@@ -11,7 +11,7 @@
     <meta name="author" content="Harpia Consultoria">
     <link rel="canonical" href="https://harpiaconsultoria.eng.br/" />
 
-    <!-- Open Graph (para compartilhamento em redes sociais como Facebook, LinkedIn, WhatsApp) -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Laudos de Engenharia de Precisão em Barbacena | Harpia Consultoria" />
     <meta property="og:description" content="Consultoria de alta especialização em laudos técnicos, perícias e vistorias de engenharia civil, mecânica e segurança do trabalho. Equipe com mestres e doutores." />
     <meta property="og:type" content="website" />
@@ -22,15 +22,14 @@
     <meta property="og:site_name" content="Harpia Consultoria" />
     <meta property="og:locale" content="pt_BR" />
 
-    <!-- Twitter Card (para compartilhamento no Twitter) -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Laudos de Engenharia de Precisão em Barbacena | Harpia Consultoria" />
     <meta name="twitter:description" content="Consultoria de alta especialização em laudos técnicos, perícias e vistorias de engenharia civil, mecânica e segurança do trabalho. Equipe com mestres e doutores." />
     <meta name="twitter:image" content="https://harpiaconsultoria.eng.br/social-share.png" />
     
-    <!-- Aparência e Ícones -->
-    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/logo.svg" />
+    <!-- Ícones e Aparência -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTIgMkwzIDhWMjBDMyAyMC41NTIzIDMuNDQ3NzIgMjEgNCAyMUgyMEMyMC41NTIzIDIxIDIxIDIwLjU1MjMgMjEgMjBWOEwxMiAyWiIgZmlsbD0iIzFlMjkzYiIgc3Ryb2tlPSIjNDc1NTY5IiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTIgMkwxNiA2LjVWMTFMMTIgMTRMOCAxMVY2LjVMMTIgMloiIGZpbGw9IiMyNUQzNjYiLz4KPHBhdGggZD0iTTEwIDE1TDEyIDE3TDE0IDE1VjE5TDEyIDIxTDEwIDE5VjE1WiIgZmlsbD0iIzFlMjkzYiIgc3Ryb2tlPSIjNDc1NTY5IiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNOS41IDguNUwxMiAxMC41TDE0LjUgOC41IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=" type="image/svg+xml" />
     <meta name="theme-color" content="#020617">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,10 +42,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#25D366", // Vibrant Green for WhatsApp
-                        'background-dark': "#020617", // Slate-950
-                        'surface-dark': "#0f172a", // Slate-900
-                        'form-dark': '#1D232A',
+                        primary: "#25D366",
+                        'background-dark': "#020617",
+                        'surface-dark': "#0f172a",
                         'background-light': '#F7F8FA',
                     },
                     fontFamily: {
@@ -57,37 +55,16 @@
         };
     </script>
     <style>
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        .material-icons, .material-icons-outlined { 
-            font-size: inherit; 
-            line-height: inherit;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1e293b;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #475569;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
-        }
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .material-icons, .material-icons-outlined { font-size: inherit; line-height: inherit; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1e293b; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+        .hidden { display: none; }
+        .fade-in-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .fade-in-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
-  }
-}
-</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -114,27 +91,9 @@
     }
   ],
   "description": "Consultoria de alta especialização em Engenharia Diagnóstica. Nossa equipe de sócios, com Mestrado e Doutorado, possui vasta experiência em casos de alta complexidade, como a perícia no Morro da Forca, garantindo a máxima precisão e autoridade técnica em laudos e perícias.",
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Barbacena"
-    },
-    {
-      "@type": "City",
-      "name": "São João del-Rei"
-    },
-    {
-      "@type": "City",
-      "name": "Juiz de Fora"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Região das Vertentes"
-    }
-  ],
+  "areaServed": [{"@type": "City", "name": "Barbacena"}, {"@type": "City", "name": "São João del-Rei"}, {"@type": "City", "name": "Juiz de Fora"}, {"@type": "AdministrativeArea", "name": "Região das Vertentes"}],
   "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Serviços de Engenharia",
+    "@type": "OfferCatalog", "name": "Serviços de Engenharia",
     "itemListElement": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Engenharia Diagnóstica" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Inspeção Predial" } },
@@ -147,7 +106,711 @@
 </script>
 </head>
 <body class="bg-background-dark text-slate-100 font-sans">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    
+    <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#/" class="flex-shrink-0 flex items-center gap-2">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L3 8V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V8L12 2Z" fill="#1e293b" stroke="#475569" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M12 2L16 6.5V11L12 14L8 11V6.5L12 2Z" fill="#25D366"/>
+                        <path d="M10 15L12 17L14 15V19L12 21L10 19V15Z" fill="#1e293b" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9.5 8.5L12 10.5L14.5 8.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="flex flex-col">
+                        <span class="text-white font-bold text-xl tracking-tight leading-none">HARPIA</span>
+                        <span class="text-slate-400 text-xs font-medium tracking-[0.2em] leading-none">CONSULTORIA</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/#tecnologia" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Tecnologia</a>
+                    <a href="/#servicos" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Serviços</a>
+                    <a href="/#metodologia" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Metodologia</a>
+                    <a href="/#equipe" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Equipe</a>
+                    <a href="#/blog" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Blog</a>
+                    <a href="/#contato" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Contato</a>
+                </nav>
+                <div class="hidden md:flex">
+                    <a href="/#contato" class="inline-flex items-center justify-center px-4 py-2 border border-slate-500 text-sm font-medium rounded text-white hover:bg-slate-800 hover:border-slate-400 transition-all">
+                        SOLICITAR ORÇAMENTO
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle-btn" class="text-slate-300 hover:text-white" type="button" aria-label="Open menu">
+                        <span id="menu-icon" class="material-icons-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-surface-dark/95 backdrop-blur-sm">
+            <nav class="px-4 pt-2 pb-4 space-y-2">
+                <a href="/#tecnologia" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors">Tecnologia</a>
+                <a href="/#servicos" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors">Serviços</a>
+                <a href="/#metodologia" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors">Metodologia</a>
+                <a href="/#equipe" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors">Equipe</a>
+                <a href="#/blog" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors">Blog</a>
+                <a href="/#contato" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors">Contato</a>
+                <a href="/#contato" class="block w-full text-center mt-4 px-4 py-2 border border-slate-500 text-sm font-medium rounded text-white hover:bg-slate-800 hover:border-slate-400 transition-all">
+                    SOLICITAR ORÇAMENTO
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="page-home">
+            <section class="relative min-h-screen flex items-center justify-center bg-surface-dark overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <video autoplay loop muted playsInline class="w-full h-full object-cover opacity-30" src="https://videos.pexels.com/video-files/8053782/8053782-hd_1920_1080_25fps.mp4" crossorigin="anonymous"></video>
+                    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-surface-dark"></div>
+                </div>
+                <div class="relative z-10 max-w-5xl mx-auto px-4 text-center mt-20">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        Engenharia Diagnóstica <br class="hidden md:block" />
+                        Laudos Técnicos e Perícias de Precisão
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto">
+                       Soluções completas em laudos de engenharia civil, mecânica e segurança do trabalho em Barbacena-MG e região.
+                    </p>
+                    <a href="#contato" class="inline-flex items-center px-6 py-3 md:px-8 md:py-4 border border-white text-sm md:text-base font-medium rounded text-white hover:bg-white hover:text-slate-900 transition-all duration-300 uppercase tracking-wide">
+                        SOLICITAR ORÇAMENTO
+                    </a>
+                </div>
+                <a href="#tecnologia" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" aria-label="Scroll down">
+                    <span class="material-icons-outlined text-white/50 text-4xl">arrow_downward</span>
+                </a>
+            </section>
+            
+            <section class="py-20 bg-slate-950" id="tecnologia">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 fade-in-on-scroll">
+                        <h2 class="text-3xl font-bold text-white mb-4">Tecnologia Aplicada a Laudos de Engenharia Civil</h2>
+                        <p class="text-slate-400 max-w-2xl mx-auto">Métodos de inspeção que aumentam a precisão dos laudos.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group" style="transition-delay: 100ms;">
+                            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
+                                <span class="material-icons-outlined text-4xl text-primary">center_focus_strong</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Análise Não Destrutiva</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">Ensaios não destrutivos (ultrassom, esclerometria) para laudos técnicos e vistorias estruturais.</p>
+                        </div>
+                        <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group" style="transition-delay: 200ms;">
+                            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
+                                <span class="material-icons-outlined text-4xl text-primary">sensors</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Varredura a Laser 3D</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">Modelagem 3D para identificação de deformações em laudos periciais e perícias judiciais.</p>
+                        </div>
+                        <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group" style="transition-delay: 300ms;">
+                            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
+                                <span class="material-icons-outlined text-4xl text-primary">thermostat</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Termografia Infravermelha</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">Detecção de umidade e infiltrações para vistorias e avaliações de imóveis completas.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-20 bg-surface-dark" id="servicos">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 fade-in-on-scroll">
+                        <h2 class="text-3xl font-bold text-white mb-4">Serviços em Laudos Técnicos e Perícias</h2>
+                        <p class="text-slate-400 max-w-2xl mx-auto">Laudos técnicos, perícias e vistorias para imóveis residenciais, comerciais e industriais.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="fade-in-on-scroll relative bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-primary/50 transition-colors group">
+                           <h3 class="text-xl font-bold text-white mb-2">Laudos Técnicos de Engenharia Civil</h3>
+                           <p class="text-sm text-slate-400">Laudo técnico e relatório técnico para regularização, reformas, comprovação de estabilidade e atendimento a órgãos públicos.</p>
+                        </div>
+                        <div class="fade-in-on-scroll relative bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-primary/50 transition-colors group">
+                           <span class="absolute top-4 right-4 bg-primary/20 text-primary text-xs px-2 py-1 rounded font-semibold">DESTAQUE</span>
+                           <h3 class="text-xl font-bold text-white mb-2">Vistorias e Avaliação de Imóveis</h3>
+                           <p class="text-sm text-slate-400">Vistoria técnica e laudo de avaliação de imóvel para compra/venda, financiamentos, seguros e atualização patrimonial.</p>
+                        </div>
+                        <div class="fade-in-on-scroll relative bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-primary/50 transition-colors group">
+                           <h3 class="text-xl font-bold text-white mb-2">Laudos para Caixa e Bancos</h3>
+                           <p class="text-sm text-slate-400">Laudo de engenharia para Caixa, Banco do Brasil e demais instituições financeiras, conforme critérios técnicos exigidos.</p>
+                        </div>
+                        <div class="fade-in-on-scroll relative bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-primary/50 transition-colors group">
+                           <h3 class="text-xl font-bold text-white mb-2">Perícias Judiciais</h3>
+                           <p class="text-sm text-slate-400">Laudo pericial de engenharia civil para ações judiciais e extrajudiciais, conflitos construtivos e vícios em obras.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-16 bg-surface-dark border-t border-slate-800/50">
+                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                     <div class="text-center mb-12 fade-in-on-scroll">
+                         <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Tipos de Laudos Técnicos e Perícia</h2>
+                         <p class="text-slate-400 text-sm">Conheça as principais soluções que oferecemos.</p>
+                     </div>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto fade-in-on-scroll">
+                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
+                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">account_balance</span>
+                            <div><h3 class="text-white font-medium text-sm">Avaliação de Valor de Imóvel</h3><p class="text-xs text-slate-500">Laudo para Instituições Financeiras, Bancos e inventários</p></div>
+                        </div>
+                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
+                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">warning</span>
+                            <div><h3 class="text-white font-medium text-sm">Laudo de Patologia Estrutural</h3><p class="text-xs text-slate-500">Análise de trincas, rachaduras e anomalias construtivas</p></div>
+                        </div>
+                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
+                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">gavel</span>
+                            <div><h3 class="text-white font-medium text-sm">Laudo Pericial de Engenharia Civil</h3><p class="text-xs text-slate-500">Assistência técnica para processos judiciais e extrajudiciais</p></div>
+                        </div>
+                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
+                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">visibility</span>
+                            <div><h3 class="text-white font-medium text-sm">Vistoria Cautelar e Recebimento de Obras</h3><p class="text-xs text-slate-500">Para obras novas, locações e garantia de vizinhança</p></div>
+                        </div>
+                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
+                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">construction</span>
+                            <div><h3 class="text-white font-medium text-sm">Laudo de Reforma (NBR 16.280) e Inspeção Predial</h3><p class="text-xs text-slate-500">Segurança para reformas e manutenção preventiva de edifícios</p></div>
+                        </div>
+                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
+                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">ac_unit</span>
+                            <div><h3 class="text-white font-medium text-sm">PMOC para Ar-Condicionado</h3><p class="text-xs text-slate-500">Plano de Manutenção, Operação e Controle (Obrigatório por Lei)</p></div>
+                        </div>
+                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
+                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">precision_manufacturing</span>
+                            <div><h3 class="text-white font-medium text-sm">Laudo de Máquinas (NR-12) e Inspeção de Playgrounds</h3><p class="text-xs text-slate-500">Segurança de equipamentos e conformidade de áreas de lazer</p></div>
+                        </div>
+                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
+                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">gas_meter</span>
+                            <div><h3 class="text-white font-medium text-sm">Teste de Estanqueidade (Gás) e Vasos de Pressão (NR-13)</h3><p class="text-xs text-slate-500">Inspeção de segurança para redes de gás e equipamentos</p></div>
+                        </div>
+                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
+                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">folder_shared</span>
+                            <div><h3 class="text-white font-medium text-sm">LTCAT e Laudo de Insalubridade/Periculosidade</h3><p class="text-xs text-slate-500">Documentação para fins previdenciários e trabalhistas</p></div>
+                        </div>
+                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
+                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">support_agent</span>
+                            <div><h3 class="text-white font-medium text-sm">Assistência Técnica em Perícias Trabalhistas</h3><p class="text-xs text-slate-500">Fundamentação técnica em processos de SST</p></div>
+                        </div>
+                     </div>
+                     <div class="max-w-5xl mx-auto text-center fade-in-on-scroll">
+                         <p class="text-sm text-slate-400 mt-8">Nossos laudos são elaborados por uma <a href="#equipe" class="text-primary hover:underline font-semibold">equipe de mestres e doutores</a> com vasta experiência em casos de alta complexidade, como a perícia no Morro da Forca, garantindo a máxima precisão e autoridade técnica.</p>
+                         <p class="text-xs text-slate-600 mt-4">Todos os laudos seguem as normas técnicas aplicáveis e incluem ART/RRT.</p>
+                     </div>
+                 </div>
+            </section>
+
+            <section class="py-20 bg-slate-950" id="metodologia">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 fade-in-on-scroll">
+                        <h2 class="text-3xl font-bold text-white mb-4">Metodologia para Laudos Técnicos e Periciais</h2>
+                        <p class="text-slate-400">Processo estruturado e fundamentado.</p>
+                    </div>
+                    <div class="relative fade-in-on-scroll">
+                        <div class="absolute left-6 top-0 bottom-0 w-px bg-slate-700 h-full"></div>
+                        <div class="relative flex items-start mb-12 group">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center z-10 text-sm font-bold text-slate-400 group-hover:border-primary group-hover:text-primary transition-colors">01</div>
+                            <div class="ml-8 pt-2"><div class="flex items-center mb-1"><span class="material-icons-outlined text-slate-400 mr-2 text-xl">chat</span><h3 class="text-lg font-bold text-white">Consultoria e Escopo</h3></div><p class="text-sm text-slate-400">Entendimento da demanda e definição do tipo de laudo necessário.</p></div>
+                        </div>
+                        <div class="relative flex items-start mb-12 group">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center z-10 text-sm font-bold text-slate-400 group-hover:border-primary group-hover:text-primary transition-colors">02</div>
+                            <div class="ml-8 pt-2"><div class="flex items-center mb-1"><span class="material-icons-outlined text-slate-400 mr-2 text-xl">search</span><h3 class="text-lg font-bold text-white">Inspeção Técnica</h3></div><p class="text-sm text-slate-400">Visita in loco com equipamentos de última geração para coleta de dados.</p></div>
+                        </div>
+                        <div class="relative flex items-start mb-12 group">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center z-10 text-sm font-bold text-slate-400 group-hover:border-primary group-hover:text-primary transition-colors">03</div>
+                            <div class="ml-8 pt-2"><div class="flex items-center mb-1"><span class="material-icons-outlined text-slate-400 mr-2 text-xl">analytics</span><h3 class="text-lg font-bold text-white">Análise e Parecer</h3></div><p class="text-sm text-slate-400">Processamento dos dados e elaboração do parecer técnico fundamentado.</p></div>
+                        </div>
+                        <div class="relative flex items-start group">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center z-10 text-sm font-bold text-slate-400 group-hover:border-primary group-hover:text-primary transition-colors">04</div>
+                            <div class="ml-8 pt-2"><div class="flex items-center mb-1"><span class="material-icons-outlined text-slate-400 mr-2 text-xl">verified</span><h3 class="text-lg font-bold text-white">Entrega do Laudo</h3></div><p class="text-sm text-slate-400">Laudo completo, pronto para órgãos públicos, instituições financeiras ou processos judiciais.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20 bg-surface-dark">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12 fade-in-on-scroll">
+                        <h2 class="text-3xl font-bold text-white mb-4">Perguntas Frequentes sobre Laudos Técnicos</h2>
+                        <p class="text-slate-400">Tire suas dúvidas sobre laudos de engenharia civil.</p>
+                    </div>
+                    <div class="space-y-4 fade-in-on-scroll">
+                        <details class="group bg-slate-800/50 rounded-lg overflow-hidden border border-slate-700 open:border-primary/50 transition-all">
+                            <summary class="flex justify-between items-center p-5 cursor-pointer list-none text-white font-medium hover:bg-slate-800 transition-colors"><span>Quanto custa um laudo técnico de engenharia civil?</span><span class="material-icons-outlined transform group-open:rotate-180 transition-transform text-2xl">expand_more</span></summary>
+                            <div class="px-5 pb-5 text-slate-400 text-sm"><p>O custo varia conforme a complexidade, área do imóvel e finalidade do laudo. Entre em contato para um orçamento personalizado.</p></div>
+                        </details>
+                        <details class="group bg-slate-800/50 rounded-lg overflow-hidden border border-slate-700 open:border-primary/50 transition-all">
+                            <summary class="flex justify-between items-center p-5 cursor-pointer list-none text-white font-medium hover:bg-slate-800 transition-colors"><span>Qual a diferença entre laudo técnico, relatório e parecer?</span><span class="material-icons-outlined transform group-open:rotate-180 transition-transform text-2xl">expand_more</span></summary>
+                            <div class="px-5 pb-5 text-slate-400 text-sm"><p>O Laudo é mais completo, conclusivo e fundamentado tecnicamente. O Relatório descreve fatos observados. O Parecer é uma opinião técnica resumida.</p></div>
+                        </details>
+                        <details class="group bg-slate-800/50 rounded-lg overflow-hidden border border-slate-700 open:border-primary/50 transition-all">
+                            <summary class="flex justify-between items-center p-5 cursor-pointer list-none text-white font-medium hover:bg-slate-800 transition-colors"><span>Qualquer engenheiro pode fazer laudo técnico?</span><span class="material-icons-outlined transform group-open:rotate-180 transition-transform text-2xl">expand_more</span></summary>
+                            <div class="px-5 pb-5 text-slate-400 text-sm"><p>O ideal é que seja feito por engenheiro civil com especialização na área de perícias ou patologia, devidamente registrado no CREA.</p></div>
+                        </details>
+                        <details class="group bg-slate-800/50 rounded-lg overflow-hidden border border-slate-700 open:border-primary/50 transition-all">
+                            <summary class="flex justify-between items-center p-5 cursor-pointer list-none text-white font-medium hover:bg-slate-800 transition-colors"><span>Os laudos atendem Caixa e bancos?</span><span class="material-icons-outlined transform group-open:rotate-180 transition-transform text-2xl">expand_more</span></summary>
+                            <div class="px-5 pb-5 text-slate-400 text-sm"><p>Sim, nossos laudos são elaborados seguindo rigorosamente as normas da ABNT e exigências das instituições financeiras.</p></div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20 bg-slate-950" id="equipe">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 fade-in-on-scroll">
+                        <h2 class="text-3xl font-bold text-white mb-4">Nossa Equipe</h2>
+                        <p class="text-slate-400">Profissionais especializados em laudos e perícias técnicas.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all" style="transition-delay: 100ms;">
+                            <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 overflow-hidden"><img src="https://source.unsplash.com/400x400/?portrait,man,30s,engineer" alt="Foto de Gustavo Santos" class="w-full h-full object-cover" loading="lazy"></div>
+                            <h3 class="text-lg font-bold text-white">Gustavo Santos</h3><p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Engenheiro Civil</p><p class="text-sm text-slate-400">Especialista em contenções e estabilidade de taludes, perito credenciado TJMG e MPMG.</p>
+                        </div>
+                        <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all" style="transition-delay: 200ms;">
+                            <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 overflow-hidden"><img src="https://source.unsplash.com/400x400/?portrait,man,20s,engineer" alt="Foto de Lucas de Sá" class="w-full h-full object-cover" loading="lazy"></div>
+                            <h3 class="text-lg font-bold text-white">Lucas de Sá</h3><p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Engenheiro Mecânico e Civil</p><p class="text-sm text-slate-400">Engenheiro com formação em Mecânica, Segurança do Trabalho e Civil. Doutorando em Estruturas.</p>
+                        </div>
+                        <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all" style="transition-delay: 300ms;">
+                            <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 overflow-hidden"><img src="https://source.unsplash.com/400x400/?portrait,man,50s,architect" alt="Foto de Djalmir Silva" class="w-full h-full object-cover" loading="lazy"></div>
+                            <h3 class="text-lg font-bold text-white">Djalmir Silva</h3><p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Arquiteto e Urbanista</p><p class="text-sm text-slate-400">Arquiteto e urbanista, capitão da reserva da Aeronáutica e consultor do IPHAN.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-20 bg-surface-dark">
+                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                     <div class="text-center mb-16 fade-in-on-scroll">
+                         <h2 class="text-3xl font-bold text-white mb-4">Depoimentos de Nossos Clientes</h2>
+                         <p class="text-slate-400">O que dizem sobre nossos laudos e perícias de engenharia.</p>
+                     </div>
+                     <div id="trustindex-widget-container" class="fade-in-on-scroll"></div>
+                 </div>
+            </section>
+            
+            <section class="py-20 bg-slate-950" id="blog">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 fade-in-on-scroll">
+                        <h2 class="text-3xl font-bold text-white mb-4">Últimas do Blog</h2>
+                        <p class="text-slate-400 max-w-2xl mx-auto">Informações e dicas sobre engenharia diagnóstica, laudos e perícias.</p>
+                    </div>
+                    <div id="homepage-blog-posts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 fade-in-on-scroll">
+                        <!-- Blog posts will be injected here by JS -->
+                    </div>
+                    <div class="text-center fade-in-on-scroll">
+                         <a href="#/blog" class="inline-flex items-center px-6 py-3 border border-slate-500 text-sm font-medium rounded text-white hover:bg-slate-800 hover:border-slate-400 transition-all">
+                            Ver todos os posts
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contato" class="bg-background-light text-slate-800">
+                <div class="flex flex-col lg:flex-row min-h-[90vh]">
+                    <div class="lg:w-5/12 w-full aspect-square lg:aspect-auto fade-in-on-scroll" style="transition-delay: 100ms;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.2755881772346!2d-43.768791099999994!3d-21.221067299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f16!3m3!1m2!1s0x48f68e2270d524ab%3A0x46b16dd914564611!2sHarpia%20Consultoria%20-%20Engenharia%20e%20Laudos%20T%C3%A9cnicos!5e1!3m2!1spt-BR!2sbr!4v1767458030731!5m2!1spt-BR!2sbr" class="w-full h-full" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Localização da Harpia Consultoria"></iframe>
+                    </div>
+                    <div class="lg:w-7/12 w-full flex flex-col justify-center p-8 sm:p-12 lg:p-16">
+                        <div class="fade-in-on-scroll">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-slate-800 mb-2">Fale Conosco</h2>
+                            <p class="text-slate-600 mb-10">Pronto para começar? Envie-nos uma mensagem para um orçamento rápido e sem compromisso.</p>
+                        </div>
+                        <div class="w-full fade-in-on-scroll" style="transition-delay: 150ms;">
+                            <form id="contact-form" class="space-y-6">
+                                <div>
+                                    <label class="text-sm font-semibold text-slate-700 mb-3 block">1. Qual serviço você precisa?</label>
+                                    <div id="service-options-container" class="flex flex-wrap gap-2">
+                                        <button type="button" data-service="Vistoria de Imóvel" class="px-4 py-2 text-sm rounded-full border transform transition-all duration-200 bg-white text-slate-600 border-slate-300 hover:bg-slate-100 hover:border-slate-400 hover:shadow-sm">Vistoria de Imóvel</button>
+                                        <button type="button" data-service="Laudo para Reforma" class="px-4 py-2 text-sm rounded-full border transform transition-all duration-200 bg-white text-slate-600 border-slate-300 hover:bg-slate-100 hover:border-slate-400 hover:shadow-sm">Laudo para Reforma</button>
+                                        <button type="button" data-service="Perícia Judicial" class="px-4 py-2 text-sm rounded-full border transform transition-all duration-200 bg-white text-slate-600 border-slate-300 hover:bg-slate-100 hover:border-slate-400 hover:shadow-sm">Perícia Judicial</button>
+                                        <button type="button" data-service="Outro" class="px-4 py-2 text-sm rounded-full border transform transition-all duration-200 bg-white text-slate-600 border-slate-300 hover:bg-slate-100 hover:border-slate-400 hover:shadow-sm">Outro</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="name-contact" class="text-sm font-semibold text-slate-700 mb-2 block">2. Seu nome completo *</label>
+                                    <input id="name-contact" name="name" type="text" required class="w-full bg-white border border-slate-300 rounded-md py-2 px-3 text-slate-900 text-sm placeholder-slate-400 focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition" placeholder="Digite seu nome">
+                                </div>
+                                <div>
+                                    <label for="message-contact" class="text-sm font-semibold text-slate-700 mb-2 block">3. Detalhes adicionais (opcional)</label>
+                                    <textarea id="message-contact" name="message" rows="3" class="w-full bg-white border border-slate-300 rounded-md py-2 px-3 text-slate-900 text-sm placeholder-slate-400 focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition" placeholder="Descreva brevemente sua necessidade..."></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-primary hover:bg-green-600 text-white font-bold py-3 px-4 rounded-md flex items-center justify-center text-center text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40">
+                                    <span class="material-icons text-lg mr-2">whatsapp</span> Enviar via WhatsApp
+                                </button>
+                                <p class="text-center text-xs text-slate-500">Ao enviar, você será redirecionado para o WhatsApp.</p>
+                            </form>
+                        </div>
+                        <div class="fade-in-on-scroll" style="transition-delay: 300ms;">
+                            <div class="mt-12 pt-8 border-t border-slate-200">
+                                <h3 class="text-lg font-bold text-slate-800 mb-6">Ou entre em contato diretamente</h3>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8">
+                                    <div class="flex items-start"><span class="material-icons-outlined text-slate-500 mr-4 text-3xl">location_on</span><div><h4 class="font-semibold text-slate-500 text-xs tracking-wider mb-1">ENDEREÇO</h4><p class="text-slate-700 text-sm">Avenida Olegário Maciel, 470, Centro</p><p class="text-slate-700 text-sm">Barbacena – MG | CEP 36200-082</p></div></div>
+                                    <div class="flex items-start"><span class="material-icons-outlined text-slate-500 mr-4 text-3xl">phone_in_talk</span><div><h4 class="font-semibold text-slate-500 text-xs tracking-wider mb-1">TELEFONE</h4><p class="text-slate-700 text-sm">(31) 98216-2913</p></div></div>
+                                    <div class="flex items-start"><span class="material-icons-outlined text-slate-500 mr-4 text-3xl">mail_outline</span><div><h4 class="font-semibold text-slate-500 text-xs tracking-wider mb-1">E-MAIL</h4><p class="text-slate-700 text-sm">contato@harpiaconsultoria.eng.br</p></div></div>
+                                    <div class="flex items-start"><span class="material-icons-outlined text-slate-500 mr-4 text-3xl">schedule</span><div><h4 class="font-semibold text-slate-500 text-xs tracking-wider mb-1">HORÁRIO DE ATENDIMENTO</h4><p class="text-slate-700 text-sm">Segunda a Sexta: 8h às 17h</p><p class="text-slate-700 text-sm">Sábado: Plantão via WhatsApp</p></div></div>
+                                </div>
+                                <div class="mt-8 flex items-start p-4 bg-slate-100 rounded-lg border border-slate-200">
+                                    <span class="material-icons-outlined text-slate-500 mr-4 text-3xl shrink-0">event_available</span>
+                                    <div><h4 class="font-semibold text-slate-500 text-xs tracking-wider mb-1">AGENDAMENTO FLEXÍVEL</h4><p class="text-slate-700 text-sm">Para sua comodidade, atendimentos podem ser agendados online. Oferecemos também horários especiais mediante consulta prévia para atender sua necessidade.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-blog-list" class="hidden"></div>
+        <div id="page-blog-post" class="hidden"></div>
+    </main>
+
+    <footer class="bg-black text-slate-400 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <div class="md:col-span-5 lg:col-span-4">
+                    <a href="#/" class="flex-shrink-0 flex items-center gap-2 mb-4">
+                       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L3 8V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V8L12 2Z" fill="#1e293b" stroke="#475569" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M12 2L16 6.5V11L12 14L8 11V6.5L12 2Z" fill="#25D366"/>
+                            <path d="M10 15L12 17L14 15V19L12 21L10 19V15Z" fill="#1e293b" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9.5 8.5L12 10.5L14.5 8.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="flex flex-col">
+                            <span class="text-white font-bold text-xl tracking-tight leading-none">HARPIA</span>
+                            <span class="text-slate-400 text-xs font-medium tracking-[0.2em] leading-none">CONSULTORIA</span>
+                        </div>
+                    </a>
+                    <p class="text-sm max-w-xs">Laudos técnicos, perícias e vistorias de engenharia civil, mecânica e segurança do trabalho.</p>
+                </div>
+                <div class="md:col-span-3 lg:col-span-2">
+                    <h4 class="text-sm font-semibold text-white tracking-wider uppercase mb-4">Navegação</h4>
+                    <nav class="flex flex-col space-y-2">
+                        <a href="/#servicos" class="text-sm hover:text-white transition-colors">Serviços</a>
+                        <a href="/#metodologia" class="text-sm hover:text-white transition-colors">Metodologia</a>
+                        <a href="/#equipe" class="text-sm hover:text-white transition-colors">Equipe</a>
+                        <a href="/#contato" class="text-sm hover:text-white transition-colors">Contato</a>
+                        <a href="#/blog" class="text-sm hover:text-white transition-colors">Blog</a>
+                    </nav>
+                </div>
+                <div class="md:col-span-4 lg:col-span-3">
+                     <h4 class="text-sm font-semibold text-white tracking-wider uppercase mb-4">Principais Laudos</h4>
+                     <nav class="flex flex-col space-y-2">
+                        <a href="/#servicos" class="text-sm hover:text-white transition-colors">Laudo de Patologia Estrutural</a>
+                        <a href="/#servicos" class="text-sm hover:text-white transition-colors">Laudo de Reforma (NBR 16.280)</a>
+                        <a href="/#servicos" class="text-sm hover:text-white transition-colors">Perícia Judicial</a>
+                        <a href="/#servicos" class="text-sm hover:text-white transition-colors">PMOC e Laudos (NR-12/NR-13)</a>
+                        <a href="/#servicos" class="text-sm hover:text-white transition-colors">LTCAT e Laudos de SST</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-12 pt-8 text-center text-xs text-slate-600">
+                <p class="mb-2">Atendemos Barbacena-MG, São João del-Rei, Juiz de Fora e toda a região de Campos das Vertentes.</p>
+                <p>© 2024 Harpia Consultoria. Todos os direitos reservados.</p>
+                <p class="mt-1">CREA-MG 144817/D MG | CNPJ: 46.128.059/0001-72</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform" aria-label="Contact us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-white" fill="currentColor"><path d="M19.05 4.94A9.85 9.85 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.73-1.11-5.2-2.9-7.07zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.81.83-3.04-.2-.31a8.34 8.34 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.23.86 5.82 2.45s2.45 3.62 2.45 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.2c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72s-.02-.38.1-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41.04-.3-.02-.43c-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.55-.42-.15 0-.3 0-.46 0s-.39.06-.6.31c-.2.25-.78.76-.78 1.85s.8 2.15.91 2.3s1.58 2.4 3.8 3.36c.55.24.93.38 1.24.48.55.17 1.05.14 1.44.09.43-.06 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.05-.12-.2-.19-.44-.31z" /></svg>
+    </a>
+    
+    <button type="button" id="back-to-top-btn" class="fixed bottom-24 right-6 z-50 w-12 h-12 bg-slate-800/80 backdrop-blur-sm border border-slate-700 rounded-full shadow-lg flex items-center justify-center text-slate-300 hover:bg-slate-700 hover:text-white hover:border-slate-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-dark focus:ring-primary transition-all duration-300 opacity-0 translate-y-4" aria-label="Voltar ao topo" style="visibility: hidden;">
+        <span class="material-icons-outlined">keyboard_arrow_up</span>
+    </button>
+    
+<script type="module">
+    // --- EMBEDDED DATA ---
+    const postsData = [
+        {"slug":"assistencia-tecnica-para-advogados-em-barbacena","title":"A Prova Técnica como Estratégia de Êxito: Por que Advogados de Barbacena Escolhem a Harpia Consultoria?","seoTitle":"Assistência Técnica para Advogados em Barbacena | Harpia Consultoria","excerpt":"O sucesso de uma ação judicial, seja ela cível ou trabalhista, depende da solidez das provas. Entenda como o apoio de peritos mestres e doutores transforma a complexidade técnica em vantagem jurídica.","date":"2024-08-05","category":"Perícia Judicial","readTime":"5 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?law,engineering","content":"<div class='mb-8 p-6 rounded-lg border border-slate-700 bg-slate-800/50 not-prose'><h3 class='text-lg font-bold text-white mb-4'>Artigo elaborado por Peritos Especialistas:</h3><div class='flex flex-col sm:flex-row gap-6 text-left'><div class='flex items-center gap-4'><img src='https://source.unsplash.com/400x400/?portrait,man,30s,engineer' alt='Foto de Gustavo Santos' class='w-16 h-16 rounded-full object-cover shrink-0' loading='lazy' /><div><h4 class='font-bold text-white'>Gustavo Santos</h4><p class='text-sm text-slate-400'>Eng. Civil, Especialista em Contenções, Perito Credenciado TJMG.</p></div></div><div class='flex items-center gap-4'><img src='https://source.unsplash.com/400x400/?portrait,man,20s,engineer' alt='Foto de Lucas de Sá' class='w-16 h-16 rounded-full object-cover shrink-0' loading='lazy' /><div><h4 class='font-bold text-white'>Lucas de Sá</h4><p class='text-sm text-slate-400'>Eng. Mecânico e Civil, Doutorando em Estruturas.</p></div></div></div></div><p class='mb-4 text-slate-300'>No contencioso moderno, a sentença é frequentemente proferida com base na convicção do juiz sobre o laudo pericial. Para o advogado, delegar a interpretação técnica apenas ao perito judicial nomeado é um risco que pode custar a causa. A Assistência Técnica Judicial surge não como um custo, mas como um seguro processual indispensável.</p><div class='my-8 text-center'><a href='https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Vi%20o%20artigo%20sobre%20assist%C3%AAncia%20t%C3%A9cnica%20para%20advogados%20e%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20t%C3%A9cnica%20para%20um%20processo.' target='_blank' rel='noopener noreferrer' class='inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-green-600 text-white font-bold rounded-md text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40'><span class='material-icons text-lg mr-2'>calendar_month</span>Agendar Reunião Técnica para Processo</a></div><h2 class='text-2xl font-bold text-white mt-6 mb-3'>1. Blindagem Técnica em Processos Cíveis e Trabalhistas</h2><p class='mb-4 text-slate-300'>Muitos processos de Patologia das Construções ou Insalubridade (LTCAT) são perdidos por quesitos mal formulados. Na Harpia Consultoria, apoiamos o advogado desde a petição inicial:</p><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Quesitos Estratégicos:</strong> Formulamos perguntas que obrigam o perito judicial a abordar os pontos cruciais para a tese de defesa ou acusação.</li><li><strong>Parecer Técnico de Engenharia:</strong> Documento com rigor científico, assinado por Mestres e Doutores, pronto para ser anexado aos autos e confrontar laudos judiciais equivocados.</li></ul><h2 class='text-2xl font-bold text-white mt-6 mb-3'>2. Áreas de Atuação de Alta Relevância para o Judiciário</h2><p class='mb-4 text-slate-300'>Com base nas demandas frequentes do TJMG e tribunais do trabalho, focamos em:</p><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Vícios Construtivos e Vistoria Cautelar:</strong> Essencial para ações contra construtoras ou conflitos de vizinhança em Barbacena e região.</li><li><strong>Perícias Mecânicas e NR-12:</strong> Apoio em ações de acidentes de trabalho ou falhas em sistemas de ar-condicionado (PMOC).</li><li><strong>Avaliação de Imóveis (PTAM):</strong> Fundamental para inventários, dissoluções de sociedades e garantias bancárias.</li></ul><p class='mb-4 text-slate-300'>Nossa expertise em <a href='/#servicos' class='text-primary hover:underline'>Perícia Judicial</a> e <a href='/#servicos' class='text-primary hover:underline'>Laudo Técnico de Engenharia</a> garante o suporte necessário.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>3. O Diferencial da Harpia: Tecnologia e Ciência</h2><p class='mb-4 text-slate-300'>Não entregamos apenas papéis; entregamos provas. Utilizamos Termografia Infravermelha e Drones para materializar danos que, de outra forma, seriam subjetivos, facilitando o convencimento do magistrado.</p><div class='my-8 text-center'><a href='https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Vi%20o%20artigo%20sobre%20assist%C3%AAncia%20t%C3%A9cnica%20para%20advogados%20e%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20t%C3%A9cnica%20para%20um%20processo.' target='_blank' rel='noopener noreferrer' class='inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-green-600 text-white font-bold rounded-md text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40'><span class='material-icons text-lg mr-2'>calendar_month</span>Agendar Reunião Técnica para Processo</a></div>"},
+        {"slug":"inspecao-de-fachadas-com-drone-em-barbacena","title":"Inspeção de Fachadas com Drone em Barbacena: Precisão e Segurança na Engenharia Diagnóstica","excerpt":"Descubra como a Harpia Consultoria utiliza drones e termografia infravermelha para identificar patologias invisíveis a olho nu, garantindo laudos técnicos fundamentados e economia para condomínios em Barbacena e região.","date":"2024-08-01","category":"Inspeção Predial","readTime":"3 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?drone,facade,inspection","content":"<p class='mb-4 text-slate-300'>A manutenção predial em Barbacena ganhou um aliado poderoso: a Engenharia Diagnóstica apoiada por tecnologia de ponta. Diferente das vistorias tradicionais, a Harpia Consultoria utiliza Drones para Inspeção e Varredura a Laser 3D para alcançar pontos críticos de fachadas com total segurança e precisão milimétrica.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Por que investir em um Laudo Técnico com Drone?</h2><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Identificação de Patologias:</strong> O uso da Termografia Infravermelha permite detectar infiltrações e descolamentos de pastilhas antes que se tornem problemas graves.</li><li><strong>Segurança Jurídica:</strong> Nossos laudos são elaborados por uma equipe com alto rigor acadêmico, incluindo Mestrandos e Doutorandos, e experiência comprovada em perícias complexas como a do Morro da Forca.</li><li><strong>Conformidade Legal:</strong> Essencial para síndicos que precisam realizar a Inspeção Predial regular ou proprietários que necessitam de um Laudo de Reforma em Barbacena.</li></ul><p class='text-slate-300'>Seja para uma Vistoria Cautelar de Vizinhança ou para uma Perícia Judicial, a fundamentação técnica é o que separa um documento comum de uma prova incontestável.</p>"},
+        {"slug":"a-importancia-do-laudo-de-vistoria-de-vizinhanca","title":"A Importância do Laudo de Vistoria de Vizinhança","excerpt":"Antes de iniciar uma obra, a vistoria de vizinhança é crucial para evitar conflitos e prejuízos futuros. Saiba por quê.","date":"2024-07-28","category":"Vistorias","readTime":"4 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?construction,neighbor","content":"<p class='mb-4 text-slate-300'>A vistoria cautelar de vizinhança é um documento técnico essencial que registra o estado de conservação dos imóveis localizados ao redor de uma futura obra. Realizada por um engenheiro qualificado, essa inspeção preventiva tem como objetivo principal resguardar tanto a construtora quanto os vizinhos de possíveis conflitos e prejuízos.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Por que é um passo indispensável?</h2><p class='mb-4 text-slate-300'>Ao documentar detalhadamente, com fotos e anotações, as condições preexistentes das edificações vizinhas (como fissuras, trincas, umidade ou problemas estruturais), o laudo cria um registro fiel do 'antes'. Caso surjam reclamações de danos durante ou após a construção, este documento serve como prova técnica para determinar se os problemas foram causados pela obra ou se já existiam, evitando litígios e custos inesperados.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Benefícios para Todos</h2><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Para a Construtora:</strong> Segurança jurídica, prevenção de custos com reparos indevidos e demonstração de boa-fé e profissionalismo.</li><li><strong>Para os Vizinhos:</strong> Garantia de que qualquer dano causado pela obra será devidamente identificado e reparado, trazendo tranquilidade durante o processo construtivo.</li></ul><p class='text-slate-300'>Portanto, investir em um laudo de vistoria de vizinhança não é um custo, mas uma garantia de segurança e transparência, fundamental para o sucesso de qualquer empreendimento na construção civil.</p>"},
+        {"slug":"identificando-patologias-estruturais-sinais-de-alerta","title":"Identificando Patologias Estruturais: Sinais de Alerta","excerpt":"Fissuras, umidade e deformações podem indicar problemas sérios. Aprenda a identificar os principais sinais de patologias em sua construção.","date":"2024-07-22","category":"Patologia Estrutural","readTime":"6 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?concrete,crack","content":"<p class='mb-4 text-slate-300'>Patologias estruturais são anomalias que comprometem a segurança, a estabilidade e a vida útil de uma edificação. Identificá-las precocemente é vital para evitar acidentes e custos de reparo elevados. Fique atento a estes sinais de alerta:</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>1. Fissuras e Trincas</h2><p class='mb-4 text-slate-300'>Nem toda fissura é perigosa, mas algumas merecem atenção especial. Fissuras diagonais em paredes e lajes, que geralmente partem de cantos de portas e janelas, podem indicar problemas de fundação ou sobrecarga na estrutura. Trincas que atravessam tijolos ou blocos são mais preocupantes do que aquelas que seguem a linha da argamassa.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>2. Deformações e Deslocamentos</h2><p class='mb-4 text-slate-300'>Lajes 'embarrigadas', vigas encurvadas ou pisos que parecem 'afundar' são sinais claros de que a estrutura está sofrendo deformações excessivas. Pilares que apresentam inclinação ou paredes estufadas também são indicativos de problemas graves que exigem uma avaliação técnica imediata.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>3. Infiltração e Umidade Recorrente</h2><p class='mb-4 text-slate-300'>Manchas de mofo, bolor e descascamento da pintura podem ser mais do que um problema estético. A infiltração contínua pode levar à corrosão da armadura de aço dentro do concreto, um processo que enfraquece a estrutura de forma silenciosa e progressiva. Ao notar qualquer um desses sinais, é fundamental contratar um engenheiro civil para um diagnóstico preciso. A Harpia Consultoria é especialista na elaboração de laudos de patologia estrutural, identificando as causas e recomendando as soluções mais seguras e eficazes.</p>"},
+        {"slug":"laudo-tecnico-para-reforma-o-que-diz-a-nbr-16280","title":"Laudo Técnico para Reforma: O que diz a NBR 16.280?","excerpt":"Qualquer alteração em edificações precisa seguir a norma ABNT NBR 16.280. Entenda a necessidade do laudo e da ART.","date":"2024-07-18","category":"Normas Técnicas","readTime":"5 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?engineering,blueprint","content":"<p class='mb-4 text-slate-300'>Desde 2014, a norma ABNT NBR 16.280 estabelece os requisitos para a gestão de reformas em edificações, sejam elas em áreas comuns ou privativas de condomínios. Seu principal objetivo é garantir a segurança da estrutura e dos usuários, evitando que alterações inadequadas causem danos ou acidentes.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Quando o Laudo é Necessário?</h2><p class='mb-4 text-slate-300'>Qualquer reforma que altere ou comprometa a segurança da edificação exige a supervisão de um profissional habilitado (engenheiro ou arquiteto). Isso inclui, mas não se limita a:</p><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li>Remoção ou abertura de paredes, mesmo que não sejam estruturais.</li><li>Instalação de ar-condicionado, banheiras ou qualquer equipamento que gere sobrecarga.</li><li>Alterações no sistema de gás, elétrico ou hidráulico.</li><li>Fechamento de sacadas com vidro.</li><li>Troca de revestimentos que possa sobrecarregar a laje (ex: substituir um piso vinílico por granito).</li></ul><p class='text-slate-300'>Para essas intervenções, o profissional deve emitir um Laudo Técnico ou Parecer e uma Anotação de Responsabilidade Técnica (ART) ou Registro de Responsabilidade Técnica (RRT), apresentando o plano de reforma ao síndico antes do início dos trabalhos. Reformas simples, como pintura e troca de gesso, geralmente são isentas. Contudo, na dúvida, consultar um profissional é sempre a decisão mais segura.</p>"}
+    ];
+
+    const defaultTitle = 'Laudos de Engenharia Civil, Mecânica e Segurança em Barbacena | Harpia Consultoria';
+    const defaultDescription = 'Especialistas em laudos técnicos em Barbacena e região. Mestres e doutores em engenharia civil, mecânica e segurança do trabalho. Precisa de um laudo fundamentado? Fale conosco e solicite um orçamento via WhatsApp!';
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- INITIALIZATIONS ---
+        handleHeaderScroll();
+        handleMenuToggle();
+        handleBackToTopButton();
+        initFadeInOnScroll();
+        initContactForm();
+        initTestimonialsWidget();
+        renderHomepageBlogPosts();
+        
+        // --- ROUTING ---
+        handleRouteChange(); 
+        window.addEventListener('hashchange', handleRouteChange);
+        
+        // --- SMOOTH SCROLL FOR NAV LINKS ---
+        document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(2);
+                
+                // If on a blog page, first navigate home, then scroll
+                if(window.location.hash.startsWith('#/blog')) {
+                    window.location.hash = '/';
+                    setTimeout(() => {
+                        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                } else { // Already on homepage, just scroll
+                    document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+
+    // --- ROUTER LOGIC ---
+    function handleRouteChange() {
+        const pageHome = document.getElementById('page-home');
+        const pageBlogList = document.getElementById('page-blog-list');
+        const pageBlogPost = document.getElementById('page-blog-post');
+
+        const allPages = [pageHome, pageBlogList, pageBlogPost];
+        allPages.forEach(p => p.classList.add('hidden'));
+
+        const hash = window.location.hash;
+
+        if (hash.startsWith('#/blog/')) {
+            const slug = hash.split('/').pop();
+            renderBlogPost(slug);
+            pageBlogPost.classList.remove('hidden');
+        } else if (hash === '#/blog') {
+            renderBlogListPage();
+            pageBlogList.classList.remove('hidden');
+        } else {
+            pageHome.classList.remove('hidden');
+            updateMetaTags(defaultTitle, defaultDescription);
+        }
+        window.scrollTo(0, 0);
+    }
+    
+    function updateMetaTags(title, description) {
+        document.title = title;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', description);
+    }
+
+    // --- DYNAMIC PAGE RENDERING ---
+    function renderBlogListPage() {
+        updateMetaTags('Blog e Artigos Técnicos | Harpia Consultoria', 'Acompanhe nossos artigos sobre engenharia diagnóstica, laudos técnicos, perícias, e as últimas novidades da engenharia em Barbacena e região.');
+        const container = document.getElementById('page-blog-list');
+        
+        const sortedPosts = postsData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        
+        const content = `
+            <section class="py-28 bg-surface-dark">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl font-bold text-white mb-4">Blog e Artigos Técnicos</h1>
+                        <p class="text-slate-400 max-w-2xl mx-auto">Informações e dicas sobre engenharia diagnóstica, laudos e perícias.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        ${sortedPosts.map(post => `
+                            <a href="#/blog/${post.slug}" class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
+                                <img src="${post.imageUrl}" alt="Imagem para o post: ${post.title}" class="w-full h-48 object-cover" loading="lazy" />
+                                <div class="p-6 flex-grow flex flex-col">
+                                    <div class="flex justify-between items-center text-xs mb-3">
+                                        <span class="bg-primary/10 text-primary px-2 py-1 rounded font-semibold">${post.category}</span>
+                                        <span class="text-slate-500">${post.readTime}</span>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors flex-grow">${post.title}</h3>
+                                    <p class="text-sm text-slate-400 leading-relaxed mb-4">${post.excerpt}</p>
+                                    <div class="mt-auto text-primary font-semibold text-sm">Ler mais <span aria-hidden="true">→</span></div>
+                                </div>
+                            </a>
+                        `).join('')}
+                    </div>
+                </div>
+            </section>
+        `;
+        container.innerHTML = content;
+    }
+
+    function renderBlogPost(slug) {
+        const container = document.getElementById('page-blog-post');
+        const post = postsData.find(p => p.slug === slug);
+
+        if (!post) {
+            container.innerHTML = `<div class="text-center py-40 text-slate-400">Artigo não encontrado. <a href="#/blog" class="text-primary underline">Voltar para o blog</a>.</div>`;
+            updateMetaTags('Artigo não encontrado | Harpia Consultoria', '');
+            return;
+        }
+        
+        updateMetaTags(post.seoTitle || `${post.title} | Harpia Consultoria`, post.excerpt);
+
+        const formattedDate = new Date(post.date).toLocaleDateString('pt-BR', {
+            year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
+        });
+
+        const content = `
+            <article class="py-28 bg-surface-dark">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <header class="mb-12 text-center">
+                        <p class="text-primary font-semibold mb-2">${post.category}</p>
+                        <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">${post.title}</h1>
+                        <p class="text-slate-400 text-sm">Publicado em ${formattedDate}</p>
+                    </header>
+                    <img src="${post.imageUrl}" alt="Imagem principal para ${post.title}" class="w-full h-auto max-h-[500px] object-cover rounded-lg mb-12" loading="lazy" />
+                    <div class="prose prose-invert prose-lg max-w-none">${post.content}</div>
+                    <div class="mt-20 p-8 rounded-lg border border-slate-700 bg-slate-800 text-center">
+                        <h3 class="text-xl font-bold text-white mb-2">Precisa de um Laudo Técnico Especializado?</h3>
+                        <p class="text-slate-400 mb-6">Nossa equipe está pronta para oferecer um diagnóstico preciso e fundamentado para sua necessidade.</p>
+                        <a href="https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Vi%20um%20artigo%20no%20blog%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-green-600 text-white font-bold rounded-md text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40">
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 mr-2" fill="currentColor"><path d="M19.05 4.94A9.85 9.85 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.73-1.11-5.2-2.9-7.07zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.81.83-3.04-.2-.31a8.34 8.34 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.23.86 5.82 2.45s2.45 3.62 2.45 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.2c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72s-.02-.38.1-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41.04-.3-.02-.43c-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.55-.42-.15 0-.3 0-.46 0s-.39.06-.6.31c-.2.25-.78.76-.78 1.85s.8 2.15.91 2.3s1.58 2.4 3.8 3.36c.55.24.93.38 1.24.48.55.17 1.05.14 1.44.09.43-.06 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.05-.12-.2-.19-.44-.31z" /></svg>
+                            Enviar via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </article>
+        `;
+        container.innerHTML = content;
+    }
+
+    // --- INTERACTIVITY LOGIC ---
+    function handleHeaderScroll() {
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('bg-surface-dark/95', 'backdrop-blur-sm', 'border-b', 'border-slate-800');
+                header.classList.remove('bg-transparent');
+            } else {
+                header.classList.remove('bg-surface-dark/95', 'backdrop-blur-sm', 'border-b', 'border-slate-800');
+                header.classList.add('bg-transparent');
+            }
+        });
+    }
+
+    function handleMenuToggle() {
+        const toggleBtn = document.getElementById('menu-toggle-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let isMenuOpen = false;
+
+        const toggle = () => {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.textContent = isMenuOpen ? 'close' : 'menu';
+        };
+
+        toggleBtn.addEventListener('click', toggle);
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggle();
+            });
+        });
+    }
+
+    function handleBackToTopButton() {
+        const btn = document.getElementById('back-to-top-btn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btn.classList.remove('opacity-0', 'translate-y-4');
+                btn.style.visibility = 'visible';
+            } else {
+                btn.classList.add('opacity-0', 'translate-y-4');
+                btn.style.visibility = 'hidden';
+            }
+        });
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    function initFadeInOnScroll() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    }
+
+    function initContactForm() {
+        const form = document.getElementById('contact-form');
+        const serviceButtonsContainer = document.getElementById('service-options-container');
+        let selectedService = '';
+
+        serviceButtonsContainer.addEventListener('click', e => {
+            const target = e.target.closest('button');
+            if (!target) return;
+
+            selectedService = target.dataset.service;
+            
+            // Update button styles
+            serviceButtonsContainer.querySelectorAll('button').forEach(btn => {
+                btn.classList.remove('bg-slate-800', 'text-white', 'border-slate-800', 'shadow-lg', 'scale-105');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-300');
+            });
+            target.classList.add('bg-slate-800', 'text-white', 'border-slate-800', 'shadow-lg', 'scale-105');
+            target.classList.remove('bg-white', 'text-slate-600', 'border-slate-300');
+        });
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const nameInput = document.getElementById('name-contact');
+            const messageInput = document.getElementById('message-contact');
+            
+            if (!selectedService) {
+                alert('Por favor, selecione um tipo de serviço.');
+                return;
+            }
+            if (!nameInput.value) {
+                alert('Por favor, digite seu nome.');
+                return;
+            }
+
+            const whatsappMessage = `Olá! Meu nome é ${nameInput.value}. Gostaria de solicitar um orçamento para: ${selectedService}.${messageInput.value ? `\n\nDetalhes: ${messageInput.value}` : ''}`;
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=5531982162913&text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+
+    function initTestimonialsWidget() {
+        const container = document.getElementById('trustindex-widget-container');
+        if (container) {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.trustindex.io/loader.js?c60e62361b0324244f566dcd319';
+            script.defer = true;
+            script.async = true;
+            container.appendChild(script);
+        }
+    }
+    
+    function renderHomepageBlogPosts() {
+        const container = document.getElementById('homepage-blog-posts');
+        if (!container) return;
+        
+        const sortedPosts = postsData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        const recentPosts = sortedPosts.slice(0, 3);
+        
+        container.innerHTML = recentPosts.map(post => `
+            <div class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group">
+                <div class="p-6 flex-grow">
+                    <div class="flex justify-between items-center text-xs mb-3">
+                        <span class="bg-primary/10 text-primary px-2 py-1 rounded font-semibold">${post.category}</span>
+                        <span class="text-slate-500">${post.readTime}</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">${post.title}</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">${post.excerpt}</p>
+                </div>
+                <div class="p-6 bg-slate-800/50 mt-auto">
+                    <a href="#/blog/${post.slug}" class="text-primary font-semibold text-sm hover:underline">
+                        Ler mais <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        `).join('');
+    }
+
+</script>
 </body>
 </html>

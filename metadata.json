@@ -1,5 +1,5 @@
 {
-  "name": "Harpia Consultoria - Landing Page",
-  "description": "A responsive landing page for Harpia Consultoria, a civil engineering consultancy specializing in technical reports, expert analysis, and inspections. Built with React, TypeScript, and Tailwind CSS for optimal performance and SEO.",
+  "name": "Harpia Consultoria - Static Landing Page",
+  "description": "A responsive, single-file static landing page for Harpia Consultoria, an engineering consultancy. Built with HTML, Tailwind CSS, and vanilla JavaScript for maximum performance and portability.",
   "requestFramePermissions": []
 }
