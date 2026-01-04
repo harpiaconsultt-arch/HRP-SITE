@@ -78,6 +78,108 @@
         .prose li { margin-bottom: 0.5em; }
         .prose .not-prose { color: inherit; }
         .prose-invert { --tw-prose-bullets: #94a3b8; }
+        
+        /* Encapsulated Testimonials Section Styles */
+        .secao-depoimentos-harpia {
+            background-color: #001f3f;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        .secao-depoimentos-harpia .carousel-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .secao-depoimentos-harpia .carousel-track-container {
+            overflow: hidden;
+        }
+        .secao-depoimentos-harpia .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .secao-depoimentos-harpia .carousel-slide {
+            flex-shrink: 0;
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        .secao-depoimentos-harpia .testimonial-card {
+            background-color: white;
+            color: #1e293b;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .secao-depoimentos-harpia .testimonial-stars {
+            color: #FFC107;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .secao-depoimentos-harpia .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        .secao-depoimentos-harpia .testimonial-author {
+            font-weight: 700;
+        }
+        .secao-depoimentos-harpia .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s, opacity 0.2s;
+            z-index: 10;
+        }
+        .secao-depoimentos-harpia .carousel-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .secao-depoimentos-harpia .carousel-button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        .secao-depoimentos-harpia .carousel-button--left { left: 0; }
+        .secao-depoimentos-harpia .carousel-button--right { right: 0; }
+        .secao-depoimentos-harpia .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+        .secao-depoimentos-harpia .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .secao-depoimentos-harpia .carousel-dot.active {
+            background-color: white;
+            transform: scale(1.2);
+        }
+        @media (min-width: 1024px) {
+            .secao-depoimentos-harpia .carousel-slide {
+                width: calc(100% / 3);
+            }
+        }
     </style>
 <script type="application/ld+json">
 {
@@ -176,7 +278,7 @@
             <section class="relative min-h-screen flex items-center justify-center bg-surface-dark overflow-hidden">
                 <div class="absolute inset-0 z-0">
                     <img src="https://lh3.googleusercontent.com/gg-dl/ABS2GSl-5qqWVXuHHID9OQAO0OrkfY_lKomfuNMw-6bB0FUSvR-QesD4I09psUgWBtSp4KF6yEIr92cN2bnsRVp3UsIIvB9nvtDwGzsTTh8vkYQX7TriYGXI0zeG_Mm13IcvrWPqs7NXOaBR7J12AouK9ZoerZ1b2WassIU7qcQHb7_J7YA26w=s1024-rj" 
-                         alt="" 
+                         alt="Fundo abstrato de engenharia" 
                          class="w-full h-full object-cover opacity-30"
                          width="1920" height="1080">
                     <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-surface-dark"></div>
@@ -391,13 +493,20 @@
                 </div>
             </section>
             
-            <section class="py-20 bg-surface-dark" id="testimonials">
+            <section id="depoimentos" class="secao-depoimentos-harpia">
                  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                      <div class="text-center mb-16 fade-in-on-scroll">
                          <h2 class="text-3xl font-bold text-white mb-4">Depoimentos de Nossos Clientes</h2>
-                         <p class="text-slate-400">O que dizem sobre nossos laudos e perícias de engenharia.</p>
+                         <p class="text-slate-300">O que dizem sobre nossos laudos e perícias de engenharia.</p>
                      </div>
-                     <div id="trustindex-widget-container" class="fade-in-on-scroll"></div>
+                     <div id="native-reviews-carousel-container" class="fade-in-on-scroll">
+                        <!-- O carrossel nativo será injetado aqui pelo JavaScript -->
+                     </div>
+                     <div class="text-center mt-12 fade-in-on-scroll">
+                        <a href="https://search.google.com/local/reviews?placeid=ChIJqyTVcCKO9kgREUZWFNltsUY" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border border-slate-400 text-sm font-medium rounded text-white hover:bg-white hover:text-slate-900 transition-all duration-300">
+                            Ver todas as 22 avaliações no Google
+                        </a>
+                    </div>
                  </div>
             </section>
             
@@ -518,7 +627,7 @@
             </div>
             <div class="border-t border-slate-800 mt-12 pt-8 text-center text-xs text-slate-600">
                 <p class="mb-2">Atendemos Barbacena-MG, São João del-Rei, Juiz de Fora e toda a região de Campos das Vertentes.</p>
-                <p>© 2024 Harpia Consultoria. Todos os direitos reservados.</p>
+                <p>© 2026 Harpia Consultoria. Todos os direitos reservados.</p>
                 <p class="mt-1">CREA-MG 144817/D MG | CNPJ: 46.128.059/0001-72</p>
             </div>
         </div>
@@ -533,13 +642,20 @@
     </button>
     
 <script type="module">
-    // --- EMBEDDED DATA ---
+    // --- EMBEDDED DATA (BLOG & REVIEWS) ---
     const postsData = [
-        {"slug":"assistencia-tecnica-para-advogados-em-barbacena","title":"A Prova Técnica como Estratégia de Êxito: Por que Advogados de Barbacena Escolhem a Harpia Consultoria?","seoTitle":"Assistência Técnica para Advogados em Barbacena | Harpia Consultoria","excerpt":"O sucesso de uma ação judicial, seja ela cível ou trabalhista, depende da solidez das provas. Entenda como o apoio de peritos mestres e doutores transforma a complexidade técnica em vantagem jurídica.","date":"2024-08-05","category":"Perícia Judicial","readTime":"5 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?law,engineering","content":"<div class='mb-8 p-6 rounded-lg border border-slate-700 bg-slate-800/50 not-prose'><h3 class='text-lg font-bold text-white mb-4'>Artigo elaborado por Peritos Especialistas:</h3><div class='flex flex-col sm:flex-row gap-6 text-left'><div class='flex items-center gap-4'><img src='https://source.unsplash.com/400x400/?portrait,man,30s,engineer' alt='Retrato de Gustavo Santos, Engenheiro Civil.' class='w-16 h-16 rounded-full object-cover shrink-0' loading='lazy' width='100' height='100' /><div><h4 class='font-bold text-white'>Gustavo Santos</h4><p class='text-sm text-slate-400'>Eng. Civil, Especialista em Contenções, Perito Credenciado TJMG.</p></div></div><div class='flex items-center gap-4'><img src='https://source.unsplash.com/400x400/?portrait,man,20s,engineer' alt='Retrato de Lucas de Sá, Engenheiro Mecânico e Civil.' class='w-16 h-16 rounded-full object-cover shrink-0' loading='lazy' width='100' height='100' /><div><h4 class='font-bold text-white'>Lucas de Sá</h4><p class='text-sm text-slate-400'>Eng. Mecânico e Civil, Doutorando em Estruturas.</p></div></div></div></div><p class='mb-4 text-slate-300'>No contencioso moderno, a sentença é frequentemente proferida com base na convicção do juiz sobre o laudo pericial. Para o advogado, delegar a interpretação técnica apenas ao perito judicial nomeado é um risco que pode custar a causa. A Assistência Técnica Judicial surge não como um custo, mas como um seguro processual indispensável.</p><div class='my-8 text-center'><a href='https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Vi%20o%20artigo%20sobre%20assist%C3%AAncia%20t%C3%A9cnica%20para%20advogados%20e%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20t%C3%A9cnica%20para%20um%20processo.' target='_blank' rel='noopener noreferrer' class='inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-green-600 text-white font-bold rounded-md text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40'><span class='material-icons text-lg mr-2'>calendar_month</span>Agendar Reunião Técnica para Processo</a></div><h2 class='text-2xl font-bold text-white mt-6 mb-3'>1. Blindagem Técnica em Processos Cíveis e Trabalhistas</h2><p class='mb-4 text-slate-300'>Muitos processos de Patologia das Construções ou Insalubridade (LTCAT) são perdidos por quesitos mal formulados. Na Harpia Consultoria, apoiamos o advogado desde a petição inicial:</p><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Quesitos Estratégicos:</strong> Formulamos perguntas que obrigam o perito judicial a abordar os pontos cruciais para a tese de defesa ou acusação.</li><li><strong>Parecer Técnico de Engenharia:</strong> Documento com rigor científico, assinado por Mestres e Doutores, pronto para ser anexado aos autos e confrontar laudos judiciais equivocados.</li></ul><h2 class='text-2xl font-bold text-white mt-6 mb-3'>2. Áreas de Atuação de Alta Relevância para o Judiciário</h2><p class='mb-4 text-slate-300'>Com base nas demandas frequentes do TJMG e tribunais do trabalho, focamos em:</p><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Vícios Construtivos e Vistoria Cautelar:</strong> Essencial para ações contra construtoras ou conflitos de vizinhança em Barbacena e região.</li><li><strong>Perícias Mecânicas e NR-12:</strong> Apoio em ações de acidentes de trabalho ou falhas em sistemas de ar-condicionado (PMOC).</li><li><strong>Avaliação de Imóveis (PTAM):</strong> Fundamental para inventários, dissoluções de sociedades e garantias bancárias.</li></ul><p class='mb-4 text-slate-300'>Nossa expertise em <a href='/#servicos' class='text-primary hover:underline'>Perícia Judicial</a> e <a href='/#servicos' class='text-primary hover:underline'>Laudo Técnico de Engenharia</a> garante o suporte necessário.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>3. O Diferencial da Harpia: Tecnologia e Ciência</h2><p class='mb-4 text-slate-300'>Não entregamos apenas papéis; entregamos provas. Utilizamos Termografia Infravermelha e Drones para materializar danos que, de outra forma, seriam subjetivos, facilitando o convencimento do magistrado.</p><div class='my-8 text-center'><a href='https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Vi%20o%20artigo%20sobre%20assist%C3%AAncia%20t%C3%A9cnica%20para%20advogados%20e%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20t%C3%A9cnica%20para%20um%20processo.' target='_blank' rel='noopener noreferrer' class='inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-green-600 text-white font-bold rounded-md text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40'><span class='material-icons text-lg mr-2'>calendar_month</span>Agendar Reunião Técnica para Processo</a></div>"},
-        {"slug":"inspecao-de-fachadas-com-drone-em-barbacena","title":"Inspeção de Fachadas com Drone em Barbacena: Precisão e Segurança na Engenharia Diagnóstica","excerpt":"Descubra como a Harpia Consultoria utiliza drones e termografia infravermelha para identificar patologias invisíveis a olho nu, garantindo laudos técnicos fundamentados e economia para condomínios em Barbacena e região.","date":"2024-08-01","category":"Inspeção Predial","readTime":"3 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?drone,facade,inspection","content":"<p class='mb-4 text-slate-300'>A manutenção predial em Barbacena ganhou um aliado poderoso: a Engenharia Diagnóstica apoiada por tecnologia de ponta. Diferente das vistorias tradicionais, a Harpia Consultoria utiliza Drones para Inspeção e Varredura a Laser 3D para alcançar pontos críticos de fachadas com total segurança e precisão milimétrica.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Por que investir em um Laudo Técnico com Drone?</h2><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Identificação de Patologias:</strong> O uso da Termografia Infravermelha permite detectar infiltrações e descolamentos de pastilhas antes que se tornem problemas graves.</li><li><strong>Segurança Jurídica:</strong> Nossos laudos são elaborados por uma equipe com alto rigor acadêmico, incluindo Mestrandos e Doutorandos, e experiência comprovada em perícias complexas como a do Morro da Forca.</li><li><strong>Conformidade Legal:</strong> Essencial para síndicos que precisam realizar a Inspeção Predial regular ou proprietários que necessitam de um Laudo de Reforma em Barbacena.</li></ul><p class='text-slate-300'>Seja para uma Vistoria Cautelar de Vizinhança ou para uma Perícia Judicial, a fundamentação técnica é o que separa um documento comum de uma prova incontestável.</p>"},
+        {"slug":"assistencia-tecnica-para-advogados-em-barbacena","title":"A Prova Técnica como Estratégia de Êxito: Por que Advogados de Barbacena Escolhem a Harpia Consultoria?","seoTitle":"Assistência Técnica para Advogados em Barbacena | Harpia Consultoria","excerpt":"O sucesso de uma ação judicial, seja ela cível ou trabalhista, depende da solidez das provas. Entenda como o apoio de peritos mestres e doutores transforma a complexidade técnica em vantagem jurídica.","date":"2024-08-05","category":"Perícia Judicial","readTime":"5 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?law,engineering","content":"<div class='mb-8 p-6 rounded-lg border border-slate-700 bg-slate-800/50 not-prose'><h3 class='text-lg font-bold text-white mb-4'>Artigo elaborado por Peritos Especialistas:</h3><div class='flex flex-col sm:flex-row gap-6 text-left'><div class='flex items-center gap-4'><img src='https://source.unsplash.com/400x400/?portrait,man,30s,engineer' alt='Retrato de Gustavo Santos, Engenheiro Civil.' class='w-16 h-16 rounded-full object-cover shrink-0' loading='lazy' width='100' height='100' /><div><h4 class='font-bold text-white'>Gustavo Santos</h4><p class='text-sm text-slate-400'>Eng. Civil, Especialista em Contenções, Perito Credenciado TJMG.</p></div></div><div class='flex items-center gap-4'><img src='https://source.unsplash.com/400x400/?portrait,man,20s,engineer' alt='Retrato de Lucas de Sá, Engenheiro Mecânico e Civil.' class='w-16 h-16 rounded-full object-cover shrink-0' loading='lazy' width='100' height='100' /><div><h4 class='font-bold text-white'>Lucas de Sá</h4><p class='text-sm text-slate-400'>Eng. Mecânico e Civil, Doutorando em Estruturas.</p></div></div></div></div><p class='mb-4 text-slate-300'>No contencioso moderno, a sentença é frequentemente proferida com base na convicção do juiz sobre o laudo pericial. Para o advogado, delegar a interpretação técnica apenas ao perito judicial nomeado é um risco que pode custar a causa. A Assistência Técnica Judicial surge não como um custo, mas como um seguro processual indispensável.</p><div class='my-8 text-center'><a href='https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Vi%20o%20artigo%20sobre%20assist%C3%AAncia%20t%C3%A9cnica%20para%20advogados%20e%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20t%C3%A9cnica%20para%20um%20processo.' target='_blank' rel='noopener noreferrer' class='inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-green-600 text-white font-bold rounded-md text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40'><span class='material-icons text-lg mr-2'>calendar_month</span>Agendar Reunião Técnica para Processo</a></div><h2 class='text-2xl font-bold text-white mt-6 mb-3'>1. Blindagem Técnica em Processos Cíveis e Trabalhistas</h2><p class='mb-4 text-slate-300'>Muitos processos de Patologia das Construções ou Insalubridade (LTCAT) são perdidos por quesitos mal formulados. Na Harpia Consultoria, apoiamos o advogado desde a petição inicial:</p><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Quesitos Estratégicos:</strong> Formulamos perguntas que obrigam o perito judicial a abordar os pontos cruciais para a tese de defesa ou acusação.</li><li><strong>Parecer Técnico de Engenharia:</strong> Documento com rigor científico, assinado por Mestres e Doutores, pronto para ser anexado aos autos e confrontar laudos judiciais equivocados.</li></ul><h2 class='text-2xl font-bold text-white mt-6 mb-3'>2. Áreas de Atuação de Alta Relevância para o Judiciário</h2><p class='mb-4 text-slate-300'>Com base nas demandas frequentes do TJMG e tribunais do trabalho, focamos em:</p><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Vícios Construtivos e Vistoria Cautelar:</strong> Essencial para ações contra construtoras ou conflitos de vizinhança em Barbacena e região.</li><li><strong>Perícias Mecânicas e NR-12:</strong> Apoio em ações de acidentes de trabalho ou falhas em sistemas de ar-condicionado (PMOC).</li><li><strong>Avaliação de Imóveis:</strong> Fundamental para inventários, dissoluções de sociedades e garantias bancárias.</li></ul><p class='mb-4 text-slate-300'>Nossa expertise em <a href='/#servicos' class='text-primary hover:underline'>Perícia Judicial</a> e <a href='/#servicos' class='text-primary hover:underline'>Laudo Técnico de Engenharia</a> garante o suporte necessário.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>3. O Diferencial da Harpia: Tecnologia e Ciência</h2><p class='mb-4 text-slate-300'>Não entregamos apenas papéis; entregamos provas. Utilizamos Termografia Infravermelha e Drones para materializar danos que, de outra forma, seriam subjetivos, facilitando o convencimento do magistrado.</p><div class='my-8 text-center'><a href='https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Vi%20o%20artigo%20sobre%20assist%C3%AAncia%20t%C3%A9cnica%20para%20advogados%20e%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20t%C3%A9cnica%20para%20um%20processo.' target='_blank' rel='noopener noreferrer' class='inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-green-600 text-white font-bold rounded-md text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40'><span class='material-icons text-lg mr-2'>calendar_month</span>Agendar Reunião Técnica para Processo</a></div>"},
+        {"slug":"inspecao-de-fachadas-com-drone-em-barbacena","title":"Inspeção de Fachadas com Drone em Barbacena: Precisão e Segurança na Engenharia Diagnóstica","excerpt":"Descubra como a Harpia Consultoria utiliza drones e termografia infravermelha para identificar patologias invisíveis a olho nu, garantindo laudos técnicos fundamentados e economia para condomínios em Barbacena e região.","date":"2024-08-01","category":"Inspeção Predial","readTime":"3 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?drone,facade,inspection","content":"<p class='mb-4 text-slate-300'>A manutenção predial em Barbacena ganhou um aliado poderoso: a Engenharia Diagnóstica apoiada por tecnologia de ponta. Diferente das vistorias tradicionais, a Harpia Consultoria utiliza Drones para Inspeção e Varredura a Laser 3D para alcançar pontos críticos de fachadas com total segurança e precisão milimétrica.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Por que investir em um Laudo Técnico com Drone?</h2><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Identificação de Patologias:</strong> O uso da Termografia Infravermelha permite detectar infiltrações e descolamentos de pastylhas antes que se tornem problemas graves.</li><li><strong>Segurança Jurídica:</strong> Nossos laudos são elaborados por uma equipe com alto rigor acadêmico, incluindo Mestrandos e Doutorandos, e experiência comprovada em perícias complexas como a do Morro da Forca.</li><li><strong>Conformidade Legal:</strong> Essencial para síndicos que precisam realizar a Inspeção Predial regular ou proprietários que necessitam de um Laudo de Reforma em Barbacena.</li></ul><p class='text-slate-300'>Seja para uma Vistoria Cautelar de Vizinhança ou para uma Perícia Judicial, a fundamentação técnica é o que separa um documento comum de uma prova incontestável.</p>"},
         {"slug":"a-importancia-do-laudo-de-vistoria-de-vizinhanca","title":"A Importância do Laudo de Vistoria de Vizinhança","excerpt":"Antes de iniciar uma obra, a vistoria de vizinhança é crucial para evitar conflitos e prejuízos futuros. Saiba por quê.","date":"2024-07-28","category":"Vistorias","readTime":"4 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?construction,neighbor","content":"<p class='mb-4 text-slate-300'>A vistoria cautelar de vizinhança é um documento técnico essencial que registra o estado de conservação dos imóveis localizados ao redor de uma futura obra. Realizada por um engenheiro qualificado, essa inspeção preventiva tem como objetivo principal resguardar tanto a construtora quanto os vizinhos de possíveis conflitos e prejuízos.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Por que é um passo indispensável?</h2><p class='mb-4 text-slate-300'>Ao documentar detalhadamente, com fotos e anotações, as condições preexistentes das edificações vizinhas (como fissuras, trincas, umidade ou problemas estruturais), o laudo cria um registro fiel do 'antes'. Caso surjam reclamações de danos durante ou após a construção, este documento serve como prova técnica para determinar se os problemas foram causados pela obra ou se já existiam, evitando litígios e custos inesperados.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Benefícios para Todos</h2><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Para a Construtora:</strong> Segurança jurídica, prevenção de custos com reparos indevidos e demonstração de boa-fé e profissionalismo.</li><li><strong>Para os Vizinhos:</strong> Garantia de que qualquer dano causado pela obra será devidamente identificado e reparado, trazendo tranquilidade durante o processo construtivo.</li></ul><p class='text-slate-300'>Portanto, investir em um laudo de vistoria de vizinhança não é um custo, mas uma garantia de segurança e transparência, fundamental para o sucesso de qualquer empreendimento na construção civil.</p>"},
         {"slug":"identificando-patologias-estruturais-sinais-de-alerta","title":"Identificando Patologias Estruturais: Sinais de Alerta","excerpt":"Fissuras, umidade e deformações podem indicar problemas sérios. Aprenda a identificar os principais sinais de patologias em sua construção.","date":"2024-07-22","category":"Patologia Estrutural","readTime":"6 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?concrete,crack","content":"<p class='mb-4 text-slate-300'>Patologias estruturais são anomalias que comprometem a segurança, a estabilidade e a vida útil de uma edificação. Identificá-las precocemente é vital para evitar acidentes e custos de reparo elevados. Fique atento a estes sinais de alerta:</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>1. Fissuras e Trincas</h2><p class='mb-4 text-slate-300'>Nem toda fissura é perigosa, mas algumas merecem atenção especial. Fissuras diagonais em paredes e lajes, que geralmente partem de cantos de portas e janelas, podem indicar problemas de fundação ou sobrecarga na estrutura. Trincas que atravessam tijolos ou blocos são mais preocupantes do que aquelas que seguem a linha da argamassa.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>2. Deformações e Deslocamentos</h2><p class='mb-4 text-slate-300'>Lajes 'embarrigadas', vigas encurvadas ou pisos que parecem 'afundar' são sinais claros de que a estrutura está sofrendo deformações excessivas. Pilares que apresentam inclinação ou paredes estufadas também são indicativos de problemas graves que exigem uma avaliação técnica imediata.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>3. Infiltração e Umidade Recorrente</h2><p class='mb-4 text-slate-300'>Manchas de mofo, bolor e descascamento da pintura podem ser mais do que um problema estético. A infiltração contínua pode levar à corrosão da armadura de aço dentro do concreto, um processo que enfraquece a estrutura de forma silenciosa e progressiva. Ao notar qualquer um desses sinais, é fundamental contratar um engenheiro civil para um diagnóstico preciso. A Harpia Consultoria é especialista na elaboração de laudos de patologia estrutural, identificando as causas e recomendando as soluções mais seguras e eficazes.</p>"},
         {"slug":"laudo-tecnico-para-reforma-o-que-diz-a-nbr-16280","title":"Laudo Técnico para Reforma: O que diz a NBR 16.280?","excerpt":"Qualquer alteração em edificações precisa seguir a norma ABNT NBR 16.280. Entenda a necessidade do laudo e da ART.","date":"2024-07-18","category":"Normas Técnicas","readTime":"5 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?engineering,blueprint","content":"<p class='mb-4 text-slate-300'>Desde 2014, a norma ABNT NBR 16.280 estabelece os requisitos para a gestão de reformas em edificações, sejam elas em áreas comuns ou privativas de condomínios. Seu principal objetivo é garantir a segurança da estrutura e dos usuários, evitando que alterações inadequadas causem danos ou acidentes.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Quando o Laudo é Necessário?</h2><p class='mb-4 text-slate-300'>Qualquer reforma que altere ou comprometa a segurança da edificação exige a supervisão de um profissional habilitado (engenheiro ou arquiteto). Isso inclui, mas não se limita a:</p><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li>Remoção ou abertura de paredes, mesmo que não sejam estruturais.</li><li>Instalação de ar-condicionado, banheiras ou qualquer equipamento que gere sobrecarga.</li><li>Alterações no sistema de gás, elétrico ou hidráulico.</li><li>Fechamento de sacadas com vidro.</li><li>Troca de revestimentos que possa sobrecarregar a laje (ex: substituir um piso vinílico por granito).</li></ul><p class='text-slate-300'>Para essas intervenções, o profissional deve emitir um Laudo Técnico ou Parecer e uma Anotação de Responsabilidade Técnica (ART) ou Registro de Responsabilidade Técnica (RRT), apresentando o plano de reforma ao síndico antes do início dos trabalhos. Reformas simples, como pintura e troca de gesso, geralmente são isentas. Contudo, na dúvida, consultar um profissional é sempre a decisão mais segura.</p>"}
+    ];
+    const nativeReviewsData = [
+        { author: 'Mariana Esteves', text: 'Excelente serviço de engenharia! A equipe demonstrou notável expertise em laudos técnicos, com análises detalhadas e cálculos precisos. Seus relatórios são claros, completos e atendem perfeitamente às normas. Impressionaram-me com sua eficiência em testes, conformidade e simulações computacionais. Altamente recomendado para projetos que exigem rigor técnico e qualidade superior.' },
+        { author: 'Jônatas Anklin', text: 'Sua expertise técnica e atenção aos detalhes foram fundamentais para garantir a segurança e eficiência do projeto. Desde a análise inicial até a entrega final, demonstrou comprometimento, conhecimento e profissionalismo. Recomendo seus serviços a quem busca uma avaliação estrutural confiável e precisa.' },
+        { author: 'Roseli Pereira', text: 'Excelência, notável expertise em "LAUDOS TÉCNICO", com análise detalhada e cálculos preciso; trabalho sério e preciso dentro das normas de engenharia civil! Profissional esclarecido, ciente do seu trabalho, "genuíndade"! impressionou-me com a eficiência, cuidados no trabalho prestado, respeito, compromisso; a vontade, dedicação em oferecer o melhor possível!' },
+        { author: 'Rapha TJ', text: 'Profissionais com amplo conhecimento e comprometimento com o que se propõem. Não colocam o dinheiro como foco e sim a resolução do problema. Recomendo à todos!' },
+        { author: 'Leonardo Paulino', text: 'Trabalho rápido e correto.' }
     ];
 
     const defaultTitle = 'Laudos de Engenharia Civil, Mecânica e Segurança em Barbacena | Harpia Consultoria';
@@ -553,7 +669,7 @@
         handleBackToTopButton();
         initFadeInOnScroll();
         initContactForm();
-        lazyLoadTestimonialsWidget();
+        initNativeTestimonials();
         renderHomepageBlogPosts();
         
         // --- ROUTING ---
@@ -566,13 +682,12 @@
                 e.preventDefault();
                 const targetId = this.getAttribute('href').substring(2);
                 
-                // If on a blog page, first navigate home, then scroll
                 if(window.location.hash.startsWith('#/blog')) {
                     window.location.hash = '/';
                     setTimeout(() => {
                         document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
                     }, 100);
-                } else { // Already on homepage, just scroll
+                } else { 
                     document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
                 }
             });
@@ -763,7 +878,6 @@
 
             selectedService = target.dataset.service;
             
-            // Update button styles
             serviceButtonsContainer.querySelectorAll('button').forEach(btn => {
                 btn.classList.remove('bg-slate-800', 'text-white', 'border-slate-800', 'shadow-lg', 'scale-105');
                 btn.classList.add('bg-white', 'text-slate-600', 'border-slate-300');
@@ -791,27 +905,106 @@
             window.open(whatsappUrl, '_blank');
         });
     }
-
-    function lazyLoadTestimonialsWidget() {
-        const container = document.getElementById('testimonials');
-        if (!container) return;
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const script = document.createElement('script');
-                    script.src = 'https://cdn.trustindex.io/loader.js?c60e62361b0324244f566dcd319';
-                    script.defer = true;
-                    script.async = true;
-                    document.getElementById('trustindex-widget-container').appendChild(script);
-                    observer.unobserve(container);
-                }
-            });
-        }, { rootMargin: '200px' });
-        
-        observer.observe(container);
-    }
     
+    function initNativeTestimonials() {
+        const container = document.getElementById('native-reviews-carousel-container');
+        if (!container || !nativeReviewsData.length) return;
+
+        container.innerHTML = `
+            <div class="carousel-wrapper">
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        ${nativeReviewsData.map(review => `
+                            <div class="carousel-slide">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                                    <p class="testimonial-text">“${review.text}”</p>
+                                    <p class="testimonial-author">- <strong class="font-bold">${review.author}</strong></p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <button class="carousel-button carousel-button--left" aria-label="Depoimento anterior">
+                    <span class="material-icons-outlined">arrow_back_ios</span>
+                </button>
+                <button class="carousel-button carousel-button--right" aria-label="Próximo depoimento">
+                    <span class="material-icons-outlined">arrow_forward_ios</span>
+                </button>
+            </div>
+            <div class="carousel-dots"></div>
+        `;
+        
+        const track = container.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = container.querySelector('.carousel-button--right');
+        const prevButton = container.querySelector('.carousel-button--left');
+        const dotsNav = container.querySelector('.carousel-dots');
+        
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            dot.setAttribute('aria-label', `Ir para depoimento ${i + 1}`);
+            dotsNav.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsNav.children);
+        let currentIndex = 0;
+        let slideWidth = slides[0].getBoundingClientRect().width;
+        
+        const getSlidesToShow = () => window.innerWidth >= 1024 ? 3 : 1;
+        
+        const updateCarousel = () => {
+            slideWidth = slides[0].getBoundingClientRect().width;
+            track.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+
+            const slidesToShow = getSlidesToShow();
+            const maxIndex = slides.length - slidesToShow;
+            
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex >= maxIndex;
+        };
+
+        nextButton.addEventListener('click', () => {
+            const slidesToShow = getSlidesToShow();
+            const maxIndex = slides.length - slidesToShow;
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        dotsNav.addEventListener('click', e => {
+            const targetDot = e.target.closest('button');
+            if (!targetDot) return;
+            const targetIndex = dots.indexOf(targetDot);
+            const slidesToShow = getSlidesToShow();
+            const maxIndex = slides.length - slidesToShow;
+            currentIndex = Math.min(targetIndex, maxIndex);
+            updateCarousel();
+        });
+
+        window.addEventListener('resize', () => {
+            const slidesToShow = getSlidesToShow();
+            const maxIndex = slides.length - slidesToShow;
+            if (currentIndex > maxIndex) {
+                currentIndex = maxIndex;
+            }
+            updateCarousel();
+        });
+
+        updateCarousel();
+    }
+
+
     function renderHomepageBlogPosts() {
         const container = document.getElementById('homepage-blog-posts');
         if (!container) return;
