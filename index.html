@@ -60,7 +60,7 @@
     </script>
     
     <!-- Estilos Customizados -->
-    <style>
+    <style type="text/tailwindcss">
         body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         .material-icons, .material-icons-outlined { font-size: inherit; line-height: inherit; }
         ::-webkit-scrollbar { width: 8px; }
@@ -82,7 +82,7 @@
         
         /* Encapsulated Testimonials Section Styles */
         .secao-depoimentos-harpia {
-            background-color: #0f172a; /* Updated background color */
+            background-color: #0f172a; /* surface-dark */
             padding-top: 5rem;
             padding-bottom: 5rem;
         }
@@ -229,6 +229,14 @@
     ]
   }
 }
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WX7TNRJS94"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WX7TNRJS94'); 
 </script>
 </head>
 <body class="bg-background-dark text-slate-100 font-sans">
@@ -488,8 +496,8 @@
                                 <img src="img/gustavo-santos.webp" alt="Retrato de Gustavo Santos, Engenheiro Civil." class="w-full h-full object-cover object-top rounded-full" loading="lazy" width="400" height="400">
                             </div>
                             <h3 class="text-lg font-bold text-white font-montserrat">Gustavo Santos</h3>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Sócio Harpia | Especialista em Contenções e Taludes</p>
-                            <p class="text-sm text-slate-400">Perito credenciado TJMG/MPMG. Projetista responsável pela obra do Morro da Forca, Ouro Preto.</p>
+                            <p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Engenheiro Civil Geotécnico</p>
+                            <p class="text-sm text-slate-400">Especialista em Contenções e Taludes. Perito credenciado TJMG/MPMG. Projetista responsável pela obra do Morro da Forca, Ouro Preto. Ex-Coordenador de Defesa Civil de Barbacena.</p>
                         </div>
                         <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all" style="transition-delay: 200ms;">
                             <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 overflow-hidden">
@@ -514,7 +522,22 @@
                          <p class="text-slate-300">O que dizem sobre nossos laudos e perícias de engenharia.</p>
                      </div>
                      <div id="native-reviews-carousel-container" class="fade-in-on-scroll">
-                        <!-- O carrossel nativo será injetado aqui pelo JavaScript -->
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track-container">
+                                <div id="native-reviews-track" class="carousel-track">
+                                    <!-- Slides serão injetadas pelo JavaScript -->
+                                </div>
+                            </div>
+                            <button id="prev-native-review" class="carousel-button carousel-button--left" aria-label="Depoimento anterior">
+                                <span class="material-icons-outlined text-3xl">chevron_left</span>
+                            </button>
+                            <button id="next-native-review" class="carousel-button carousel-button--right" aria-label="Próximo depoimento">
+                                <span class="material-icons-outlined text-3xl">chevron_right</span>
+                            </button>
+                        </div>
+                        <div id="native-carousel-dots" class="carousel-dots">
+                            <!-- Pontos de navegação serão injetados pelo JavaScript -->
+                        </div>
                      </div>
                      <div class="text-center mt-12 fade-in-on-scroll">
                         <a href="https://search.google.com/local/reviews?placeid=ChIJqyTVcCKO9kgREUZWFNltsUY" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border border-slate-400 text-sm font-medium rounded text-white hover:bg-white hover:text-slate-900 transition-all duration-300 font-montserrat">
@@ -642,13 +665,14 @@
         </div>
     </footer>
 
-    <a href="https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform animate-gentle-pulse" aria-label="Fale conosco no WhatsApp">
+    <a id="whatsapp-fab" href="https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform animate-gentle-pulse" aria-label="Fale conosco no WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-white" fill="currentColor" aria-hidden="true"><path d="M19.05 4.94A9.85 9.85 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.73-1.11-5.2-2.9-7.07zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.81.83-3.04-.2-.31a8.34 8.34 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.23.86 5.82 2.45s2.45 3.62 2.45 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.2c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72s-.02-.38.1-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41.04-.3-.02-.43c-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.55-.42-.15 0-.3 0-.46 0s-.39.06-.6.31c-.2.25-.78.76-.78 1.85s.8 2.15.91 2.3s1.58 2.4 3.8 3.36c.55.24.93.38 1.24.48.55.17 1.05.14 1.44.09.43-.06 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.05-.12-.2-.19-.44-.31z" /></svg>
     </a>
     
     <button type="button" id="back-to-top-btn" class="fixed bottom-24 right-6 z-50 w-12 h-12 bg-slate-800/80 backdrop-blur-sm border border-slate-700 rounded-full shadow-lg flex items-center justify-center text-slate-300 hover:bg-slate-700 hover:text-white hover:border-slate-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-dark focus:ring-primary transition-all duration-300 opacity-0 translate-y-4" aria-label="Voltar ao topo" style="visibility: hidden;">
         <span class="material-icons-outlined">keyboard_arrow_up</span>
     </button>
-
+    
+    <script defer src="index.tsx"></script>
 </body>
 </html>
