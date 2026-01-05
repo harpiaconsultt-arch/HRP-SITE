@@ -1,6 +1,3 @@
-// FIX: Make this file a module to allow global scope augmentation. This resolves errors related to 'declare global' and undefined 'gtag' on the window object.
-export {};
-
 // --- TYPE DEFINITIONS ---
 declare global {
     interface Window {
@@ -193,8 +190,11 @@ function initNativeCarousel() {
             currentIndex = numPages - 1;
         }
 
-        const transformPercentage = currentIndex * (100 / slidesPerView);
-        track.style.transform = `translateX(-${transformPercentage}%)`;
+        // This calculation is wrong for multi-slide view. It should be based on the width of a single slide.
+        // Let's assume slide width is 100% / slidesPerView.
+        const singleSlideWidthPercentage = 100 / slidesPerView;
+        track.style.transform = `translateX(-${currentIndex * singleSlideWidthPercentage}%)`;
+
 
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);

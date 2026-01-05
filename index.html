@@ -11,6 +11,27 @@
     <meta name="author" content="Harpia Consultoria">
     <link rel="canonical" href="https://harpiaconsultoria.eng.br/" />
 
+    <!-- Tailwind Play CDN & Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#25D366",
+                        'background-dark': "#020617",
+                        'surface-dark': "#0f172a",
+                        'background-light': '#F7F8FA',
+                    },
+                    fontFamily: {
+                        sans: ["Roboto", "sans-serif"],
+                        montserrat: ["Montserrat", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+
     <!-- Open Graph -->
     <meta property="og:title" content="Harpia Consultoria | Engenharia Diagnóstica e Perícias em Barbacena" />
     <meta property="og:description" content="Especialistas em laudos de vizinhança, vistorias cautelares e estabilidade de taludes em Barbacena e região." />
@@ -37,27 +58,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons" rel="stylesheet" />
-
-    <!-- Tailwind Play CDN & Config -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#25D366",
-                        'background-dark': "#020617",
-                        'surface-dark': "#0f172a",
-                        'background-light': '#F7F8FA',
-                    },
-                    fontFamily: {
-                        sans: ["Roboto", "sans-serif"],
-                        montserrat: ["Montserrat", "sans-serif"],
-                    },
-                },
-            },
-        };
-    </script>
     
     <!-- Estilos Customizados -->
     <style type="text/tailwindcss">
@@ -587,7 +587,7 @@
                                 </div>
                                 <div>
                                     <label for="name-contact" class="text-sm font-semibold text-slate-700 mb-2 block font-montserrat">2. Seu nome completo *</label>
-                                    <input id="name-contact" name="name" type="text" required class="w-full bg-white border border-slate-300 rounded-md py-2 px-3 text-slate-900 text-sm placeholder-slate-400 focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition" placeholder="Digite seu nome">
+                                    <input id="name-contact" name="name" type="text" required class="w-full bg-white border border-slate-300 rounded-md py-2 px-3 text-slate-900 text-sm placeholder-slate-400 focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition" placeholder="Digite seu nome" autocomplete="name">
                                 </div>
                                 <div>
                                     <label for="message-contact" class="text-sm font-semibold text-slate-700 mb-2 block font-montserrat">3. Detalhes adicionais (opcional)</label>
