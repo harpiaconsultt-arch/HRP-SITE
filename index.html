@@ -68,8 +68,7 @@
         ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #64748b; }
         .hidden { display: none; }
-        .fade-in-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
-        .fade-in-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+        .fade-in-on-scroll { opacity: 1; transform: translateY(0); } /* Disable JS animation */
         .prose { color: #d1d5db; }
         .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { font-family: "Montserrat", sans-serif; font-weight: 600; color: #f8fafc; margin-top: 1.5em; margin-bottom: 0.8em; }
         .prose p { margin-bottom: 1.25em; }
@@ -86,26 +85,7 @@
             padding-top: 5rem;
             padding-bottom: 5rem;
         }
-        .secao-depoimentos-harpia .carousel-wrapper {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        .secao-depoimentos-harpia .carousel-track-container {
-            overflow: hidden;
-        }
-        .secao-depoimentos-harpia .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .secao-depoimentos-harpia .carousel-slide {
-            flex-shrink: 0;
-            width: 100%;
-            padding: 0 10px;
-            box-sizing: border-box;
-        }
-        .secao-depoimentos-harpia .testimonial-card {
+        .testimonial-card {
             background-color: white;
             color: #1e293b;
             border-radius: 0.5rem;
@@ -115,73 +95,22 @@
             flex-direction: column;
             height: 100%;
         }
-        .secao-depoimentos-harpia .testimonial-stars {
+        .testimonial-stars {
             color: #FFC107;
             font-size: 1.25rem;
             margin-bottom: 1rem;
         }
-        .secao-depoimentos-harpia .testimonial-text {
+        .testimonial-text {
             font-style: italic;
             margin-bottom: 1.5rem;
             font-size: 1rem;
             line-height: 1.6;
             flex-grow: 1;
         }
-        .secao-depoimentos-harpia .testimonial-author {
+        .testimonial-author {
             font-weight: 700;
         }
-        .secao-depoimentos-harpia .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            border-radius: 50%;
-            width: 44px;
-            height: 44px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s, opacity 0.2s;
-            z-index: 10;
-        }
-        .secao-depoimentos-harpia .carousel-button:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        .secao-depoimentos-harpia .carousel-button:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-        .secao-depoimentos-harpia .carousel-button--left { left: 0; }
-        .secao-depoimentos-harpia .carousel-button--right { right: 0; }
-        .secao-depoimentos-harpia .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-top: 2rem;
-        }
-        .secao-depoimentos-harpia .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.3);
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .secao-depoimentos-harpia .carousel-dot.active {
-            background-color: white;
-            transform: scale(1.2);
-        }
-        @media (min-width: 1024px) {
-            .secao-depoimentos-harpia .carousel-slide {
-                width: calc(100% / 3);
-            }
-        }
-
+       
         /* CTA Button Animation */
         @keyframes gentle-pulse {
           0%, 100% { transform: scale(1); }
@@ -492,22 +421,22 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all" style="transition-delay: 100ms;">
-                            <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 overflow-hidden">
-                                <img src="img/gustavo-santos.webp" alt="Retrato de Gustavo Santos, Engenheiro Civil." class="w-full h-full object-cover object-top rounded-full" width="400" height="400">
+                            <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
+                                <span class="material-icons-outlined text-6xl text-slate-400" aria-hidden="true">person</span>
                             </div>
                             <h3 class="text-lg font-bold text-white font-montserrat">Gustavo Santos</h3>
                             <p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Engenheiro Civil Geotécnico</p>
                             <p class="text-sm text-slate-400">Especialista em Contenções e Taludes. Perito credenciado TJMG/MPMG. Projetista responsável pela obra do Morro da Forca, Ouro Preto. Ex-Coordenador de Defesa Civil de Barbacena.</p>
                         </div>
                         <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all" style="transition-delay: 200ms;">
-                            <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 overflow-hidden">
-                                <img src="img/lucas.webp" alt="Retrato de Lucas de Sá, Engenheiro Mecânico e Civil." class="w-full h-full object-cover object-top rounded-full" width="400" height="400">
+                             <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
+                                <span class="material-icons-outlined text-6xl text-slate-400" aria-hidden="true">person</span>
                             </div>
                             <h3 class="text-lg font-bold text-white font-montserrat">Lucas de Sá</h3><p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Engenheiro Mecânico e Civil</p><p class="text-sm text-slate-400">Engenheiro com formação em Mecânica, Segurança do Trabalho e Civil. Doutorando em Estruturas.</p>
                         </div>
                         <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all" style="transition-delay: 300ms;">
-                            <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 overflow-hidden">
-                                <img src="img/djalmir.webp" alt="Retrato de Djalmir Silva, Arquiteto e Urbanista." class="w-full h-full object-cover object-top rounded-full" width="400" height="400">
+                             <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
+                                <span class="material-icons-outlined text-6xl text-slate-400" aria-hidden="true">person</span>
                             </div>
                             <h3 class="text-lg font-bold text-white font-montserrat">Djalmir Silva</h3><p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Arquiteto e Urbanista</p><p class="text-sm text-slate-400">Arquiteto e urbanista, capitão da reserva da Aeronáutica e consultor do IPHAN.</p>
                         </div>
@@ -521,22 +450,21 @@
                          <h2 class="text-3xl font-light text-white mb-4 font-montserrat">Depoimentos de Nossos Clientes</h2>
                          <p class="text-slate-300">O que dizem sobre nossos laudos e perícias de engenharia.</p>
                      </div>
-                     <div id="native-reviews-carousel-container" class="fade-in-on-scroll">
-                        <div class="carousel-wrapper">
-                            <div class="carousel-track-container">
-                                <div id="native-reviews-track" class="carousel-track">
-                                    <!-- Slides serão injetadas pelo JavaScript -->
-                                </div>
-                            </div>
-                            <button id="prev-native-review" class="carousel-button carousel-button--left" aria-label="Depoimento anterior">
-                                <span class="material-icons-outlined text-3xl">chevron_left</span>
-                            </button>
-                            <button id="next-native-review" class="carousel-button carousel-button--right" aria-label="Próximo depoimento">
-                                <span class="material-icons-outlined text-3xl">chevron_right</span>
-                            </button>
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"O laudo de vistoria de vizinhança foi extremamente detalhado e profissional. A equipe da Harpia nos deu a segurança que precisávamos para iniciar nossa construção sem preocupações. Atendimento impecável do início ao fim."</p>
+                            <p class="testimonial-author">- Construtora Rocha & Filhos</p>
                         </div>
-                        <div id="native-carousel-dots" class="carousel-dots">
-                            <!-- Pontos de navegação serão injetados pelo JavaScript -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Contratei a Harpia para um laudo de patologias em meu condomínio. A precisão do diagnóstico com os equipamentos que eles usam é impressionante. Identificaram a origem da infiltração que outros 2 profissionais não encontraram."</p>
+                            <p class="testimonial-author">- Mariana Costa, Síndica</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Como advogado, preciso de assistentes técnicos que falem a linguagem do direito e da engenharia. A Harpia Consultoria entrega pareceres robustos que fortalecem nossas teses nos processos. Parceria de sucesso."</p>
+                            <p class="testimonial-author">- Dr. Carlos Almeida</p>
                         </div>
                      </div>
                      <div class="text-center mt-12 fade-in-on-scroll">
@@ -554,7 +482,51 @@
                         <p class="text-slate-400 max-w-2xl mx-auto">Informações e dicas sobre engenharia diagnóstica, laudos e perícias.</p>
                     </div>
                     <div id="homepage-blog-posts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 fade-in-on-scroll">
-                        <!-- Blog posts will be injected here by JS -->
+                        <div class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group">
+                            <div class="p-6 flex-grow flex flex-col">
+                                 <div class="flex justify-between items-center text-xs mb-3">
+                                    <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Perícia Judicial</span>
+                                    <span class="text-slate-500">5 min de leitura</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors font-montserrat flex-grow">A Prova Técnica como Estratégia de Êxito: Por que Advogados de Barbacena Escolhem a Harpia Consultoria?</h3>
+                                <p class="text-sm text-slate-400 leading-relaxed">O sucesso de uma ação judicial, seja ela cível ou trabalhista, depende da solidez das provas. Entenda como o apoio de peritos mestres e doutores transforma a complexidade técnica em vantagem jurídica.</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 mt-auto">
+                                <a href="#/blog/assistencia-tecnica-para-advogados-em-barbacena" class="text-primary font-semibold text-sm hover:underline font-montserrat">
+                                    Ler mais <span aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group">
+                            <div class="p-6 flex-grow flex flex-col">
+                                 <div class="flex justify-between items-center text-xs mb-3">
+                                    <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Inspeção Predial</span>
+                                    <span class="text-slate-500">3 min de leitura</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors font-montserrat flex-grow">Inspeção de Fachadas com Drone em Barbacena: Precisão e Segurança na Engenharia Diagnóstica</h3>
+                                <p class="text-sm text-slate-400 leading-relaxed">Descubra como a Harpia Consultoria utiliza drones e termografia infravermelha para identificar patologias invisíveis a olho nu, garantindo laudos técnicos fundamentados e economia para condomínios em Barbacena e região.</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 mt-auto">
+                                <a href="#/blog/inspecao-de-fachadas-com-drone-em-barbacena" class="text-primary font-semibold text-sm hover:underline font-montserrat">
+                                    Ler mais <span aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group">
+                            <div class="p-6 flex-grow flex flex-col">
+                                 <div class="flex justify-between items-center text-xs mb-3">
+                                    <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Vistorias</span>
+                                    <span class="text-slate-500">4 min de leitura</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors font-montserrat flex-grow">A Importância do Laudo de Vistoria de Vizinhança</h3>
+                                <p class="text-sm text-slate-400 leading-relaxed">Saiba como proteger sua obra e evitar conflitos judiciais com o Laudo de Vizinhança.</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 mt-auto">
+                                <a href="#/blog/a-importancia-do-laudo-de-vistoria-de-vizinhanca" class="text-primary font-semibold text-sm hover:underline font-montserrat">
+                                    Ler mais <span aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="text-center fade-in-on-scroll">
                          <a href="#/blog" class="inline-flex items-center px-6 py-3 border border-slate-500 text-sm font-medium rounded text-white hover:bg-slate-800 hover:border-slate-400 transition-all font-montserrat">
@@ -567,7 +539,7 @@
             <section id="contato" class="bg-background-light text-slate-800">
                 <div class="flex flex-col lg:flex-row min-h-[90vh]">
                     <div class="lg:w-5/12 w-full aspect-square lg:aspect-auto fade-in-on-scroll" style="transition-delay: 100ms;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.2755881772346!2d-43.768791099999994!3d-21.221067299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f16!3m3!1m2!1s0x48f68e2270d524ab%3A0x46b16dd914564611!2sHarpia%20Consultoria%20-%20Engenharia%20e%20Laudos%20T%C3%A9cnicos!5e1!3m2!1spt-BR!2sbr!4v1767458030731!5m2!1spt-BR!2sbr" class="w-full h-full" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Localização da Harpia Consultoria"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.2755881772346!2d-43.768791099999994!3d-21.221067299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f16!3m3!1m2!1s0x48f68e2270d524ab%3A0x46b16dd914564611!2sHarpia%20Consultoria%20-%20Engenharia%20e%20Laudos%20T%C3%A9cnicos!5e1!3m2!1spt-BR!2sbr!4v1767458030731!5m2!1spt-BR!2sbr" class="w-full h-full" style="border: 0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Localização da Harpia Consultoria"></iframe>
                     </div>
                     <div class="lg:w-7/12 w-full flex flex-col justify-center p-8 sm:p-12 lg:p-16">
                         <div class="fade-in-on-scroll">
@@ -628,7 +600,7 @@
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
                 <div class="md:col-span-5 lg:col-span-4">
                     <a href="/" class="flex-shrink-0 flex items-center gap-2 mb-4">
-                        <img src="img/logo.webp" alt="Logo Harpia" class="h-10 w-auto" loading="lazy">
+                        <img src="img/logo.webp" alt="Logo Harpia" class="h-10 w-auto">
                         <div class="flex flex-col">
                             <span class="text-white font-bold text-xl tracking-tight leading-none font-montserrat">HARPIA</span>
                             <span class="text-slate-400 text-xs font-medium tracking-[0.2em] leading-none font-montserrat">CONSULTORIA</span>
