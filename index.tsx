@@ -1,3 +1,6 @@
+// FIX: Add export {} to make this file a module and allow global augmentation. This resolves all `gtag` related errors.
+export {};
+
 // --- TYPE DEFINITIONS ---
 declare global {
     interface Window {
