@@ -1,11 +1,6 @@
 // FIX: Make this file a module to allow global scope augmentation. This resolves errors related to 'declare global' and undefined 'gtag' on the window object.
 export {};
 
-// --- CONFIGURATION ---
-// IMPORTANTE: Insira sua Chave de API do Google Cloud aqui.
-const GOOGLE_API_KEY = 'SUA_API_KEY_AQUI'; 
-const GOOGLE_PLACE_ID = 'ChIJqyTVcCKO9kgREUZWFNltsUY';
-
 // --- TYPE DEFINITIONS ---
 declare global {
     interface Window {
@@ -42,13 +37,46 @@ function trackPageView(path: string, title: string) {
 }
 
 
-// --- EMBEDDED DATA (BLOG & REVIEWS) ---
+// --- EMBEDDED DATA ---
 const postsData = [
     {"slug":"assistencia-tecnica-para-advogados-em-barbacena","title":"A Prova Técnica como Estratégia de Êxito: Por que Advogados de Barbacena Escolhem a Harpia Consultoria?","seoTitle":"Assistência Técnica para Advogados em Barbacena | Harpia Consultoria","excerpt":"O sucesso de uma ação judicial, seja ela cível ou trabalhista, depende da solidez das provas. Entenda como o apoio de peritos mestres e doutores transforma a complexidade técnica em vantagem jurídica.","date":"2024-08-05","category":"Perícia Judicial","readTime":"5 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?law,engineering","content":"<div class='mb-8 p-6 rounded-lg border border-slate-700 bg-slate-800/50 not-prose'><h3 class='text-lg font-bold text-white mb-4 font-montserrat'>Artigo elaborado por Peritos Especialistas:</h3><div class='flex flex-col sm:flex-row gap-6 text-left'><div class='flex items-center gap-4'><img src='img/gustavo-santos.webp' alt='Retrato de Gustavo Santos, Engenheiro Civil.' class='w-16 h-16 rounded-full object-cover shrink-0' loading='lazy' width='100' height='100' /><div><h4 class='font-bold text-white font-montserrat'>Gustavo Santos</h4><p class='text-sm text-slate-400'>Engenheiro Civil Geotécnico, perito credenciado TJMG/MPMG e Ex-Coordenador da Defesa Civil de Barbacena.</p></div></div><div class='flex items-center gap-4'><img src='img/lucas.webp' alt='Retrato de Lucas de Sá, Engenheiro Mecânico e Civil.' class='w-16 h-16 rounded-full object-cover shrink-0' loading='lazy' width='100' height='100' /><div><h4 class='font-bold text-white font-montserrat'>Lucas de Sá</h4><p class='text-sm text-slate-400'>Eng. Mecânico e Civil, Doutorando em Estruturas.</p></div></div></div></div><p class='mb-4 text-slate-300'>No contencioso moderno, a sentença é frequentemente proferida com base na convicção do juiz sobre o laudo pericial. Para o advogado, delegar a interpretação técnica apenas ao perito judicial nomeado é um risco que pode custar a causa. A Assistência Técnica Judicial surge não como um custo, mas como um seguro processual indispensável.</p><div class='my-8 text-center'><a href='https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Vi%20o%20artigo%20sobre%20assist%C3%AAncia%20t%C3%A9cnica%20para%20advogados%20e%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20t%C3%A9cnica%20para%20um%20processo.' target='_blank' rel='noopener noreferrer' class='inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-green-600 text-white font-bold rounded-md text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40 animate-gentle-pulse not-prose no-underline font-montserrat'><span class='material-icons text-lg mr-2'>calendar_month</span>Agendar Reunião Técnica para Processo</a></div><h2 class='text-2xl font-bold text-white mt-6 mb-3'>1. Blindagem Técnica em Processos Cíveis e Trabalhistas</h2><p class='mb-4 text-slate-300'>Muitos processos de Patologia das Construções ou Insalubridade (LTCAT) são perdidos por quesitos mal formulados. Na Harpia Consultoria, apoiamos o advogado desde a petição inicial:</p><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Quesitos Estratégicos:</strong> Formulamos perguntas que obrigam o perito judicial a abordar os pontos cruciais para a tese de defesa ou acusação.</li><li><strong>Parecer Técnico de Engenharia:</strong> Documento com rigor científico, assinado por Mestres e Doutores, pronto para ser anexado aos autos e confrontar laudos judiciais equivocados.</li></ul><h2 class='text-2xl font-bold text-white mt-6 mb-3'>2. Áreas de Atuação de Alta Relevância para o Judiciário</h2><p class='mb-4 text-slate-300'>Com base nas demandas frequentes do TJMG e tribunais do trabalho, focamos em:</p><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Vícios Construtivos e Vistoria Cautelar:</strong> Essencial para ações contra construtoras ou conflitos de vizinhança em Barbacena e região.</li><li><strong>Perícias Mecânicas e NR-12:</strong> Apoio em ações de acidentes de trabalho ou falhas em sistemas de ar-condicionado (PMOC).</li><li><strong>Avaliação de Imóveis:</strong> Fundamental para inventários, dissoluções de sociedades e garantias bancárias.</li></ul><p class='mb-4 text-slate-300'>Nossa expertise em <a href='/#servicos' class='text-primary hover:underline'>Perícia Judicial</a> e <a href='/#servicos' class='text-primary hover:underline'>Laudo Técnico de Engenharia</a> garante o suporte necessário.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>3. O Diferencial da Harpia: Tecnologia e Ciência</h2><p class='mb-4 text-slate-300'>Não entregamos apenas papéis; entregamos provas. Utilizamos Termografia Infravermelha e Drones para materializar danos que, de outra forma, seriam subjetivos, facilitando o convencimento do magistrado.</p><div class='my-8 text-center'><a href='https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Vi%20o%20artigo%20sobre%20assist%C3%AAncia%20t%C3%A9cnica%20para%20advogados%20e%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20t%C3%A9cnica%20para%20um%20processo.' target='_blank' rel='noopener noreferrer' class='inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-green-600 text-white font-bold rounded-md text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40 animate-gentle-pulse not-prose no-underline font-montserrat'><span class='material-icons text-lg mr-2'>calendar_month</span>Agendar Reunião Técnica para Processo</a></div>"},
     {"slug":"inspecao-de-fachadas-com-drone-em-barbacena","title":"Inspeção de Fachadas com Drone em Barbacena: Precisão e Segurança na Engenharia Diagnóstica","excerpt":"Descubra como a Harpia Consultoria utiliza drones e termografia infravermelha para identificar patologias invisíveis a olho nu, garantindo laudos técnicos fundamentados e economia para condomínios em Barbacena e região.","date":"2024-08-01","category":"Inspeção Predial","readTime":"3 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?drone,facade,inspection","content":"<p class='mb-4 text-slate-300'>A manutenção predial em Barbacena ganhou um aliado poderoso: a Engenharia Diagnóstica apoiada por tecnologia de ponta. Diferente das vistorias tradicionais, a Harpia Consultoria utiliza Drones para Inspeção e Varredura a Laser 3D para alcançar pontos críticos de fachadas com total segurança e precisão milimétrica.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Por que investir em um Laudo Técnico com Drone?</h2><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Identificação de Patologias:</strong> O uso da Termografia Infravermelha permite detectar infiltrações e descolamentos de pastilhas antes que se tornem problemas graves.</li><li><strong>Segurança Jurídica:</strong> Nossos laudos são elaborados por uma equipe com alto rigor acadêmico, incluindo Mestrandos e Doutorandos, e experiência comprovada em perícias complexas como a do Morro da Forca.</li><li><strong>Conformidade Legal:</strong> Essencial para síndicos que precisam realizar a Inspeção Predial regular ou proprietários que necessitam de um Laudo de Reforma em Barbacena.</li></ul><p class='text-slate-300'>Seja para uma Vistoria Cautelar de Vizinhança ou para uma Perícia Judicial, a fundamentação técnica é o que separa um documento comum de uma prova incontestável.</p>"},
     {"slug":"a-importancia-do-laudo-de-vistoria-de-vizinhanca","title":"A Importância do Laudo de Vistoria de Vizinhança","seoTitle":"A Importância do Laudo de Vistoria de Vizinhança | Harpia Consultoria","excerpt":"Saiba como proteger sua obra e evitar conflitos judiciais com o Laudo de Vizinhança.","date":"2024-07-28","category":"Vistorias","readTime":"4 min de leitura","imageUrl":"https://harpiaconsultoria.eng.br/img/vistoria-fissura.webp","content":"<p class='mb-4 text-slate-300'>A vistoria cautelar de vizinhança é um documento técnico essencial que registra o estado de conservação dos imóveis localizados ao redor de uma futura obra. Realizada por um engenheiro qualificado, essa inspeção preventiva tem como objetivo principal resguardar tanto a construtora quanto os vizinhos de possíveis conflitos e prejuízos.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Por que é um passo indispensável?</h2><p class='mb-4 text-slate-300'>Ao documentar detalhadamente, com fotos e anotações, as condições preexistentes das edificações vizinhas (como fissuras, trincas, umidade ou problemas estruturais), o laudo cria um registro fiel do 'antes'. Caso surjam reclamações de danos durante ou após a construção, este documento serve como prova técnica para determinar se os problemas foram causados pela obra ou se já existiam, evitando litígios e custos inesperados.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Benefícios para Todos</h2><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li><strong>Para a Construtora:</strong> Segurança jurídica, prevenção de custos com reparos indevidos e demonstração de boa-fé e profissionalismo.</li><li><strong>Para os Vizinhos:</strong> Garantia de que qualquer dano causado pela obra será devidamente identificado e reparado, trazendo tranquilidade durante o processo construtivo.</li></ul><p class='text-slate-300'>Portanto, investir em um laudo de vistoria de vizinhança não é um custo, mas uma garantia de segurança e transparência, fundamental para o sucesso de qualquer empreendimento na construção civil.</p>"},
     {"slug":"identificando-patologias-estruturais-sinais-de-alerta","title":"Identificando Patologias Estruturais: Sinais de Alerta","excerpt":"Fissuras, umidade e deformações podem indicar problemas sérios. Aprenda a identificar os principais sinais de patologias em sua construção.","date":"2024-07-22","category":"Patologia Estrutural","readTime":"6 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?concrete,crack","content":"<p class='mb-4 text-slate-300'>Patologias estruturais são anomalias que comprometem a segurança, a estabilidade e a vida útil de uma edificação. Identificá-las precocemente é vital para evitar acidentes e custos de reparo elevados. Fique atento a estes sinais de alerta:</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>1. Fissuras e Trincas</h2><p class='mb-4 text-slate-300'>Nem toda fissura é perigosa, mas algumas merecem atenção especial. Fissuras diagonais em paredes e lajes, que geralmente partem de cantos de portas e janelas, podem indicar problemas de fundação ou sobrecarga na estrutura. Trincas que atravessam tijolos ou blocos são mais preocupantes do que aquelas que seguem a linha da argamassa.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>2. Deformações e Deslocamentos</h2><p class='mb-4 text-slate-300'>Lajes 'embarrigadas', vigas encurvadas ou pisos que parecem 'afundar' são sinais claros de que a estrutura está sofrendo deformações excessivas. Pilares que apresentam inclinação ou paredes estufadas também são indicativos de problemas graves que exigem uma avaliação técnica imediata.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>3. Infiltração e Umidade Recorrente</h2><p class='mb-4 text-slate-300'>Manchas de mofo, bolor e descascamento da pintura podem ser mais do que um problema estético. A infiltração contínua pode levar à corrosão da armadura de aço dentro do concreto, um processo que enfraquece a estrutura de forma silenciosa e progressiva. Ao notar qualquer um desses sinais, é fundamental contratar um engenheiro civil para um diagnóstico preciso. A Harpia Consultoria é especialista na elaboração de laudos de patologia estrutural, identificando as causas e recomendando as soluções mais seguras e eficazes.</p>"},
     {"slug":"laudo-tecnico-para-reforma-o-que-diz-a-nbr-16280","title":"Laudo Técnico para Reforma: O que diz a NBR 16.280?","excerpt":"Qualquer alteração em edificações precisa seguir a norma ABNT NBR 16.280. Entenda a necessidade do laudo e da ART.","date":"2024-07-18","category":"Normas Técnicas","readTime":"5 min de leitura","imageUrl":"https://source.unsplash.com/800x600/?engineering,blueprint","content":"<p class='mb-4 text-slate-300'>Desde 2014, a norma ABNT NBR 16.280 estabelece os requisitos para a gestão de reformas em edificações, sejam elas em áreas comuns ou privativas de condomínios. Seu principal objetivo é garantir a segurança da estrutura e dos usuários, evitando que alterações inadequadas causem danos ou acidentes.</p><h2 class='text-2xl font-bold text-white mt-6 mb-3'>Quando o Laudo é Necessário?</h2><p class='mb-4 text-slate-300'>Qualquer reforma que altere ou comprometa a segurança da edificação exige a supervisão de um profissional habilitado (engenheiro ou arquiteto). Isso inclui, mas não se limita a:</p><ul class='list-disc list-inside text-slate-300 space-y-2 mb-4'><li>Remoção ou abertura de paredes, mesmo que não sejam estruturais.</li><li>Instalação de ar-condicionado, banheiras ou qualquer equipamento que gere sobrecarga.</li><li>Alterações no sistema de gás, elétrico ou hidráulico.</li><li>Fechamento de sacadas com vidro.</li><li>Troca de revestimentos que possa sobrecarregar a laje (ex: substituir um piso vinílico por granito).</li></ul><p class='text-slate-300'>Para essas intervenções, o profissional deve emitir um Laudo Técnico ou Parecer e uma Anotação de Responsabilidade Técnica (ART) ou Registro de Responsabilidade Técnica (RRT), apresentando o plano de reforma ao síndico antes do início dos trabalhos. Reformas simples, como pintura e troca de gesso, geralmente são isentas. Contudo, na dúvida, consultar um profissional é sempre a decisão mais segura.</p>"}
+];
+
+const testimonialsData = [
+    {
+        text: "O laudo de vistoria de vizinhança foi extremamente detalhado e profissional. A equipe da Harpia nos deu a segurança que precisávamos para iniciar nossa construção sem preocupações. Atendimento impecável do início ao fim.",
+        author: "Construtora Rocha & Filhos",
+        rating: 5
+    },
+    {
+        text: "Contratei a Harpia para um laudo de patologias em meu condomínio. A precisão do diagnóstico com os equipamentos que eles usam é impressionante. Identificaram a origem da infiltração que outros 2 profissionais não encontraram.",
+        author: "Mariana Costa, Síndica",
+        rating: 5
+    },
+    {
+        text: "Como advogado, preciso de assistentes técnicos que falem a linguagem do direito e da engenharia. A Harpia Consultoria entrega pareceres robustos que fortalecem nossas teses nos processos. Parceria de sucesso.",
+        author: "Dr. Carlos Almeida",
+        rating: 5
+    },
+    {
+        text: "Atendimento rápido, laudo para reforma (NBR 16.280) entregue antes do prazo e com todas as informações necessárias para o condomínio. Recomendo fortemente o trabalho do Eng. Gustavo e sua equipe.",
+        author: "Fernanda Oliveira",
+        rating: 5
+    },
+    {
+        text: "Necessitávamos de um PMOC para nosso sistema de climatização. A Harpia não só elaborou o plano como nos orientou sobre as melhores práticas de manutenção. Serviço completo e de alta qualidade.",
+        author: "Gerência - Clínica Saúde Plena",
+        rating: 5
+    },
+    {
+        text: "A perícia no maquinário da nossa indústria foi crucial para o processo trabalhista que enfrentávamos. O laudo da Harpia foi claro, bem fundamentado e decisivo para o resultado favorável. Profissionais de alto gabarito.",
+        author: "Diretoria - Metalúrgica BQ",
+        rating: 5
+    }
 ];
 
 const defaultTitle = 'Harpia Consultoria | Engenharia Diagnóstica e Perícias em Barbacena';
@@ -64,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     handleBackToTopButton();
     initFadeInOnScroll();
     initContactForm();
-    loadGoogleMapsScript();
+    initNativeCarousel();
     renderHomepageBlogPosts();
     
     // --- ROUTING ---
@@ -81,10 +109,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if(window.location.hash.startsWith('#/blog')) {
                 window.location.hash = '/';
                 setTimeout(() => {
-                    document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                    const element = document.getElementById(targetId);
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
             } else { 
-                document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                const element = document.getElementById(targetId);
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
@@ -120,106 +150,78 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// --- GOOGLE PLACES API & TESTIMONIALS CAROUSEL ---
-function loadGoogleMapsScript() {
-    const reviewsTrack = document.getElementById('reviews-track');
-    if (!reviewsTrack) return;
-    if (GOOGLE_API_KEY === 'SUA_API_KEY_AQUI' || !GOOGLE_API_KEY) {
-        reviewsTrack.innerHTML = `<div class="review-slide"><p class="review-text">A chave da API do Google não foi configurada. Insira a chave no arquivo script.js para carregar os depoimentos.</p></div>`;
-        return;
-    }
-    const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places&callback=initMap`;
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
-    (window as any).initMap = initMap;
-}
+// --- NATIVE TESTIMONIALS CAROUSEL ---
+function initNativeCarousel() {
+    const track = document.getElementById('native-reviews-track') as HTMLElement | null;
+    const prevButton = document.getElementById('prev-native-review') as HTMLButtonElement | null;
+    const nextButton = document.getElementById('next-native-review') as HTMLButtonElement | null;
+    const dotsContainer = document.getElementById('native-carousel-dots') as HTMLElement | null;
 
-function initMap() {
-    const service = new (window as any).google.maps.places.PlacesService(document.createElement('div'));
-    service.getDetails({
-        placeId: GOOGLE_PLACE_ID,
-        fields: ['reviews']
-    }, (place: any, status: any) => {
-        const reviewsTrack = document.getElementById('reviews-track');
-        if (!reviewsTrack) return;
-        if (status === (window as any).google.maps.places.PlacesServiceStatus.OK && place && place.reviews) {
-            const fiveStarReviews = place.reviews.filter((r: any) => r.rating === 5);
-            if(fiveStarReviews.length > 0) {
-                renderReviews(fiveStarReviews);
-                initCarousel(fiveStarReviews.length);
-            } else {
-                 reviewsTrack.innerHTML = `<div class="review-slide"><p class="review-text">Nenhum depoimento de 5 estrelas encontrado no momento.</p></div>`;
-            }
-        } else {
-            reviewsTrack.innerHTML = `<div class="review-slide"><p class="review-text">Não foi possível carregar os depoimentos. Verifique a chave da API e as configurações.</p></div>`;
-        }
-    });
-}
+    if (!track || !prevButton || !nextButton || !dotsContainer) return;
 
-function renderReviews(reviews: any[]) {
-    const reviewsTrack = document.getElementById('reviews-track');
-    if (!reviewsTrack) return;
-    reviewsTrack.innerHTML = reviews.map(review => `
-        <div class="review-slide">
-            <div class="review-stars">${'★'.repeat(5)}</div>
-            <p class="review-text">"${review.text}"</p>
-            <p class="review-author">- ${review.author_name}</p>
+    // 1. Populate Slides and Dots
+    track.innerHTML = testimonialsData.map(testimonial => `
+        <div class="carousel-slide">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">${'★'.repeat(testimonial.rating)}</div>
+                <p class="testimonial-text">"${testimonial.text}"</p>
+                <p class="testimonial-author">- ${testimonial.author}</p>
+            </div>
         </div>
     `).join('');
-}
 
-function initCarousel(totalSlides: number) {
-    const track = document.getElementById('reviews-track') as HTMLElement | null;
-    const prevButton = document.getElementById('prev-review') as HTMLButtonElement | null;
-    const nextButton = document.getElementById('next-review') as HTMLButtonElement | null;
-    const dotsContainer = document.getElementById('carousel-dots') as HTMLElement | null;
-    
-    if (!track || !prevButton || !nextButton || !dotsContainer) return;
-    
+    dotsContainer.innerHTML = testimonialsData.map((_, index) => 
+        `<button class="carousel-dot" data-index="${index}" aria-label="Ir para depoimento ${index + 1}"></button>`
+    ).join('');
+
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+    const slides = track.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
     let currentIndex = 0;
 
-    // Create dots
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement('button');
-        dot.classList.add('dot');
-        dot.setAttribute('aria-label', `Go to review ${i + 1}`);
-        dot.addEventListener('click', () => {
-            goToSlide(i);
-        });
-        dotsContainer.appendChild(dot);
-    }
-    const dots = dotsContainer.querySelectorAll('.dot');
-    
-    function updateCarousel() {
-        if (track) {
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
+    // 2. Core Carousel Logic
+    const updateCarousel = () => {
+        const slidesPerView = window.innerWidth >= 1024 ? 3 : 1;
+        const slideWidthPercentage = 100 / slidesPerView;
+
+        track.style.transform = `translateX(-${currentIndex * slideWidthPercentage}%)`;
+
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
-    }
+        
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex >= totalSlides - slidesPerView;
+    };
 
-    function goToSlide(index: number) {
-        currentIndex = index;
-        updateCarousel();
-    }
+    // 3. Event Listeners
+    nextButton.addEventListener('click', () => {
+        const slidesPerView = window.innerWidth >= 1024 ? 3 : 1;
+        if (currentIndex < totalSlides - slidesPerView) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
 
     prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalSlides - 1;
-        updateCarousel();
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+    
+    dotsContainer.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        if (target.matches('.carousel-dot')) {
+            currentIndex = parseInt(target.getAttribute('data-index') || '0', 10);
+            updateCarousel();
+        }
     });
 
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex < totalSlides - 1) ? currentIndex + 1 : 0;
-        updateCarousel();
-    });
-
-    updateCarousel(); // Initial state
+    // 4. Initial & Resize Handling
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
 }
-
 
 // --- ROUTER LOGIC ---
 function handleRouteChange() {
@@ -260,19 +262,34 @@ function handleRouteChange() {
 function updateMetaTags(title: string, description: string, imageUrl: string, url: string) {
     // Standard tags
     document.title = title;
-    document.querySelector('meta[name="description"]')?.setAttribute('content', description);
-    document.querySelector('link[rel="canonical"]')?.setAttribute('href', url);
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    if (descriptionMeta) descriptionMeta.setAttribute('content', description);
+    
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if(canonicalLink) canonicalLink.setAttribute('href', url);
 
     // Open Graph tags
-    document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
-    document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
-    document.querySelector('meta[property="og:image"]')?.setAttribute('content', imageUrl);
-    document.querySelector('meta[property="og:url"]')?.setAttribute('content', url);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if(ogTitle) ogTitle.setAttribute('content', title);
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if(ogDescription) ogDescription.setAttribute('content', description);
+
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    if(ogImage) ogImage.setAttribute('content', imageUrl);
+    
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if(ogUrl) ogUrl.setAttribute('content', url);
 
     // Twitter Card tags
-    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
-    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', description);
-    document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', imageUrl);
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if(twitterTitle) twitterTitle.setAttribute('content', title);
+    
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if(twitterDescription) twitterDescription.setAttribute('content', description);
+
+    const twitterImage = document.querySelector('meta[name="twitter:image"]');
+    if(twitterImage) twitterImage.setAttribute('content', imageUrl);
 }
 
 // --- DYNAMIC PAGE RENDERING ---
@@ -281,13 +298,15 @@ function addDelegatedBlogLinkListener(containerId: string) {
     if (!container) return;
 
     // Use a flag to ensure the listener is added only once
-    if (container.dataset.listenerAdded === 'true') return;
+    const listenerAdded = container.dataset.listenerAdded;
+    if (listenerAdded === 'true') return;
 
     container.addEventListener('click', (e) => {
         const target = e.target as HTMLElement;
         const link = target.closest('a[href^="#/blog/"]');
         if (link) {
-            const postTitle = link.querySelector('h3')?.textContent?.trim() || 'Unknown Blog Post';
+            const h3 = link.querySelector('h3');
+            const postTitle = h3 ? h3.textContent?.trim() : 'Unknown Blog Post';
             trackEvent('select_content', { 
                 content_type: 'blog_post', 
                 item_id: postTitle 
@@ -305,7 +324,7 @@ function renderBlogListPage() {
     const blogListDescription = 'Acompanhe nossos artigos sobre engenharia diagnóstica, laudos técnicos, perícias, e as últimas novidades da engenharia em Barbacena e região.';
     updateMetaTags(blogListTitle, blogListDescription, defaultImage, `${siteBaseUrl}#/blog`);
     
-    const sortedPosts = postsData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    const sortedPosts = [...postsData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
     
     const content = `
         <section class="py-28 bg-surface-dark">
@@ -503,7 +522,7 @@ function renderHomepageBlogPosts() {
     const container = document.getElementById('homepage-blog-posts');
     if (!container) return;
     
-    const sortedPosts = postsData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    const sortedPosts = [...postsData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
     const recentPosts = sortedPosts.slice(0, 3);
     
     container.innerHTML = recentPosts.map(post => `
