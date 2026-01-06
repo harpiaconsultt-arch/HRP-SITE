@@ -87,6 +87,61 @@ const setupUIEventListeners = () => {
             window.open(whatsappUrl, '_blank');
         });
     }
+
+    // Testimonials Slider
+    const track = document.getElementById('testimonials-track');
+    const prevBtn = document.getElementById('prev-testimonial-btn');
+    const nextBtn = document.getElementById('next-testimonial-btn');
+    
+    if (track && prevBtn && nextBtn) {
+        let autoScrollInterval: number;
+
+        const scrollCards = (direction: 'next' | 'prev') => {
+            const card = track.querySelector('.testimonial-card') as HTMLElement;
+            if (!card) return;
+            
+            const cardStyle = window.getComputedStyle(card);
+            const cardMargin = parseFloat(cardStyle.marginRight);
+            const cardWidth = card.offsetWidth + cardMargin;
+            const scrollAmount = cardWidth;
+
+            track.scrollBy({
+                left: direction === 'next' ? scrollAmount : -scrollAmount,
+                behavior: 'smooth'
+            });
+        };
+        
+        const startAutoScroll = () => {
+            autoScrollInterval = window.setInterval(() => {
+                const isAtEnd = Math.abs(track.scrollLeft + track.clientWidth - track.scrollWidth) < 10;
+                if (isAtEnd) {
+                    track.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    scrollCards('next');
+                }
+            }, 5000); // Change slide every 5 seconds
+        };
+
+        const stopAutoScroll = () => {
+            clearInterval(autoScrollInterval);
+        };
+
+        prevBtn.addEventListener('click', () => {
+            stopAutoScroll();
+            scrollCards('prev');
+            startAutoScroll();
+        });
+        nextBtn.addEventListener('click', () => {
+            stopAutoScroll();
+            scrollCards('next');
+            startAutoScroll();
+        });
+
+        track.addEventListener('mouseenter', stopAutoScroll);
+        track.addEventListener('mouseleave', startAutoScroll);
+
+        startAutoScroll();
+    }
 };
 
 
