@@ -74,6 +74,22 @@ const renderBlogPostPage = (slug: string) => {
     if (contentEl) contentEl.innerHTML = post.content;
 };
 
+// --- HEADER LOGIC ---
+const updateHeaderState = () => {
+    if (!header) return;
+    const onHomePage = pageHome && !pageHome.classList.contains('hidden');
+
+    // Header is opaque if scrolled down OR if not on the home page.
+    // Transparent only when at the top of the home page.
+    if (window.scrollY > 10 || !onHomePage) {
+        header.classList.add('bg-surface-dark/95', 'backdrop-blur-sm', 'border-b', 'border-slate-800');
+        header.classList.remove('bg-transparent');
+    } else {
+        header.classList.remove('bg-surface-dark/95', 'backdrop-blur-sm', 'border-b', 'border-slate-800');
+        header.classList.add('bg-transparent');
+    }
+};
+
 
 // --- ROUTER ---
 const router = () => {
@@ -92,23 +108,15 @@ const router = () => {
     } else {
         pageHome?.classList.remove('hidden');
     }
+    
+    updateHeaderState();
 };
 
 // --- UI INTERACTIONS ---
 const setupUIEventListeners = () => {
     // Header Scroll
     if (header) {
-        const handleScroll = () => {
-            if (window.scrollY > 10) {
-                header.classList.add('bg-surface-dark/95', 'backdrop-blur-sm', 'border-b', 'border-slate-800');
-                header.classList.remove('bg-transparent');
-            } else {
-                header.classList.remove('bg-surface-dark/95', 'backdrop-blur-sm', 'border-b', 'border-slate-800');
-                header.classList.add('bg-transparent');
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
-        handleScroll();
+        window.addEventListener('scroll', updateHeaderState);
     }
     
     // Mobile Menu
@@ -119,7 +127,10 @@ const setupUIEventListeners = () => {
             menuIcon.textContent = isMenuOpen ? 'menu' : 'close';
         });
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.textContent = 'menu';
+            });
         });
     }
 
@@ -159,16 +170,24 @@ const setupUIEventListeners = () => {
             const target = (e.target as HTMLElement).closest('button');
             if (!target) return;
             selectedService = target.dataset.service || '';
-            serviceButtonsContainer.querySelectorAll('button').forEach(btn => btn.classList.remove('bg-slate-800', 'text-white'));
-            target.classList.add('bg-slate-800', 'text-white');
+            serviceButtonsContainer.querySelectorAll('button').forEach(btn => {
+                btn.classList.remove('bg-slate-800', 'text-white', 'border-slate-800');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-300');
+            });
+            target.classList.add('bg-slate-800', 'text-white', 'border-slate-800');
+            target.classList.remove('bg-white', 'text-slate-600', 'border-slate-300');
         });
         
         contactForm.addEventListener('submit', e => {
             e.preventDefault();
             const name = (document.getElementById('name-contact') as HTMLInputElement).value;
             const message = (document.getElementById('message-contact') as HTMLTextAreaElement).value;
-            if (!name || !selectedService) {
-                alert('Por favor, preencha seu nome e selecione um serviço.');
+            if (!name) {
+                alert('Por favor, preencha seu nome.');
+                return;
+            }
+            if (!selectedService) {
+                alert('Por favor, selecione um serviço.');
                 return;
             }
             const whatsappMessage = `Olá! Meu nome é ${name}. Gostaria de solicitar um orçamento para: ${selectedService}.${message ? `\n\nDetalhes: ${message}` : ''}`;
@@ -182,8 +201,8 @@ const setupUIEventListeners = () => {
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('posts.json');
-        if (!response.ok) throw new Error('Network response was not ok');
+        const response = await fetch('/posts.json');
+        if (!response.ok) throw new Error(`Network error: ${response.status} ${response.statusText}`);
         allPosts = await response.json();
         
         setupUIEventListeners();
@@ -191,7 +210,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         router(); // Initial route
     } catch (error) {
         console.error('Failed to load blog posts:', error);
-        // Fallback for UI if posts fail to load
+        // Fallback for UI if posts fail to load, so the rest of the site works
         setupUIEventListeners();
         router();
     }
