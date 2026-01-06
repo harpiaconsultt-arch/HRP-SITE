@@ -30,7 +30,9 @@ const pages = [pageHome, pageBlogList, pageBlogPost];
 const renderBlogListPage = () => {
     const container = document.getElementById('blog-list-container');
     if (!container) return;
-    container.innerHTML = allPosts.map(post => `
+    // Sort posts by date, newest first
+    const sortedPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    container.innerHTML = sortedPosts.map(post => `
         <a href="#/blog/${post.slug}" class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
             <div class="p-6 flex-grow flex flex-col">
                  <div class="flex justify-between items-center text-xs mb-3">
@@ -74,22 +76,6 @@ const renderBlogPostPage = (slug: string) => {
     if (contentEl) contentEl.innerHTML = post.content;
 };
 
-// --- HEADER LOGIC ---
-const updateHeaderState = () => {
-    if (!header) return;
-    const onHomePage = pageHome && !pageHome.classList.contains('hidden');
-
-    // Header is opaque if scrolled down OR if not on the home page.
-    // Transparent only when at the top of the home page.
-    if (window.scrollY > 10 || !onHomePage) {
-        header.classList.add('bg-surface-dark/95', 'backdrop-blur-sm', 'border-b', 'border-slate-800');
-        header.classList.remove('bg-transparent');
-    } else {
-        header.classList.remove('bg-surface-dark/95', 'backdrop-blur-sm', 'border-b', 'border-slate-800');
-        header.classList.add('bg-transparent');
-    }
-};
-
 
 // --- ROUTER ---
 const router = () => {
@@ -108,16 +94,10 @@ const router = () => {
     } else {
         pageHome?.classList.remove('hidden');
     }
-    
-    updateHeaderState();
 };
 
 // --- UI INTERACTIONS ---
 const setupUIEventListeners = () => {
-    // Header Scroll
-    if (header) {
-        window.addEventListener('scroll', updateHeaderState);
-    }
     
     // Mobile Menu
     if (menuToggleBtn && mobileMenu && menuIcon) {
