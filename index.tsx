@@ -95,56 +95,53 @@ const setupUIEventListeners = () => {
     
     if (track && prevBtn && nextBtn) {
         const cards = Array.from(track.children) as HTMLElement[];
-        if (cards.length === 0) return;
+        if (cards.length > 0) {
+            let currentIndex = 0;
+            let autoScrollInterval: number;
 
-        let currentIndex = 0;
-        let autoScrollInterval: number;
+            const updateAndGoToSlide = (newIndex: number) => {
+                // Loop around if the index is out of bounds
+                currentIndex = (newIndex + cards.length) % cards.length;
+                const card = cards[currentIndex];
+                if (card) {
+                    track.scrollTo({
+                        left: card.offsetLeft,
+                        behavior: 'smooth'
+                    });
+                }
+            };
+            
+            const startAutoScroll = () => {
+                stopAutoScroll(); // Prevent multiple intervals
+                autoScrollInterval = window.setInterval(() => {
+                    updateAndGoToSlide(currentIndex + 1);
+                }, 5000);
+            };
 
-        const goToSlide = (index: number) => {
-            const card = cards[index];
-            if (!card) return;
-            track.scrollTo({
-                left: card.offsetLeft - (track.offsetLeft || 0),
-                behavior: 'smooth'
+            const stopAutoScroll = () => {
+                clearInterval(autoScrollInterval);
+            };
+
+            prevBtn.addEventListener('click', () => {
+                stopAutoScroll();
+                updateAndGoToSlide(currentIndex - 1);
+                startAutoScroll();
             });
-            currentIndex = index;
-        };
-        
-        const nextSlide = () => {
-            const nextIndex = (currentIndex + 1) % cards.length;
-            goToSlide(nextIndex);
-        };
 
-        const prevSlide = () => {
-            const prevIndex = (currentIndex - 1 + cards.length) % cards.length;
-            goToSlide(prevIndex);
-        };
-        
-        const startAutoScroll = () => {
-            stopAutoScroll(); // Ensure no multiple intervals running
-            autoScrollInterval = window.setInterval(nextSlide, 5000); // Change slide every 5 seconds
-        };
+            nextBtn.addEventListener('click', () => {
+                stopAutoScroll();
+                updateAndGoToSlide(currentIndex + 1);
+                startAutoScroll();
+            });
 
-        const stopAutoScroll = () => {
-            clearInterval(autoScrollInterval);
-        };
+            // Pause on hover over the track or buttons
+            [track, prevBtn, nextBtn].forEach(el => {
+                el.addEventListener('mouseenter', stopAutoScroll);
+                el.addEventListener('mouseleave', startAutoScroll);
+            });
 
-        prevBtn.addEventListener('click', () => {
-            stopAutoScroll();
-            prevSlide();
             startAutoScroll();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            stopAutoScroll();
-            nextSlide();
-            startAutoScroll();
-        });
-
-        track.addEventListener('mouseenter', stopAutoScroll);
-        track.addEventListener('mouseleave', startAutoScroll);
-
-        startAutoScroll();
+        }
     }
 };
 
