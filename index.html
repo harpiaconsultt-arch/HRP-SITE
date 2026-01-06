@@ -181,7 +181,7 @@
 </head>
 <body class="bg-background-dark text-slate-100 font-sans">
     
-    <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-surface-dark border-b border-slate-800">
+    <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-surface-dark border-b border-slate-800 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="/" class="flex-shrink-0 flex items-center gap-2">
@@ -432,22 +432,22 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all">
-                            <div class="w-32 h-32 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
-                                <span class="material-icons-outlined text-9xl text-slate-400" aria-hidden="true">person</span>
+                            <div class="w-20 h-20 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
+                                <span class="material-icons-outlined text-7xl text-slate-400" aria-hidden="true">person</span>
                             </div>
                             <h3 class="text-lg font-bold text-white font-montserrat">Gustavo Santos</h3>
                             <p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Engenheiro Civil Geotécnico</p>
                             <p class="text-sm text-slate-400">Especialista em Contenções e Taludes. Perito credenciado TJMG/MPMG. Projetista responsável pela obra do Morro da Forca, Ouro Preto. Ex-Coordenador de Defesa Civil de Barbacena.</p>
                         </div>
                         <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all">
-                             <div class="w-32 h-32 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
-                                <span class="material-icons-outlined text-9xl text-slate-400" aria-hidden="true">person</span>
+                             <div class="w-20 h-20 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
+                                <span class="material-icons-outlined text-7xl text-slate-400" aria-hidden="true">person</span>
                             </div>
                             <h3 class="text-lg font-bold text-white font-montserrat">Lucas de Sá</h3><p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Engenheiro Mecânico e Civil</p><p class="text-sm text-slate-400">Engenheiro com formação em Mecânica, Segurança do Trabalho e Civil. Doutorando em Estruturas.</p>
                         </div>
                         <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all">
-                             <div class="w-32 h-32 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
-                                <span class="material-icons-outlined text-9xl text-slate-400" aria-hidden="true">person</span>
+                             <div class="w-20 h-20 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
+                                <span class="material-icons-outlined text-7xl text-slate-400" aria-hidden="true">person</span>
                             </div>
                             <h3 class="text-lg font-bold text-white font-montserrat">Djalmir Silva</h3><p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Arquiteto e Urbanista</p><p class="text-sm text-slate-400">Arquiteto e urbanista, capitão da reserva da Aeronáutica e consultor do IPHAN.</p>
                         </div>
@@ -511,9 +511,9 @@
                         <h2 class="text-3xl font-light text-white mb-4 font-montserrat">Últimas do Blog</h2>
                         <p class="text-slate-400 max-w-2xl mx-auto">Informações e dicas sobre engenharia diagnóstica, laudos e perícias.</p>
                     </div>
-                    <div id="homepage-blog-posts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 fade-in-on-scroll">
+                    <div id="homepage-blog-posts" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 scrollbar-hide mb-16 fade-in-on-scroll">
                         
-                        <a href="#/blog/quando-contratar-engenharia-diagnostica" class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
+                        <a href="#/blog/quando-contratar-engenharia-diagnostica" class="w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
                             <div class="p-6 flex-grow flex flex-col">
                                  <div class="flex justify-between items-center text-xs mb-3">
                                     <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Engenharia Diagnóstica</span>
@@ -529,7 +529,7 @@
                             </div>
                         </a>
                         
-                        <a href="#/blog/vistoria-cautelar-de-vizinhanca-guia-completo" class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
+                        <a href="#/blog/vistoria-cautelar-de-vizinhanca-guia-completo" class="w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
                             <div class="p-6 flex-grow flex flex-col">
                                  <div class="flex justify-between items-center text-xs mb-3">
                                     <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Vistorias</span>
@@ -545,7 +545,7 @@
                             </div>
                         </a>
                         
-                        <a href="#/blog/pericia-judicial-engenharia-o-papel-assistente-tecnico" class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
+                        <a href="#/blog/pericia-judicial-engenharia-o-papel-assistente-tecnico" class="w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
                             <div class="p-6 flex-grow flex flex-col">
                                  <div class="flex justify-between items-center text-xs mb-3">
                                     <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Perícia Judicial</span>
@@ -624,28 +624,70 @@
             </section>
         </div>
 
-        <div id="page-blog-list" class="hidden">
-            <div class="bg-slate-950 py-20 lg:py-32">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 class="text-4xl lg:text-5xl font-bold text-white mb-12 text-center font-montserrat">Blog Harpia</h1>
-                    <div id="blog-list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Blog posts will be injected here by JS -->
+        <div id="blog-post-container" class="hidden">
+            <article id="quando-contratar-engenharia-diagnostica" class="blog-post-content hidden">
+                <div class="bg-slate-950 py-20 lg:py-32">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <a href="/" class="inline-flex items-center text-primary hover:underline mb-8 font-montserrat">
+                            <span class="material-icons-outlined text-lg mr-1">arrow_back</span>
+                            Voltar para a Home
+                        </a>
+                        <h1 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-2 font-montserrat">Quando Contratar um Especialista em Engenharia Diagnóstica?</h1>
+                        <div class="text-slate-400 mb-8 flex items-center gap-4 text-sm">
+                            <span>Engenharia Diagnóstica</span>
+                            <span>&bull;</span>
+                            <span>15 de agosto de 2024</span>
+                            <span>&bull;</span>
+                            <span>4 min de leitura</span>
+                        </div>
+                        <div class="prose prose-invert max-w-none text-slate-300 leading-relaxed">
+                            <h2>O 'médico' do seu imóvel</h2><p>Assim como procuramos um médico ao primeiro sinal de que algo não vai bem com nossa saúde, um imóvel também precisa de um especialista quando apresenta 'sintomas'. A engenharia diagnóstica é a especialidade que investiga, analisa e determina as causas de problemas construtivos, conhecidos como patologias.</p><h3>Quando chamar o especialista?</h3><p>Muitos proprietários esperam o problema se agravar, o que encarece e complica a solução. O ideal é contratar um engenheiro diagnóstico ao notar:</p><ul><li><strong>Fissuras, trincas ou rachaduras:</strong> Especialmente as que aumentam de tamanho ou aparecem de forma inclinada nas paredes.</li><li><strong>Infiltrações e umidade:</strong> Manchas, mofo ou descascamento de pintura são sinais de que a água está encontrando um caminho indesejado.</li><li><strong>Deformações estruturais:</strong> Lajes ou vigas com 'barrigas', pisos afundando ou paredes 'estufadas' são sinais de alerta máximo.</li><li><strong>Antes de uma grande reforma:</strong> Para garantir que as alterações não comprometerão a estrutura existente.</li><li><strong>Na compra de um imóvel usado:</strong> Uma vistoria técnica completa pode revelar vícios ocultos e evitar um mau negócio.</li></ul><p>Agir preventivamente não é um custo, mas um investimento na segurança e na valorização do seu patrimônio. Um laudo técnico preciso fornece o diagnóstico correto e o 'tratamento' adequado para a saúde do seu imóvel.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div id="page-blog-post" class="hidden">
-             <div class="bg-slate-950 py-20 lg:py-32">
-                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <a href="#/blog" class="inline-flex items-center text-primary hover:underline mb-8 font-montserrat">
-                        <span class="material-icons-outlined text-lg mr-1">arrow_back</span>
-                        Voltar para o Blog
-                    </a>
-                    <h1 id="blog-post-title" class="text-3xl md:text-4xl font-bold text-white mt-4 mb-2 font-montserrat"></h1>
-                    <div id="blog-post-meta" class="text-slate-400 mb-8 flex items-center gap-4 text-sm"></div>
-                    <div id="blog-post-content" class="prose prose-invert max-w-none text-slate-300 leading-relaxed"></div>
+            </article>
+            <article id="vistoria-cautelar-de-vizinhanca-guia-completo" class="blog-post-content hidden">
+                <div class="bg-slate-950 py-20 lg:py-32">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <a href="/" class="inline-flex items-center text-primary hover:underline mb-8 font-montserrat">
+                            <span class="material-icons-outlined text-lg mr-1">arrow_back</span>
+                            Voltar para a Home
+                        </a>
+                        <h1 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-2 font-montserrat">Vistoria Cautelar de Vizinhança: Um Guia Completo</h1>
+                        <div class="text-slate-400 mb-8 flex items-center gap-4 text-sm">
+                            <span>Vistorias</span>
+                            <span>&bull;</span>
+                            <span>12 de agosto de 2024</span>
+                            <span>&bull;</span>
+                            <span>5 min de leitura</span>
+                        </div>
+                        <div class="prose prose-invert max-w-none text-slate-300 leading-relaxed">
+                            <h2>Uma apólice de seguro para sua obra</h2><p>Iniciar uma construção ou reforma é um processo complexo que envolve riscos. Um dos maiores é o impacto que sua obra pode causar nos imóveis vizinhos. Vibrações, escavações e tráfego de máquinas podem gerar danos, resultando em disputas judiciais caras e demoradas. A Vistoria Cautelar de Vizinhança é a principal ferramenta para mitigar esses riscos.</p><h3>O que é e para que serve?</h3><p>É um laudo técnico detalhado, elaborado por um engenheiro, que documenta o estado de conservação de todos os imóveis no entorno da obra ANTES do seu início. Através de fotos, vídeos e descrições técnicas, ele registra todas as anomalias preexistentes, como fissuras, infiltrações, desgastes, etc.</p><h3>Principais Benefícios:</h3><ul><li><strong>Segurança Jurídica:</strong> Protege o construtor contra acusações indevidas de danos que já existiam antes da obra começar.</li><li><strong>Respaldo para Vizinhos:</strong> Caso a obra realmente cause um novo dano, o laudo serve como prova irrefutável para que o vizinho busque a devida reparação.</li><li><strong>Prevenção de Conflitos:</strong> A vistoria demonstra transparência e profissionalismo, estabelecendo uma relação de confiança e prevenindo litígios.</li></ul><p>A NBR 12.722 da ABNT recomenda fortemente a prática. Não realizar a vistoria é assumir um risco desnecessário. É um investimento baixo perto do custo de uma ação judicial e da paralisação de uma obra. Pense nela como a fundação da boa vizinhança e da sua tranquilidade.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </article>
+            <article id="pericia-judicial-engenharia-o-papel-assistente-tecnico" class="blog-post-content hidden">
+                <div class="bg-slate-950 py-20 lg:py-32">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <a href="/" class="inline-flex items-center text-primary hover:underline mb-8 font-montserrat">
+                            <span class="material-icons-outlined text-lg mr-1">arrow_back</span>
+                            Voltar para a Home
+                        </a>
+                        <h1 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-2 font-montserrat">Perícia Judicial de Engenharia: O Papel do Assistente Técnico</h1>
+                        <div class="text-slate-400 mb-8 flex items-center gap-4 text-sm">
+                            <span>Perícia Judicial</span>
+                            <span>&bull;</span>
+                            <span>8 de agosto de 2024</span>
+                            <span>&bull;</span>
+                            <span>4 min de leitura</span>
+                        </div>
+                        <div class="prose prose-invert max-w-none text-slate-300 leading-relaxed">
+                           <h2>Traduzindo a engenharia para o direito</h2><p>Em um processo judicial que envolve questões técnicas de construção, a prova pericial é, muitas vezes, o elemento central que define o resultado da causa. O juiz nomeia um perito de sua confiança para elaborar um laudo técnico. No entanto, as partes (autor e réu) têm o direito de nomear seus próprios especialistas: os assistentes técnicos.</p><h3>Por que o Assistente Técnico é Crucial?</h3><p>O assistente técnico é o engenheiro de confiança da parte, que atua como um 'advogado técnico' dentro do processo. Suas responsabilidades são estratégicas:</p><ul><li><strong>Formular Quesitos:</strong> Elaborar as perguntas técnicas que serão respondidas pelo perito judicial. Quesitos bem formulados podem direcionar a perícia para os pontos mais favoráveis à tese da parte.</li><li><strong>Acompanhar a Perícia:</strong> Participar das vistorias e diligências junto ao perito judicial, garantindo que todos os pontos relevantes sejam analisados e que a metodologia correta seja aplicada.</li><li><strong>Analisar o Laudo Oficial:</strong> Examinar criticamente o laudo do perito judicial, identificando falhas, omissões ou interpretações equivocadas.</li><li><strong>Elaborar um Parecer Técnico:</strong> Apresentar um parecer próprio, concordando ou discordando (parcial ou totalmente) do laudo oficial. Um parecer divergente bem fundamentado pode levar o juiz a desconsiderar o laudo do perito e decidir a favor da parte.</li></ul><p>Contratar um assistente técnico não é um luxo, mas uma necessidade estratégica. É garantir que a sua versão dos fatos técnicos seja defendida com a máxima competência, aumentando exponencialmente as chances de um resultado favorável no processo judicial.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
         </div>
     </main>
 
@@ -700,5 +742,42 @@
     </button>
     
     <script type="module" src="index.tsx"></script>
+    <script>
+        function handleRouting() {
+          const hash = window.location.hash;
+          const pageHome = document.getElementById('page-home');
+          const blogPostContainer = document.getElementById('blog-post-container'); 
+
+          if (hash.startsWith('#/blog/')) {
+            const postId = hash.replace('#/blog/', '');
+            const targetPost = document.getElementById(postId);
+
+            if (pageHome) pageHome.classList.add('hidden');
+            if (blogPostContainer) blogPostContainer.classList.remove('hidden');
+            
+            // Hide all posts within the container first
+            if (blogPostContainer) {
+                blogPostContainer.querySelectorAll('.blog-post-content').forEach(post => {
+                    post.classList.add('hidden');
+                });
+            }
+
+            if (targetPost) {
+              targetPost.classList.remove('hidden');
+              window.scrollTo(0, 0);
+            } else {
+                // If post not found, go back to home to avoid a blank page
+                window.location.hash = '#/';
+            }
+          } else {
+            // Not a blog post URL, show home and hide the entire blog container
+            if (pageHome) pageHome.classList.remove('hidden');
+            if (blogPostContainer) blogPostContainer.classList.add('hidden');
+          }
+        }
+        window.addEventListener('hashchange', handleRouting);
+        // Use DOMContentLoaded to run the router as soon as the DOM is ready
+        document.addEventListener('DOMContentLoaded', handleRouting);
+    </script>
 </body>
 </html>
