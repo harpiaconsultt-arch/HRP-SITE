@@ -68,7 +68,8 @@
         ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #64748b; }
         .hidden { display: none; }
-        .fade-in-on-scroll { opacity: 1; transform: translateY(0); } /* Disable JS animation */
+        .fade-in-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .fade-in-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
         .prose { color: #d1d5db; }
         .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { font-family: "Montserrat", sans-serif; font-weight: 600; color: #f8fafc; margin-top: 1.5em; margin-bottom: 0.8em; }
         .prose p { margin-bottom: 1.25em; }
@@ -250,21 +251,21 @@
                         <p class="text-slate-400 max-w-2xl mx-auto">Métodos de inspeção que aumentam a precisão dos laudos.</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group" style="transition-delay: 100ms;">
+                        <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group">
                             <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
                                 <span class="material-icons-outlined text-4xl text-primary">center_focus_strong</span>
                             </div>
                             <h3 class="text-lg font-semibold text-white mb-3 font-montserrat">Análise Não Destrutiva</h3>
                             <p class="text-sm text-slate-400 leading-relaxed">Ensaios não destrutivos (ultrassom, esclerometria) para laudos técnicos e vistorias estruturais.</p>
                         </div>
-                        <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group" style="transition-delay: 200ms;">
+                        <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group">
                             <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
                                 <span class="material-icons-outlined text-4xl text-primary">sensors</span>
                             </div>
                             <h3 class="text-lg font-semibold text-white mb-3 font-montserrat">Varredura a Laser 3D</h3>
                             <p class="text-sm text-slate-400 leading-relaxed">Modelagem 3D para identificação de deformações em laudos periciais e perícias judiciais.</p>
                         </div>
-                        <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group" style="transition-delay: 300ms;">
+                        <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group">
                             <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
                                 <span class="material-icons-outlined text-4xl text-primary">thermostat</span>
                             </div>
@@ -420,23 +421,23 @@
                         <p class="text-slate-400">Profissionais especializados em laudos e perícias técnicas.</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all" style="transition-delay: 100ms;">
+                        <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all">
                             <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
-                                <span class="material-icons-outlined text-6xl text-slate-400" aria-hidden="true">person</span>
+                                <span class="material-icons-outlined text-8xl text-slate-400" aria-hidden="true">person</span>
                             </div>
                             <h3 class="text-lg font-bold text-white font-montserrat">Gustavo Santos</h3>
                             <p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Engenheiro Civil Geotécnico</p>
                             <p class="text-sm text-slate-400">Especialista em Contenções e Taludes. Perito credenciado TJMG/MPMG. Projetista responsável pela obra do Morro da Forca, Ouro Preto. Ex-Coordenador de Defesa Civil de Barbacena.</p>
                         </div>
-                        <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all" style="transition-delay: 200ms;">
+                        <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all">
                              <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
-                                <span class="material-icons-outlined text-6xl text-slate-400" aria-hidden="true">person</span>
+                                <span class="material-icons-outlined text-8xl text-slate-400" aria-hidden="true">person</span>
                             </div>
                             <h3 class="text-lg font-bold text-white font-montserrat">Lucas de Sá</h3><p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Engenheiro Mecânico e Civil</p><p class="text-sm text-slate-400">Engenheiro com formação em Mecânica, Segurança do Trabalho e Civil. Doutorando em Estruturas.</p>
                         </div>
-                        <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all" style="transition-delay: 300ms;">
+                        <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all">
                              <div class="w-24 h-24 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
-                                <span class="material-icons-outlined text-6xl text-slate-400" aria-hidden="true">person</span>
+                                <span class="material-icons-outlined text-8xl text-slate-400" aria-hidden="true">person</span>
                             </div>
                             <h3 class="text-lg font-bold text-white font-montserrat">Djalmir Silva</h3><p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Arquiteto e Urbanista</p><p class="text-sm text-slate-400">Arquiteto e urbanista, capitão da reserva da Aeronáutica e consultor do IPHAN.</p>
                         </div>
@@ -450,7 +451,7 @@
                          <h2 class="text-3xl font-light text-white mb-4 font-montserrat">Depoimentos de Nossos Clientes</h2>
                          <p class="text-slate-300">O que dizem sobre nossos laudos e perícias de engenharia.</p>
                      </div>
-                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in-on-scroll">
                         <div class="testimonial-card">
                             <div class="testimonial-stars">★★★★★</div>
                             <p class="testimonial-text">"O laudo de vistoria de vizinhança foi extremamente detalhado e profissional. A equipe da Harpia nos deu a segurança que precisávamos para iniciar nossa construção sem preocupações. Atendimento impecável do início ao fim."</p>
@@ -482,7 +483,7 @@
                         <p class="text-slate-400 max-w-2xl mx-auto">Informações e dicas sobre engenharia diagnóstica, laudos e perícias.</p>
                     </div>
                     <div id="homepage-blog-posts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 fade-in-on-scroll">
-                        <div class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group">
+                        <a href="#/blog/assistencia-tecnica-para-advogados-em-barbacena" class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
                             <div class="p-6 flex-grow flex flex-col">
                                  <div class="flex justify-between items-center text-xs mb-3">
                                     <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Perícia Judicial</span>
@@ -492,12 +493,12 @@
                                 <p class="text-sm text-slate-400 leading-relaxed">O sucesso de uma ação judicial, seja ela cível ou trabalhista, depende da solidez das provas. Entenda como o apoio de peritos mestres e doutores transforma a complexidade técnica em vantagem jurídica.</p>
                             </div>
                             <div class="p-6 bg-slate-800/50 mt-auto">
-                                <a href="#/blog/assistencia-tecnica-para-advogados-em-barbacena" class="text-primary font-semibold text-sm hover:underline font-montserrat">
+                                <div class="text-primary font-semibold text-sm group-hover:underline font-montserrat">
                                     Ler mais <span aria-hidden="true">→</span>
-                                </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group">
+                        </a>
+                        <a href="#/blog/inspecao-de-fachadas-com-drone-em-barbacena" class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
                             <div class="p-6 flex-grow flex flex-col">
                                  <div class="flex justify-between items-center text-xs mb-3">
                                     <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Inspeção Predial</span>
@@ -507,12 +508,12 @@
                                 <p class="text-sm text-slate-400 leading-relaxed">Descubra como a Harpia Consultoria utiliza drones e termografia infravermelha para identificar patologias invisíveis a olho nu, garantindo laudos técnicos fundamentados e economia para condomínios em Barbacena e região.</p>
                             </div>
                             <div class="p-6 bg-slate-800/50 mt-auto">
-                                <a href="#/blog/inspecao-de-fachadas-com-drone-em-barbacena" class="text-primary font-semibold text-sm hover:underline font-montserrat">
+                                <div class="text-primary font-semibold text-sm group-hover:underline font-montserrat">
                                     Ler mais <span aria-hidden="true">→</span>
-                                </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group">
+                        </a>
+                        <a href="#/blog/a-importancia-do-laudo-de-vistoria-de-vizinhanca" class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
                             <div class="p-6 flex-grow flex flex-col">
                                  <div class="flex justify-between items-center text-xs mb-3">
                                     <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Vistorias</span>
@@ -522,11 +523,11 @@
                                 <p class="text-sm text-slate-400 leading-relaxed">Saiba como proteger sua obra e evitar conflitos judiciais com o Laudo de Vizinhança.</p>
                             </div>
                             <div class="p-6 bg-slate-800/50 mt-auto">
-                                <a href="#/blog/a-importancia-do-laudo-de-vistoria-de-vizinhanca" class="text-primary font-semibold text-sm hover:underline font-montserrat">
+                                <div class="text-primary font-semibold text-sm group-hover:underline font-montserrat">
                                     Ler mais <span aria-hidden="true">→</span>
-                                </a>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="text-center fade-in-on-scroll">
                          <a href="#/blog" class="inline-flex items-center px-6 py-3 border border-slate-500 text-sm font-medium rounded text-white hover:bg-slate-800 hover:border-slate-400 transition-all font-montserrat">
@@ -538,7 +539,7 @@
 
             <section id="contato" class="bg-background-light text-slate-800">
                 <div class="flex flex-col lg:flex-row min-h-[90vh]">
-                    <div class="lg:w-5/12 w-full aspect-square lg:aspect-auto fade-in-on-scroll" style="transition-delay: 100ms;">
+                    <div class="lg:w-5/12 w-full aspect-square lg:aspect-auto fade-in-on-scroll">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.2755881772346!2d-43.768791099999994!3d-21.221067299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f16!3m3!1m2!1s0x48f68e2270d524ab%3A0x46b16dd914564611!2sHarpia%20Consultoria%20-%20Engenharia%20e%20Laudos%20T%C3%A9cnicos!5e1!3m2!1spt-BR!2sbr!4v1767458030731!5m2!1spt-BR!2sbr" class="w-full h-full" style="border: 0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Localização da Harpia Consultoria"></iframe>
                     </div>
                     <div class="lg:w-7/12 w-full flex flex-col justify-center p-8 sm:p-12 lg:p-16">
@@ -546,7 +547,7 @@
                             <h2 class="text-3xl lg:text-4xl font-bold text-slate-800 mb-2 font-montserrat">Fale Conosco</h2>
                             <p class="text-slate-600 mb-10">Pronto para começar? Envie-nos uma mensagem para um orçamento rápido e sem compromisso.</p>
                         </div>
-                        <div class="w-full fade-in-on-scroll" style="transition-delay: 150ms;">
+                        <div class="w-full fade-in-on-scroll">
                             <form id="contact-form" class="space-y-6">
                                 <div>
                                     <label class="text-sm font-semibold text-slate-700 mb-3 block font-montserrat">1. Qual serviço você precisa?</label>
@@ -571,7 +572,7 @@
                                 <p class="text-center text-xs text-slate-500">Ao enviar, você será redirecionado para o WhatsApp.</p>
                             </form>
                         </div>
-                        <div class="fade-in-on-scroll" style="transition-delay: 300ms;">
+                        <div class="fade-in-on-scroll">
                             <div class="mt-12 pt-8 border-t border-slate-200">
                                 <h3 class="text-lg font-bold text-slate-800 mb-6 font-montserrat">Ou entre em contato diretamente</h3>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8">
