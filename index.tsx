@@ -88,38 +88,41 @@ const setupUIEventListeners = () => {
         });
     }
 
-    // Testimonials Slider
+    // Testimonials Slider - REWRITTEN FOR RELIABILITY
     const track = document.getElementById('testimonials-track');
     const prevBtn = document.getElementById('prev-testimonial-btn');
     const nextBtn = document.getElementById('next-testimonial-btn');
     
     if (track && prevBtn && nextBtn) {
+        const cards = Array.from(track.children) as HTMLElement[];
+        if (cards.length === 0) return;
+
+        let currentIndex = 0;
         let autoScrollInterval: number;
 
-        const scrollCards = (direction: 'next' | 'prev') => {
-            const card = track.querySelector('.testimonial-card') as HTMLElement;
+        const goToSlide = (index: number) => {
+            const card = cards[index];
             if (!card) return;
-            
-            const cardStyle = window.getComputedStyle(card);
-            const cardMargin = parseFloat(cardStyle.marginRight);
-            const cardWidth = card.offsetWidth + cardMargin;
-            const scrollAmount = cardWidth;
-
-            track.scrollBy({
-                left: direction === 'next' ? scrollAmount : -scrollAmount,
+            track.scrollTo({
+                left: card.offsetLeft - (track.offsetLeft || 0),
                 behavior: 'smooth'
             });
+            currentIndex = index;
+        };
+        
+        const nextSlide = () => {
+            const nextIndex = (currentIndex + 1) % cards.length;
+            goToSlide(nextIndex);
+        };
+
+        const prevSlide = () => {
+            const prevIndex = (currentIndex - 1 + cards.length) % cards.length;
+            goToSlide(prevIndex);
         };
         
         const startAutoScroll = () => {
-            autoScrollInterval = window.setInterval(() => {
-                const isAtEnd = Math.abs(track.scrollLeft + track.clientWidth - track.scrollWidth) < 10;
-                if (isAtEnd) {
-                    track.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    scrollCards('next');
-                }
-            }, 5000); // Change slide every 5 seconds
+            stopAutoScroll(); // Ensure no multiple intervals running
+            autoScrollInterval = window.setInterval(nextSlide, 5000); // Change slide every 5 seconds
         };
 
         const stopAutoScroll = () => {
@@ -128,12 +131,13 @@ const setupUIEventListeners = () => {
 
         prevBtn.addEventListener('click', () => {
             stopAutoScroll();
-            scrollCards('prev');
+            prevSlide();
             startAutoScroll();
         });
+
         nextBtn.addEventListener('click', () => {
             stopAutoScroll();
-            scrollCards('next');
+            nextSlide();
             startAutoScroll();
         });
 
