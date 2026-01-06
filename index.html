@@ -121,6 +121,15 @@
         .animate-gentle-pulse {
           animation: gentle-pulse 2.5s infinite ease-in-out;
         }
+
+        /* Scrollbar Hide Utility */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
     </style>
 <script type="application/ld+json">
 {
@@ -447,35 +456,51 @@
             </section>
             
             <section id="depoimentos" class="secao-depoimentos-harpia">
-                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                     <div class="text-center mb-16 fade-in-on-scroll">
-                         <h2 class="text-3xl font-light text-white mb-4 font-montserrat">Depoimentos de Nossos Clientes</h2>
-                         <p class="text-slate-300">O que dizem sobre nossos laudos e perícias de engenharia.</p>
-                     </div>
-                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in-on-scroll">
-                        <div class="testimonial-card">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"O laudo de vistoria de vizinhança foi extremamente detalhado e profissional. A equipe da Harpia nos deu a segurança que precisávamos para iniciar nossa construção sem preocupações. Atendimento impecável do início ao fim."</p>
-                            <p class="testimonial-author">- Construtora Rocha & Filhos</p>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"Contratei a Harpia para um laudo de patologias em meu condomínio. A precisão do diagnóstico com os equipamentos que eles usam é impressionante. Identificaram a origem da infiltração que outros 2 profissionais não encontraram."</p>
-                            <p class="testimonial-author">- Mariana Costa, Síndica</p>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"Como advogado, preciso de assistentes técnicos que falem a linguagem do direito e da engenharia. A Harpia Consultoria entrega pareceres robustos que fortalecem nossas teses nos processos. Parceria de sucesso."</p>
-                            <p class="testimonial-author">- Dr. Carlos Almeida</p>
-                        </div>
-                     </div>
-                     <div class="text-center mt-12 fade-in-on-scroll">
-                        <a href="https://search.google.com/local/reviews?placeid=ChIJqyTVcCKO9kgREUZWFNltsUY" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border border-slate-400 text-sm font-medium rounded text-white hover:bg-white hover:text-slate-900 transition-all duration-300 font-montserrat">
-                            Ver todas as 22 avaliações no Google
-                        </a>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 fade-in-on-scroll">
+                        <h2 class="text-3xl font-light text-white mb-4 font-montserrat">Depoimentos de Nossos Clientes</h2>
+                        <p class="text-slate-300">O que dizem sobre nossos laudos e perícias de engenharia.</p>
                     </div>
-                 </div>
-            </section>
+
+                    <div class="relative fade-in-on-scroll max-w-4xl mx-auto">
+                        <div id="testimonials-container" class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth scrollbar-hide gap-6 py-4 lg:grid lg:grid-cols-3 lg:gap-8 lg:p-0">
+                            
+                            <div class="testimonial-card w-[90%] max-w-sm sm:w-4/5 lg:w-auto flex-shrink-0 snap-center">
+                                <div class="testimonial-stars">★★★★★</div>
+                                <p class="testimonial-text">"O laudo de vistoria de vizinhança foi extremamente detalhado e profissional. A equipe da Harpia nos deu a segurança que precisávamos para iniciar nossa construção sem preocupações. Atendimento impecável do início ao fim."</p>
+                                <p class="testimonial-author">- Construtora Rocha & Filhos</p>
+                            </div>
+                            
+                            <div class="testimonial-card w-[90%] max-w-sm sm:w-4/5 lg:w-auto flex-shrink-0 snap-center">
+                                <div class="testimonial-stars">★★★★★</div>
+                                <p class="testimonial-text">"Contratei a Harpia para um laudo de patologias em meu condomínio. A precisão do diagnóstico com os equipamentos que eles usam é impressionante. Identificaram a origem da infiltração que outros 2 profissionais não encontraram."</p>
+                                <p class="testimonial-author">- Mariana Costa, Síndica</p>
+                            </div>
+
+                            <div class="testimonial-card w-[90%] max-w-sm sm:w-4/5 lg:w-auto flex-shrink-0 snap-center">
+                                <div class="testimonial-stars">★★★★★</div>
+                                <p class="testimonial-text">"Como advogado, preciso de assistentes técnicos que falem a linguagem do direito e da engenharia. A Harpia Consultoria entrega pareceres robustos que fortalecem nossas teses nos processos. Parceria de sucesso."</p>
+                                <p class="testimonial-author">- Dr. Carlos Almeida</p>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute top-1/2 left-0 -translate-y-1/2 w-full flex justify-between px-0 lg:hidden pointer-events-none">
+                            <button id="testimonial-prev" aria-label="Anterior" class="bg-slate-700/50 text-white rounded-full w-10 h-10 flex items-center justify-center disabled:opacity-20 shadow-lg hover:bg-slate-700 transition-colors pointer-events-auto"><span class="material-icons-outlined">chevron_left</span></button>
+                            <button id="testimonial-next" aria-label="Próximo" class="bg-slate-700/50 text-white rounded-full w-10 h-10 flex items-center justify-center disabled:opacity-20 shadow-lg hover:bg-slate-700 transition-colors pointer-events-auto"><span class="material-icons-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+
+                    <div id="testimonial-dots" class="lg:hidden flex justify-center gap-3 mt-6">
+                        <!-- Dots are generated dynamically by JavaScript -->
+                    </div>
+
+                    <div class="text-center mt-12 fade-in-on-scroll">
+                       <a href="https://search.google.com/local/reviews?placeid=ChIJqyTVcCKO9kgREUZWFNltsUY" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border border-slate-400 text-sm font-medium rounded text-white hover:bg-white hover:text-slate-900 transition-all duration-300 font-montserrat">
+                           Ver todas as 22 avaliações no Google
+                       </a>
+                   </div>
+                </div>
+           </section>
             
             <section class="py-20 bg-slate-950" id="blog">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
