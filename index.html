@@ -51,7 +51,7 @@
     
     <!-- Ícones e Aparência -->
     <link rel="icon" href="img/logo.webp" type="image/webp" />
-    <meta name="theme-color" content="#020617">
+    <meta name="theme-color" content="#FFFFFF">
     
     <!-- Fontes Otimizadas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -176,50 +176,61 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-WX7TNRJS94'); 
+
+  gtag('config', 'G-WX7TNRJS94');
+  gtag('config', 'AW-16755835554');
+
+  // Função para rastrear clique no WhatsApp
+  function trackWhatsappClick() {
+    gtag('event', 'conversion', {
+        'send_to': 'AW-16755835554',
+        'event_category': 'WhatsApp',
+        'event_label': 'Clique Institucional'
+    });
+  }
 </script>
 </head>
 <body class="bg-background-dark text-slate-100 font-sans">
     
-    <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-surface-dark border-b border-slate-800 shadow-md">
+    <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="/" class="flex-shrink-0 flex items-center gap-2">
                     <img src="img/logo.webp" alt="Logo Harpia" class="h-10 w-auto" fetchpriority="high">
                     <div class="flex flex-col">
-                        <span class="text-white font-bold text-xl tracking-tight leading-none font-montserrat">HARPIA</span>
-                        <span class="text-slate-400 text-xs font-medium tracking-[0.2em] leading-none font-montserrat">CONSULTORIA</span>
+                        <span class="text-slate-900 font-bold text-xl tracking-tight leading-none font-montserrat">HARPIA</span>
+                        <span class="text-slate-500 text-xs font-medium tracking-[0.2em] leading-none font-montserrat">CONSULTORIA</span>
                     </div>
                 </a>
                 <nav class="hidden md:flex space-x-8">
-                    <a href="/#tecnologia" class="text-slate-300 hover:text-white text-sm font-medium transition-colors font-montserrat">Tecnologia</a>
-                    <a href="/#servicos" class="text-slate-300 hover:text-white text-sm font-medium transition-colors font-montserrat">Serviços</a>
-                    <a href="/#metodologia" class="text-slate-300 hover:text-white text-sm font-medium transition-colors font-montserrat">Metodologia</a>
-                    <a href="/#equipe" class="text-slate-300 hover:text-white text-sm font-medium transition-colors font-montserrat">Equipe</a>
-                    <a href="#/blog" class="text-slate-300 hover:text-white text-sm font-medium transition-colors font-montserrat">Blog</a>
-                    <a href="/#contato" class="text-slate-300 hover:text-white text-sm font-medium transition-colors font-montserrat">Contato</a>
+                    <a href="/#tecnologia" class="text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors font-montserrat">Tecnologia</a>
+                    <a href="/#servicos" class="text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors font-montserrat">Serviços</a>
+                    <a href="/#metodologia" class="text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors font-montserrat">Metodologia</a>
+                    <a href="/#equipe" class="text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors font-montserrat">Equipe</a>
+                    <a href="#/blog" class="text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors font-montserrat">Blog</a>
+                    <a href="/#contato" class="text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors font-montserrat">Contato</a>
                 </nav>
                 <div class="hidden md:flex">
-                    <a href="/#contato" class="inline-flex items-center justify-center px-4 py-2 border border-slate-500 text-sm font-medium rounded text-white hover:bg-slate-800 hover:border-slate-400 transition-all animate-gentle-pulse font-montserrat">
+                    <a href="/#contato" class="inline-flex items-center justify-center px-4 py-2 border border-slate-400 text-sm font-medium rounded text-slate-700 hover:bg-slate-100 hover:border-slate-500 transition-all animate-gentle-pulse font-montserrat">
                         SOLICITAR ORÇAMENTO
                     </a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button id="menu-toggle-btn" class="text-slate-300 hover:text-white" type="button" aria-label="Abrir menu">
+                    <button id="menu-toggle-btn" class="text-slate-600 hover:text-slate-900" type="button" aria-label="Abrir menu">
                         <span id="menu-icon" class="material-icons-outlined text-3xl">menu</span>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-surface-dark/95 backdrop-blur-sm">
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm">
             <nav class="px-4 pt-2 pb-4 space-y-2">
-                <a href="/#tecnologia" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors font-montserrat">Tecnologia</a>
-                <a href="/#servicos" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors font-montserrat">Serviços</a>
-                <a href="/#metodologia" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors font-montserrat">Metodologia</a>
-                <a href="/#equipe" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors font-montserrat">Equipe</a>
-                <a href="#/blog" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors font-montserrat">Blog</a>
-                <a href="/#contato" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors font-montserrat">Contato</a>
-                <a href="/#contato" class="block w-full text-center mt-4 px-4 py-2 border border-slate-500 text-sm font-medium rounded text-white hover:bg-slate-800 hover:border-slate-400 transition-all font-montserrat">
+                <a href="/#tecnologia" class="block text-slate-600 hover:text-slate-900 py-2 text-base font-medium transition-colors font-montserrat">Tecnologia</a>
+                <a href="/#servicos" class="block text-slate-600 hover:text-slate-900 py-2 text-base font-medium transition-colors font-montserrat">Serviços</a>
+                <a href="/#metodologia" class="block text-slate-600 hover:text-slate-900 py-2 text-base font-medium transition-colors font-montserrat">Metodologia</a>
+                <a href="/#equipe" class="block text-slate-600 hover:text-slate-900 py-2 text-base font-medium transition-colors font-montserrat">Equipe</a>
+                <a href="#/blog" class="block text-slate-600 hover:text-slate-900 py-2 text-base font-medium transition-colors font-montserrat">Blog</a>
+                <a href="/#contato" class="block text-slate-600 hover:text-slate-900 py-2 text-base font-medium transition-colors font-montserrat">Contato</a>
+                <a href="/#contato" class="block w-full text-center mt-4 px-4 py-2 border border-slate-400 text-sm font-medium rounded text-slate-700 hover:bg-slate-100 transition-all font-montserrat">
                     SOLICITAR ORÇAMENTO
                 </a>
             </nav>
@@ -262,22 +273,22 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group">
-                            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
-                                <span class="material-icons-outlined text-4xl text-primary">center_focus_strong</span>
+                            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
+                                <span class="material-icons-outlined text-5xl text-primary">center_focus_strong</span>
                             </div>
                             <h3 class="text-lg font-semibold text-white mb-3 font-montserrat">Análise Não Destrutiva</h3>
                             <p class="text-sm text-slate-400 leading-relaxed">Ensaios não destrutivos (ultrassom, esclerometria) para laudos técnicos e vistorias estruturais.</p>
                         </div>
                         <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group">
-                            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
-                                <span class="material-icons-outlined text-4xl text-primary">sensors</span>
+                            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
+                                <span class="material-icons-outlined text-5xl text-primary">sensors</span>
                             </div>
                             <h3 class="text-lg font-semibold text-white mb-3 font-montserrat">Varredura a Laser 3D</h3>
                             <p class="text-sm text-slate-400 leading-relaxed">Modelagem 3D para identificação de deformações em laudos periciais e perícias judiciais.</p>
                         </div>
                         <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group">
-                            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
-                                <span class="material-icons-outlined text-4xl text-primary">thermostat</span>
+                            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
+                                <span class="material-icons-outlined text-5xl text-primary">thermostat</span>
                             </div>
                             <h3 class="text-lg font-semibold text-white mb-3 font-montserrat">Termografia Infravermelha</h3>
                             <p class="text-sm text-slate-400 leading-relaxed">Detecção de umidade e infiltrações para vistorias e avaliações de imóveis completas.</p>
@@ -463,36 +474,36 @@
                     </div>
 
                     <div class="fade-in-on-scroll">
-                        <div id="testimonials-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div id="testimonials-container" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 scrollbar-hide">
                             
-                            <div class="testimonial-card">
+                            <div class="testimonial-card w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center">
                                 <div class="testimonial-stars">★★★★★</div>
                                 <p class="testimonial-text">"O laudo de vistoria de vizinhança foi extremamente detalhado e profissional. A equipe da Harpia nos deu a segurança que precisávamos para iniciar nossa construção sem preocupações. Atendimento impecável do início ao fim."</p>
                                 <p class="testimonial-author">- Construtora Rocha & Filhos</p>
                             </div>
                             
-                            <div class="testimonial-card">
+                            <div class="testimonial-card w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center">
                                 <div class="testimonial-stars">★★★★★</div>
                                 <p class="testimonial-text">"Contratei a Harpia para um laudo de patologias em meu condomínio. A precisão do diagnóstico com os equipamentos que eles usam é impressionante. Identificaram a origem da infiltração que outros 2 profissionais não encontraram."</p>
                                 <p class="testimonial-author">- Mariana Costa, Síndica</p>
                             </div>
 
-                            <div class="testimonial-card">
+                            <div class="testimonial-card w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center">
                                 <div class="testimonial-stars">★★★★★</div>
-                                <p class="testimonial-text">"Como advogado, preciso de assistentes técnicos que falem a linguagem do direito e da engenharia. A Harpia Consultoria entrega pareceres robustos que fortalecem nossas teses nos processos. Parceria de sucesso."</p>
+                                <p class="testimonial-text">"Como advogado, preciso de assistentes técnicos que falem a linguagem do direito e da engenharia. A Harpia entrega pareceres robustos que fortalecem nossas teses nos processos. Parceria de sucesso."</p>
                                 <p class="testimonial-author">- Dr. Carlos Almeida</p>
                             </div>
 
-                            <div class="testimonial-card">
+                            <div class="testimonial-card w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center">
                                 <div class="testimonial-stars">★★★★★</div>
                                 <p class="testimonial-text">"O laudo técnico apresentado pela Harpia foi decisivo em uma disputa judicial sobre vícios construtivos. A clareza e o embasamento técnico foram elogiados até pela parte contrária. Profissionais de altíssimo nível."</p>
-                                <p class="testimonial-author">- Escritório Jurídico Andrade & Paiva</p>
+                                <p class="testimonial-author">- Rapha TJ</p>
                             </div>
 
-                            <div class="testimonial-card">
+                            <div class="testimonial-card w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center">
                                 <div class="testimonial-stars">★★★★★</div>
-                                <p class="testimonial-text">"Estava comprando um imóvel antigo e pedi uma vistoria completa. O relatório da Harpia foi fundamental para a minha tomada de decisão, apontando pontos críticos que eu jamais veria. Evitei um péssimo negócio graças a eles."</p>
-                                <p class="testimonial-author">- Roberto Medeiros</p>
+                                <p class="testimonial-text">"Serviço de extrema qualidade, desde o atendimento até a entrega do laudo. O conhecimento técnico do engenheiro Gustavo é notável. Recomendo fortemente para quem busca um trabalho sério e confiável."</p>
+                                <p class="testimonial-author">- Jônatas Anklin</p>
                             </div>
                         </div>
                     </div>
@@ -598,7 +609,7 @@
                                     <label for="message-contact" class="text-sm font-semibold text-slate-700 mb-2 block font-montserrat">3. Detalhes adicionais (opcional)</label>
                                     <textarea id="message-contact" name="message" rows="3" class="w-full bg-white border border-slate-300 rounded-md py-2 px-3 text-slate-900 text-sm placeholder-slate-400 focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition" placeholder="Descreva brevemente sua necessidade..."></textarea>
                                 </div>
-                                <button type="submit" class="bg-primary hover:bg-green-600 text-white font-bold py-3 px-4 rounded-md flex items-center justify-center mx-auto text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40 animate-gentle-pulse font-montserrat">
+                                <button type="submit" onclick="trackWhatsappClick()" class="bg-primary hover:bg-green-600 text-white font-bold py-3 px-4 rounded-md flex items-center justify-center mx-auto text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40 animate-gentle-pulse font-montserrat">
                                     <span class="material-icons text-lg mr-2">whatsapp</span> Enviar via WhatsApp
                                 </button>
                                 <p class="text-center text-xs text-slate-500">Ao enviar, você será redirecionado para o WhatsApp.</p>
@@ -662,7 +673,7 @@
                             <span>5 min de leitura</span>
                         </div>
                         <div class="prose prose-invert max-w-none text-slate-300 leading-relaxed">
-                            <h2>Uma apólice de seguro para sua obra</h2><p>Iniciar uma construção ou reforma é um processo complexo que envolve riscos. Um dos maiores é o impacto que sua obra pode causar nos imóveis vizinhos. Vibrações, escavações e tráfego de máquinas podem gerar danos, resultando em disputas judiciais caras e demoradas. A Vistoria Cautelar de Vizinhança é a principal ferramenta para mitigar esses riscos.</p><h3>O que é e para que serve?</h3><p>É um laudo técnico detalhado, elaborado por um engenheiro, que documenta o estado de conservação de todos os imóveis no entorno da obra ANTES do seu início. Através de fotos, vídeos e descrições técnicas, ele registra todas as anomalias preexistentes, como fissuras, infiltrações, desgastes, etc.</p><h3>Principais Benefícios:</h3><ul><li><strong>Segurança Jurídica:</strong> Protege o construtor contra acusações indevidas de danos que já existiam antes da obra começar.</li><li><strong>Respaldo para Vizinhos:</strong> Caso a obra realmente cause um novo dano, o laudo serve como prova irrefutável para que o vizinho busque a devida reparação.</li><li><strong>Prevenção de Conflitos:</strong> A vistoria demonstra transparência e profissionalismo, estabelecendo uma relação de confiança e prevenindo litígios.</li></ul><p>A NBR 12.722 da ABNT recomenda fortemente a prática. Não realizar a vistoria é assumir um risco desnecessário. É um investimento baixo perto do custo de uma ação judicial e da paralisação de uma obra. Pense nela como a fundação da boa vizinhança e da sua tranquilidade.</p>
+                            <h2>Uma apólice de seguro para sua obra</h2><p>Iniciar uma construção ou reforma é um processo complexo que envolve riscos. Um dos maiores é o impacto que sua obra pode causar nos imóveis vizinhos. Vibrações, escavações e tráfego de máquinas podem gerar danos, resultando em disputas judiciais caras e demoradas. A Vistoria Cautelar de Vizinhança é a principal ferramenta para mitigar esses riscos.</p><h3>O que é e para que serve?</h3><p>É um <strong>laudo técnico de engenharia civil</strong> detalhado, que documenta o estado de conservação de todos os imóveis no entorno da obra ANTES do seu início. Através de fotos, vídeos e descrições, ele funciona como um <strong>relatório técnico</strong> completo, registrando todas as anomalias preexistentes, como fissuras, infiltrações, desgastes, etc. Este <strong>parecer técnico</strong> é essencial para a segurança de todos.</p><h3>Principais Benefícios:</h3><ul><li><strong>Segurança Jurídica:</strong> Protege o construtor contra acusações indevidas de danos que já existiam antes da obra começar.</li><li><strong>Respaldo para Vizinhos:</strong> Caso a obra realmente cause um novo dano, o laudo serve como prova irrefutável para que o vizinho busque a devida reparação.</li><li><strong>Prevenção de Conflitos:</strong> A vistoria demonstra transparência e profissionalismo, estabelecendo uma relação de confiança e prevenindo litígios que exigiriam um <strong>laudo pericial</strong>.</li></ul><p>A NBR 12.722 da ABNT recomenda fortemente a prática. Não realizar a vistoria é assumir um risco desnecessário. É um investimento baixo perto do custo de uma ação judicial e da paralisação de uma obra. Pense nela como a fundação da boa vizinhança e da sua tranquilidade.</p>
                         </div>
                     </div>
                 </div>
@@ -733,7 +744,7 @@
         </div>
     </footer>
 
-    <a id="whatsapp-fab" href="https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform animate-gentle-pulse" aria-label="Fale conosco no WhatsApp">
+    <a id="whatsapp-fab" href="https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." onclick="trackWhatsappClick()" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform animate-gentle-pulse" aria-label="Fale conosco no WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-white" fill="currentColor" aria-hidden="true"><path d="M19.05 4.94A9.85 9.85 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.73-1.11-5.2-2.9-7.07zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.81.83-3.04-.2-.31a8.34 8.34 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.23.86 5.82 2.45s2.45 3.62 2.45 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.2c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72s-.02-.38.1-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41.04-.3-.02-.43c-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.55-.42-.15 0-.3 0-.46 0s-.39.06-.6.31c-.2.25-.78.76-.78 1.85s.8 2.15.91 2.3s1.58 2.4 3.8 3.36c.55.24.93.38 1.24.48.55.17 1.05.14 1.44.09.43-.06 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.05-.12-.2-.19-.44-.31z" /></svg>
     </a>
     
