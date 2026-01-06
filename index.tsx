@@ -14,7 +14,6 @@ interface Post {
 let allPosts: Post[] = [];
 
 // --- UI ELEMENT SELECTORS ---
-const header = document.getElementById('header');
 const mobileMenu = document.getElementById('mobile-menu');
 const menuToggleBtn = document.getElementById('menu-toggle-btn');
 const menuIcon = document.getElementById('menu-icon');
@@ -25,12 +24,73 @@ const pageBlogPost = document.getElementById('page-blog-post');
 const contactForm = document.getElementById('contact-form');
 const pages = [pageHome, pageBlogList, pageBlogPost];
 
+// --- SEO and META TAGS ---
+
+const setAttributeById = (id: string, value: string, attribute = 'content') => {
+    const el = document.getElementById(id);
+    if (el) el.setAttribute(attribute, value);
+};
+
+const extractImageUrl = (content: string): string | null => {
+    const match = content.match(/<img.*?src=["'](.*?)["']/);
+    return match ? match[1] : null;
+};
+
+const defaultMeta = {
+    title: "Harpia Consultoria | Engenharia Diagnóstica e Perícias em Barbacena",
+    description: "Especialistas em laudos de vizinhança, vistorias cautelares e estabilidade de taludes em Barbacena e região.",
+    url: "https://harpiaconsultoria.eng.br/",
+    imageUrl: new URL('img/logo-share.png', "https://harpiaconsultoria.eng.br/").href
+};
+
+const resetMetaTags = () => {
+    document.title = defaultMeta.title;
+
+    setAttributeById('canonical-link', defaultMeta.url, 'href');
+    setAttributeById('meta-description', defaultMeta.description);
+    
+    setAttributeById('og-title', defaultMeta.title);
+    setAttributeById('og-description', defaultMeta.description);
+    setAttributeById('og-url', defaultMeta.url);
+    setAttributeById('og-image', defaultMeta.imageUrl);
+    setAttributeById('og-type', 'website');
+    
+    setAttributeById('twitter-card', 'summary_large_image');
+    setAttributeById('twitter-title', defaultMeta.title);
+    setAttributeById('twitter-description', defaultMeta.description);
+    setAttributeById('twitter-image', defaultMeta.imageUrl);
+};
+
+const updateMetaTags = (post: Post) => {
+    const baseUrl = "https://harpiaconsultoria.eng.br/";
+    const postUrl = `${baseUrl}#/blog/${post.slug}`;
+    const imageUrl = extractImageUrl(post.content);
+    const fullImageUrl = imageUrl ? new URL(imageUrl, baseUrl).href : defaultMeta.imageUrl;
+    const postTitle = `${post.title} | Harpia Consultoria`;
+
+    document.title = postTitle;
+
+    setAttributeById('canonical-link', postUrl, 'href');
+    setAttributeById('meta-description', post.description);
+    
+    setAttributeById('og-title', postTitle);
+    setAttributeById('og-description', post.description);
+    setAttributeById('og-url', postUrl);
+    setAttributeById('og-image', fullImageUrl);
+    setAttributeById('og-type', 'article');
+    
+    setAttributeById('twitter-card', 'summary_large_image');
+    setAttributeById('twitter-title', postTitle);
+    setAttributeById('twitter-description', post.description);
+    setAttributeById('twitter-image', fullImageUrl);
+};
+
+
 // --- RENDER FUNCTIONS ---
 
 const renderBlogListPage = () => {
     const container = document.getElementById('blog-list-container');
     if (!container) return;
-    // Sort posts by date, newest first
     const sortedPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
     container.innerHTML = sortedPosts.map(post => `
         <a href="#/blog/${post.slug}" class="bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
@@ -51,13 +111,7 @@ const renderBlogListPage = () => {
     `).join('');
 };
 
-const renderBlogPostPage = (slug: string) => {
-    const post = allPosts.find(p => p.slug === slug);
-    if (!post) {
-        // Fallback to blog list if post not found
-        window.location.hash = '#/blog';
-        return;
-    }
+const renderBlogPostPage = (post: Post) => {
     const titleEl = document.getElementById('blog-post-title');
     const metaEl = document.getElementById('blog-post-meta');
     const contentEl = document.getElementById('blog-post-content');
@@ -86,13 +140,21 @@ const router = () => {
 
     if (hash.startsWith('#/blog/')) {
         const slug = hash.substring('#/blog/'.length);
-        renderBlogPostPage(slug);
-        pageBlogPost?.classList.remove('hidden');
+        const post = allPosts.find(p => p.slug === slug);
+        if (post) {
+            renderBlogPostPage(post);
+            updateMetaTags(post);
+            pageBlogPost?.classList.remove('hidden');
+        } else {
+            window.location.hash = '#/blog';
+        }
     } else if (hash === '#/blog') {
         renderBlogListPage();
+        resetMetaTags();
         pageBlogList?.classList.remove('hidden');
     } else {
         pageHome?.classList.remove('hidden');
+        resetMetaTags();
     }
 };
 
