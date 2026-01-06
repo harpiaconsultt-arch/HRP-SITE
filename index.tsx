@@ -237,69 +237,6 @@ const setupUIEventListeners = () => {
             window.open(whatsappUrl, '_blank');
         });
     }
-
-    // Testimonials Slider
-    const sliderContainer = document.getElementById('testimonials-container');
-    const prevBtn = document.getElementById('testimonial-prev') as HTMLButtonElement;
-    const nextBtn = document.getElementById('testimonial-next') as HTMLButtonElement;
-    const dotsContainer = document.getElementById('testimonial-dots');
-
-    if (sliderContainer && prevBtn && nextBtn && dotsContainer) {
-        const slides = Array.from(sliderContainer.children);
-        let activeIndex = 0;
-
-        // Create dots
-        const dots = slides.map((_, i) => {
-            const dot = document.createElement('button');
-            dot.setAttribute('aria-label', `Ir para depoimento ${i + 1}`);
-            dot.classList.add('w-2.5', 'h-2.5', 'rounded-full', 'bg-white/30', 'transition-colors', 'duration-300', 'hover:bg-white/50');
-            dotsContainer.appendChild(dot);
-            dot.addEventListener('click', () => {
-                slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            });
-            return dot;
-        });
-
-        // Update UI based on active slide
-        const updateSliderUI = (index: number) => {
-            if (index < 0 || index >= slides.length) return;
-            activeIndex = index;
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('bg-white', i === index);
-                dot.classList.toggle('bg-white/30', i !== index);
-            });
-            prevBtn.disabled = index === 0;
-            nextBtn.disabled = index === slides.length - 1;
-        };
-        
-        // Observer to detect active slide
-        const intersectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const index = slides.indexOf(entry.target);
-                    updateSliderUI(index);
-                }
-            });
-        }, { root: sliderContainer, threshold: 0.5 });
-
-        slides.forEach(slide => intersectionObserver.observe(slide));
-
-        // Button click handlers
-        prevBtn.addEventListener('click', () => {
-            if (activeIndex > 0) {
-                slides[activeIndex - 1].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            }
-        });
-
-        nextBtn.addEventListener('click', () => {
-            if (activeIndex < slides.length - 1) {
-                slides[activeIndex + 1].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            }
-        });
-        
-        // Initial state
-        updateSliderUI(0);
-    }
 };
 
 
