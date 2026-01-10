@@ -6,7 +6,7 @@
     
     <!-- SEO Meta Tags Primários -->
     <title>Harpia Consultoria | Engenharia Diagnóstica e Perícias em Barbacena</title>
-    <meta id="meta-description" name="description" content="Precisa de um laudo técnico de engenharia civil em Barbacena ou São João Del Rei? Realizamos perícia de engenharia e avaliação de imóveis para resolver problemas de umidade e trincas.">
+    <meta id="meta-description" name="description" content="Especialistas em Engenharia Diagnóstica e Perícias em Barbacena e região. Laudos técnicos, vistorias e inspeção de trincas e umidade com tecnologia de ponta.">
     <meta name="keywords" content="laudo técnico, engenharia civil, perícia, vistoria, Barbacena, Harpia Consultoria, engenheiro civil, contato engenharia Barbacena, orçamento laudo técnico, vistoria de imóvel MG, PMOC, LTCAT, NR-12, laudo de reforma">
     <meta name="author" content="Harpia Consultoria">
     <link id="canonical-link" rel="canonical" href="https://harpiaconsultoria.eng.br/" />
@@ -205,6 +205,23 @@
   }
 }
 </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1387923072219701');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX7TNRJS94"></script>
 <script>
@@ -217,11 +234,18 @@
 
   // Função para rastrear clique no WhatsApp
   function trackWhatsappClick() {
-    gtag('event', 'conversion', {
-        'send_to': 'AW-16755835554',
-        'event_category': 'WhatsApp',
-        'event_label': 'Clique Institucional'
-    });
+    // Google Ads Conversion
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16755835554',
+          'event_category': 'WhatsApp',
+          'event_label': 'Clique Institucional'
+      });
+    }
+    // Meta Pixel Contact Event
+    if (typeof fbq === 'function') {
+      fbq('track', 'Contact');
+    }
   }
 </script>
 </head>
