@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="pt-BR">
 <head>
+    <!-- Meta tags críticas para renderização inicial e SEO -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- SEO Meta Tags Primários -->
+    <meta name="theme-color" content="#020617">
     <title>Harpia Consultoria | Engenharia Diagnóstica e Perícias em Barbacena</title>
     <meta id="meta-description" name="description" content="Especialistas em Engenharia Diagnóstica e Perícias em Barbacena e região. Laudos técnicos, vistorias e inspeção de trincas e umidade com tecnologia de ponta.">
     <meta name="keywords" content="laudo técnico, engenharia civil, perícia, vistoria, Barbacena, Harpia Consultoria, engenheiro civil, contato engenharia Barbacena, orçamento laudo técnico, vistoria de imóvel MG, PMOC, LTCAT, NR-12, laudo de reforma">
     <meta name="author" content="Harpia Consultoria">
     <link id="canonical-link" rel="canonical" href="https://harpiaconsultoria.eng.br/" />
+
+    <!-- Resource Hints para conexões externas críticas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
+    <!-- Ícones -->
+    <link rel="icon" href="img/logo.webp" type="image/webp" />
+    
+    <!-- Fontes (Otimizadas para não bloquear a renderização) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons">
+    </noscript>
 
     <!-- Tailwind Play CDN & Config -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,33 +51,6 @@
             },
         };
     </script>
-
-    <!-- Open Graph -->
-    <meta id="og-title" property="og:title" content="Harpia Consultoria | Engenharia Diagnóstica e Perícias em Barbacena" />
-    <meta id="og-description" property="og:description" content="Especialistas em laudos de vizinhança, vistorias cautelares e estabilidade de taludes em Barbacena e região." />
-    <meta id="og-type" property="og:type" content="website" />
-    <meta id="og-url" property="og:url" content="https://harpiaconsultoria.eng.br/" />
-    <meta id="og-image" property="og:image" content="https://harpiaconsultoria.eng.br/img/logo-share.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Harpia Consultoria" />
-    <meta property="og:locale" content="pt_BR" />
-
-    <!-- Twitter Card -->
-    <meta id="twitter-card" name="twitter:card" content="summary_large_image" />
-    <meta id="twitter-title" name="twitter:title" content="Harpia Consultoria | Engenharia Diagnóstica e Perícias em Barbacena" />
-    <meta id="twitter-description" name="twitter:description" content="Especialistas em laudos de vizinhança, vistorias cautelares e estabilidade de taludes em Barbacena e região." />
-    <meta id="twitter-image" name="twitter:image" content="https://harpiaconsultoria.eng.br/img/logo-share.png" />
-    
-    <!-- Ícones e Aparência -->
-    <link rel="icon" href="img/logo.webp" type="image/webp" />
-    <meta name="theme-color" content="#020617">
-    
-    <!-- Fontes Otimizadas -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons" rel="stylesheet" />
     
     <!-- Estilos Customizados -->
     <style type="text/tailwindcss">
@@ -67,8 +60,6 @@
         ::-webkit-scrollbar-track { background: #1e293b; }
         ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #64748b; }
-        .hidden { display: none; }
-        /* Definitive fix: Make content visible by default to prevent "disappearing site" issue if JS fails. */
         .fade-in-on-scroll { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
         .fade-in-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
         .prose { color: #d1d5db; }
@@ -80,182 +71,130 @@
         .prose li { margin-bottom: 0.5em; }
         .prose .not-prose { color: inherit; }
         .prose-invert { --tw-prose-bullets: #94a3b8; }
-        
-        /* Encapsulated Testimonials Section Styles */
-        .secao-depoimentos-harpia {
-            background-color: #0f172a; /* surface-dark */
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-        }
-        .testimonial-card {
-            background-color: white;
-            color: #1e293b;
-            border-radius: 0.5rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        .testimonial-stars {
-            color: #FFC107;
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            line-height: 1.6;
-            flex-grow: 1;
-        }
-        .testimonial-author {
-            font-weight: 700;
-        }
-       
-        /* CTA Button Animation */
-        @keyframes gentle-pulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
-        }
-        .animate-gentle-pulse {
-          animation: gentle-pulse 2.5s infinite ease-in-out;
-        }
-
-        /* Scrollbar Hide Utility */
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
+        .secao-depoimentos-harpia { background-color: #0f172a; padding-top: 5rem; padding-bottom: 5rem; }
+        .testimonial-card { background-color: white; color: #1e293b; border-radius: 0.5rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; height: 100%; }
+        .testimonial-stars { color: #FFC107; font-size: 1.25rem; margin-bottom: 1rem; }
+        .testimonial-text { font-style: italic; margin-bottom: 1.5rem; font-size: 1rem; line-height: 1.6; flex-grow: 1; }
+        .testimonial-author { font-weight: 700; }
+        @keyframes gentle-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .animate-gentle-pulse { animation: gentle-pulse 2.5s infinite ease-in-out; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Harpia Consultoria e Engenharia",
-  "url": "https://harpiaconsultoria.eng.br/",
-  "logo": "https://harpiaconsultoria.eng.br/logo.svg",
-  "telephone": "+55 31 98216-2913",
-  "email": "contato@harpiaconsultoria.eng.br",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Avenida Olegário Maciel, 470",
-    "addressLocality": "Barbacena",
-    "addressRegion": "MG",
-    "postalCode": "36200-082",
-    "addressCountry": "BR"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/harpiaconsultt/?viewAsMember=true",
-    "https://www.instagram.com/eng.harpiaconsultoria/",
-    "https://www.youtube.com/@HarpiaConsult"
-  ],
-  "openingHoursSpecification": [
+
+    <!-- Open Graph & Twitter Card -->
+    <meta id="og-title" property="og:title" content="Harpia Consultoria | Engenharia Diagnóstica e Perícias em Barbacena" />
+    <meta id="og-description" property="og:description" content="Especialistas em laudos de vizinhança, vistorias cautelares e estabilidade de taludes em Barbacena e região." />
+    <meta id="og-type" property="og:type" content="website" />
+    <meta id="og-url" property="og:url" content="https://harpiaconsultoria.eng.br/" />
+    <meta id="og-image" property="og:image" content="https://harpiaconsultoria.eng.br/img/logo-share.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Harpia Consultoria" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta id="twitter-card" name="twitter:card" content="summary_large_image" />
+    <meta id="twitter-title" name="twitter:title" content="Harpia Consultoria | Engenharia Diagnóstica e Perícias em Barbacena" />
+    <meta id="twitter-description" name="twitter:description" content="Especialistas em laudos de vizinhança, vistorias cautelares e estabilidade de taludes em Barbacena e região." />
+    <meta id="twitter-image" name="twitter:image" content="https://harpiaconsultoria.eng.br/img/logo-share.png" />
+
+    <!-- Scripts (JSON-LD e Rastreamento) -->
+    <script type="application/ld+json">
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "08:00",
-      "closes": "17:00"
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Harpia Consultoria e Engenharia",
+      "url": "https://harpiaconsultoria.eng.br/",
+      "logo": "https://harpiaconsultoria.eng.br/logo.svg",
+      "telephone": "+55 31 98216-2913",
+      "email": "contato@harpiaconsultoria.eng.br",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida Olegário Maciel, 470",
+        "addressLocality": "Barbacena",
+        "addressRegion": "MG",
+        "postalCode": "36200-082",
+        "addressCountry": "BR"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/harpiaconsultt/?viewAsMember=true",
+        "https://www.instagram.com/eng.harpiaconsultoria/",
+        "https://www.youtube.com/@HarpiaConsult"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ],
+      "description": "Consultoria de alta especialização em Engenharia Diagnóstica. Nossa equipe de sócios, com Mestrado e Doutorado, possui vasta experiência em casos de alta complexidade, como a perícia no Morro da Forca, garantindo a máxima precisão e autoridade técnica em laudos e perícias.",
+      "areaServed": [{"@type": "City", "name": "Barbacena"}, {"@type": "City", "name": "São João del-Rei"}, {"@type": "City", "name": "Juiz de Fora"}, {"@type": "AdministrativeArea", "name": "Região das Vertentes"}],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Engenharia Diagnóstica",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vistoria de Imóvel", "description": "Vistorias técnicas detalhadas para compra, venda, locação e recebimento de obras em Barbacena e região." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laudo para Reforma (NBR 16.280)", "description": "Laudo técnico de engenharia civil para garantir a segurança de reformas em apartamentos e edifícios." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Perícia Judicial de Engenharia", "description": "Atuação como assistente técnico em processos judiciais que envolvem disputas construtivas." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Avaliação de Imóveis", "description": "Avaliação de imóveis residenciais e comerciais para fins de inventário, partilha, venda ou garantia bancária em Barbacena e São João Del Rei." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PMOC para Ar-condicionado" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LTCAT (Laudo Técnico das Condições do Ambiente de Trabalho)" } }
+        ]
+      }
     }
-  ],
-  "description": "Consultoria de alta especialização em Engenharia Diagnóstica. Nossa equipe de sócios, com Mestrado e Doutorado, possui vasta experiência em casos de alta complexidade, como a perícia no Morro da Forca, garantindo a máxima precisão e autoridade técnica em laudos e perícias.",
-  "areaServed": [{"@type": "City", "name": "Barbacena"}, {"@type": "City", "name": "São João del-Rei"}, {"@type": "City", "name": "Juiz de Fora"}, {"@type": "AdministrativeArea", "name": "Região das Vertentes"}],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Serviços de Engenharia Diagnóstica",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Vistoria de Imóvel",
-          "description": "Vistorias técnicas detalhadas para compra, venda, locação e recebimento de obras em Barbacena e região."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Laudo para Reforma (NBR 16.280)",
-          "description": "Laudo técnico de engenharia civil para garantir a segurança de reformas em apartamentos e edifícios."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Perícia Judicial de Engenharia",
-          "description": "Atuação como assistente técnico em processos judiciais que envolvem disputas construtivas."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Avaliação de Imóveis",
-          "description": "Avaliação de imóveis residenciais e comerciais para fins de inventário, partilha, venda ou garantia bancária em Barbacena e São João Del Rei."
-        }
-      },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PMOC para Ar-condicionado" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LTCAT (Laudo Técnico das Condições do Ambiente de Trabalho)" } }
-    ]
-  }
-}
-</script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1387923072219701');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WX7TNRJS94"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1387923072219701');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX7TNRJS94"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-WX7TNRJS94');
-  gtag('config', 'AW-16755835554');
+      gtag('config', 'G-WX7TNRJS94');
+      gtag('config', 'AW-16755835554');
 
-  // Função para rastrear clique no WhatsApp
-  function trackWhatsappClick() {
-    // Google Ads Conversion
-    if (typeof gtag === 'function') {
-      gtag('event', 'conversion', {
-          'send_to': 'AW-16755835554',
-          'event_category': 'WhatsApp',
-          'event_label': 'Clique Institucional'
-      });
-    }
-    // Meta Pixel Contact Event
-    if (typeof fbq === 'function') {
-      fbq('track', 'Contact');
-    }
-  }
-</script>
+      // Função para rastrear clique no WhatsApp
+      function trackWhatsappClick() {
+        // Google Ads Conversion
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+              'send_to': 'AW-16755835554',
+              'event_category': 'WhatsApp',
+              'event_label': 'Clique Institucional'
+          });
+        }
+        // Meta Pixel Contact Event
+        if (typeof fbq === 'function') {
+          fbq('track', 'Contact');
+        }
+      }
+    </script>
 </head>
 <body class="bg-background-dark text-slate-100 font-sans">
     
     <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-surface-dark border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="/" class="flex-shrink-0 flex items-center gap-2">
-                    <img src="img/logo.webp" alt="Logo da Harpia Consultoria, empresa de engenharia diagnóstica" class="h-10 w-auto" fetchpriority="high">
+                <a href="/" class="flex-shrink-0 flex items-center gap-2" aria-label="Página inicial da Harpia Consultoria">
+                    <img src="img/logo.webp" alt="Logo da Harpia Consultoria, empresa de engenharia diagnóstica" class="h-10 w-auto" fetchpriority="high" width="40" height="40">
                     <div class="flex flex-col">
                         <span class="text-white font-bold text-xl tracking-tight leading-none font-montserrat">HARPIA</span>
                         <span class="text-slate-400 text-xs font-medium tracking-[0.2em] leading-none font-montserrat">CONSULTORIA</span>
@@ -588,7 +527,7 @@ src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
                     </div>
                     <div id="homepage-blog-posts" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 scrollbar-hide mb-16 fade-in-on-scroll">
 
-                        <a href="#/blog/preco-laudo-tecnico-engenharia-barbacena" class="w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
+                        <a href="#/blog/preco-laudo-tecnico-engenharia-barbacena-2026" class="w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
                             <div class="p-6 flex-grow flex flex-col">
                                  <div class="flex justify-between items-center text-xs mb-3">
                                     <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Laudos Técnicos</span>
@@ -663,7 +602,7 @@ src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
             <section id="contato" class="bg-background-light text-slate-800">
                 <div class="flex flex-col lg:flex-row min-h-[90vh]">
                     <div class="lg:w-5/12 w-full aspect-square lg:aspect-auto fade-in-on-scroll">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.2755881772346!2d-43.768791099999994!3d-21.221067299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f16!3m3!1m2!1s0x48f68e2270d524ab%3A0x46b16dd914564611!2sHarpia%20Consultoria%20-%20Engenharia%20e%20Laudos%20T%C3%A9cnicos!5e1!3m2!1spt-BR!2sbr!4v1767458030731!5m2!1spt-BR!2sbr" class="w-full h-full" style="border: 0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Localização da Harpia Consultoria"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.2755881772346!2d-43.768791099999994!3d-21.221067299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f16!3m3!1m2!1s0x48f68e2270d524ab%3A0x46b16dd914564611!2sHarpia%20Consultoria%20-%20Engenharia%20e%20Laudos%20T%C3%A9cnicos!5e1!3m2!1spt-BR!2sbr!4v1767458030731!5m2!1spt-BR!2sbr" class="w-full h-full" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Localização da Harpia Consultoria"></iframe>
                     </div>
                     <div class="lg:w-7/12 w-full flex flex-col justify-center p-8 sm:p-12 lg:p-16">
                         <div class="fade-in-on-scroll">
@@ -716,7 +655,7 @@ src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
         </div>
 
         <div id="blog-post-container" class="hidden">
-            <article id="preco-laudo-tecnico-engenharia-barbacena" class="blog-post-content hidden">
+            <article id="preco-laudo-tecnico-engenharia-barbacena-2026" class="blog-post-content hidden">
                 <div class="bg-slate-950 py-20 lg:py-32">
                     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                         <a href="/" class="inline-flex items-center text-primary hover:underline mb-8 font-montserrat">
@@ -727,7 +666,7 @@ src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
                         <div class="text-slate-400 mb-8 flex items-center gap-4 text-sm">
                             <span>Laudos Técnicos</span>
                             <span>&bull;</span>
-                            <span>20 de agosto de 2024</span>
+                            <span>09 de janeiro de 2026</span>
                             <span>&bull;</span>
                             <span>3 min de leitura</span>
                         </div>
@@ -831,8 +770,8 @@ src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
                 <div class="md:col-span-5 lg:col-span-4">
-                    <a href="/" class="flex-shrink-0 flex items-center gap-2 mb-4">
-                        <img src="img/logo.webp" alt="Logo da Harpia Consultoria e Engenharia" class="h-10 w-auto">
+                    <a href="/" class="flex-shrink-0 flex items-center gap-2 mb-4" aria-label="Página inicial da Harpia Consultoria">
+                        <img src="img/logo.webp" alt="Logo da Harpia Consultoria e Engenharia" class="h-10 w-auto" width="40" height="40">
                         <div class="flex flex-col">
                             <span class="text-white font-bold text-xl tracking-tight leading-none font-montserrat">HARPIA</span>
                             <span class="text-slate-400 text-xs font-medium tracking-[0.2em] leading-none font-montserrat">CONSULTORIA</span>
