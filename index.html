@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="pt-BR">
 <head>
+    <!-- Resource Hints: Estabelece conexões críticas o mais cedo possível -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
     <!-- Meta tags críticas para renderização inicial e SEO -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,75 +17,243 @@
     <meta name="author" content="Harpia Consultoria">
     <link id="canonical-link" rel="canonical" href="https://harpiaconsultoria.eng.br/" />
 
-    <!-- Resource Hints para conexões externas críticas -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://connect.facebook.net">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-
     <!-- Ícones -->
     <link rel="icon" href="img/logo.webp" type="image/webp" />
     
     <!-- Fontes (Otimizadas para não bloquear a renderização) -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons" media="print" onload="this.media='all'">
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons">
     </noscript>
-
-    <!-- Tailwind Play CDN & Config -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#25D366",
-                        'background-dark': "#020617",
-                        'surface-dark': "#0f172a",
-                        'background-light': '#F7F8FA',
-                    },
-                    fontFamily: {
-                        sans: ["Roboto", "sans-serif"],
-                        montserrat: ["Montserrat", "sans-serif"],
-                    },
-                },
-            },
-        };
-    </script>
     
-    <!-- Estilos Customizados -->
-    <style type="text/tailwindcss">
-        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        .material-icons, .material-icons-outlined { font-size: inherit; line-height: inherit; }
+    <!-- CSS Puro (Conversão do Tailwind) -->
+    <style>
+        :root {
+            --color-primary: #0A2240;
+            --color-cta-green: #1E8E4A;
+            --color-background-dark: #020617;
+            --color-surface-dark: #0A2240;
+            --color-background-light: #F7F8FA;
+        }
+        *,::before,::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; }
+        html { line-height: 1.5; -webkit-text-size-adjust: 100%; tab-size: 4; font-family: "Inter", sans-serif; }
+        body { margin: 0; line-height: inherit; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background-color: var(--color-background-dark); color: #f1f5f9; font-family: "Inter", sans-serif; }
+        img, svg { display: block; vertical-align: middle; max-width: 100%; height: auto; }
+        h1,h2,h3,h4,p,a,span,div,button,label,input,textarea,details,summary,header,footer,section,nav,main,article { font-family: "Inter", sans-serif; }
+        .scroll-smooth { scroll-behavior: smooth; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1e293b; }
         ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #64748b; }
-        .fade-in-on-scroll { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .material-icons, .material-icons-outlined { font-size: inherit; line-height: inherit; }
+        .fade-in-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
         .fade-in-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
         .prose { color: #d1d5db; }
-        .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { font-family: "Montserrat", sans-serif; font-weight: 600; color: #f8fafc; margin-top: 1.5em; margin-bottom: 0.8em; }
+        .prose h1,.prose h2,.prose h3,.prose h4 { font-weight: 600; color: #f8fafc; margin-top: 1.5em; margin-bottom: 0.8em; }
         .prose p { margin-bottom: 1.25em; }
-        .prose a { color: #25D366; text-decoration: underline; }
+        .prose a { color: var(--color-cta-green); text-decoration: underline; }
         .prose a:hover { text-decoration: none; }
         .prose ul { list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.25em; }
         .prose li { margin-bottom: 0.5em; }
         .prose .not-prose { color: inherit; }
         .prose-invert { --tw-prose-bullets: #94a3b8; }
-        .secao-depoimentos-harpia { background-color: #0f172a; padding-top: 5rem; padding-bottom: 5rem; }
-        .testimonial-card { background-color: white; color: #1e293b; border-radius: 0.5rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; height: 100%; }
-        .testimonial-stars { color: #FFC107; font-size: 1.25rem; margin-bottom: 1rem; }
-        .testimonial-text { font-style: italic; margin-bottom: 1.5rem; font-size: 1rem; line-height: 1.6; flex-grow: 1; }
-        .testimonial-author { font-weight: 700; }
         @keyframes gentle-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         .animate-gentle-pulse { animation: gentle-pulse 2.5s infinite ease-in-out; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        header { position: fixed; width: 100%; z-index: 50; transition-property: all; transition-duration: 300ms; background-color: var(--color-surface-dark); border-bottom: 1px solid #1e293b; }
+        header .max-w-7xl, footer .max-w-7xl { max-width: 80rem; margin: auto; padding: 0 1rem; }
+        header .flex { display: flex; justify-content: space-between; align-items: center; height: 5rem; }
+        header .logo-link { display: flex; flex-shrink: 0; align-items: center; gap: 0.5rem; }
+        header .logo-img { height: 2.5rem; width: auto; }
+        header .logo-text { display: flex; flex-direction: column; }
+        header .logo-text span:first-child { color: white; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.025em; line-height: 1; }
+        header .logo-text span:last-child { color: #94a3b8; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; line-height: 1; }
+        header nav a { color: #cbd5e1; font-size: 0.875rem; font-weight: 500; transition: color 150ms; }
+        header nav a:hover { color: white; }
+        header nav.hidden { display: none; }
+        header .cta-button { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem 1rem; border: 1px solid #64748b; font-size: 0.875rem; font-weight: 500; border-radius: 0.25rem; color: white; transition: all 150ms; }
+        header .cta-button:hover { background-color: #1e293b; border-color: #94a3b8; }
+        header .menu-toggle-btn { color: #cbd5e1; }
+        header .menu-toggle-btn:hover { color: white; }
+        #mobile-menu { background-color: rgba(10, 34, 64, 0.95); backdrop-filter: blur(4px); }
+        #mobile-menu nav { padding: 0.5rem 1rem 1rem; }
+        #mobile-menu a { display: block; color: #cbd5e1; padding: 0.5rem 0; font-size: 1rem; font-weight: 500; transition: color 150ms; }
+        #mobile-menu a:hover { color: white; }
+        #mobile-menu .cta-button { width: 100%; text-align: center; margin-top: 1rem; }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: var(--color-surface-dark); overflow: hidden; }
+        .hero .bg-image-container { position: absolute; inset: 0; z-index: 0; }
+        .hero .bg-image { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; }
+        .hero .bg-overlay { position: absolute; inset: 0; background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6), var(--color-surface-dark)); }
+        .hero .content { position: relative; z-index: 10; max-width: 64rem; margin: 5rem auto 0; padding: 0 1rem; text-align: center; }
+        .hero h1 { font-size: 2.25rem; font-weight: 300; color: white; margin-bottom: 1.5rem; line-height: 1.25; }
+        .hero p { font-size: 1.125rem; color: #cbd5e1; margin-bottom: 2.5rem; max-width: 48rem; margin-left: auto; margin-right: auto; }
+        .hero .cta-button { display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid white; font-size: 0.875rem; font-weight: 500; border-radius: 0.25rem; color: white; transition: all 300ms; text-transform: uppercase; letter-spacing: 0.025em; }
+        .hero .cta-button:hover { background-color: white; color: #0f172a; }
+        .hero .scroll-down { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 1s infinite; }
+        .hero .scroll-down .material-icons-outlined { color: rgba(255, 255, 255, 0.5); font-size: 2.5rem; }
+        section { padding: 5rem 0; }
+        .section-title { text-align: center; margin-bottom: 4rem; }
+        .section-title h2 { font-size: 1.875rem; font-weight: 300; color: white; margin-bottom: 1rem; }
+        .section-title p { color: #94a3b8; max-width: 42rem; margin: auto; }
+        .grid-3-col { display: grid; gap: 2rem; }
+        .card-tech { background-color: #0f172a; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); border: 1px solid #1e293b; transition: all 150ms; text-align: center; }
+        .card-tech:hover { box-shadow: 0 10px 15px -3px rgba(30,142,74,0.1), 0 4px 6px -4px rgba(30,142,74,0.1); border-color: #334155; }
+        .card-tech .icon-wrapper { display: inline-flex; align-items: center; justify-content: center; width: 5rem; height: 5rem; border-radius: 9999px; background-color: #1e293b; margin-bottom: 1.5rem; transition: background-color 150ms; }
+        .card-tech:hover .icon-wrapper { background-color: #334155; }
+        .card-tech .icon { font-size: 3rem; color: var(--color-cta-green); }
+        .card-tech h3 { font-size: 1.125rem; font-weight: 600; color: white; margin-bottom: 0.75rem; }
+        .card-tech p { font-size: 0.875rem; color: #94a3b8; line-height: 1.625; }
+        .bg-slate-950 { background-color: #020617; }
+        .container { max-width: 80rem; margin: auto; padding: 0 1rem; }
+        .grid-2-col { display: grid; gap: 1.5rem; }
+        .card-service { position: relative; background-color: rgba(30, 41, 59, 0.5); padding: 2rem; border-radius: 0.5rem; border: 1px solid #334155; transition: border-color 150ms; }
+        .card-service:hover { border-color: rgba(30, 142, 74, 0.5); }
+        .card-service h3 { font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+        .card-service p { font-size: 0.875rem; color: #94a3b8; }
+        .card-service .highlight { position: absolute; top: 1rem; right: 1rem; border: 1px solid var(--color-cta-green); color: var(--color-cta-green); font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 9999px; font-weight: 600; }
+        .py-16 { padding: 4rem 0; }
+        .border-t { border-top-width: 1px; }
+        .border-slate-800\/50 { border-color: rgba(30,41,59,0.5); }
+        .max-w-5xl { max-width: 64rem; }
+        .card-laudo { display: flex; align-items: center; padding: 1rem; background-color: rgba(30,41,59,0.3); border-radius: 0.25rem; border: 1px solid rgba(51,65,85,0.5); transition: background-color 150ms; }
+        .card-laudo:hover { background-color: rgba(30,41,59,0.5); }
+        .card-laudo .icon { color: #94a3b8; margin-right: 1rem; font-size: 1.5rem; flex-shrink: 0; width: 1.5rem; text-align: center; }
+        .card-laudo h3 { color: white; font-weight: 500; font-size: 0.875rem; }
+        .card-laudo p { font-size: 0.75rem; color: #64748b; }
+        .equipe-link { color: var(--color-cta-green); }
+        .equipe-link:hover { text-decoration: underline; }
+        .text-xs.text-slate-600 { color: #475569; margin-top: 1rem; }
+        .metodologia-timeline { position: relative; }
+        .metodologia-timeline .line { position: absolute; left: 1.5rem; top: 0; bottom: 0; width: 2px; background-color: #334155; }
+        .metodologia-timeline .item { position: relative; display: flex; align-items: flex-start; margin-bottom: 3rem; }
+        .metodologia-timeline .item:last-child { margin-bottom: 0; }
+        .metodologia-timeline .item .step { flex-shrink: 0; width: 3rem; height: 3rem; border-radius: 9999px; background-color: #0f172a; border: 2px solid #334155; display: flex; align-items: center; justify-content: center; z-index: 10; font-size: 0.875rem; font-weight: 700; color: #94a3b8; transition: all 150ms; }
+        .metodologia-timeline .item:hover .step { border-color: var(--color-cta-green); color: var(--color-cta-green); }
+        .metodologia-timeline .item .content { margin-left: 2rem; padding-top: 0.5rem; }
+        .metodologia-timeline .item h3 { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.25rem; display: flex; align-items: center; }
+        .metodologia-timeline .item .icon { color: #94a3b8; margin-right: 0.5rem; font-size: 1.25rem; }
+        .faq details { background-color: rgba(30,41,59,0.5); border-radius: 0.5rem; overflow: hidden; border: 1px solid #334155; transition: all 150ms; }
+        .faq details[open] { border-color: rgba(30,142,74,0.5); }
+        .faq summary { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; cursor: pointer; list-style: none; color: white; font-weight: 500; transition: background-color 150ms; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary:hover { background-color: #1e293b; }
+        .faq summary .icon { transform: rotate(0); transition: transform 150ms; }
+        .faq details[open] summary .icon { transform: rotate(180deg); }
+        .faq .answer { padding: 0 1.25rem 1.25rem; color: #94a3b8; font-size: 0.875rem; }
+        .card-equipe { background-color: rgba(30,41,59,0.3); padding: 2rem; border-radius: 0.5rem; border: 1px solid rgba(51,65,85,0.5); text-align: center; transition: all 150ms; }
+        .card-equipe:hover { background-color: rgba(30,41,59,0.5); }
+        .card-equipe .avatar { width: 5rem; height: 5rem; margin: auto; border-radius: 9999px; background-color: #334155; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; }
+        .card-equipe .avatar .icon { font-size: 4.5rem; color: #94a3b8; }
+        .card-equipe h3 { font-size: 1.125rem; font-weight: 700; color: white; }
+        .card-equipe .role { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.025em; margin-bottom: 1rem; }
+        .secao-depoimentos-harpia { background-color: var(--color-surface-dark); }
+        .testimonials-container { position: relative; }
+        .testimonials-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 1rem; }
+        .testimonial-card { width: 90%; flex-shrink: 0; scroll-snap-align: center; background-color: white; color: #1e293b; border-radius: 0.5rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; height: 100%; }
+        .testimonial-stars { color: #FFC107; font-size: 1.25rem; margin-bottom: 1rem; }
+        .testimonial-text { font-style: italic; margin-bottom: 1.5rem; font-size: 1rem; line-height: 1.6; flex-grow: 1; }
+        .testimonial-author { font-weight: 700; }
+        .testimonial-btn { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(30,41,59,0.4); border-radius: 9999px; width: 2.25rem; height: 2.25rem; display: flex; align-items: center; justify-content: center; color: white; z-index: 10; transition: all 150ms; }
+        .testimonial-btn:hover { background-color: rgba(30,41,59,0.7); transform: translateY(-50%) scale(1.1); }
+        .testimonial-btn.prev { left: 0; }
+        .testimonial-btn.next { right: 0; }
+        .google-reviews-link { display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid #94a3b8; font-size: 0.875rem; font-weight: 500; border-radius: 0.25rem; color: white; transition: all 300ms; }
+        .google-reviews-link:hover { background-color: white; color: #0f172a; }
+        .blog-posts-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 1rem; margin-bottom: 4rem; }
+        .blog-card { width: 90%; flex-shrink: 0; scroll-snap-align: center; background-color: #0f172a; border-radius: 0.5rem; overflow: hidden; border: 1px solid #1e293b; display: flex; flex-direction: column; transition: transform 150ms; }
+        .blog-card:hover { transform: translateY(-0.25rem); }
+        .blog-card .content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .blog-card .meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; margin-bottom: 0.75rem; }
+        .blog-card .category { border: 1px solid var(--color-cta-green); color: var(--color-cta-green); padding: 0.25rem 0.5rem; border-radius: 9999px; font-weight: 500; }
+        .blog-card .read-time { color: #64748b; }
+        .blog-card h3 { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.5rem; transition: color 150ms; flex-grow: 1; }
+        .blog-card:hover h3 { color: var(--color-cta-green); }
+        .blog-card .footer { padding: 1.5rem; background-color: rgba(30,41,59,0.5); margin-top: auto; }
+        .blog-card .read-more { color: var(--color-cta-green); font-weight: 600; font-size: 0.875rem; }
+        .blog-card .read-more:hover { text-decoration: underline; }
+        .view-all-posts-btn { display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid #64748b; font-size: 0.875rem; font-weight: 500; border-radius: 0.25rem; color: white; transition: all 150ms; }
+        .view-all-posts-btn:hover { background-color: #1e293b; border-color: #94a3b8; }
+        #contato { background-color: var(--color-background-light); color: var(--text-dark); }
+        #contato .contact-wrapper { display: flex; flex-direction: column; min-height: 90vh; }
+        #contato iframe { width: 100%; height: 100%; border: 0; }
+        #contato .form-container { display: flex; flex-direction: column; justify-content: center; padding: 2rem; }
+        #contato h2 { font-size: 1.875rem; font-weight: 700; color: #1e293b; margin-bottom: 0.5rem; }
+        #contato .form-intro { color: #475569; margin-bottom: 2.5rem; }
+        #contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
+        #contact-form label { font-size: 0.875rem; font-weight: 600; color: #334155; margin-bottom: 0.75rem; display: block; }
+        #service-options-container { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        #service-options-container button { padding: 0.5rem 1rem; font-size: 0.875rem; border-radius: 9999px; border: 1px solid #cbd5e1; transition: all 200ms; background-color: white; color: #475569; }
+        #service-options-container button:hover { background-color: #f1f5f9; border-color: #94a3b8; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); }
+        #service-options-container button.selected { background-color: #1e293b; color: white; border-color: #1e293b; }
+        #contact-form input, #contact-form textarea { width: 100%; background-color: white; border: 1px solid #cbd5e1; border-radius: 0.375rem; padding: 0.5rem 0.75rem; color: #0f172a; font-size: 0.875rem; transition: all 150ms; }
+        #contact-form input::placeholder, #contact-form textarea::placeholder { color: #94a3b8; }
+        #contact-form input:focus, #contact-form textarea:focus { outline: 2px solid transparent; outline-offset: 2px; --tw-ring-color: #64748b; box-shadow: 0 0 0 2px var(--tw-ring-color); border-color: #64748b; }
+        #contact-form button[type="submit"] { background-color: var(--color-cta-green); color: white; font-weight: 700; padding: 0.75rem 1rem; border-radius: 0.375rem; display: flex; align-items: center; justify-content: center; margin: auto; font-size: 0.875rem; transition: background-color 300ms; box-shadow: 0 10px 15px -3px rgba(30,142,74,0.3), 0 4px 6px -4px rgba(30,142,74,0.3); }
+        #contact-form button[type="submit"]:hover { background-color: #166534; }
+        .contact-info { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e2e8f0; }
+        .contact-info h3 { font-size: 1.125rem; font-weight: 700; color: #1e293b; margin-bottom: 1.5rem; }
+        .contact-info .info-grid { display: grid; gap: 2rem 1.5rem; }
+        .contact-info .info-item { display: flex; align-items: flex-start; }
+        .contact-info .info-item .icon { color: #64748b; margin-right: 1rem; font-size: 1.875rem; }
+        .contact-info .info-item h4 { font-weight: 600; color: #64748b; font-size: 0.75rem; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+        .contact-info .info-item p { color: #334155; font-size: 0.875rem; }
+        footer { background-color: var(--black); color: #94a3b8; padding: 4rem 0; border-top: 1px solid #1e293b; }
+        footer .footer-grid { display: grid; gap: 2rem; }
+        footer .footer-col h4 { font-size: 0.875rem; font-weight: 600; color: white; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; }
+        footer .footer-col nav { display: flex; flex-direction: column; gap: 0.5rem; }
+        footer .footer-col a { font-size: 0.875rem; transition: color 150ms; }
+        footer .footer-col a:hover { color: white; }
+        footer .social-links { margin-top: 1.5rem; display: flex; gap: 1rem; }
+        footer .social-links a { color: #94a3b8; transition: color 150ms; }
+        footer .social-links a:hover { color: white; }
+        footer .social-links svg { width: 1.5rem; height: 1.5rem; fill: currentColor; }
+        footer .copyright { border-top: 1px solid #1e293b; margin-top: 3rem; padding-top: 2rem; text-align: center; font-size: 0.75rem; color: #475569; }
+        #whatsapp-fab { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 50; width: 3.5rem; height: 3.5rem; background-color: var(--color-cta-green); border-radius: 9999px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; transition: transform 150ms; }
+        #whatsapp-fab:hover { transform: scale(1.1); }
+        #whatsapp-fab svg { width: 2rem; height: 2rem; color: white; fill: currentColor; }
+        #back-to-top-btn { position: fixed; bottom: 6rem; right: 1.5rem; z-index: 50; width: 3rem; height: 3rem; background-color: rgba(30,41,59,0.8); backdrop-filter: blur(4px); border: 1px solid #334155; border-radius: 9999px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; color: #cbd5e1; transition: all 300ms; opacity: 0; transform: translateY(1rem); visibility: hidden; }
+        #back-to-top-btn:hover { background-color: #334155; color: white; border-color: #475569; }
+        #blog-post-container .blog-post-content { display: none; }
+        #blog-post-container .blog-post-content.active { display: block; }
+        @media (min-width: 640px) {
+            header .max-w-7xl, footer .max-w-7xl, .container { padding: 0 1.5rem; }
+            .hero .cta-button { padding: 1rem 2rem; font-size: 1rem; }
+            .contact-info .info-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .testimonial-card, .blog-card { width: 45%; }
+        }
+        @media (min-width: 768px) {
+            header nav.hidden { display: flex; gap: 2rem; }
+            header .cta-button.hidden { display: inline-flex; }
+            .md\:hidden { display: none; }
+            #mobile-menu { display: none; }
+            .hero h1 { font-size: 3rem; }
+            .hero h1 .md\:block { display: block; }
+            .hero p { font-size: 1.25rem; }
+            .grid-3-col { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .grid-2-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .section-title h2 { font-size: 1.875rem; }
+            .testimonial-btn.prev { left: -1rem; }
+            .testimonial-btn.next { right: -1rem; }
+            footer .footer-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+            footer .col-span-5 { grid-column: span 5 / span 5; }
+            footer .col-span-4 { grid-column: span 4 / span 4; }
+            footer .col-span-3 { grid-column: span 3 / span 3; }
+            footer .col-span-2 { grid-column: span 2 / span 2; }
+        }
+        @media (min-width: 1024px) {
+            header .max-w-7xl, footer .max-w-7xl, .container { padding: 0 2rem; }
+            .hero h1 { font-size: 3.75rem; }
+            #contato .contact-wrapper { flex-direction: row; }
+            #contato .map-container { width: 41.666667%; aspect-ratio: auto; }
+            #contato .form-container { width: 58.333333%; padding: 4rem; }
+            #contato h2 { font-size: 2.25rem; }
+            .testimonial-card, .blog-card { width: 31%; }
+        }
     </style>
 
     <!-- Open Graph & Twitter Card -->
@@ -145,47 +319,47 @@
     }
     </script>
 </head>
-<body class="bg-background-dark text-slate-100 font-sans">
+<body>
     
-    <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-surface-dark border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="/" class="flex-shrink-0 flex items-center gap-2" aria-label="Página inicial da Harpia Consultoria">
-                    <img src="img/logo.webp" alt="Logo da Harpia Consultoria, empresa de engenharia diagnóstica" class="h-10 w-auto" width="40" height="40">
-                    <div class="flex flex-col">
-                        <span class="text-white font-bold text-xl tracking-tight leading-none font-montserrat">HARPIA</span>
-                        <span class="text-slate-400 text-xs font-medium tracking-[0.2em] leading-none font-montserrat">CONSULTORIA</span>
+    <header id="header">
+        <div class="max-w-7xl">
+            <div class="flex">
+                <a href="/" class="logo-link" aria-label="Página inicial da Harpia Consultoria">
+                    <img src="img/logo.webp" alt="Logo da Harpia Consultoria, empresa de engenharia diagnóstica" class="logo-img" width="40" height="40">
+                    <div class="logo-text">
+                        <span>HARPIA</span>
+                        <span>CONSULTORIA</span>
                     </div>
                 </a>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="/#tecnologia" class="text-slate-300 hover:text-white text-sm font-medium transition-colors font-montserrat">Tecnologia</a>
-                    <a href="/#servicos" class="text-slate-300 hover:text-white text-sm font-medium transition-colors font-montserrat">Serviços</a>
-                    <a href="/#metodologia" class="text-slate-300 hover:text-white text-sm font-medium transition-colors font-montserrat">Metodologia</a>
-                    <a href="/#equipe" class="text-slate-300 hover:text-white text-sm font-medium transition-colors font-montserrat">Equipe</a>
-                    <a href="#/blog" class="text-slate-300 hover:text-white text-sm font-medium transition-colors font-montserrat">Blog</a>
-                    <a href="/#contato" class="text-slate-300 hover:text-white text-sm font-medium transition-colors font-montserrat">Contato</a>
+                <nav class="hidden md:flex">
+                    <a href="/#tecnologia">Tecnologia</a>
+                    <a href="/#servicos">Serviços</a>
+                    <a href="/#metodologia">Metodologia</a>
+                    <a href="/#equipe">Equipe</a>
+                    <a href="#/blog">Blog</a>
+                    <a href="/#contato">Contato</a>
                 </nav>
                 <div class="hidden md:flex">
-                    <a href="/#contato" class="inline-flex items-center justify-center px-4 py-2 border border-slate-500 text-sm font-medium rounded text-white hover:bg-slate-800 hover:border-slate-400 transition-all animate-gentle-pulse font-montserrat">
+                    <a href="/#contato" class="cta-button animate-gentle-pulse">
                         SOLICITAR ORÇAMENTO
                     </a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button id="menu-toggle-btn" class="text-slate-300 hover:text-white" type="button" aria-label="Abrir menu">
+                    <button id="menu-toggle-btn" class="menu-toggle-btn" type="button" aria-label="Abrir menu">
                         <span id="menu-icon" class="material-icons-outlined text-3xl">menu</span>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-surface-dark/95 backdrop-blur-sm">
-            <nav class="px-4 pt-2 pb-4 space-y-2">
-                <a href="/#tecnologia" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors font-montserrat">Tecnologia</a>
-                <a href="/#servicos" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors font-montserrat">Serviços</a>
-                <a href="/#metodologia" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors font-montserrat">Metodologia</a>
-                <a href="/#equipe" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors font-montserrat">Equipe</a>
-                <a href="#/blog" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors font-montserrat">Blog</a>
-                <a href="/#contato" class="block text-slate-300 hover:text-white py-2 text-base font-medium transition-colors font-montserrat">Contato</a>
-                <a href="/#contato" class="block w-full text-center mt-4 px-4 py-2 border border-slate-500 text-sm font-medium rounded text-white hover:bg-slate-800 transition-all font-montserrat">
+        <div id="mobile-menu" class="hidden">
+            <nav>
+                <a href="/#tecnologia">Tecnologia</a>
+                <a href="/#servicos">Serviços</a>
+                <a href="/#metodologia">Metodologia</a>
+                <a href="/#equipe">Equipe</a>
+                <a href="#/blog">Blog</a>
+                <a href="/#contato">Contato</a>
+                <a href="/#contato" class="cta-button">
                     SOLICITAR ORÇAMENTO
                 </a>
             </nav>
@@ -194,416 +368,398 @@
 
     <main>
         <div id="page-home">
-            <section class="relative min-h-screen flex items-center justify-center bg-surface-dark overflow-hidden">
-                <div class="absolute inset-0 z-0">
+            <section class="hero">
+                <div class="bg-image-container">
                     <img src="img/hero-harpia.webp" 
                          alt="Imagem de fundo de um projeto de engenharia, representando laudos técnicos e perícias de precisão da Harpia Consultoria" 
-                         class="w-full h-full object-cover opacity-30"
+                         class="bg-image"
                          width="1920" height="1080"
                          fetchpriority="high" loading="eager">
-                    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-surface-dark"></div>
+                    <div class="bg-overlay"></div>
                 </div>
-                <div class="relative z-10 max-w-5xl mx-auto px-4 text-center mt-20">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 leading-tight font-montserrat">
+                <div class="content">
+                    <h1>
                         Engenharia Diagnóstica <br class="hidden md:block" />
                         Laudos Técnicos e Perícias de Precisão
                     </h1>
-                    <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto">
+                    <p>
                        Soluções completas em laudos de engenharia civil, mecânica e segurança do trabalho em Barbacena-MG e região.
                     </p>
-                    <a href="#contato" class="inline-flex items-center px-6 py-3 md:px-8 md:py-4 border border-white text-sm md:text-base font-medium rounded text-white hover:bg-white hover:text-slate-900 transition-all duration-300 uppercase tracking-wide animate-gentle-pulse font-montserrat">
+                    <a href="#contato" class="cta-button animate-gentle-pulse">
                         SOLICITAR ORÇAMENTO
                     </a>
                 </div>
-                <a href="#tecnologia" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" aria-label="Rolar para baixo">
-                    <span class="material-icons-outlined text-white/50 text-4xl">arrow_downward</span>
+                <a href="#tecnologia" class="scroll-down" aria-label="Rolar para baixo">
+                    <span class="material-icons-outlined">arrow_downward</span>
                 </a>
             </section>
             
-            <section class="py-20 bg-slate-950" id="tecnologia">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16 fade-in-on-scroll">
-                        <h2 class="text-3xl font-light text-white mb-4 font-montserrat">Tecnologia Aplicada a Laudos de Engenharia Civil</h2>
-                        <p class="text-slate-400 max-w-2xl mx-auto">Métodos de inspeção que aumentam a precisão dos laudos.</p>
+            <section class="bg-slate-950" id="tecnologia">
+                <div class="container">
+                    <div class="section-title fade-in-on-scroll">
+                        <h2>Tecnologia Aplicada a Laudos de Engenharia Civil</h2>
+                        <p>Métodos de inspeção que aumentam a precisão dos laudos.</p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group">
-                            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
-                                <span class="material-icons-outlined text-5xl text-primary" aria-label="Ícone de análise não destrutiva">center_focus_strong</span>
+                    <div class="grid-3-col">
+                        <div class="card-tech fade-in-on-scroll">
+                            <div class="icon-wrapper">
+                                <span class="material-icons-outlined icon">center_focus_strong</span>
                             </div>
-                            <h3 class="text-lg font-semibold text-white mb-3 font-montserrat">Análise Não Destrutiva</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">Ensaios não destrutivos (ultrassom, esclerometria) para laudos técnicos e vistorias estruturais.</p>
+                            <h3>Análise Não Destrutiva</h3>
+                            <p>Ensaios não destrutivos (ultrassom, esclerometria) para laudos técnicos e vistorias estruturais.</p>
                         </div>
-                        <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group">
-                            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
-                                <span class="material-icons-outlined text-5xl text-primary" aria-label="Ícone de varredura a laser 3D">sensors</span>
+                        <div class="card-tech fade-in-on-scroll">
+                            <div class="icon-wrapper">
+                                <span class="material-icons-outlined icon">sensors</span>
                             </div>
-                            <h3 class="text-lg font-semibold text-white mb-3 font-montserrat">Varredura a Laser 3D</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">Modelagem 3D para identificação de deformações em laudos periciais e perícias judiciais.</p>
+                            <h3>Varredura a Laser 3D</h3>
+                            <p>Modelagem 3D para identificação de deformações em laudos periciais e perícias judiciais.</p>
                         </div>
-                        <div class="fade-in-on-scroll bg-slate-900 p-8 rounded-lg shadow-sm border border-slate-800 hover:shadow-lg hover:shadow-primary/10 hover:border-slate-700 transition-all text-center group">
-                            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-slate-800 mb-6 group-hover:bg-slate-700 transition-colors">
-                                <span class="material-icons-outlined text-5xl text-primary" aria-label="Ícone de termografia infravermelha">thermostat</span>
+                        <div class="card-tech fade-in-on-scroll">
+                            <div class="icon-wrapper">
+                                <span class="material-icons-outlined icon">thermostat</span>
                             </div>
-                            <h3 class="text-lg font-semibold text-white mb-3 font-montserrat">Termografia Infravermelha</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">Detecção de umidade e infiltrações para vistorias e avaliações de imóveis completas.</p>
+                            <h3>Termografia Infravermelha</h3>
+                            <p>Detecção de umidade e infiltrações para vistorias e avaliações de imóveis completas.</p>
                         </div>
                     </div>
                 </div>
             </section>
             
-            <section class="py-20 bg-surface-dark" id="servicos">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16 fade-in-on-scroll">
-                        <h2 class="text-3xl font-light text-white mb-4 font-montserrat">Serviços em Laudos Técnicos e Perícias</h2>
-                        <p class="text-slate-400 max-w-2xl mx-auto">Laudos técnicos, perícias e vistorias para imóveis residenciais, comerciais e industriais.</p>
+            <section class="bg-surface-dark" id="servicos">
+                <div class="container">
+                    <div class="section-title fade-in-on-scroll">
+                        <h2>Serviços em Laudos Técnicos e Perícias</h2>
+                        <p>Laudos técnicos, perícias e vistorias para imóveis residenciais, comerciais e industriais.</p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="fade-in-on-scroll relative bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-primary/50 transition-colors group">
-                           <h3 class="text-xl font-bold text-white mb-2 font-montserrat">Laudos Técnicos de Engenharia Civil</h3>
-                           <p class="text-sm text-slate-400">Laudo técnico e relatório técnico para regularização, reformas, comprovação de estabilidade e atendimento a órgãos públicos.</p>
+                    <div class="grid-2-col">
+                        <div class="card-service fade-in-on-scroll">
+                           <h3>Laudos Técnicos de Engenharia Civil</h3>
+                           <p>Laudo técnico e relatório técnico para regularização, reformas, comprovação de estabilidade e atendimento a órgãos públicos.</p>
                         </div>
-                        <div class="fade-in-on-scroll relative bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-primary/50 transition-colors group">
-                           <span class="absolute top-4 right-4 border border-primary text-primary text-xs px-2 py-1 rounded-full font-semibold font-montserrat">DESTAQUE</span>
-                           <h3 class="text-xl font-bold text-white mb-2 font-montserrat">Vistorias e Avaliação de Imóveis</h3>
-                           <p class="text-sm text-slate-400">Vistoria técnica e laudo de avaliação de imóvel para compra/venda, financiamentos, seguros e atualização patrimonial.</p>
+                        <div class="card-service fade-in-on-scroll">
+                           <span class="highlight">DESTAQUE</span>
+                           <h3>Vistorias e Avaliação de Imóveis</h3>
+                           <p>Vistoria técnica e laudo de avaliação de imóvel para compra/venda, financiamentos, seguros e atualização patrimonial.</p>
                         </div>
-                        <div class="fade-in-on-scroll relative bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-primary/50 transition-colors group">
-                           <h3 class="text-xl font-bold text-white mb-2 font-montserrat">Laudos para Caixa e Bancos</h3>
-                           <p class="text-sm text-slate-400">Laudo de engenharia para Caixa, Banco do Brasil e demais instituições financeiras, conforme critérios técnicos exigidos.</p>
+                        <div class="card-service fade-in-on-scroll">
+                           <h3>Laudos para Caixa e Bancos</h3>
+                           <p>Laudo de engenharia para Caixa, Banco do Brasil e demais instituições financeiras, conforme critérios técnicos exigidos.</p>
                         </div>
-                        <div class="fade-in-on-scroll relative bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-primary/50 transition-colors group">
-                           <h3 class="text-xl font-bold text-white mb-2 font-montserrat">Perícias Judiciais</h3>
-                           <p class="text-sm text-slate-400">Laudo pericial de engenharia civil para ações judiciais e extrajudiciais, conflitos construtivos e vícios em obras.</p>
+                        <div class="card-service fade-in-on-scroll">
+                           <h3>Perícias Judiciais</h3>
+                           <p>Laudo pericial de engenharia civil para ações judiciais e extrajudiciais, conflitos construtivos e vícios em obras.</p>
                         </div>
                     </div>
                 </div>
             </section>
             
-            <section class="py-16 bg-surface-dark border-t border-slate-800/50">
-                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                     <div class="text-center mb-12 fade-in-on-scroll">
-                         <h2 class="text-2xl md:text-3xl font-bold text-white mb-3 font-montserrat">Tipos de Laudos Técnicos e Perícia</h2>
-                         <p class="text-slate-400 text-sm">Conheça as principais soluções que oferecemos.</p>
+            <section class="py-16 bg-surface-dark border-t border-slate-800\/50">
+                 <div class="container">
+                     <div class="section-title fade-in-on-scroll" style="margin-bottom: 3rem;">
+                         <h2>Tipos de Laudos Técnicos e Perícia</h2>
+                         <p class="text-sm">Conheça as principais soluções que oferecemos.</p>
                      </div>
-                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto fade-in-on-scroll">
-                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
-                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">account_balance</span>
-                            <div><h3 class="text-white font-medium text-sm font-montserrat">Avaliação de Valor de Imóvel</h3><p class="text-xs text-slate-500">Laudo para Instituições Financeiras, Bancos e inventários</p></div>
+                     <div class="grid-2-col max-w-5xl mx-auto fade-in-on-scroll" style="gap: 1rem;">
+                        <div class="card-laudo">
+                            <span class="material-icons-outlined icon">account_balance</span>
+                            <div><h3>Avaliação de Valor de Imóvel</h3><p>Laudo para Instituições Financeiras, Bancos e inventários</p></div>
                         </div>
-                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
-                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">warning</span>
-                            <div><h3 class="text-white font-medium text-sm font-montserrat">Laudo de Patologia Estrutural</h3><p class="text-xs text-slate-500">Análise de trincas, rachaduras e anomalias construtivas</p></div>
+                        <div class="card-laudo">
+                            <span class="material-icons-outlined icon">warning</span>
+                            <div><h3>Laudo de Patologia Estrutural</h3><p>Análise de trincas, rachaduras e anomalias construtivas</p></div>
                         </div>
-                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
-                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">gavel</span>
-                            <div><h3 class="text-white font-medium text-sm font-montserrat">Laudo Pericial de Engenharia Civil</h3><p class="text-xs text-slate-500">Assistência técnica para processos judiciais e extrajudiciais</p></div>
+                        <div class="card-laudo">
+                            <span class="material-icons-outlined icon">gavel</span>
+                            <div><h3>Laudo Pericial de Engenharia Civil</h3><p>Assistência técnica para processos judiciais e extrajudiciais</p></div>
                         </div>
-                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
-                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">visibility</span>
-                            <div><h3 class="text-white font-medium text-sm font-montserrat">Vistoria Cautelar e Recebimento de Obras</h3><p class="text-xs text-slate-500">Para obras novas, locações e garantia de vizinhança</p></div>
+                        <div class="card-laudo">
+                            <span class="material-icons-outlined icon">visibility</span>
+                            <div><h3>Vistoria Cautelar e Recebimento de Obras</h3><p>Para obras novas, locações e garantia de vizinhança</p></div>
                         </div>
-                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
-                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">construction</span>
-                            <div><h3 class="text-white font-medium text-sm font-montserrat">Laudo de Reforma (NBR 16.280) e Inspeção Predial</h3><p class="text-xs text-slate-500">Segurança para reformas e manutenção preventiva de edifícios</p></div>
+                        <div class="card-laudo">
+                            <span class="material-icons-outlined icon">construction</span>
+                            <div><h3>Laudo de Reforma (NBR 16.280) e Inspeção Predial</h3><p>Segurança para reformas e manutenção preventiva de edifícios</p></div>
                         </div>
-                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
-                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">ac_unit</span>
-                            <div><h3 class="text-white font-medium text-sm font-montserrat">PMOC para Ar-Condicionado</h3><p class="text-xs text-slate-500">Plano de Manutenção, Operação e Controle (Obrigatório por Lei)</p></div>
+                        <div class="card-laudo">
+                            <span class="material-icons-outlined icon">ac_unit</span>
+                            <div><h3>PMOC para Ar-Condicionado</h3><p>Plano de Manutenção, Operação e Controle (Obrigatório por Lei)</p></div>
                         </div>
-                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
-                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">precision_manufacturing</span>
-                            <div><h3 class="text-white font-medium text-sm font-montserrat">Laudo de Máquinas (NR-12) e Inspeção de Playgrounds</h3><p class="text-xs text-slate-500">Segurança de equipamentos e conformidade de áreas de lazer</p></div>
+                        <div class="card-laudo">
+                            <span class="material-icons-outlined icon">precision_manufacturing</span>
+                            <div><h3>Laudo de Máquinas (NR-12) e Inspeção de Playgrounds</h3><p>Segurança de equipamentos e conformidade de áreas de lazer</p></div>
                         </div>
-                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
-                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">gas_meter</span>
-                            <div><h3 class="text-white font-medium text-sm font-montserrat">Teste de Estanqueidade (Gás) e Vasos de Pressão (NR-13)</h3><p class="text-xs text-slate-500">Inspeção de segurança para redes de gás e equipamentos</p></div>
+                        <div class="card-laudo">
+                            <span class="material-icons-outlined icon">gas_meter</span>
+                            <div><h3>Teste de Estanqueidade (Gás) e Vasos de Pressão (NR-13)</h3><p>Inspeção de segurança para redes de gás e equipamentos</p></div>
                         </div>
-                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
-                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">folder_shared</span>
-                            <div><h3 class="text-white font-medium text-sm font-montserrat">LTCAT e Laudo de Insalubridade/Periculosidade</h3><p class="text-xs text-slate-500">Documentação para fins previdenciários e trabalhistas</p></div>
+                        <div class="card-laudo">
+                            <span class="material-icons-outlined icon">folder_shared</span>
+                            <div><h3>LTCAT e Laudo de Insalubridade/Periculosidade</h3><p>Documentação para fins previdenciários e trabalhistas</p></div>
                         </div>
-                        <div class="flex items-center p-4 bg-slate-800/30 rounded border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
-                            <span class="material-icons-outlined text-slate-400 mr-4 text-2xl flex-shrink-0 w-6 text-center">support_agent</span>
-                            <div><h3 class="text-white font-medium text-sm font-montserrat">Assistência Técnica em Perícias Trabalhistas</h3><p class="text-xs text-slate-500">Fundamentação técnica em processos de SST</p></div>
+                        <div class="card-laudo">
+                            <span class="material-icons-outlined icon">support_agent</span>
+                            <div><h3>Assistência Técnica em Perícias Trabalhistas</h3><p>Fundamentação técnica em processos de SST</p></div>
                         </div>
                      </div>
                      <div class="max-w-5xl mx-auto text-center fade-in-on-scroll">
-                         <p class="text-sm text-slate-400 mt-8">Nossos laudos são elaborados por uma <a href="#equipe" class="text-primary hover:underline font-semibold">equipe de mestres e doutores</a> com vasta experiência em casos de alta complexidade, como a perícia no Morro da Forca, garantindo a máxima precisão e autoridade técnica.</p>
-                         <p class="text-xs text-slate-600 mt-4">Todos os laudos seguem as normas técnicas aplicáveis e incluem ART/RRT.</p>
+                         <p class="text-sm text-slate-400" style="margin-top: 2rem;">Nossos laudos são elaborados por uma <a href="#equipe" class="equipe-link font-semibold">equipe de mestres e doutores</a> com vasta experiência em casos de alta complexidade, como a perícia no Morro da Forca, garantindo a máxima precisão e autoridade técnica.</p>
+                         <p class="text-xs text-slate-600">Todos os laudos seguem as normas técnicas aplicáveis e incluem ART/RRT.</p>
                      </div>
                  </div>
             </section>
 
-            <section class="py-20 bg-slate-950" id="metodologia">
-                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16 fade-in-on-scroll">
-                        <h2 class="text-3xl font-light text-white mb-4 font-montserrat">Metodologia para Laudos Técnicos e Periciais</h2>
-                        <p class="text-slate-400">Processo estruturado e fundamentado.</p>
+            <section class="bg-slate-950" id="metodologia">
+                <div class="max-w-4xl mx-auto container">
+                    <div class="section-title fade-in-on-scroll">
+                        <h2>Metodologia para Laudos Técnicos e Periciais</h2>
+                        <p>Processo estruturado e fundamentado.</p>
                     </div>
-                    <div class="relative fade-in-on-scroll">
-                        <div class="absolute left-6 top-0 bottom-0 w-px bg-slate-700 h-full"></div>
-                        <div class="relative flex items-start mb-12 group">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center z-10 text-sm font-bold text-slate-400 group-hover:border-primary group-hover:text-primary transition-colors font-montserrat">01</div>
-                            <div class="ml-8 pt-2"><div class="flex items-center mb-1"><span class="material-icons-outlined text-slate-400 mr-2 text-xl">chat</span><h3 class="text-lg font-bold text-white font-montserrat">Consultoria e Escopo</h3></div><p class="text-sm text-slate-400">Entendimento da demanda e definição do tipo de laudo necessário.</p></div>
+                    <div class="metodologia-timeline fade-in-on-scroll">
+                        <div class="line"></div>
+                        <div class="item">
+                            <div class="step">01</div>
+                            <div class="content"><h3><span class="material-icons-outlined icon">chat</span>Consultoria e Escopo</h3><p class="text-sm text-slate-400">Entendimento da demanda e definição do tipo de laudo necessário.</p></div>
                         </div>
-                        <div class="relative flex items-start mb-12 group">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center z-10 text-sm font-bold text-slate-400 group-hover:border-primary group-hover:text-primary transition-colors font-montserrat">02</div>
-                            <div class="ml-8 pt-2"><div class="flex items-center mb-1"><span class="material-icons-outlined text-slate-400 mr-2 text-xl">search</span><h3 class="text-lg font-bold text-white font-montserrat">Inspeção Técnica</h3></div><p class="text-sm text-slate-400">Visita in loco com equipamentos de última geração para coleta de dados.</p></div>
+                        <div class="item">
+                            <div class="step">02</div>
+                            <div class="content"><h3><span class="material-icons-outlined icon">search</span>Inspeção Técnica</h3><p class="text-sm text-slate-400">Visita in loco com equipamentos de última geração para coleta de dados.</p></div>
                         </div>
-                        <div class="relative flex items-start mb-12 group">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center z-10 text-sm font-bold text-slate-400 group-hover:border-primary group-hover:text-primary transition-colors font-montserrat">03</div>
-                            <div class="ml-8 pt-2"><div class="flex items-center mb-1"><span class="material-icons-outlined text-slate-400 mr-2 text-xl">analytics</span><h3 class="text-lg font-bold text-white font-montserrat">Análise e Parecer</h3></div><p class="text-sm text-slate-400">Processamento dos dados e elaboração do parecer técnico fundamentado.</p></div>
+                        <div class="item">
+                            <div class="step">03</div>
+                            <div class="content"><h3><span class="material-icons-outlined icon">analytics</span>Análise e Parecer</h3><p class="text-sm text-slate-400">Processamento dos dados e elaboração do parecer técnico fundamentado.</p></div>
                         </div>
-                        <div class="relative flex items-start group">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center z-10 text-sm font-bold text-slate-400 group-hover:border-primary group-hover:text-primary transition-colors font-montserrat">04</div>
-                            <div class="ml-8 pt-2"><div class="flex items-center mb-1"><span class="material-icons-outlined text-slate-400 mr-2 text-xl">verified</span><h3 class="text-lg font-bold text-white font-montserrat">Entrega do Laudo</h3></div><p class="text-sm text-slate-400">Laudo completo, pronto para órgãos públicos, instituições financeiras ou processos judiciais.</p></div>
+                        <div class="item">
+                            <div class="step">04</div>
+                            <div class="content"><h3><span class="material-icons-outlined icon">verified</span>Entrega do Laudo</h3><p class="text-sm text-slate-400">Laudo completo, pronto para órgãos públicos, instituições financeiras ou processos judiciais.</p></div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="py-20 bg-surface-dark">
-                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-12 fade-in-on-scroll">
-                        <h2 class="text-3xl font-light text-white mb-4 font-montserrat">Perguntas Frequentes sobre Laudos Técnicos</h2>
-                        <p class="text-slate-400">Tire suas dúvidas sobre laudos de engenharia civil.</p>
+            <section class="bg-surface-dark">
+                <div class="max-w-4xl mx-auto container faq">
+                    <div class="section-title fade-in-on-scroll" style="margin-bottom: 3rem;">
+                        <h2>Perguntas Frequentes sobre Laudos Técnicos</h2>
+                        <p>Tire suas dúvidas sobre laudos de engenharia civil.</p>
                     </div>
-                    <div class="space-y-4 fade-in-on-scroll">
-                        <details class="group bg-slate-800/50 rounded-lg overflow-hidden border border-slate-700 open:border-primary/50 transition-all">
-                            <summary class="flex justify-between items-center p-5 cursor-pointer list-none text-white font-medium hover:bg-slate-800 transition-colors font-montserrat"><span>Quanto custa um laudo técnico de engenharia civil?</span><span class="material-icons-outlined transform group-open:rotate-180 transition-transform text-2xl">expand_more</span></summary>
-                            <div class="px-5 pb-5 text-slate-400 text-sm"><p>O custo varia conforme a complexidade, área do imóvel e finalidade do laudo. Entre em contato para um orçamento personalizado.</p></div>
+                    <div class="fade-in-on-scroll" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <details>
+                            <summary><span>Quanto custa um laudo técnico de engenharia civil?</span><span class="material-icons-outlined icon">expand_more</span></summary>
+                            <div class="answer"><p>O custo varia conforme a complexidade, área do imóvel e finalidade do laudo. Entre em contato para um orçamento personalizado.</p></div>
                         </details>
-                        <details class="group bg-slate-800/50 rounded-lg overflow-hidden border border-slate-700 open:border-primary/50 transition-all">
-                            <summary class="flex justify-between items-center p-5 cursor-pointer list-none text-white font-medium hover:bg-slate-800 transition-colors font-montserrat"><span>Qual a diferença entre laudo técnico, relatório e parecer?</span><span class="material-icons-outlined transform group-open:rotate-180 transition-transform text-2xl">expand_more</span></summary>
-                            <div class="px-5 pb-5 text-slate-400 text-sm"><p>O Laudo é mais completo, conclusivo e fundamentado tecnicamente. O Relatório descreve fatos observados. O Parecer é uma opinião técnica resumida.</p></div>
+                        <details>
+                            <summary><span>Qual a diferença entre laudo técnico, relatório e parecer?</span><span class="material-icons-outlined icon">expand_more</span></summary>
+                            <div class="answer"><p>O Laudo é mais completo, conclusivo e fundamentado tecnicamente. O Relatório descreve fatos observados. O Parecer é uma opinião técnica resumida.</p></div>
                         </details>
-                        <details class="group bg-slate-800/50 rounded-lg overflow-hidden border border-slate-700 open:border-primary/50 transition-all">
-                            <summary class="flex justify-between items-center p-5 cursor-pointer list-none text-white font-medium hover:bg-slate-800 transition-colors font-montserrat"><span>Qualquer engenheiro pode fazer laudo técnico?</span><span class="material-icons-outlined transform group-open:rotate-180 transition-transform text-2xl">expand_more</span></summary>
-                            <div class="px-5 pb-5 text-slate-400 text-sm"><p>O ideal é que seja feito por engenheiro civil com especialização na área de perícias ou patologia, devidamente registrado no CREA.</p></div>
+                        <details>
+                            <summary><span>Qualquer engenheiro pode fazer laudo técnico?</span><span class="material-icons-outlined icon">expand_more</span></summary>
+                            <div class="answer"><p>O ideal é que seja feito por engenheiro civil com especialização na área de perícias ou patologia, devidamente registrado no CREA.</p></div>
                         </details>
-                        <details class="group bg-slate-800/50 rounded-lg overflow-hidden border border-slate-700 open:border-primary/50 transition-all">
-                            <summary class="flex justify-between items-center p-5 cursor-pointer list-none text-white font-medium hover:bg-slate-800 transition-colors font-montserrat"><span>Os laudos atendem Caixa e bancos?</span><span class="material-icons-outlined transform group-open:rotate-180 transition-transform text-2xl">expand_more</span></summary>
-                            <div class="px-5 pb-5 text-slate-400 text-sm"><p>Sim, nossos laudos são elaborados seguindo rigorosamente as normas da ABNT e exigências das instituições financeiras.</p></div>
+                        <details>
+                            <summary><span>Os laudos atendem Caixa e bancos?</span><span class="material-icons-outlined icon">expand_more</span></summary>
+                            <div class="answer"><p>Sim, nossos laudos são elaborados seguindo rigorosamente as normas da ABNT e exigências das instituições financeiras.</p></div>
                         </details>
                     </div>
                 </div>
             </section>
 
-            <section class="py-20 bg-slate-950" id="equipe">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16 fade-in-on-scroll">
-                        <h2 class="text-3xl font-light text-white mb-4 font-montserrat">Nossa Equipe</h2>
-                        <p class="text-slate-400">Profissionais especializados em laudos e perícias técnicas.</p>
+            <section class="bg-slate-950" id="equipe">
+                <div class="container">
+                    <div class="section-title fade-in-on-scroll">
+                        <h2>Nossa Equipe</h2>
+                        <p>Profissionais especializados em laudos e perícias técnicas.</p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all">
-                            <div class="w-20 h-20 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
-                                <span class="material-icons-outlined text-7xl text-slate-400" aria-hidden="true">person</span>
+                    <div class="grid-3-col">
+                        <div class="card-equipe fade-in-on-scroll">
+                            <div class="avatar">
+                                <span class="material-icons-outlined icon">person</span>
                             </div>
-                            <h3 class="text-lg font-bold text-white font-montserrat">Gustavo Santos</h3>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Engenheiro Civil Geotécnico</p>
+                            <h3>Gustavo Santos</h3>
+                            <p class="role">Engenheiro Civil Geotécnico</p>
                             <p class="text-sm text-slate-400">Especialista em Contenções e Taludes. Perito credenciado TJMG/MPMG. Projetista responsável pela obra do Morro da Forca, Ouro Preto. Ex-Coordenador de Defesa Civil de Barbacena.</p>
                         </div>
-                        <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all">
-                             <div class="w-20 h-20 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
-                                <span class="material-icons-outlined text-7xl text-slate-400" aria-hidden="true">person</span>
+                        <div class="card-equipe fade-in-on-scroll">
+                            <div class="avatar">
+                                <span class="material-icons-outlined icon">person</span>
                             </div>
-                            <h3 class="text-lg font-bold text-white font-montserrat">Lucas de Sá</h3><p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Engenheiro Mecânico e Civil</p><p class="text-sm text-slate-400">Engenheiro com formação em Mecânica, Segurança do Trabalho e Civil. Doutorando em Estruturas.</p>
+                            <h3>Lucas de Sá</h3>
+                            <p class="role">Engenheiro Mecânico e Civil</p>
+                            <p class="text-sm text-slate-400">Engenheiro com formação em Mecânica, Segurança do Trabalho e Civil. Doutorando em Estruturas.</p>
                         </div>
-                        <div class="fade-in-on-scroll bg-slate-800/30 p-8 rounded-lg border border-slate-700/50 text-center hover:bg-slate-800/50 transition-all">
-                             <div class="w-20 h-20 mx-auto rounded-full bg-slate-700 mb-4 flex items-center justify-center">
-                                <span class="material-icons-outlined text-7xl text-slate-400" aria-hidden="true">person</span>
+                        <div class="card-equipe fade-in-on-scroll">
+                             <div class="avatar">
+                                <span class="material-icons-outlined icon">person</span>
                             </div>
-                            <h3 class="text-lg font-bold text-white font-montserrat">Djalmir Silva</h3><p class="text-xs text-slate-500 uppercase tracking-wide mb-4">Arquiteto e Urbanista</p><p class="text-sm text-slate-400">Arquiteto e urbanista, capitão da reserva da Aeronáutica e consultor do IPHAN.</p>
+                            <h3>Djalmir Silva</h3>
+                            <p class="role">Arquiteto e Urbanista</p>
+                            <p class="text-sm text-slate-400">Arquiteto e urbanista, capitão da reserva da Aeronáutica e consultor do IPHAN.</p>
                         </div>
                     </div>
                 </div>
             </section>
             
             <section id="depoimentos" class="secao-depoimentos-harpia">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16 fade-in-on-scroll">
-                        <h2 class="text-3xl font-light text-white mb-4 font-montserrat">Depoimentos de Nossos Clientes</h2>
+                <div class="container">
+                    <div class="section-title fade-in-on-scroll">
+                        <h2>Depoimentos de Nossos Clientes</h2>
                         <p class="text-slate-300">O que dizem sobre nossos laudos e perícias de engenharia.</p>
                     </div>
-
-                    <div class="relative fade-in-on-scroll">
-                        <button id="prev-testimonial-btn" aria-label="Depoimento anterior" class="absolute top-1/2 left-0 md:-left-4 transform -translate-y-1/2 bg-slate-800/40 hover:bg-slate-800/70 rounded-full w-9 h-9 flex items-center justify-center text-white z-10 transition-all hover:scale-110">
+                    <div class="testimonials-container fade-in-on-scroll">
+                        <button id="prev-testimonial-btn" aria-label="Depoimento anterior" class="testimonial-btn prev">
                             <span class="material-icons-outlined">chevron_left</span>
                         </button>
-                        <div id="testimonials-track" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 scrollbar-hide">
-                            <div class="testimonial-card w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center">
+                        <div id="testimonials-track" class="testimonials-track scrollbar-hide">
+                            <div class="testimonial-card">
                                 <div class="testimonial-stars">★★★★★</div>
                                 <p class="testimonial-text">"O laudo de vistoria de vizinhança foi extremamente detalhado e profissional. A equipe da Harpia nos deu a segurança que precisávamos para iniciar nossa construção sem preocupações. Atendimento impecável do início ao fim."</p>
                                 <p class="testimonial-author">- Construtora Rocha & Filhos</p>
                             </div>
-                            
-                            <div class="testimonial-card w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center">
+                            <div class="testimonial-card">
                                 <div class="testimonial-stars">★★★★★</div>
                                 <p class="testimonial-text">"Contratei a Harpia para um laudo de patologias em meu condomínio. A precisão do diagnóstico com os equipamentos que eles usam é impressionante. Identificaram a origem da infiltração que outros 2 profissionais não encontraram."</p>
                                 <p class="testimonial-author">- Mariana Costa, Síndica</p>
                             </div>
-
-                            <div class="testimonial-card w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center">
+                            <div class="testimonial-card">
                                 <div class="testimonial-stars">★★★★★</div>
                                 <p class="testimonial-text">"Como advogado, preciso de assistentes técnicos que falem a linguagem do direito e da engenharia. A Harpia entrega pareceres robustos que fortalecem nossas teses nos processos. Parceria de sucesso."</p>
                                 <p class="testimonial-author">- Dr. Carlos Almeida</p>
                             </div>
-
-                            <div class="testimonial-card w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center">
+                            <div class="testimonial-card">
                                 <div class="testimonial-stars">★★★★★</div>
                                 <p class="testimonial-text">"O laudo técnico apresentado pela Harpia foi decisivo em uma disputa judicial sobre vícios construtivos. A clareza e o embasamento técnico foram elogiados até pela parte contrária. Profissionais de altíssimo nível."</p>
                                 <p class="testimonial-author">- Rapha TJ</p>
                             </div>
-
-                            <div class="testimonial-card w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center">
+                            <div class="testimonial-card">
                                 <div class="testimonial-stars">★★★★★</div>
                                 <p class="testimonial-text">"Serviço de extrema qualidade, desde o atendimento até a entrega do laudo. O conhecimento técnico do engenheiro Gustavo é notável. Recomendo fortemente para quem busca um trabalho sério e confiável."</p>
                                 <p class="testimonial-author">- Jônatas Anklin</p>
                             </div>
                         </div>
-                        <button id="next-testimonial-btn" aria-label="Próximo depoimento" class="absolute top-1/2 right-0 md:-right-4 transform -translate-y-1/2 bg-slate-800/40 hover:bg-slate-800/70 rounded-full w-9 h-9 flex items-center justify-center text-white z-10 transition-all hover:scale-110">
+                        <button id="next-testimonial-btn" aria-label="Próximo depoimento" class="testimonial-btn next">
                             <span class="material-icons-outlined">chevron_right</span>
                         </button>
                     </div>
-
-                    <div class="text-center mt-12 fade-in-on-scroll">
-                       <a href="https://search.google.com/local/reviews?placeid=ChIJqyTVcCKO9kgREUZWFNltsUY" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border border-slate-400 text-sm font-medium rounded text-white hover:bg-white hover:text-slate-900 transition-all duration-300 font-montserrat">
+                    <div class="text-center fade-in-on-scroll" style="margin-top: 3rem;">
+                       <a href="https://search.google.com/local/reviews?placeid=ChIJqyTVcCKO9kgREUZWFNltsUY" target="_blank" rel="noopener noreferrer" class="google-reviews-link">
                            Ver todas as 35 avaliações no Google
                        </a>
                    </div>
                 </div>
            </section>
             
-            <section class="py-20 bg-slate-950" id="blog">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16 fade-in-on-scroll">
-                        <h2 class="text-3xl font-light text-white mb-4 font-montserrat">Últimas do Blog</h2>
-                        <p class="text-slate-400 max-w-2xl mx-auto">Informações e dicas sobre engenharia diagnóstica, laudos e perícias.</p>
+            <section class="bg-slate-950" id="blog">
+                <div class="container">
+                    <div class="section-title fade-in-on-scroll">
+                        <h2>Últimas do Blog</h2>
+                        <p>Informações e dicas sobre engenharia diagnóstica, laudos e perícias.</p>
                     </div>
-                    <div id="homepage-blog-posts" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 scrollbar-hide mb-16 fade-in-on-scroll">
-
-                        <a href="#/blog/preco-laudo-tecnico-engenharia-barbacena-2026" class="w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
-                            <div class="p-6 flex-grow flex flex-col">
-                                 <div class="flex justify-between items-center text-xs mb-3">
-                                    <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Laudos Técnicos</span>
-                                    <span class="text-slate-500">3 min de leitura</span>
+                    <div id="homepage-blog-posts" class="blog-posts-track scrollbar-hide fade-in-on-scroll">
+                        <a href="#/blog/preco-laudo-tecnico-engenharia-barbacena-2026" class="blog-card">
+                            <div class="content">
+                                 <div class="meta">
+                                    <span class="category">Laudos Técnicos</span>
+                                    <span class="read-time">3 min de leitura</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors font-montserrat flex-grow">Quanto custa um laudo de engenharia em Barbacena e região em 2026?</h3>
-                                <p class="text-sm text-slate-400 leading-relaxed">Saiba quanto custa um laudo técnico de engenharia civil em Barbacena e região. Entenda os preços e tecnologias.</p>
+                                <h3>Quanto custa um laudo de engenharia em Barbacena e região em 2026?</h3>
+                                <p class="text-sm text-slate-400">Saiba quanto custa um laudo técnico de engenharia civil em Barbacena e região. Entenda os preços e tecnologias.</p>
                             </div>
-                            <div class="p-6 bg-slate-800/50 mt-auto">
-                                <div class="text-primary font-semibold text-sm group-hover:underline font-montserrat">
-                                    Ler mais <span aria-hidden="true">→</span>
-                                </div>
+                            <div class="footer">
+                                <div class="read-more">Ler mais <span aria-hidden="true">→</span></div>
                             </div>
                         </a>
-                        
-                        <a href="#/blog/quando-contratar-engenharia-diagnostica" class="w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
-                            <div class="p-6 flex-grow flex flex-col">
-                                 <div class="flex justify-between items-center text-xs mb-3">
-                                    <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Engenharia Diagnóstica</span>
-                                    <span class="text-slate-500">4 min de leitura</span>
+                        <a href="#/blog/quando-contratar-engenharia-diagnostica" class="blog-card">
+                            <div class="content">
+                                 <div class="meta">
+                                    <span class="category">Engenharia Diagnóstica</span>
+                                    <span class="read-time">4 min de leitura</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors font-montserrat flex-grow">Quando Contratar um Especialista em Engenharia Diagnóstica?</h3>
-                                <p class="text-sm text-slate-400 leading-relaxed">Saiba identificar os momentos cruciais em que a avaliação de um engenheiro diagnóstico pode salvar seu patrimônio e garantir sua segurança.</p>
+                                <h3>Quando Contratar um Especialista em Engenharia Diagnóstica?</h3>
+                                <p class="text-sm text-slate-400">Saiba identificar os momentos cruciais em que a avaliação de um engenheiro diagnóstico pode salvar seu patrimônio e garantir sua segurança.</p>
                             </div>
-                            <div class="p-6 bg-slate-800/50 mt-auto">
-                                <div class="text-primary font-semibold text-sm group-hover:underline font-montserrat">
-                                    Ler mais <span aria-hidden="true">→</span>
-                                </div>
+                            <div class="footer">
+                                <div class="read-more">Ler mais <span aria-hidden="true">→</span></div>
                             </div>
                         </a>
-                        
-                        <a href="#/blog/vistoria-cautelar-de-vizinhanca-guia-completo" class="w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
-                            <div class="p-6 flex-grow flex flex-col">
-                                 <div class="flex justify-between items-center text-xs mb-3">
-                                    <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Vistorias</span>
-                                    <span class="text-slate-500">5 min de leitura</span>
+                        <a href="#/blog/vistoria-cautelar-de-vizinhanca-guia-completo" class="blog-card">
+                            <div class="content">
+                                 <div class="meta">
+                                    <span class="category">Vistorias</span>
+                                    <span class="read-time">5 min de leitura</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors font-montserrat flex-grow">Vistoria Cautelar de Vizinhança: Um Guia Completo</h3>
-                                <p class="text-sm text-slate-400 leading-relaxed">Vai construir ou reformar? Entenda por que a vistoria de vizinhança é uma etapa indispensável para a sua segurança jurídica e financeira.</p>
+                                <h3>Vistoria Cautelar de Vizinhança: Um Guia Completo</h3>
+                                <p class="text-sm text-slate-400">Vai construir ou reformar? Entenda por que a vistoria de vizinhança é uma etapa indispensável para a sua segurança jurídica e financeira.</p>
                             </div>
-                            <div class="p-6 bg-slate-800/50 mt-auto">
-                                <div class="text-primary font-semibold text-sm group-hover:underline font-montserrat">
-                                    Ler mais <span aria-hidden="true">→</span>
-                                </div>
+                            <div class="footer">
+                                <div class="read-more">Ler mais <span aria-hidden="true">→</span></div>
                             </div>
                         </a>
-                        
-                        <a href="#/blog/pericia-judicial-engenharia-o-papel-assistente-tecnico" class="w-[90%] md:w-[45%] lg:w-[31%] flex-shrink-0 snap-center bg-slate-900 rounded-lg overflow-hidden border border-slate-800 flex flex-col group transition-transform hover:-translate-y-1">
-                            <div class="p-6 flex-grow flex flex-col">
-                                 <div class="flex justify-between items-center text-xs mb-3">
-                                    <span class="border border-primary text-primary px-2 py-1 rounded-full font-medium font-montserrat">Perícia Judicial</span>
-                                    <span class="text-slate-500">4 min de leitura</span>
+                        <a href="#/blog/pericia-judicial-engenharia-o-papel-assistente-tecnico" class="blog-card">
+                            <div class="content">
+                                 <div class="meta">
+                                    <span class="category">Perícia Judicial</span>
+                                    <span class="read-time">4 min de leitura</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors font-montserrat flex-grow">Perícia Judicial de Engenharia: O Papel do Assistente Técnico</h3>
-                                <p class="text-sm text-slate-400 leading-relaxed">Advogados e partes em um processo: descubram como um assistente técnico de engenharia pode ser decisivo para o sucesso da sua causa.</p>
+                                <h3>Perícia Judicial de Engenharia: O Papel do Assistente Técnico</h3>
+                                <p class="text-sm text-slate-400">Advogados e partes em um processo: descubram como um assistente técnico de engenharia pode ser decisivo para o sucesso da sua causa.</p>
                             </div>
-                            <div class="p-6 bg-slate-800/50 mt-auto">
-                                <div class="text-primary font-semibold text-sm group-hover:underline font-montserrat">
-                                    Ler mais <span aria-hidden="true">→</span>
-                                </div>
+                            <div class="footer">
+                                <div class="read-more">Ler mais <span aria-hidden="true">→</span></div>
                             </div>
                         </a>
                     </div>
                     <div class="text-center fade-in-on-scroll">
-                         <a href="#/blog" class="inline-flex items-center px-6 py-3 border border-slate-500 text-sm font-medium rounded text-white hover:bg-slate-800 hover:border-slate-400 transition-all font-montserrat">
-                            Ver todos os posts
-                        </a>
+                         <a href="#/blog" class="view-all-posts-btn">Ver todos os posts</a>
                     </div>
                 </div>
             </section>
 
-            <section id="contato" class="bg-background-light text-slate-800">
-                <div class="flex flex-col lg:flex-row min-h-[90vh]">
-                    <div class="lg:w-5/12 w-full aspect-square lg:aspect-auto fade-in-on-scroll">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.2755881772346!2d-43.768791099999994!3d-21.221067299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f16!3m3!1m2!1s0x48f68e2270d524ab%3A0x46b16dd914564611!2sHarpia%20Consultoria%20-%20Engenharia%20e%20Laudos%20T%C3%A9cnicos!5e1!3m2!1spt-BR!2sbr!4v1767458030731!5m2!1spt-BR!2sbr" class="w-full h-full" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Localização da Harpia Consultoria"></iframe>
+            <section id="contato" class="p-0">
+                <div class="contact-wrapper">
+                    <div class="map-container fade-in-on-scroll">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.2755881772346!2d-43.768791099999994!3d-21.221067299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f16!3m3!1m2!1s0x48f68e2270d524ab%3A0x46b16dd914564611!2sHarpia%20Consultoria%20-%20Engenharia%20e%20Laudos%20T%C3%A9cnicos!5e1!3m2!1spt-BR!2sbr!4v1767458030731!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Localização da Harpia Consultoria"></iframe>
                     </div>
-                    <div class="lg:w-7/12 w-full flex flex-col justify-center p-8 sm:p-12 lg:p-16">
+                    <div class="form-container">
                         <div class="fade-in-on-scroll">
-                            <h2 class="text-3xl lg:text-4xl font-bold text-slate-800 mb-2 font-montserrat">Fale Conosco</h2>
-                            <p class="text-slate-600 mb-10">Pronto para começar? Envie-nos uma mensagem para um orçamento rápido e sem compromisso.</p>
+                            <h2>Fale Conosco</h2>
+                            <p class="form-intro">Pronto para começar? Envie-nos uma mensagem para um orçamento rápido e sem compromisso.</p>
                         </div>
                         <div class="w-full fade-in-on-scroll">
-                            <form id="contact-form" class="space-y-6">
+                            <form id="contact-form">
                                 <div>
-                                    <label class="text-sm font-semibold text-slate-700 mb-3 block font-montserrat">1. Qual serviço você precisa?</label>
-                                    <div id="service-options-container" class="flex flex-wrap gap-2">
-                                        <button type="button" data-service="Vistoria de Imóvel" class="px-4 py-2 text-sm rounded-full border transform transition-all duration-200 bg-white text-slate-600 border-slate-300 hover:bg-slate-100 hover:border-slate-400 hover:shadow-sm font-montserrat">Vistoria de Imóvel</button>
-                                        <button type="button" data-service="Laudo para Reforma" class="px-4 py-2 text-sm rounded-full border transform transition-all duration-200 bg-white text-slate-600 border-slate-300 hover:bg-slate-100 hover:border-slate-400 hover:shadow-sm font-montserrat">Laudo para Reforma</button>
-                                        <button type="button" data-service="Perícia Judicial" class="px-4 py-2 text-sm rounded-full border transform transition-all duration-200 bg-white text-slate-600 border-slate-300 hover:bg-slate-100 hover:border-slate-400 hover:shadow-sm font-montserrat">Perícia Judicial</button>
-                                        <button type="button" data-service="Outro" class="px-4 py-2 text-sm rounded-full border transform transition-all duration-200 bg-white text-slate-600 border-slate-300 hover:bg-slate-100 hover:border-slate-400 hover:shadow-sm font-montserrat">Outro</button>
+                                    <label>1. Qual serviço você precisa?</label>
+                                    <div id="service-options-container">
+                                        <button type="button" data-service="Vistoria de Imóvel">Vistoria de Imóvel</button>
+                                        <button type="button" data-service="Laudo para Reforma">Laudo para Reforma</button>
+                                        <button type="button" data-service="Perícia Judicial">Perícia Judicial</button>
+                                        <button type="button" data-service="Outro">Outro</button>
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="name-contact" class="text-sm font-semibold text-slate-700 mb-2 block font-montserrat">2. Seu nome completo *</label>
-                                    <input id="name-contact" name="name" type="text" required class="w-full bg-white border border-slate-300 rounded-md py-2 px-3 text-slate-900 text-sm placeholder-slate-400 focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition" placeholder="Digite seu nome" autocomplete="name">
+                                    <label for="name-contact">2. Seu nome completo *</label>
+                                    <input id="name-contact" name="name" type="text" required placeholder="Digite seu nome" autocomplete="name">
                                 </div>
                                 <div>
-                                    <label for="message-contact" class="text-sm font-semibold text-slate-700 mb-2 block font-montserrat">3. Detalhes adicionais (opcional)</label>
-                                    <textarea id="message-contact" name="message" rows="3" class="w-full bg-white border border-slate-300 rounded-md py-2 px-3 text-slate-900 text-sm placeholder-slate-400 focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition" placeholder="Descreva brevemente sua necessidade..."></textarea>
+                                    <label for="message-contact">3. Detalhes adicionais (opcional)</label>
+                                    <textarea id="message-contact" name="message" rows="3" placeholder="Descreva brevemente sua necessidade..."></textarea>
                                 </div>
-                                <button type="submit" onclick="trackWhatsappClick()" class="bg-primary hover:bg-green-600 text-white font-bold py-3 px-4 rounded-md flex items-center justify-center mx-auto text-sm transition-colors duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/40 animate-gentle-pulse font-montserrat">
-                                    <span class="material-icons text-lg mr-2">whatsapp</span> Enviar via WhatsApp
+                                <button type="submit" onclick="trackWhatsappClick()" class="animate-gentle-pulse">
+                                    <span class="material-icons" style="margin-right: 0.5rem; font-size:1.25rem;">whatsapp</span> Enviar via WhatsApp
                                 </button>
                                 <p class="text-center text-xs text-slate-500">Ao enviar, você será redirecionado para o WhatsApp.</p>
                             </form>
                         </div>
-                        <div class="fade-in-on-scroll">
-                            <div class="mt-12 pt-8 border-t border-slate-200">
-                                <h3 class="text-lg font-bold text-slate-800 mb-6 font-montserrat">Ou entre em contato diretamente</h3>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8">
-                                    <div class="flex items-start"><span class="material-icons-outlined text-slate-500 mr-4 text-3xl">location_on</span><div><h4 class="font-semibold text-slate-500 text-xs tracking-wider mb-1 font-montserrat">ENDEREÇO</h4><p class="text-slate-700 text-sm">Avenida Olegário Maciel, 470, Centro</p><p class="text-slate-700 text-sm">Barbacena – MG | CEP 36200-082</p></div></div>
-                                    <div class="flex items-start"><span class="material-icons-outlined text-slate-500 mr-4 text-3xl">phone_in_talk</span><div><h4 class="font-semibold text-slate-500 text-xs tracking-wider mb-1 font-montserrat">TELEFONE</h4><p class="text-slate-700 text-sm">(31) 98216-2913</p></div></div>
-                                    <div class="flex items-start"><span class="material-icons-outlined text-slate-500 mr-4 text-3xl">mail_outline</span><div><h4 class="font-semibold text-slate-500 text-xs tracking-wider mb-1 font-montserrat">E-MAIL</h4><p class="text-slate-700 text-sm">contato@harpiaconsultoria.eng.br</p></div></div>
-                                    <div class="flex items-start"><span class="material-icons-outlined text-slate-500 mr-4 text-3xl">schedule</span><div><h4 class="font-semibold text-slate-500 text-xs tracking-wider mb-1 font-montserrat">HORÁRIO DE ATENDIMENTO</h4><p class="text-slate-700 text-sm">Segunda a Sexta: 8h às 17h</p><p class="text-slate-700 text-sm">Sábado: Plantão via WhatsApp</p></div></div>
-                                </div>
-                                <div class="mt-8 flex items-start p-4 bg-slate-100 rounded-lg border border-slate-200">
-                                    <span class="material-icons-outlined text-slate-500 mr-4 text-3xl shrink-0">event_available</span>
-                                    <div><h4 class="font-semibold text-slate-500 text-xs tracking-wider mb-1 font-montserrat">AGENDAMENTO FLEXÍVEL</h4><p class="text-slate-700 text-sm">Para sua comodidade, atendimentos podem ser agendados online. Oferecemos também horários especiais mediante consulta prévia para atender sua necessidade.</p></div>
-                                </div>
+                        <div class="contact-info fade-in-on-scroll">
+                            <h3>Ou entre em contato diretamente</h3>
+                            <div class="info-grid">
+                                <div class="info-item"><span class="material-icons-outlined icon">location_on</span><div><h4>ENDEREÇO</h4><p>Avenida Olegário Maciel, 470, Centro</p><p>Barbacena – MG | CEP 36200-082</p></div></div>
+                                <div class="info-item"><span class="material-icons-outlined icon">phone_in_talk</span><div><h4>TELEFONE</h4><p>(31) 98216-2913</p></div></div>
+                                <div class="info-item"><span class="material-icons-outlined icon">mail_outline</span><div><h4>E-MAIL</h4><p>contato@harpiaconsultoria.eng.br</p></div></div>
+                                <div class="info-item"><span class="material-icons-outlined icon">schedule</span><div><h4>HORÁRIO DE ATENDIMENTO</h4><p>Segunda a Sexta: 8h às 17h</p><p>Sábado: Plantão via WhatsApp</p></div></div>
+                            </div>
+                            <div class="info-item" style="margin-top: 2rem; padding: 1rem; background-color: #f1f5f9; border-radius: 0.5rem; border: 1px solid #e2e8f0;">
+                                <span class="material-icons-outlined icon" style="flex-shrink: 0;">event_available</span>
+                                <div><h4>AGENDAMENTO FLEXÍVEL</h4><p>Para sua comodidade, atendimentos podem ser agendados online. Oferecemos também horários especiais mediante consulta prévia para atender sua necessidade.</p></div>
                             </div>
                         </div>
                     </div>
@@ -723,70 +879,64 @@
         </div>
     </main>
 
-    <footer class="bg-black text-slate-400 py-16 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-                <div class="md:col-span-5 lg:col-span-4">
-                    <a href="/" class="flex-shrink-0 flex items-center gap-2 mb-4" aria-label="Página inicial da Harpia Consultoria">
-                        <img src="img/logo.webp" alt="Logo da Harpia Consultoria e Engenharia" class="h-10 w-auto" width="40" height="40">
-                        <div class="flex flex-col">
-                            <span class="text-white font-bold text-xl tracking-tight leading-none font-montserrat">HARPIA</span>
-                            <span class="text-slate-400 text-xs font-medium tracking-[0.2em] leading-none font-montserrat">CONSULTORIA</span>
+    <footer class="bg-black">
+        <div class="max-w-7xl">
+            <div class="footer-grid">
+                <div class="footer-col col-span-5 lg:col-span-4">
+                    <a href="/" class="logo-link" style="margin-bottom: 1rem;" aria-label="Página inicial da Harpia Consultoria">
+                        <img src="img/logo.webp" alt="Logo da Harpia Consultoria e Engenharia" class="logo-img" width="40" height="40" loading="lazy">
+                        <div class="logo-text">
+                           <span>HARPIA</span>
+                           <span>CONSULTORIA</span>
                         </div>
                     </a>
-                    <p class="text-sm max-w-xs">Laudos técnicos, perícias e vistorias de engenharia civil, mecânica e segurança do trabalho.</p>
-                    <div class="mt-6 flex space-x-4">
-                        <a href="https://www.linkedin.com/company/harpiaconsultt/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" aria-label="LinkedIn">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
+                    <p class="text-sm" style="max-width: 20rem;">Laudos técnicos, perícias e vistorias de engenharia civil, mecânica e segurança do trabalho.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/harpiaconsultt/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
-                        <a href="https://www.instagram.com/eng.harpiaconsultoria/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" aria-label="Instagram">
-                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
+                        <a href="https://www.instagram.com/eng.harpiaconsultoria/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         </a>
-                        <a href="https://www.youtube.com/@HarpiaConsult" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" aria-label="YouTube">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
+                        <a href="https://www.youtube.com/@HarpiaConsult" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                         </a>
                     </div>
                 </div>
-                <div class="md:col-span-3 lg:col-span-2">
-                    <h4 class="text-sm font-semibold text-white tracking-wider uppercase mb-4 font-montserrat">Navegação</h4>
-                    <nav class="flex flex-col space-y-2">
-                        <a href="/#servicos" class="text-sm hover:text-white transition-colors">Serviços</a>
-                        <a href="/#metodologia" class="text-sm hover:text-white transition-colors">Metodologia</a>
-                        <a href="/#equipe" class="text-sm hover:text-white transition-colors">Equipe</a>
-                        <a href="/#contato" class="text-sm hover:text-white transition-colors">Contato</a>
-                        <a href="#/blog" class="text-sm hover:text-white transition-colors">Blog</a>
+                <div class="footer-col col-span-3 lg:col-span-2">
+                    <h4>Navegação</h4>
+                    <nav>
+                        <a href="/#servicos">Serviços</a>
+                        <a href="/#metodologia">Metodologia</a>
+                        <a href="/#equipe">Equipe</a>
+                        <a href="/#contato">Contato</a>
+                        <a href="#/blog">Blog</a>
                     </nav>
                 </div>
-                <div class="md:col-span-4 lg:col-span-3">
-                     <h4 class="text-sm font-semibold text-white tracking-wider uppercase mb-4 font-montserrat">Principais Laudos</h4>
-                     <nav class="flex flex-col space-y-2">
-                        <a href="/#servicos" class="text-sm hover:text-white transition-colors">Laudo de Patologia Estrutural</a>
-                        <a href="/#servicos" class="text-sm hover:text-white transition-colors">Laudo de Reforma (NBR 16.280)</a>
-                        <a href="/#servicos" class="text-sm hover:text-white transition-colors">Perícia Judicial</a>
-                        <a href="/#servicos" class="text-sm hover:text-white transition-colors">PMOC e Laudos (NR-12/NR-13)</a>
-                        <a href="/#servicos" class="text-sm hover:text-white transition-colors">LTCAT e Laudos de SST</a>
+                <div class="footer-col col-span-4 lg:col-span-3">
+                     <h4>Principais Laudos</h4>
+                     <nav>
+                        <a href="/#servicos">Laudo de Patologia Estrutural</a>
+                        <a href="/#servicos">Laudo de Reforma (NBR 16.280)</a>
+                        <a href="/#servicos">Perícia Judicial</a>
+                        <a href="/#servicos">PMOC e Laudos (NR-12/NR-13)</a>
+                        <a href="/#servicos">LTCAT e Laudos de SST</a>
                     </nav>
                 </div>
             </div>
-            <div class="border-t border-slate-800 mt-12 pt-8 text-center text-xs text-slate-600">
-                <p class="mb-2">Atendemos Barbacena-MG, São João del-Rei, Juiz de Fora e toda a região de Campos das Vertentes.</p>
+            <div class="copyright">
+                <p style="margin-bottom: 0.5rem;">Atendemos Barbacena-MG, São João del-Rei, Juiz de Fora e toda a região de Campos das Vertentes.</p>
                 <p>© 2026 Harpia Consultoria. Todos os direitos reservados.</p>
-                <p class="mt-1">CREA-MG 144817/D MG | CNPJ: 46.128.059/0001-72</p>
+                <p style="margin-top: 0.25rem;">CREA-MG 144817/D MG | CNPJ: 46.128.059/0001-72</p>
             </div>
         </div>
     </footer>
 
-    <a id="whatsapp-fab" href="https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." onclick="trackWhatsappClick()" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform animate-gentle-pulse" aria-label="Fale conosco no WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-white" fill="currentColor" aria-hidden="true"><path d="M19.05 4.94A9.85 9.85 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.73-1.11-5.2-2.9-7.07zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.81.83-3.04-.2-.31a8.34 8.34 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.23.86 5.82 2.45s2.45 3.62 2.45 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.2c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72s-.02-.38.1-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41.04-.3-.02-.43c-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.55-.42-.15 0-.3 0-.46 0s-.39.06-.6.31c-.2.25-.78.76-.78 1.85s.8 2.15.91 2.3s1.58 2.4 3.8 3.36c.55.24.93.38 1.24.48.55.17 1.05.14 1.44.09.43-.06 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.05-.12-.2-.19-.44-.31z" /></svg>
+    <a id="whatsapp-fab" href="https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." onclick="trackWhatsappClick()" target="_blank" rel="noopener noreferrer" class="animate-gentle-pulse" aria-label="Fale conosco no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.94A9.85 9.85 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.73-1.11-5.2-2.9-7.07zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.81.83-3.04-.2-.31a8.34 8.34 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.23.86 5.82 2.45s2.45 3.62 2.45 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.2c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72s-.02-.38.1-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41.04-.3-.02-.43c-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.55-.42-.15 0-.3 0-.46 0s-.39.06-.6.31c-.2.25-.78.76-.78 1.85s.8 2.15.91 2.3s1.58 2.4 3.8 3.36c.55.24.93.38 1.24.48.55.17 1.05.14 1.44.09.43-.06 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.05-.12-.2-.19-.44-.31z" /></svg>
     </a>
     
-    <button type="button" id="back-to-top-btn" class="fixed bottom-24 right-6 z-50 w-12 h-12 bg-slate-800/80 backdrop-blur-sm border border-slate-700 rounded-full shadow-lg flex items-center justify-center text-slate-300 hover:bg-slate-700 hover:text-white hover:border-slate-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-dark focus:ring-primary transition-all duration-300 opacity-0 translate-y-4" aria-label="Voltar ao topo" style="visibility: hidden;">
+    <button type="button" id="back-to-top-btn" aria-label="Voltar ao topo">
         <span class="material-icons-outlined">keyboard_arrow_up</span>
     </button>
     
@@ -797,51 +947,50 @@
           const pageHome = document.getElementById('page-home');
           const blogPostContainer = document.getElementById('blog-post-container'); 
 
+          // Hide both containers initially to prevent flashes
+          if (pageHome) pageHome.style.display = 'none';
+          if (blogPostContainer) blogPostContainer.style.display = 'none';
+
           if (hash.startsWith('#/blog/')) {
             const postId = hash.replace('#/blog/', '');
             const targetPost = document.getElementById(postId);
 
-            if (pageHome) pageHome.classList.add('hidden');
-            if (blogPostContainer) blogPostContainer.classList.remove('hidden');
+            if (blogPostContainer) blogPostContainer.style.display = 'block';
             
             // Hide all posts within the container first
-            if (blogPostContainer) {
-                blogPostContainer.querySelectorAll('.blog-post-content').forEach(post => {
-                    post.classList.add('hidden');
-                });
-            }
+            blogPostContainer.querySelectorAll('.blog-post-content').forEach(post => {
+                post.classList.remove('active');
+            });
 
             if (targetPost) {
-              targetPost.classList.remove('hidden');
+              targetPost.classList.add('active');
               window.scrollTo(0, 0);
             } else {
-                // If post not found, go back to home to avoid a blank page
                 window.location.hash = '#/';
             }
           } else {
-            // Not a blog post URL, show home and hide the entire blog container
-            if (pageHome) pageHome.classList.remove('hidden');
-            if (blogPostContainer) blogPostContainer.classList.add('hidden');
+            if (pageHome) pageHome.style.display = 'block';
           }
         }
         window.addEventListener('hashchange', handleRouting);
-        // Use DOMContentLoaded to run the router as soon as the DOM is ready
         document.addEventListener('DOMContentLoaded', handleRouting);
     </script>
     
     <!-- Scripts movidos para o final para não bloquear a renderização -->
     <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1387923072219701');
-    fbq('track', 'PageView');
+    window.addEventListener('load', function() {
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1387923072219701');
+        fbq('track', 'PageView');
+    });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
