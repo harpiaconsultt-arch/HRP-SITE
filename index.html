@@ -285,6 +285,18 @@
             .metodologia-grid { grid-template-columns: repeat(4, 1fr); }
             .testimonial-card, .blog-card { width: 31%; }
         }
+        /* Blog Post Layout Fixes */
+        #blog-post-container .blog-post-content > div {
+            background-color: transparent !important;
+        }
+        #blog-post-container .max-w-3xl {
+            max-width: 850px !important;
+            padding: 120px 20px 60px 20px !important;
+        }
+        #blog-post-container .prose p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
     </style>
 
     <!-- Open Graph & Twitter Card -->
@@ -1149,3 +1161,5 @@
     </script>
 </body>
 </html>
+```
+
