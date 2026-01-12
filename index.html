@@ -68,6 +68,10 @@
         .animate-gentle-pulse { animation: gentle-pulse 2.5s infinite ease-in-out; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .text-center { text-align: center; }
         header { position: fixed; width: 100%; z-index: 50; transition-property: all; transition-duration: 300ms; background-color: var(--color-surface-dark); border-bottom: 1px solid #1e293b; }
         header .max-w-7xl, footer .max-w-7xl { max-width: 80rem; margin: auto; padding: 0 1rem; }
         header .flex { display: flex; justify-content: space-between; align-items: center; height: 5rem; }
@@ -88,7 +92,7 @@
         #mobile-menu nav { padding: 0.5rem 1rem 1rem; }
         #mobile-menu a { display: block; color: #cbd5e1; padding: 0.5rem 0; font-size: 1rem; font-weight: 500; transition: color 150ms; }
         #mobile-menu a:hover { color: white; }
-        #mobile-menu .cta-button { width: 100%; text-align: center; margin-top: 1rem; }
+        #mobile-menu .cta-button { display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 1rem; padding: 0.75rem 1rem; font-size: 0.875rem; }
         .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: var(--color-surface-dark); overflow: hidden; }
         .hero .bg-image-container { position: absolute; inset: 0; z-index: 0; }
         .hero .bg-image { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; }
@@ -100,8 +104,8 @@
         .hero .cta-button:hover { background-color: white; color: #0f172a; }
         .hero .scroll-down { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 1s infinite; }
         .hero .scroll-down .material-icons-outlined { color: rgba(255, 255, 255, 0.5); font-size: 2.5rem; }
-        section { padding: 5rem 0; }
-        .section-title { text-align: center; margin-bottom: 4rem; }
+        section { padding: 4rem 0; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
         .section-title h2 { font-size: 1.875rem; font-weight: 300; color: white; margin-bottom: 1rem; }
         .section-title p { color: #94a3b8; max-width: 42rem; margin: auto; }
         .grid-3-col { display: grid; gap: 2rem; }
@@ -113,6 +117,7 @@
         .card-tech h3 { font-size: 1.125rem; font-weight: 600; color: white; margin-bottom: 0.75rem; }
         .card-tech p { font-size: 0.875rem; color: #94a3b8; line-height: 1.625; }
         .bg-slate-950 { background-color: #020617; }
+        .bg-surface-dark { background-color: #0A2240; }
         .container { max-width: 80rem; margin: auto; padding: 0 1rem; }
         .grid-2-col { display: grid; gap: 1.5rem; }
         .card-service { position: relative; background-color: rgba(30, 41, 59, 0.5); padding: 2rem; border-radius: 0.5rem; border: 1px solid #334155; transition: border-color 150ms; text-align: center; }
@@ -120,12 +125,11 @@
         .card-service h3 { font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
         .card-service p { font-size: 0.875rem; color: #94a3b8; }
         .card-service .highlight { position: absolute; top: 1rem; left: 50%; transform: translateX(-50%); border: 1px solid var(--color-cta-green); color: var(--color-cta-green); font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 9999px; font-weight: 600; }
-        .py-16 { padding: 4rem 0; }
         .border-t { border-top-width: 1px; }
         .border-slate-800\/50 { border-color: rgba(30,41,59,0.5); }
-        .max-w-5xl { max-width: 64rem; }
-        .grid-laudos { display: grid; gap: 1rem; }
-        .card-laudo { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; padding: 1.5rem 1rem; background-color: rgba(30,41,59,0.3); border-radius: 0.25rem; border: 1px solid rgba(51,65,85,0.5); transition: background-color 150ms; }
+        .max-w-800px { max-width: 800px; }
+        .grid-laudos { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+        .card-laudo { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; padding: 1.25rem 1rem; background-color: rgba(30,41,59,0.3); border-radius: 0.25rem; border: 1px solid rgba(51,65,85,0.5); transition: background-color 150ms; }
         .card-laudo:hover { background-color: rgba(30,41,59,0.5); }
         .card-laudo .icon { color: #94a3b8; margin-right: 0; margin-bottom: 0.75rem; font-size: 1.75rem; flex-shrink: 0; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; }
         .card-laudo h3 { color: white; font-weight: 500; font-size: 0.875rem; }
@@ -133,15 +137,15 @@
         .equipe-link { color: var(--color-cta-green); }
         .equipe-link:hover { text-decoration: underline; }
         .text-xs.text-slate-600 { color: #475569; margin-top: 1rem; }
-        .metodologia-timeline { position: relative; }
-        .metodologia-timeline .line { position: absolute; left: 1.5rem; top: 0; bottom: 0; width: 2px; background-color: #334155; }
-        .metodologia-timeline .item { position: relative; display: flex; align-items: flex-start; margin-bottom: 3rem; }
-        .metodologia-timeline .item:last-child { margin-bottom: 0; }
-        .metodologia-timeline .item .step { flex-shrink: 0; width: 3rem; height: 3rem; border-radius: 9999px; background-color: #0f172a; border: 2px solid #334155; display: flex; align-items: center; justify-content: center; z-index: 10; font-size: 0.875rem; font-weight: 700; color: #94a3b8; transition: all 150ms; }
-        .metodologia-timeline .item:hover .step { border-color: var(--color-cta-green); color: var(--color-cta-green); }
-        .metodologia-timeline .item .content { margin-left: 2rem; padding-top: 0.5rem; }
-        .metodologia-timeline .item h3 { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.25rem; display: flex; align-items: center; }
-        .metodologia-timeline .item .icon { color: #94a3b8; margin-right: 0.5rem; font-size: 1.25rem; }
+        .metodologia-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+        .metodologia-step { text-align: center; }
+        .metodologia-step .step-icon-wrapper { width: 4rem; height: 4rem; border-radius: 9999px; background-color: #0f172a; border: 2px solid #334155; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; transition: all 150ms; }
+        .metodologia-step:hover .step-icon-wrapper { border-color: var(--color-cta-green); }
+        .metodologia-step .icon { font-size: 2rem; color: #94a3b8; transition: color 150ms; }
+        .metodologia-step:hover .icon { color: var(--color-cta-green); }
+        .metodologia-step h4 { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+        .metodologia-step h4 span { color: var(--color-cta-green); font-weight: 600; margin-right: 0.25rem; }
+        .metodologia-step p { font-size: 0.875rem; color: #94a3b8; }
         .faq details { background-color: rgba(30,41,59,0.5); border-radius: 0.5rem; overflow: hidden; border: 1px solid #334155; transition: all 150ms; }
         .faq details[open] { border-color: rgba(30,142,74,0.5); }
         .faq summary { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; cursor: pointer; list-style: none; color: white; font-weight: 500; transition: background-color 150ms; }
@@ -156,7 +160,7 @@
         .card-equipe .avatar .icon { font-size: 4.5rem; color: #94a3b8; }
         .card-equipe h3 { font-size: 1.125rem; font-weight: 700; color: white; }
         .card-equipe .role { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.025em; margin-bottom: 1rem; }
-        .secao-depoimentos-harpia { background-color: var(--color-surface-dark); }
+        .secao-depoimentos-harpia { background-color: var(--color-background-dark); }
         .testimonials-container { position: relative; }
         .testimonials-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 1rem; }
         .testimonial-card { width: 90%; flex-shrink: 0; scroll-snap-align: center; background-color: white; color: #1e293b; border-radius: 0.5rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; height: 100%; }
@@ -169,10 +173,11 @@
         .testimonial-btn.next { right: 0; }
         .google-reviews-link { display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid #94a3b8; font-size: 0.875rem; font-weight: 500; border-radius: 0.25rem; color: white; transition: all 300ms; }
         .google-reviews-link:hover { background-color: white; color: #0f172a; }
-        .blog-posts-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 1rem; margin-bottom: 4rem; }
+        .blog-posts-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 1rem; margin-bottom: 3rem; }
         .blog-card { width: 90%; flex-shrink: 0; scroll-snap-align: center; background-color: #0f172a; border-radius: 0.5rem; overflow: hidden; border: 1px solid #1e293b; display: flex; flex-direction: column; transition: transform 150ms; }
         .blog-card:hover { transform: translateY(-0.25rem); }
         .blog-card .content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .blog-card .content .text-sm { color: #ffffff; }
         .blog-card .meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; margin-bottom: 0.75rem; }
         .blog-card .category { border: 1px solid var(--color-cta-green); color: var(--color-cta-green); padding: 0.25rem 0.5rem; border-radius: 9999px; font-weight: 500; }
         .blog-card .read-time { color: #64748b; }
@@ -183,13 +188,13 @@
         .blog-card .read-more:hover { text-decoration: underline; }
         .view-all-posts-btn { display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid #64748b; font-size: 0.875rem; font-weight: 500; border-radius: 0.25rem; color: white; transition: all 150ms; }
         .view-all-posts-btn:hover { background-color: #1e293b; border-color: #94a3b8; }
-        #contato { background-color: var(--color-background-light); color: var(--text-dark); }
-        #contato .contact-wrapper { display: flex; flex-direction: column; min-height: 90vh; }
-        #contato iframe { width: 100%; height: 100%; border: 0; }
+        #contato { background-color: var(--color-background-light); color: var(--text-dark); padding: 0;}
+        #contato .contact-wrapper { display: flex; flex-direction: column; }
+        #contato iframe { width: 100%; height: 100%; border: 0; min-height: 300px; }
         #contato .form-container { display: flex; flex-direction: column; justify-content: center; padding: 2rem; }
         #contato h2 { font-size: 1.875rem; font-weight: 700; color: #1e293b; margin-bottom: 0.5rem; }
         #contato .form-intro { color: #475569; margin-bottom: 2.5rem; }
-        #contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
+        #contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
         #contact-form label { font-size: 0.875rem; font-weight: 600; color: #334155; margin-bottom: 0.75rem; display: block; }
         #service-options-container { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         #service-options-container button { padding: 0.5rem 1rem; font-size: 0.875rem; border-radius: 9999px; border: 1px solid #cbd5e1; transition: all 200ms; background-color: white; color: #475569; }
@@ -198,13 +203,14 @@
         #contact-form input, #contact-form textarea { width: 100%; background-color: white; border: 1px solid #cbd5e1; border-radius: 0.375rem; padding: 0.5rem 0.75rem; color: #0f172a; font-size: 0.875rem; transition: all 150ms; }
         #contact-form input::placeholder, #contact-form textarea::placeholder { color: #94a3b8; }
         #contact-form input:focus, #contact-form textarea:focus { outline: 2px solid transparent; outline-offset: 2px; --tw-ring-color: #64748b; box-shadow: 0 0 0 2px var(--tw-ring-color); border-color: #64748b; }
-        #contact-form button[type="submit"] { background-color: var(--color-cta-green); color: white; font-weight: 700; padding: 0.75rem 1rem; border-radius: 0.375rem; display: flex; align-items: center; justify-content: center; margin: auto; font-size: 0.875rem; transition: background-color 300ms; box-shadow: 0 10px 15px -3px rgba(30,142,74,0.3), 0 4px 6px -4px rgba(30,142,74,0.3); }
+        #contact-form button[type="submit"] { background-color: var(--color-cta-green); color: white; font-weight: 700; padding: 0.75rem 1rem; border-radius: 0.375rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.875rem; transition: background-color 300ms; box-shadow: 0 10px 15px -3px rgba(30,142,74,0.3), 0 4px 6px -4px rgba(30,142,74,0.3); }
+        #contact-form button[type="submit"] .material-icons { font-size: 1.25rem; }
         #contact-form button[type="submit"]:hover { background-color: #166534; }
-        .contact-info { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e2e8f0; }
+        .contact-info { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e2e8f0; }
         .contact-info h3 { font-size: 1.125rem; font-weight: 700; color: #1e293b; margin-bottom: 1.5rem; }
-        .contact-info .info-grid { display: grid; gap: 2rem 1.5rem; }
+        .contact-info .info-grid { display: grid; gap: 1.5rem; }
         .contact-info .info-item { display: flex; align-items: flex-start; }
-        .contact-info .info-item .icon { color: #64748b; margin-right: 1rem; font-size: 1.875rem; }
+        .contact-info .info-item .icon { color: #64748b; margin-right: 1rem; font-size: 1.875rem; flex-shrink: 0; }
         .contact-info .info-item h4 { font-weight: 600; color: #64748b; font-size: 0.75rem; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
         .contact-info .info-item p { color: #334155; font-size: 0.875rem; }
         footer { background-color: var(--black); color: #94a3b8; padding: 4rem 0; border-top: 1px solid #1e293b; }
@@ -243,6 +249,7 @@
             .grid-2-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .grid-laudos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .section-title h2 { font-size: 1.875rem; }
+            .metodologia-grid { grid-template-columns: repeat(2, 1fr); }
             .testimonial-btn.prev { left: -1rem; }
             .testimonial-btn.next { right: -1rem; }
             footer .footer-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
@@ -254,11 +261,13 @@
         @media (min-width: 1024px) {
             header .max-w-7xl, footer .max-w-7xl, .container { padding: 0 2rem; }
             .hero h1 { font-size: 3.75rem; }
-            #contato .contact-wrapper { flex-direction: row; }
-            #contato .map-container { width: 41.666667%; aspect-ratio: auto; }
-            #contato .form-container { width: 58.333333%; padding: 4rem; }
+            #contato .contact-wrapper { flex-direction: row; align-items: stretch; }
+            #contato .map-container { width: 41.666667%; }
+            #contato .map-container iframe { height: 100%;}
+            #contato .form-container { width: 58.333333%; padding: 3rem; }
             #contato h2 { font-size: 2.25rem; }
             .grid-laudos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .metodologia-grid { grid-template-columns: repeat(4, 1fr); }
             .testimonial-card, .blog-card { width: 31%; }
         }
     </style>
@@ -461,9 +470,9 @@
                 </div>
             </section>
             
-            <section class="py-16 bg-surface-dark border-t border-slate-800\/50">
+            <section class="bg-slate-950 border-t border-slate-800\/50">
                  <div class="container">
-                     <div class="section-title fade-in-on-scroll" style="margin-bottom: 3rem;">
+                     <div class="section-title fade-in-on-scroll">
                          <h2>Tipos de Laudos Técnicos e Perícia</h2>
                          <p class="text-sm">Conheça as principais soluções que oferecemos.</p>
                      </div>
@@ -509,44 +518,55 @@
                             <div><h3>Assistência Técnica em Perícias Trabalhistas</h3><p>Fundamentação técnica em processos de SST</p></div>
                         </div>
                      </div>
-                     <div class="max-w-5xl mx-auto text-center fade-in-on-scroll">
-                         <p class="text-sm text-slate-400" style="margin-top: 2rem;">Nossos laudos são elaborados por uma <a href="#equipe" class="equipe-link font-semibold">equipe de mestres e doutores</a> com vasta experiência em casos de alta complexidade, como a perícia no Morro da Forca, garantindo a máxima precisão e autoridade técnica.</p>
-                         <p class="text-xs text-slate-600">Todos os laudos seguem as normas técnicas aplicáveis e incluem ART/RRT.</p>
+                     <div class="flex flex-col items-center fade-in-on-scroll" style="padding: 0 1rem;">
+                         <p class="text-sm text-slate-400 max-w-800px text-center" style="margin-top: 2.5rem;">Nossos laudos são elaborados por uma <a href="#equipe" class="equipe-link font-semibold">equipe de mestres e doutores</a> com vasta experiência em casos de alta complexidade, como a perícia no Morro da Forca, garantindo a máxima precisão e autoridade técnica.</p>
+                         <p class="text-xs text-slate-600 max-w-800px text-center">Todos os laudos seguem as normas técnicas aplicáveis e incluem ART/RRT.</p>
                      </div>
                  </div>
             </section>
 
-            <section class="bg-slate-950" id="metodologia">
-                <div class="max-w-4xl mx-auto container">
+            <section class="bg-surface-dark" id="metodologia">
+                <div class="container">
                     <div class="section-title fade-in-on-scroll">
                         <h2>Metodologia para Laudos Técnicos e Periciais</h2>
                         <p>Processo estruturado e fundamentado.</p>
                     </div>
-                    <div class="metodologia-timeline fade-in-on-scroll">
-                        <div class="line"></div>
-                        <div class="item">
-                            <div class="step">01</div>
-                            <div class="content"><h3><span class="material-icons-outlined icon">chat</span>Consultoria e Escopo</h3><p class="text-sm text-slate-400">Entendimento da demanda e definição do tipo de laudo necessário.</p></div>
+                    <div class="metodologia-grid fade-in-on-scroll">
+                        <div class="metodologia-step">
+                            <div class="step-icon-wrapper">
+                                <span class="material-icons-outlined icon">chat</span>
+                            </div>
+                            <h4><span>01.</span> Consultoria e Escopo</h4>
+                            <p>Entendimento da demanda e definição do tipo de laudo necessário.</p>
                         </div>
-                        <div class="item">
-                            <div class="step">02</div>
-                            <div class="content"><h3><span class="material-icons-outlined icon">search</span>Inspeção Técnica</h3><p class="text-sm text-slate-400">Visita in loco com equipamentos de última geração para coleta de dados.</p></div>
+                         <div class="metodologia-step">
+                            <div class="step-icon-wrapper">
+                                <span class="material-icons-outlined icon">search</span>
+                            </div>
+                            <h4><span>02.</span> Inspeção Técnica</h4>
+                            <p>Visita in loco com equipamentos de última geração para coleta de dados.</p>
                         </div>
-                        <div class="item">
-                            <div class="step">03</div>
-                            <div class="content"><h3><span class="material-icons-outlined icon">analytics</span>Análise e Parecer</h3><p class="text-sm text-slate-400">Processamento dos dados e elaboração do parecer técnico fundamentado.</p></div>
+                         <div class="metodologia-step">
+                            <div class="step-icon-wrapper">
+                                <span class="material-icons-outlined icon">analytics</span>
+                            </div>
+                            <h4><span>03.</span> Análise e Parecer</h4>
+                            <p>Processamento dos dados e elaboração do parecer técnico fundamentado.</p>
                         </div>
-                        <div class="item">
-                            <div class="step">04</div>
-                            <div class="content"><h3><span class="material-icons-outlined icon">verified</span>Entrega do Laudo</h3><p class="text-sm text-slate-400">Laudo completo, pronto para órgãos públicos, instituições financeiras ou processos judiciais.</p></div>
+                         <div class="metodologia-step">
+                            <div class="step-icon-wrapper">
+                                <span class="material-icons-outlined icon">verified</span>
+                            </div>
+                            <h4><span>04.</span> Entrega do Laudo</h4>
+                            <p>Laudo completo, pronto para órgãos públicos ou processos judiciais.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="bg-surface-dark">
+            <section class="bg-slate-950">
                 <div class="max-w-4xl mx-auto container faq">
-                    <div class="section-title fade-in-on-scroll" style="margin-bottom: 3rem;">
+                    <div class="section-title fade-in-on-scroll">
                         <h2>Perguntas Frequentes sobre Laudos Técnicos</h2>
                         <p>Tire suas dúvidas sobre laudos de engenharia civil.</p>
                     </div>
@@ -571,7 +591,7 @@
                 </div>
             </section>
 
-            <section class="bg-slate-950" id="equipe">
+            <section class="bg-surface-dark" id="equipe">
                 <div class="container">
                     <div class="section-title fade-in-on-scroll">
                         <h2>Nossa Equipe</h2>
@@ -647,7 +667,7 @@
                             <span class="material-icons-outlined">chevron_right</span>
                         </button>
                     </div>
-                    <div class="text-center fade-in-on-scroll" style="margin-top: 3rem;">
+                    <div class="text-center fade-in-on-scroll" style="margin-top: 3rem; display: flex; justify-content: center;">
                        <a href="https://search.google.com/local/reviews?placeid=ChIJqyTVcCKO9kgREUZWFNltsUY" target="_blank" rel="noopener noreferrer" class="google-reviews-link">
                            Ver todas as 35 avaliações no Google
                        </a>
@@ -655,7 +675,7 @@
                 </div>
            </section>
             
-            <section class="bg-slate-950" id="blog">
+            <section class="bg-surface-dark" id="blog">
                 <div class="container">
                     <div class="section-title fade-in-on-scroll">
                         <h2>Últimas do Blog</h2>
@@ -669,7 +689,7 @@
                                     <span class="read-time">3 min de leitura</span>
                                 </div>
                                 <h3>Quanto custa um laudo de engenharia em Barbacena e região em 2026?</h3>
-                                <p class="text-sm text-slate-400">Saiba quanto custa um laudo técnico de engenharia civil em Barbacena e região. Entenda os preços e tecnologias.</p>
+                                <p class="text-sm">Saiba quanto custa um laudo técnico de engenharia civil em Barbacena e região. Entenda os preços e tecnologias.</p>
                             </div>
                             <div class="footer">
                                 <div class="read-more">Ler mais <span aria-hidden="true">→</span></div>
@@ -682,7 +702,7 @@
                                     <span class="read-time">4 min de leitura</span>
                                 </div>
                                 <h3>Quando Contratar um Especialista em Engenharia Diagnóstica?</h3>
-                                <p class="text-sm text-slate-400">Saiba identificar os momentos cruciais em que a avaliação de um engenheiro diagnóstico pode salvar seu patrimônio e garantir sua segurança.</p>
+                                <p class="text-sm">Saiba identificar os momentos cruciais em que a avaliação de um engenheiro diagnóstico pode salvar seu patrimônio e garantir sua segurança.</p>
                             </div>
                             <div class="footer">
                                 <div class="read-more">Ler mais <span aria-hidden="true">→</span></div>
@@ -695,7 +715,7 @@
                                     <span class="read-time">5 min de leitura</span>
                                 </div>
                                 <h3>Vistoria Cautelar de Vizinhança: Um Guia Completo</h3>
-                                <p class="text-sm text-slate-400">Vai construir ou reformar? Entenda por que a vistoria de vizinhança é uma etapa indispensável para a sua segurança jurídica e financeira.</p>
+                                <p class="text-sm">Vai construir ou reformar? Entenda por que a vistoria de vizinhança é uma etapa indispensável para a sua segurança jurídica e financeira.</p>
                             </div>
                             <div class="footer">
                                 <div class="read-more">Ler mais <span aria-hidden="true">→</span></div>
@@ -708,7 +728,7 @@
                                     <span class="read-time">4 min de leitura</span>
                                 </div>
                                 <h3>Perícia Judicial de Engenharia: O Papel do Assistente Técnico</h3>
-                                <p class="text-sm text-slate-400">Advogados e partes em um processo: descubram como um assistente técnico de engenharia pode ser decisivo para o sucesso da sua causa.</p>
+                                <p class="text-sm">Advogados e partes em um processo: descubram como um assistente técnico de engenharia pode ser decisivo para o sucesso da sua causa.</p>
                             </div>
                             <div class="footer">
                                 <div class="read-more">Ler mais <span aria-hidden="true">→</span></div>
@@ -721,7 +741,7 @@
                 </div>
             </section>
 
-            <section id="contato" class="p-0">
+            <section id="contato">
                 <div class="contact-wrapper">
                     <div class="map-container fade-in-on-scroll">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.2755881772346!2d-43.768791099999994!3d-21.221067299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f16!3m3!1m2!1s0x48f68e2270d524ab%3A0x46b16dd914564611!2sHarpia%20Consultoria%20-%20Engenharia%20e%20Laudos%20T%C3%A9cnicos!5e1!3m2!1spt-BR!2sbr!4v1767458030731!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Localização da Harpia Consultoria"></iframe>
@@ -750,9 +770,11 @@
                                     <label for="message-contact">3. Detalhes adicionais (opcional)</label>
                                     <textarea id="message-contact" name="message" rows="3" placeholder="Descreva brevemente sua necessidade..."></textarea>
                                 </div>
-                                <button type="submit" onclick="trackWhatsappClick()" class="animate-gentle-pulse">
-                                    <span class="material-icons" style="margin-right: 0.5rem; font-size:1.25rem;">whatsapp</span> Enviar via WhatsApp
-                                </button>
+                                <div style="display: flex; justify-content: center;">
+                                    <button type="submit" onclick="trackWhatsappClick()" class="animate-gentle-pulse">
+                                        <span class="material-icons">whatsapp</span> Enviar via WhatsApp
+                                    </button>
+                                </div>
                                 <p class="text-center text-xs text-slate-500">Ao enviar, você será redirecionado para o WhatsApp.</p>
                             </form>
                         </div>
@@ -765,7 +787,7 @@
                                 <div class="info-item"><span class="material-icons-outlined icon">schedule</span><div><h4>HORÁRIO DE ATENDIMENTO</h4><p>Segunda a Sexta: 8h às 17h</p><p>Sábado: Plantão via WhatsApp</p></div></div>
                             </div>
                             <div class="info-item" style="margin-top: 2rem; padding: 1rem; background-color: #f1f5f9; border-radius: 0.5rem; border: 1px solid #e2e8f0;">
-                                <span class="material-icons-outlined icon" style="flex-shrink: 0;">event_available</span>
+                                <span class="material-icons-outlined icon">event_available</span>
                                 <div><h4>AGENDAMENTO FLEXÍVEL</h4><p>Para sua comodidade, atendimentos podem ser agendados online. Oferecemos também horários especiais mediante consulta prévia para atender sua necessidade.</p></div>
                             </div>
                         </div>
