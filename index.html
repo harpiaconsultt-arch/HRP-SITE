@@ -302,8 +302,8 @@
     <meta id="twitter-description" name="twitter:description" content="Especialistas em laudos de vizinhança, vistorias cautelares e estabilidade de taludes em Barbacena e região." />
     <meta id="twitter-image" name="twitter:image" content="https://harpiaconsultoria.eng.br/img/logo-share.png" />
 
-    <!-- Scripts (JSON-LD) -->
-    <script type="application/ld+json">
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json" id="schema-markup-script">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
@@ -810,7 +810,7 @@
         </div>
 
         <div id="blog-post-container" class="hidden">
-            <article id="preco-laudo-tecnico-engenharia-barbacena-2026" class="blog-post-content hidden">
+            <article id="preco-laudo-tecnico-engenharia-barbacena-2026" class="blog-post-content hidden" data-date-published="2026-01-09">
                 <div class="bg-slate-950 py-20 lg:py-32">
                     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                         <a href="/" class="inline-flex items-center text-green-400 hover:underline mb-8 font-montserrat">
@@ -855,7 +855,7 @@
                     </div>
                 </div>
             </article>
-            <article id="quando-contratar-engenharia-diagnostica" class="blog-post-content hidden">
+            <article id="quando-contratar-engenharia-diagnostica" class="blog-post-content hidden" data-date-published="2024-08-15">
                 <div class="bg-slate-950 py-20 lg:py-32">
                     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                         <a href="/" class="inline-flex items-center text-green-400 hover:underline mb-8 font-montserrat">
@@ -876,7 +876,7 @@
                     </div>
                 </div>
             </article>
-            <article id="vistoria-cautelar-de-vizinhanca-guia-completo" class="blog-post-content hidden">
+            <article id="vistoria-cautelar-de-vizinhanca-guia-completo" class="blog-post-content hidden" data-date-published="2024-08-12">
                 <div class="bg-slate-950 py-20 lg:py-32">
                     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                         <a href="/" class="inline-flex items-center text-green-400 hover:underline mb-8 font-montserrat">
@@ -897,7 +897,7 @@
                     </div>
                 </div>
             </article>
-            <article id="pericia-judicial-engenharia-o-papel-assistente-tecnico" class="blog-post-content hidden">
+            <article id="pericia-judicial-engenharia-o-papel-assistente-tecnico" class="blog-post-content hidden" data-date-published="2024-08-08">
                 <div class="bg-slate-950 py-20 lg:py-32">
                     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                         <a href="/" class="inline-flex items-center text-green-400 hover:underline mb-8 font-montserrat">
@@ -1041,79 +1041,111 @@
 
     <!-- SPA Router and Dynamic SEO -->
     <script>
-        const originalMeta = {
-            title: document.title,
-            description: document.getElementById('meta-description').getAttribute('content'),
-            ogTitle: document.getElementById('og-title').getAttribute('content'),
-            ogDescription: document.getElementById('og-description').getAttribute('content'),
-            ogUrl: document.getElementById('og-url').getAttribute('content'),
-            canonical: document.getElementById('canonical-link').getAttribute('href')
-        };
+        document.addEventListener('DOMContentLoaded', () => {
+            const originalMeta = {
+                title: document.title,
+                description: document.getElementById('meta-description').getAttribute('content'),
+                ogTitle: document.getElementById('og-title').getAttribute('content'),
+                ogDescription: document.getElementById('og-description').getAttribute('content'),
+                ogUrl: document.getElementById('og-url').getAttribute('content'),
+                canonical: document.getElementById('canonical-link').getAttribute('href')
+            };
 
-        function updateMetaTags(meta) {
-            document.title = meta.title;
-            document.getElementById('meta-description').setAttribute('content', meta.description);
-            document.getElementById('og-title').setAttribute('content', meta.ogTitle);
-            document.getElementById('og-description').setAttribute('content', meta.ogDescription);
-            document.getElementById('og-url').setAttribute('content', meta.ogUrl);
-            document.getElementById('canonical-link').setAttribute('href', meta.canonical);
-        }
+            const schemaScript = document.getElementById('schema-markup-script');
+            const originalSchemaContent = schemaScript ? schemaScript.textContent : '';
 
-        function handleRouting() {
-            const hash = window.location.hash;
-            const pageHome = document.getElementById('page-home');
-            const blogPostContainer = document.getElementById('blog-post-container');
-            const allPosts = document.querySelectorAll('.blog-post-content');
-
-            pageHome.style.display = 'none';
-            blogPostContainer.style.display = 'none';
-            allPosts.forEach(post => post.classList.remove('active'));
-
-            if (hash.startsWith('#/blog/')) {
-                const postId = hash.substring(7);
-                const targetPost = document.getElementById(postId);
-                
-                if (targetPost) {
-                    blogPostContainer.style.display = 'block';
-                    targetPost.classList.add('active');
-                    window.scrollTo(0, 0);
-
-                    const postTitle = targetPost.querySelector('h1').textContent.trim();
-                    const postDescription = targetPost.querySelector('.prose p')?.textContent.trim() || originalMeta.description;
-                    const postUrl = `${originalMeta.canonical}${hash}`;
-                    
-                    updateMetaTags({
-                        title: `${postTitle} | Harpia Consultoria`,
-                        description: postDescription.substring(0, 155) + '...',
-                        ogTitle: `${postTitle} | Harpia Consultoria`,
-                        ogDescription: postDescription.substring(0, 155) + '...',
-                        ogUrl: postUrl,
-                        canonical: postUrl
-                    });
-                } else {
-                    window.location.hash = '#/';
-                }
-            } else if (hash === '#/blog') {
-                pageHome.style.display = 'block';
-                document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' });
-
-                const blogUrl = `${originalMeta.canonical}${hash}`;
-                updateMetaTags({
-                    title: 'Blog - Engenharia Diagnóstica | Harpia Consultoria',
-                    description: 'Acompanhe os artigos e novidades da Harpia Consultoria sobre engenharia diagnóstica, laudos, perícias e vistorias.',
-                    ogTitle: 'Blog - Engenharia Diagnóstica | Harpia Consultoria',
-                    ogDescription: 'Acompanhe os artigos e novidades da Harpia Consultoria sobre engenharia diagnóstica, laudos, perícias e vistorias.',
-                    ogUrl: blogUrl,
-                    canonical: blogUrl
-                });
-            } else {
-                pageHome.style.display = 'block';
-                updateMetaTags(originalMeta);
+            function updateMetaTags(meta) {
+                document.title = meta.title;
+                document.getElementById('meta-description').setAttribute('content', meta.description);
+                document.getElementById('og-title').setAttribute('content', meta.ogTitle);
+                document.getElementById('og-description').setAttribute('content', meta.ogDescription);
+                document.getElementById('og-url').setAttribute('content', meta.ogUrl);
+                document.getElementById('canonical-link').setAttribute('href', meta.canonical);
             }
-        }
 
-        window.addEventListener('hashchange', handleRouting);
-        document.addEventListener('DOMContentLoaded', handleRouting);
+            function handleRouting() {
+                const hash = window.location.hash;
+                const pageHome = document.getElementById('page-home');
+                const blogPostContainer = document.getElementById('blog-post-container');
+                const allPosts = document.querySelectorAll('.blog-post-content');
+
+                pageHome.style.display = 'none';
+                blogPostContainer.style.display = 'none';
+                allPosts.forEach(post => post.classList.remove('active'));
+
+                if (hash.startsWith('#/blog/')) {
+                    const postId = hash.substring(7);
+                    const targetPost = document.getElementById(postId);
+                    
+                    if (targetPost) {
+                        blogPostContainer.style.display = 'block';
+                        targetPost.classList.add('active');
+                        window.scrollTo(0, 0);
+
+                        const postTitle = targetPost.querySelector('h1').textContent.trim();
+                        const postDescription = targetPost.querySelector('.prose p')?.textContent.trim() || originalMeta.description;
+                        const postUrl = `${originalMeta.canonical.slice(0, -1)}${hash.replace('#', '')}`; // Correct URL construction
+                        
+                        updateMetaTags({
+                            title: `${postTitle} | Harpia Consultoria`,
+                            description: postDescription.substring(0, 155) + '...',
+                            ogTitle: `${postTitle} | Harpia Consultoria`,
+                            ogDescription: postDescription.substring(0, 155) + '...',
+                            ogUrl: postUrl,
+                            canonical: postUrl
+                        });
+                        
+                        // Update Schema
+                        const datePublished = targetPost.dataset.datePublished;
+                        if (schemaScript && datePublished) {
+                            const articleSchema = {
+                                "@context": "https://schema.org",
+                                "@type": "Article",
+                                "headline": postTitle,
+                                "description": postDescription.substring(0, 155) + '...',
+                                "author": { "@type": "Organization", "name": "Harpia Consultoria" },
+                                "publisher": {
+                                    "@type": "Organization",
+                                    "name": "Harpia Consultoria",
+                                    "logo": {
+                                        "@type": "ImageObject",
+                                        "url": "https://harpiaconsultoria.eng.br/img/logo.webp"
+                                    }
+                                },
+                                "datePublished": datePublished,
+                                "mainEntityOfPage": { "@type": "WebPage", "@id": postUrl }
+                            };
+                            schemaScript.textContent = JSON.stringify(articleSchema, null, 2);
+                        }
+
+                    } else {
+                        window.location.hash = '#/';
+                    }
+                } else if (hash === '#/blog') {
+                    pageHome.style.display = 'block';
+                    document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' });
+
+                    const blogUrl = `${originalMeta.canonical.slice(0, -1)}${hash.replace('#', '')}`;
+                    updateMetaTags({
+                        title: 'Blog - Engenharia Diagnóstica | Harpia Consultoria',
+                        description: 'Acompanhe os artigos e novidades da Harpia Consultoria sobre engenharia diagnóstica, laudos, perícias e vistorias.',
+                        ogTitle: 'Blog - Engenharia Diagnóstica | Harpia Consultoria',
+                        ogDescription: 'Acompanhe os artigos e novidades da Harpia Consultoria sobre engenharia diagnóstica, laudos, perícias e vistorias.',
+                        ogUrl: blogUrl,
+                        canonical: blogUrl
+                    });
+                    if (schemaScript) schemaScript.textContent = originalSchemaContent;
+
+                } else {
+                    pageHome.style.display = 'block';
+                    updateMetaTags(originalMeta);
+                    if (schemaScript) schemaScript.textContent = originalSchemaContent;
+                }
+            }
+
+            window.addEventListener('hashchange', handleRouting);
+            handleRouting(); // Initial call on page load
+        });
     </script>
 </body>
 </html>
