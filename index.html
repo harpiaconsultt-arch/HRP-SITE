@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="pt-BR">
 <head>
@@ -30,7 +31,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons">
     </noscript>
     
-    <!-- CSS Puro (Conversão do Tailwind) -->
+    <!-- CSS Refatorado -->
     <style>
         :root {
             --color-primary: #0A2240;
@@ -72,7 +73,7 @@
         .flex-col { flex-direction: column; }
         .items-center { align-items: center; }
         .text-center { text-align: center; }
-        header { position: fixed; width: 100%; z-index: 50; transition-property: all; transition-duration: 300ms; background-color: var(--color-surface-dark); border-bottom: 1px solid #1e293b; }
+        header { position: fixed; width: 100%; z-index: 50; transition-property: all; transition-duration: 300ms; background-color: var(--color-surface-dark); border-bottom: 1px solid #1e293b; min-height: 5rem; /* CLS Fix */ }
         header .max-w-7xl, footer .max-w-7xl { max-width: 80rem; margin: auto; padding: 0 1rem; }
         header .flex { display: flex; justify-content: space-between; align-items: center; height: 5rem; }
         .logo-link { display: flex; flex-shrink: 0; align-items: center; gap: 0.5rem; }
@@ -92,7 +93,7 @@
         #mobile-menu nav { padding: 0.5rem 1rem 1rem; }
         #mobile-menu a { display: block; color: #cbd5e1; padding: 0.5rem 0; font-size: 1rem; font-weight: 500; transition: color 150ms; }
         #mobile-menu a:hover { color: white; }
-        #mobile-menu .cta-button { display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 1rem; padding: 0.75rem 1rem; font-size: 0.875rem; }
+        #mobile-menu .cta-button { display: flex; justify-content: center; align-items: center; max-width: 180px !important; margin: 0 auto !important; padding: 8px 15px !important; font-size: 13px !important; }
         .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: var(--color-surface-dark); overflow: hidden; }
         .hero .bg-image-container { position: absolute; inset: 0; z-index: 0; }
         .hero .bg-image { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; }
@@ -104,32 +105,32 @@
         .hero .cta-button:hover { background-color: white; color: #0f172a; }
         .hero .scroll-down { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 1s infinite; }
         .hero .scroll-down .material-icons-outlined { color: rgba(255, 255, 255, 0.5); font-size: 2.5rem; }
-        section { padding: 4rem 0; }
-        .section-title { text-align: center; margin-bottom: 3rem; }
+        section { padding: 2.0rem 0; }
+        .section-title { text-align: center; margin-bottom: 2.5rem; }
         .section-title h2 { font-size: 1.875rem; font-weight: 300; color: white; margin-bottom: 1rem; }
         .section-title p { color: #94a3b8; max-width: 42rem; margin: auto; }
-        .grid-3-col { display: grid; gap: 2rem; }
-        .card-tech { background-color: #0f172a; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); border: 1px solid #1e293b; transition: all 150ms; text-align: center; }
+        .grid-3-col { display: grid; gap: 1.5rem; }
+        .card-tech { background-color: #0f172a; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); border: 1px solid #1e293b; transition: all 150ms; text-align: center; }
         .card-tech:hover { box-shadow: 0 10px 15px -3px rgba(30,142,74,0.1), 0 4px 6px -4px rgba(30,142,74,0.1); border-color: #334155; }
-        .card-tech .icon-wrapper { display: inline-flex; align-items: center; justify-content: center; width: 5rem; height: 5rem; border-radius: 9999px; background-color: #1e293b; margin-bottom: 1.5rem; transition: background-color 150ms; }
+        .card-tech .icon-wrapper { display: inline-flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; border-radius: 9999px; background-color: #1e293b; margin-bottom: 1rem; transition: background-color 150ms; }
         .card-tech:hover .icon-wrapper { background-color: #334155; }
-        .card-tech .icon { font-size: 3rem; color: var(--color-cta-green); }
-        .card-tech h3 { font-size: 1.125rem; font-weight: 600; color: white; margin-bottom: 0.75rem; }
+        .card-tech .icon { font-size: 2.5rem; color: var(--color-cta-green); }
+        .card-tech h3 { font-size: 1.125rem; font-weight: 600; color: white; margin-bottom: 0.5rem; }
         .card-tech p { font-size: 0.875rem; color: #94a3b8; line-height: 1.625; }
         .bg-slate-950 { background-color: #020617; }
         .bg-surface-dark { background-color: #0A2240; }
         .container { max-width: 80rem; margin: auto; padding: 0 1rem; }
-        .grid-2-col { display: grid; gap: 1.5rem; }
-        .card-service { position: relative; background-color: rgba(30, 41, 59, 0.5); padding: 2rem; border-radius: 0.5rem; border: 1px solid #334155; transition: border-color 150ms; text-align: center; }
+        .grid-2-col { display: grid; gap: 1rem; }
+        .card-service { position: relative; background-color: rgba(30, 41, 59, 0.5); padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #334155; transition: border-color 150ms; text-align: center; }
         .card-service:hover { border-color: rgba(30, 142, 74, 0.5); }
-        .card-service h3 { font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+        .card-service h3 { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
         .card-service p { font-size: 0.875rem; color: #94a3b8; }
         .card-service .highlight { position: absolute; top: 1rem; left: 50%; transform: translateX(-50%); border: 1px solid var(--color-cta-green); color: var(--color-cta-green); font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 9999px; font-weight: 600; }
         .border-t { border-top-width: 1px; }
         .border-slate-800\/50 { border-color: rgba(30,41,59,0.5); }
-        .max-w-800px { max-width: 800px; }
-        .grid-laudos { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
-        .card-laudo { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; padding: 1.25rem 1rem; background-color: rgba(30,41,59,0.3); border-radius: 0.25rem; border: 1px solid rgba(51,65,85,0.5); transition: background-color 150ms; }
+        .max-w-800px { max-width: 800px; margin-left: auto; margin-right: auto; }
+        .grid-laudos { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+        .card-laudo { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; padding: 1rem 0.75rem; background-color: rgba(30,41,59,0.3); border-radius: 0.25rem; border: 1px solid rgba(51,65,85,0.5); transition: background-color 150ms; }
         .card-laudo:hover { background-color: rgba(30,41,59,0.5); }
         .card-laudo .icon { color: #94a3b8; margin-right: 0; margin-bottom: 0.75rem; font-size: 1.75rem; flex-shrink: 0; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; }
         .card-laudo h3 { color: white; font-weight: 500; font-size: 0.875rem; }
@@ -137,8 +138,8 @@
         .equipe-link { color: var(--color-cta-green); }
         .equipe-link:hover { text-decoration: underline; }
         .text-xs.text-slate-600 { color: #475569; margin-top: 1rem; }
-        .metodologia-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
-        .metodologia-step { text-align: center; }
+        .metodologia-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        .metodologia-step { text-align: center; padding: 0 0.5rem; }
         .metodologia-step .step-icon-wrapper { width: 4rem; height: 4rem; border-radius: 9999px; background-color: #0f172a; border: 2px solid #334155; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; transition: all 150ms; }
         .metodologia-step:hover .step-icon-wrapper { border-color: var(--color-cta-green); }
         .metodologia-step .icon { font-size: 2rem; color: #94a3b8; transition: color 150ms; }
@@ -173,7 +174,7 @@
         .testimonial-btn.next { right: 0; }
         .google-reviews-link { display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid #94a3b8; font-size: 0.875rem; font-weight: 500; border-radius: 0.25rem; color: white; transition: all 300ms; }
         .google-reviews-link:hover { background-color: white; color: #0f172a; }
-        .blog-posts-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 1rem; margin-bottom: 3rem; }
+        .blog-posts-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 1rem; margin-bottom: 2rem; }
         .blog-card { width: 90%; flex-shrink: 0; scroll-snap-align: center; background-color: #0f172a; border-radius: 0.5rem; overflow: hidden; border: 1px solid #1e293b; display: flex; flex-direction: column; transition: transform 150ms; }
         .blog-card:hover { transform: translateY(-0.25rem); }
         .blog-card .content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
@@ -184,7 +185,7 @@
         .blog-card h3 { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.5rem; transition: color 150ms; flex-grow: 1; }
         .blog-card:hover h3 { color: var(--color-cta-green); }
         .blog-card .footer { padding: 1.5rem; background-color: rgba(30,41,59,0.5); margin-top: auto; }
-        .blog-card .read-more { color: var(--color-cta-green); font-weight: 600; font-size: 0.875rem; }
+        .blog-card .read-more { color: #ffffff; font-weight: 600; font-size: 0.875rem; }
         .blog-card .read-more:hover { text-decoration: underline; }
         .view-all-posts-btn { display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid #64748b; font-size: 0.875rem; font-weight: 500; border-radius: 0.25rem; color: white; transition: all 150ms; }
         .view-all-posts-btn:hover { background-color: #1e293b; border-color: #94a3b8; }
@@ -193,9 +194,9 @@
         #contato iframe { width: 100%; height: 100%; border: 0; min-height: 300px; }
         #contato .form-container { display: flex; flex-direction: column; justify-content: center; padding: 2rem; }
         #contato h2 { font-size: 1.875rem; font-weight: 700; color: #1e293b; margin-bottom: 0.5rem; }
-        #contato .form-intro { color: #475569; margin-bottom: 2.5rem; }
+        #contato .form-intro { color: #475569; margin-bottom: 2rem; }
         #contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
-        #contact-form label { font-size: 0.875rem; font-weight: 600; color: #334155; margin-bottom: 0.75rem; display: block; }
+        #contact-form label { font-size: 0.875rem; font-weight: 600; color: #334155; margin-bottom: 0.5rem; display: block; }
         #service-options-container { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         #service-options-container button { padding: 0.5rem 1rem; font-size: 0.875rem; border-radius: 9999px; border: 1px solid #cbd5e1; transition: all 200ms; background-color: white; color: #475569; }
         #service-options-container button:hover { background-color: #f1f5f9; border-color: #94a3b8; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); }
@@ -203,9 +204,23 @@
         #contact-form input, #contact-form textarea { width: 100%; background-color: white; border: 1px solid #cbd5e1; border-radius: 0.375rem; padding: 0.5rem 0.75rem; color: #0f172a; font-size: 0.875rem; transition: all 150ms; }
         #contact-form input::placeholder, #contact-form textarea::placeholder { color: #94a3b8; }
         #contact-form input:focus, #contact-form textarea:focus { outline: 2px solid transparent; outline-offset: 2px; --tw-ring-color: #64748b; box-shadow: 0 0 0 2px var(--tw-ring-color); border-color: #64748b; }
-        #contact-form button[type="submit"] { background-color: var(--color-cta-green); color: white; font-weight: 700; padding: 0.75rem 1rem; border-radius: 0.375rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.875rem; transition: background-color 300ms; box-shadow: 0 10px 15px -3px rgba(30,142,74,0.3), 0 4px 6px -4px rgba(30,142,74,0.3); }
-        #contact-form button[type="submit"] .material-icons { font-size: 1.25rem; }
-        #contact-form button[type="submit"]:hover { background-color: #166534; }
+        .btn-whatsapp-fix {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+            min-height: 55px !important;
+            background-color: #25D366 !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            border: none !important;
+            border-radius: 8px !important;
+            padding: 0 !important; /* Remove o padding que está esmagando o texto */
+            margin: 15px 0 !important;
+            font-family: 'Montserrat', sans-serif !important;
+            cursor: pointer !important;
+        }
         .contact-info { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e2e8f0; }
         .contact-info h3 { font-size: 1.125rem; font-weight: 700; color: #1e293b; margin-bottom: 1.5rem; }
         .contact-info .info-grid { display: grid; gap: 1.5rem; }
@@ -213,7 +228,7 @@
         .contact-info .info-item .icon { color: #64748b; margin-right: 1rem; font-size: 1.875rem; flex-shrink: 0; }
         .contact-info .info-item h4 { font-weight: 600; color: #64748b; font-size: 0.75rem; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
         .contact-info .info-item p { color: #334155; font-size: 0.875rem; }
-        footer { background-color: var(--black); color: #94a3b8; padding: 4rem 0; border-top: 1px solid #1e293b; }
+        footer { background-color: var(--black); color: #94a3b8; padding: 2.4rem 0; border-top: 1px solid #1e293b; }
         footer .footer-grid { display: grid; gap: 2rem; }
         footer .footer-col h4 { font-size: 0.875rem; font-weight: 600; color: white; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; }
         footer .footer-col nav { display: flex; flex-direction: column; gap: 0.5rem; }
@@ -223,12 +238,13 @@
         footer .social-links a { color: #94a3b8; transition: color 150ms; }
         footer .social-links a:hover { color: white; }
         footer .social-links svg { width: 1.5rem; height: 1.5rem; fill: currentColor; }
-        footer .copyright { border-top: 1px solid #1e293b; margin-top: 3rem; padding-top: 2rem; text-align: center; font-size: 0.75rem; color: #475569; }
+        footer .copyright { border-top: 1px solid #1e293b; margin-top: 2.5rem; padding-top: 2rem; text-align: center; font-size: 0.75rem; color: #475569; }
         #whatsapp-fab { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 50; width: 3.5rem; height: 3.5rem; background-color: var(--color-cta-green); border-radius: 9999px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; transition: transform 150ms; }
         #whatsapp-fab:hover { transform: scale(1.1); }
         #whatsapp-fab svg { width: 2rem; height: 2rem; color: white; fill: currentColor; }
         #back-to-top-btn { position: fixed; bottom: 6rem; right: 1.5rem; z-index: 50; width: 3rem; height: 3rem; background-color: rgba(30,41,59,0.8); backdrop-filter: blur(4px); border: 1px solid #334155; border-radius: 9999px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; color: #cbd5e1; transition: all 300ms; opacity: 0; transform: translateY(1rem); visibility: hidden; }
         #back-to-top-btn:hover { background-color: #334155; color: white; border-color: #475569; }
+        #back-to-top-btn.is-visible { opacity: 1; transform: translateY(0); visibility: visible; }
         #blog-post-container .blog-post-content { display: none; }
         #blog-post-container .blog-post-content.active { display: block; }
         @media (min-width: 640px) {
@@ -247,7 +263,7 @@
             .hero p { font-size: 1.25rem; }
             .grid-3-col { grid-template-columns: repeat(3, minmax(0, 1fr)); }
             .grid-2-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-            .grid-laudos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .grid-laudos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
             .section-title h2 { font-size: 1.875rem; }
             .metodologia-grid { grid-template-columns: repeat(2, 1fr); }
             .testimonial-btn.prev { left: -1rem; }
@@ -266,7 +282,6 @@
             #contato .map-container iframe { height: 100%;}
             #contato .form-container { width: 58.333333%; padding: 3rem; }
             #contato h2 { font-size: 2.25rem; }
-            .grid-laudos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
             .metodologia-grid { grid-template-columns: repeat(4, 1fr); }
             .testimonial-card, .blog-card { width: 31%; }
         }
@@ -518,8 +533,8 @@
                             <div><h3>Assistência Técnica em Perícias Trabalhistas</h3><p>Fundamentação técnica em processos de SST</p></div>
                         </div>
                      </div>
-                     <div class="flex flex-col items-center fade-in-on-scroll" style="padding: 0 1rem;">
-                         <p class="text-sm text-slate-400 max-w-800px text-center" style="margin-top: 2.5rem;">Nossos laudos são elaborados por uma <a href="#equipe" class="equipe-link font-semibold">equipe de mestres e doutores</a> com vasta experiência em casos de alta complexidade, como a perícia no Morro da Forca, garantindo a máxima precisão e autoridade técnica.</p>
+                     <div class="flex flex-col items-center fade-in-on-scroll" style="padding: 0 1rem; margin-top: 2.5rem;">
+                         <p class="text-sm text-slate-400 max-w-800px text-center">Nossos laudos são elaborados por uma <a href="#equipe" class="equipe-link font-semibold">equipe de mestres e doutores</a> com vasta experiência em casos de alta complexidade, como a perícia no Morro da Forca, garantindo a máxima precisão e autoridade técnica.</p>
                          <p class="text-xs text-slate-600 max-w-800px text-center">Todos os laudos seguem as normas técnicas aplicáveis e incluem ART/RRT.</p>
                      </div>
                  </div>
@@ -667,7 +682,7 @@
                             <span class="material-icons-outlined">chevron_right</span>
                         </button>
                     </div>
-                    <div class="text-center fade-in-on-scroll" style="margin-top: 3rem; display: flex; justify-content: center;">
+                    <div class="text-center fade-in-on-scroll" style="margin-top: 2rem; display: flex; justify-content: center;">
                        <a href="https://search.google.com/local/reviews?placeid=ChIJqyTVcCKO9kgREUZWFNltsUY" target="_blank" rel="noopener noreferrer" class="google-reviews-link">
                            Ver todas as 35 avaliações no Google
                        </a>
@@ -770,11 +785,9 @@
                                     <label for="message-contact">3. Detalhes adicionais (opcional)</label>
                                     <textarea id="message-contact" name="message" rows="3" placeholder="Descreva brevemente sua necessidade..."></textarea>
                                 </div>
-                                <div style="display: flex; justify-content: center;">
-                                    <button type="submit" onclick="trackWhatsappClick()" class="animate-gentle-pulse">
-                                        <span class="material-icons">whatsapp</span> Enviar via WhatsApp
-                                    </button>
-                                </div>
+                                
+                                <button type="submit" class="btn-whatsapp-fix">ENVIAR VIA WHATSAPP</button>
+                                
                                 <p class="text-center text-xs text-slate-500">Ao enviar, você será redirecionado para o WhatsApp.</p>
                             </form>
                         </div>
@@ -961,7 +974,7 @@
         </div>
     </footer>
 
-    <a id="whatsapp-fab" href="https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." onclick="trackWhatsappClick()" target="_blank" rel="noopener noreferrer" class="animate-gentle-pulse" aria-label="Fale conosco no WhatsApp">
+    <a id="whatsapp-fab" href="https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="animate-gentle-pulse" aria-label="Fale conosco no WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.94A9.85 9.85 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.73-1.11-5.2-2.9-7.07zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.81.83-3.04-.2-.31a8.34 8.34 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.23.86 5.82 2.45s2.45 3.62 2.45 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.2c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72s-.02-.38.1-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41.04-.3-.02-.43c-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.55-.42-.15 0-.3 0-.46 0s-.39.06-.6.31c-.2.25-.78.76-.78 1.85s.8 2.15.91 2.3s1.58 2.4 3.8 3.36c.55.24.93.38 1.24.48.55.17 1.05.14 1.44.09.43-.06 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.05-.12-.2-.19-.44-.31z" /></svg>
     </a>
     
@@ -1034,22 +1047,32 @@
 
       gtag('config', 'G-WX7TNRJS94');
       gtag('config', 'AW-16755835554');
+      
+      // Conversion Tracking Script
+      document.addEventListener('DOMContentLoaded', function() {
+        const trackConversion = () => {
+          // Meta Pixel Contact Event
+          if (typeof fbq === 'function') {
+            fbq('track', 'Contact');
+          }
+          // Google Ads Conversion Event
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-16755835554/wWlACLC0gd4bEKKF57U-'
+            });
+          }
+        };
 
-      // Função para rastrear clique no WhatsApp
-      function trackWhatsappClick() {
-        // Google Ads Conversion
-        if (typeof gtag === 'function') {
-          gtag('event', 'conversion', {
-              'send_to': 'AW-16755835554',
-              'event_category': 'WhatsApp',
-              'event_label': 'Clique Institucional'
-          });
-        }
-        // Meta Pixel Contact Event
-        if (typeof fbq === 'function') {
-          fbq('track', 'Contact');
-        }
-      }
+        // Select all target CTA elements
+        const ctaElements = document.querySelectorAll(
+          '#whatsapp-fab, .btn-whatsapp-fix, .cta-button'
+        );
+
+        // Attach the event listener to each element
+        ctaElements.forEach(element => {
+          element.addEventListener('click', trackConversion);
+        });
+      });
     </script>
 </body>
 </html>

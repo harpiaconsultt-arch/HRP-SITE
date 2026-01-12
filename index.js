@@ -1,3 +1,4 @@
+
 // --- UI ELEMENT SELECTORS ---
 const mobileMenu = document.getElementById('mobile-menu');
 const menuToggleBtn = document.getElementById('menu-toggle-btn');
@@ -27,15 +28,13 @@ const setupUIEventListeners = () => {
     if (backToTopBtn) {
         const handleScroll = () => {
             if (window.scrollY > 300) {
-                backToTopBtn.classList.remove('opacity-0', 'translate-y-4');
-                backToTopBtn.style.visibility = 'visible';
+                backToTopBtn.classList.add('is-visible');
             } else {
-                backToTopBtn.classList.add('opacity-0', 'translate-y-4');
-                backToTopBtn.style.visibility = 'hidden';
+                backToTopBtn.classList.remove('is-visible');
             }
         };
         backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll();
     }
     
@@ -60,11 +59,9 @@ const setupUIEventListeners = () => {
             if (!target) return;
             selectedService = target.dataset.service || '';
             serviceButtonsContainer.querySelectorAll('button').forEach(btn => {
-                btn.classList.remove('bg-slate-800', 'text-white', 'border-slate-800');
-                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-300');
+                btn.classList.remove('selected');
             });
-            target.classList.add('bg-slate-800', 'text-white', 'border-slate-800');
-            target.classList.remove('bg-white', 'text-slate-600', 'border-slate-300');
+            target.classList.add('selected');
         });
         
         contactForm.addEventListener('submit', e => {
