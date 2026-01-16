@@ -6,6 +6,68 @@ const menuIcon = document.getElementById('menu-icon');
 const backToTopBtn = document.getElementById('back-to-top-btn');
 const contactForm = document.getElementById('contact-form');
 
+// --- SLIDER SETUP FUNCTION ---
+const setupSlider = (trackId, prevBtnId, nextBtnId, autoScroll = true) => {
+    const track = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+
+    if (!track || !prevBtn || !nextBtn) {
+        // console.warn(`Slider elements not found for: ${trackId}`);
+        return;
+    }
+
+    const cards = Array.from(track.children);
+    if (cards.length === 0) return;
+
+    let currentIndex = 0;
+    let autoScrollInterval;
+
+    const updateAndGoToSlide = (newIndex) => {
+        currentIndex = (newIndex + cards.length) % cards.length;
+        const card = cards[currentIndex];
+        if (card) {
+            track.scrollTo({
+                left: card.offsetLeft - (track.offsetWidth - card.offsetWidth) / 2,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    const startAutoScroll = () => {
+        if (!autoScroll) return;
+        stopAutoScroll();
+        autoScrollInterval = window.setInterval(() => {
+            updateAndGoToSlide(currentIndex + 1);
+        }, 5000);
+    };
+
+    const stopAutoScroll = () => {
+        clearInterval(autoScrollInterval);
+    };
+
+    prevBtn.addEventListener('click', () => {
+        stopAutoScroll();
+        updateAndGoToSlide(currentIndex - 1);
+        startAutoScroll();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        stopAutoScroll();
+        updateAndGoToSlide(currentIndex + 1);
+        startAutoScroll();
+    });
+    
+    if (autoScroll) {
+        [track, prevBtn, nextBtn].forEach(el => {
+            el.addEventListener('mouseenter', stopAutoScroll);
+            el.addEventListener('mouseleave', startAutoScroll);
+        });
+        startAutoScroll();
+    }
+};
+
+
 // --- UI INTERACTIONS ---
 const setupUIEventListeners = () => {
     
@@ -85,61 +147,9 @@ const setupUIEventListeners = () => {
         });
     }
 
-    // Testimonials Slider - REWRITTEN FOR RELIABILITY
-    const track = document.getElementById('testimonials-track');
-    const prevBtn = document.getElementById('prev-testimonial-btn');
-    const nextBtn = document.getElementById('next-testimonial-btn');
-    
-    if (track && prevBtn && nextBtn) {
-        const cards = Array.from(track.children);
-        if (cards.length > 0) {
-            let currentIndex = 0;
-            let autoScrollInterval;
-
-            const updateAndGoToSlide = (newIndex) => {
-                // Loop around if the index is out of bounds
-                currentIndex = (newIndex + cards.length) % cards.length;
-                const card = cards[currentIndex];
-                if (card) {
-                    track.scrollTo({
-                        left: card.offsetLeft,
-                        behavior: 'smooth'
-                    });
-                }
-            };
-            
-            const startAutoScroll = () => {
-                stopAutoScroll(); // Prevent multiple intervals
-                autoScrollInterval = window.setInterval(() => {
-                    updateAndGoToSlide(currentIndex + 1);
-                }, 5000);
-            };
-
-            const stopAutoScroll = () => {
-                clearInterval(autoScrollInterval);
-            };
-
-            prevBtn.addEventListener('click', () => {
-                stopAutoScroll();
-                updateAndGoToSlide(currentIndex - 1);
-                startAutoScroll();
-            });
-
-            nextBtn.addEventListener('click', () => {
-                stopAutoScroll();
-                updateAndGoToSlide(currentIndex + 1);
-                startAutoScroll();
-            });
-
-            // Pause on hover over the track or buttons
-            [track, prevBtn, nextBtn].forEach(el => {
-                el.addEventListener('mouseenter', stopAutoScroll);
-                el.addEventListener('mouseleave', startAutoScroll);
-            });
-
-            startAutoScroll();
-        }
-    }
+    // Initialize Sliders
+    setupSlider('testimonials-track', 'prev-testimonial-btn', 'next-testimonial-btn');
+    setupSlider('homepage-blog-posts', 'prev-blog-btn', 'next-blog-btn', false); // auto-scroll disabled for blog
 };
 
 
