@@ -761,6 +761,19 @@
                             <span class="material-icons-outlined">chevron_left</span>
                         </button>
                         <div id="homepage-blog-posts" class="blog-posts-track scrollbar-hide">
+                            <a href="blog/construtoras-barbacena.html" class="blog-card">
+                                <div class="content">
+                                    <div class="meta">
+                                        <span class="category">Construção Civil</span>
+                                        <span class="read-time">3 min de leitura</span>
+                                    </div>
+                                    <h3>Como escolher construtoras em Barbacena com segurança</h3>
+                                    <p class="text-sm">Construir ou reformar requer uma escolha cuidadosa. Avalie os 5 principais pontos antes de fechar contrato.</p>
+                                </div>
+                                <div class="footer">
+                                    <div class="read-more">Ler Artigo Completo <span aria-hidden="true">→</span></div>
+                                </div>
+                            </a>
                             <a href="blog/topografia-barbacena.html" class="blog-card">
                                 <div class="content">
                                     <div class="meta">
@@ -1076,10 +1089,9 @@
         <span class="material-icons-outlined">keyboard_arrow_up</span>
     </button>
     
-    <script type="module" src="index.js"></script>
+    <script type="module" src="../index.js"></script>
     
-    <!-- Scripts movidos para o final para não bloquear a renderização -->
-    <!-- Meta Pixel Code -->
+    <!-- Tracking Scripts -->
     <script>
     window.addEventListener('load', function() {
         !function(f,b,e,v,n,t,s)
@@ -1097,8 +1109,7 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
-    <!-- Google tag (gtag.js) -->
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX7TNRJS94"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -1108,18 +1119,11 @@
       gtag('config', 'G-WX7TNRJS94');
       gtag('config', 'AW-16755835554');
       
-      // Conversion Tracking Script
       document.addEventListener('DOMContentLoaded', function() {
         const trackConversion = () => {
-          // Meta Pixel Contact Event
-          if (typeof fbq === 'function') {
-            fbq('track', 'Contact');
-          }
-          // Google Ads Conversion Event
+          if (typeof fbq === 'function') fbq('track', 'Contact');
           if (typeof gtag === 'function') {
-            gtag('event', 'conversion', {
-              'send_to': 'AW-16755835554/wWlACLC0gd4bEKKF57U-'
-            });
+            gtag('event', 'conversion', {'send_to': 'AW-16755835554/wWlACLC0gd4bEKKF57U-'});
           }
         };
 
@@ -1130,114 +1134,6 @@
         });
       });
     </script>
-
-    <!-- SPA Router and Dynamic SEO -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const originalMeta = {
-                title: document.title,
-                description: document.getElementById('meta-description').getAttribute('content'),
-                ogTitle: document.getElementById('og-title').getAttribute('content'),
-                ogDescription: document.getElementById('og-description').getAttribute('content'),
-                ogUrl: document.getElementById('og-url').getAttribute('content'),
-                canonical: document.getElementById('canonical-link').getAttribute('href')
-            };
-
-            const schemaScript = document.getElementById('schema-markup-script');
-            const originalSchemaContent = schemaScript ? schemaScript.textContent : '';
-
-            function updateMetaTags(meta) {
-                document.title = meta.title;
-                document.getElementById('meta-description').setAttribute('content', meta.description);
-                document.getElementById('og-title').setAttribute('content', meta.ogTitle);
-                document.getElementById('og-description').setAttribute('content', meta.ogDescription);
-                document.getElementById('og-url').setAttribute('content', meta.ogUrl);
-                document.getElementById('canonical-link').setAttribute('href', meta.canonical);
-            }
-
-            function handleRouting() {
-                const hash = window.location.hash;
-                const pageHome = document.getElementById('page-home');
-                const blogPostContainer = document.getElementById('blog-post-container');
-                const allPosts = document.querySelectorAll('.blog-post-content');
-
-                pageHome.style.display = 'none';
-                blogPostContainer.style.display = 'none';
-                allPosts.forEach(post => post.classList.remove('active'));
-
-                if (hash.startsWith('#/blog/')) {
-                    const postId = hash.substring(7);
-                    const targetPost = document.getElementById(postId);
-                    
-                    if (targetPost) {
-                        blogPostContainer.style.display = 'block';
-                        targetPost.classList.add('active');
-                        window.scrollTo(0, 0);
-
-                        const postTitle = targetPost.querySelector('h1').textContent.trim();
-                        const postDescription = targetPost.querySelector('.prose p')?.textContent.trim() || originalMeta.description;
-                        const postUrl = `${originalMeta.canonical.slice(0, -1)}${hash.replace('#', '')}`; // Correct URL construction
-                        
-                        updateMetaTags({
-                            title: `${postTitle} | Harpia Consultoria`,
-                            description: postDescription.substring(0, 155) + '...',
-                            ogTitle: `${postTitle} | Harpia Consultoria`,
-                            ogDescription: postDescription.substring(0, 155) + '...',
-                            ogUrl: postUrl,
-                            canonical: postUrl
-                        });
-                        
-                        // Update Schema
-                        const datePublished = targetPost.dataset.datePublished;
-                        if (schemaScript && datePublished) {
-                            const articleSchema = {
-                                "@context": "https://schema.org",
-                                "@type": "Article",
-                                "headline": postTitle,
-                                "description": postDescription.substring(0, 155) + '...',
-                                "author": { "@type": "Organization", "name": "Harpia Consultoria" },
-                                "publisher": {
-                                    "@type": "Organization",
-                                    "name": "Harpia Consultoria",
-                                    "logo": {
-                                        "@type": "ImageObject",
-                                        "url": "https://harpiaconsultoria.eng.br/img/logo.webp"
-                                    }
-                                },
-                                "datePublished": datePublished,
-                                "mainEntityOfPage": { "@type": "WebPage", "@id": postUrl }
-                            };
-                            schemaScript.textContent = JSON.stringify(articleSchema, null, 2);
-                        }
-
-                    } else {
-                        window.location.hash = '#/';
-                    }
-                } else if (hash === '#/blog') {
-                    pageHome.style.display = 'block';
-                    document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' });
-
-                    const blogUrl = `${originalMeta.canonical.slice(0, -1)}${hash.replace('#', '')}`;
-                    updateMetaTags({
-                        title: 'Blog - Engenharia Diagnóstica | Harpia Consultoria',
-                        description: 'Acompanhe os artigos e novidades da Harpia Consultoria sobre engenharia diagnóstica, laudos, perícias e vistorias.',
-                        ogTitle: 'Blog - Engenharia Diagnóstica | Harpia Consultoria',
-                        ogDescription: 'Acompanhe os artigos e novidades da Harpia Consultoria sobre engenharia diagnóstica, laudos, perícias e vistorias.',
-                        ogUrl: blogUrl,
-                        canonical: blogUrl
-                    });
-                    if (schemaScript) schemaScript.textContent = originalSchemaContent;
-
-                } else {
-                    pageHome.style.display = 'block';
-                    updateMetaTags(originalMeta);
-                    if (schemaScript) schemaScript.textContent = originalSchemaContent;
-                }
-            }
-
-            window.addEventListener('hashchange', handleRouting);
-            handleRouting(); // Initial call on page load
-        });
-    </script>
 </body>
 </html>
+```
