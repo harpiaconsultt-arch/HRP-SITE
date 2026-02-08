@@ -103,7 +103,6 @@
         #mobile-menu a:hover { color: white; }
         #mobile-menu .cta-button { display: flex; justify-content: center; align-items: center; max-width: 180px !important; margin: 0 auto !important; padding: 8px 15px !important; font-size: 13px !important; }
         
-        #hero { position: relative; display: flex; align-items: center; justify-content: center; background-color: var(--color-surface-dark); overflow: hidden; padding-top: 140px; padding-bottom: 120px; }
         #hero .bg-image-container { position: absolute; inset: 0; z-index: 0; }
         #hero .bg-image { width: 100%; height: 100%; object-fit: cover; opacity: 0.2; }
         #hero .bg-overlay { position: absolute; inset: 0; background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6), var(--color-background-dark)); }
@@ -113,7 +112,27 @@
         #hero .cta-button { display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid white; font-size: 0.875rem; font-weight: 500; border-radius: 0.25rem; color: white; transition: all 300ms; text-transform: uppercase; letter-spacing: 0.025em; }
         #hero .cta-button:hover { background-color: white; color: #0f172a; }
 
-        section { padding: 2.0rem 0; }
+        section {
+            position: relative;
+            padding: 60px 0;
+            margin-top: -50px;
+            mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+        }
+        #hero,
+        #contato {
+            margin-top: 0;
+            mask-image: none;
+            -webkit-mask-image: none;
+        }
+        #hero {
+            padding-top: 140px;
+            padding-bottom: 120px;
+        }
+        #contato {
+            padding: 0;
+        }
+
         .section-title { text-align: center; margin-bottom: 2.5rem; }
         .section-title h2 { font-size: 1.875rem; font-weight: 300; color: white; margin-bottom: 1rem; }
         .section-title p { color: #94a3b8; max-width: 42rem; margin: auto; }
@@ -203,7 +222,6 @@
         .blog-card .read-more:hover { text-decoration: underline; }
         .view-all-posts-btn { display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid #64748b; font-size: 0.875rem; font-weight: 500; border-radius: 0.25rem; color: white; transition: all 150ms; }
         .view-all-posts-btn:hover { background-color: #1e293b; border-color: #94a3b8; }
-        #contato { background-color: var(--color-background-light); color: var(--text-dark); padding: 0;}
         #contato .contact-wrapper { display: flex; flex-direction: column; }
         #contato iframe { width: 100%; height: 100%; border: 0; min-height: 300px; }
         #contato .form-container { display: flex; flex-direction: column; justify-content: center; padding: 2rem; }
@@ -282,9 +300,27 @@
             #equipe .grid-3-col::-webkit-scrollbar { display: none; }
             #equipe .card-equipe { flex: 0 0 70%; scroll-snap-align: center; }
             .team-scroll-hint { display: block; text-align: center; color: #64748b; font-size: 0.875rem; margin-top: 1rem; }
-            #hero { padding-bottom: 100px !important; } 
             .logos-container { bottom: 5px !important; height: 50px; }
             .logos-track img { height: 22px !important; margin: 0 15px; }
+
+            section {
+                padding: 40px 0;
+                margin-top: -30px;
+                mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+            }
+            #hero, #contato {
+                margin-top: 0;
+                mask-image: none;
+                -webkit-mask-image: none;
+            }
+            #hero {
+                padding-top: 140px;
+                padding-bottom: 100px !important;
+            }
+            #contato {
+                padding: 0;
+            }
         }
 
         @media (min-width: 640px) {
@@ -1160,7 +1196,6 @@
                         <a href="/#servicos">Serviços</a>
                         <a href="/#metodologia">Metodologia</a>
                         <a href="/#equipe">Equipe</a>
-                        <a href="/#contato">Contato</a>
                         <a href="#/blog">Blog</a>
                     </nav>
                 </div>
