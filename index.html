@@ -410,7 +410,6 @@
 
         /* Logos Quadradas/Circulares */
         .logos-track img[alt="Defesa Civil"],
-        .logos-track img[alt*="Uisa"],
         .logos-track img[alt*="Geo"] {
             height: 35px !important; 
             filter: brightness(0) invert(0.85) contrast(1.1);
@@ -418,15 +417,28 @@
 
         /* Logos de proporção média */
         .logos-track img[alt*="Arquidiocese"],
-        .logos-track img[alt*="Salesianas"],
-        .logos-track img[alt*="M2G2"] {
+        .logos-track img[alt*="Salesianas"] {
             height: 45px !important; 
         }
 
         .logos-track img[alt*="TJMG"] {
-            height: 55px !important; /* Aumenta a altura específica */
-            transform: scale(1.4); /* Aplica um zoom interno */
-            margin: 0 40px; /* Dá mais espaço lateral para não encostar nas outras */
+            height: 55px !important;
+            transform: scale(1.4);
+            margin: 0 40px;
+        }
+
+        .logos-track img[alt*="M2G2"] {
+            height: 55px !important;
+            transform: scale(1.3);
+            margin: 0 30px;
+            filter: brightness(0) invert(0.95) contrast(1.2);
+        }
+
+        .logos-track img[alt*="Uisa"] {
+            height: 55px !important;
+            transform: scale(1.3);
+            margin: 0 30px;
+            filter: brightness(0) invert(0.95) contrast(1.2);
         }
 
         .logos-track img:hover {
