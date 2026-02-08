@@ -345,31 +345,30 @@
         .logos-track {
             display: flex;
             width: max-content;
-            gap: 70px;
             animation: scroll-loop 40s linear infinite;
             align-items: center;
-        }
-        .logos-track img {
-            height: 35px !important;
-            width: auto !important;
-            filter: brightness(0) invert(1);
-            opacity: 0.6;
-            display: block !important;
         }
         @keyframes scroll-loop {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
-        /* Pausa o carrossel ao passar o mouse */
         .logos-track:hover {
             animation-play-state: paused;
         }
-        /* Volta a cor original e destaca a logo */ 
-        .logos-track img:hover { 
-            /* filter: none !important; */ /* Remove o branco e volta a cor real */
-            opacity: 1 !important; 
-            transform: scale(1.1); /* Leve aumento para dar feedback */
-            cursor: pointer; 
+        .logos-track img {
+            height: 38px !important; /* Aumentado levemente para melhor leitura */
+            width: auto !important;
+            margin: 0 40px;
+            filter: brightness(0) invert(0.8); /* Branco suave para preservar detalhes */
+            opacity: 0.5;
+            transition: all 0.4s ease;
+            display: inline-block !important;
+        }
+        .logos-track img:hover {
+            filter: none !important; /* Remove totalmente o filtro para mostrar a cor real */
+            opacity: 1 !important;
+            transform: scale(1.15); /* Destaque sutil */
+            cursor: pointer;
         }
     </style>
 
