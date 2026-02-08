@@ -115,7 +115,7 @@
         footer .footer-col h4 { font-size: 0.875rem; font-weight: 600; color: white; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; }
         footer .footer-col nav { display: flex; flex-direction: column; gap: 0.5rem; }
         footer .footer-col a { font-size: 0.875rem; transition: color 150ms; color: #ffffff; }
-        footer .footer-col a:hover { color: var(--color-primary); }
+        footer .footer-col a:hover { color: var(--color-cta-green); }
         footer .copyright { border-top: 1px solid #1e293b; margin-top: 2.5rem; padding-top: 2rem; text-align: center; font-size: 0.75rem; color: #475569; }
 
         #whatsapp-fab { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 50; width: 3.5rem; height: 3.5rem; background-color: var(--color-cta-green); border-radius: 9999px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; transition: transform 150ms; }
@@ -250,7 +250,6 @@
                            <span>CONSULTORIA</span>
                         </div>
                     </a>
-                    <p class="text-sm" style="max-width: 20rem;">Laudos técnicos, perícias e vistorias de engenharia civil, mecânica e segurança do trabalho.</p>
                 </div>
                 <div class="footer-col col-span-3 lg:col-span-2">
                     <h4>Navegação</h4>
@@ -262,12 +261,25 @@
                     </nav>
                 </div>
                 <div class="footer-col col-span-4 lg:col-span-3">
-                     <h4>Contato</h4>
+                     <h4>Principais Laudos</h4>
                      <nav>
-                        <a href="../#contato">Fale Conosco</a>
-                        <a href="https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." class="track-conversion">WhatsApp</a>
+                        <a href="../#servicos">Laudo de Patologia Estrutural</a>
+                        <a href="../#servicos">Laudo de Reforma (NBR 16.280)</a>
+                        <a href="../#servicos">Perícia Judicial</a>
+                     </nav>
+                </div>
+                 <!-- START: Clickable Footer Contact -->
+                <div class="footer-col col-span-4 lg:col-span-3">
+                    <h4>Contato Direto</h4>
+                    <nav>
+                        <a href="tel:+5531982162913">(31) 98216-2913</a>
+                        <a href="mailto:contato@harpiaconsultoria.eng.br">contato@harpiaconsultoria.eng.br</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Harpia+Consultoria+Avenida+Olegário+Maciel,+470+Barbacena" target="_blank" rel="noopener noreferrer">
+                           Av. Olegário Maciel, 470, Centro - Barbacena/MG
+                        </a>
                     </nav>
                 </div>
+                <!-- END: Clickable Footer Contact -->
             </div>
             <div class="copyright">
                 <p>© 2026 Harpia Consultoria. Todos os direitos reservados.</p>
@@ -277,46 +289,4 @@
     </footer>
 
     <a id="whatsapp-fab" href="https://api.whatsapp.com/send?phone=5531982162913&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="animate-gentle-pulse track-conversion" aria-label="Fale conosco no WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M19.05 4.94A9.85 9.85 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.73-1.11-5.2-2.9-7.07zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.81.83-3.04-.2-.31a8.34 8.34 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.23.86 5.82 2.45s2.45 3.62 2.45 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.2c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72s-.02-.38.1-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41.04-.3-.02-.43c-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.55-.42-.15 0-.3 0-.46 0s-.39.06-.6.31c-.2.25-.78.76-.78 1.85s.8 2.15.91 2.3s1.58 2.4 3.8 3.36c.55.24.93.38 1.24.48.55.17 1.05.14 1.44.09.43-.06 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.05-.12-.2-.19-.44-.31z" /></svg>
-    </a>
-    
-    <script type="module" src="../index.js"></script>
-    
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '13879230722197'); 
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=13879230722197&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX7TNRJS94"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WX7TNRJS94');
-      gtag('config', 'AW-16755835554');
-      document.addEventListener('DOMContentLoaded', function() {
-        const trackConversion = () => {
-          if (typeof fbq === 'function') fbq('track', 'Contact');
-          if (typeof gtag === 'function') {
-            gtag('event', 'conversion', {'send_to': 'AW-16755835554/wWlACLC0gd4bEKKF57U-'});
-          }
-        };
-        const ctaElements = document.querySelectorAll('.track-conversion');
-        ctaElements.forEach(element => element.addEventListener('click', trackConversion));
-      });
-    </script>
-</body>
-</html>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M19.05 4.94A9.85 9.85 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.73-1.11-5.2-2.9-7.07zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.81.83-3.04-.2-.31a8.34 8.34 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.23.86 5.82 2.45s2
