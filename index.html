@@ -103,18 +103,15 @@
         #mobile-menu a:hover { color: white; }
         #mobile-menu .cta-button { display: flex; justify-content: center; align-items: center; max-width: 180px !important; margin: 0 auto !important; padding: 8px 15px !important; font-size: 13px !important; }
         
-        /* --- START: Hero Section Update --- */
-        .hero { position: relative; min-height: auto; display: flex; align-items: center; justify-content: center; background-color: var(--color-surface-dark); overflow: hidden; padding: 140px 0 60px; }
-        .hero .bg-image-container { position: absolute; inset: 0; z-index: 0; }
-        .hero .bg-image { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; }
-        .hero .bg-overlay { position: absolute; inset: 0; background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6), var(--color-surface-dark)); }
-        .hero .content { position: relative; z-index: 10; max-width: 64rem; margin: 0 auto; padding: 0 1rem; text-align: center; }
-        .hero h1 { font-size: 2.25rem; font-weight: 300; color: white; margin-bottom: 1.5rem; line-height: 1.25; }
-        .hero p { font-size: 1.125rem; color: #cbd5e1; margin-bottom: 2.5rem; max-width: 48rem; margin-left: auto; margin-right: auto; }
-        .hero .cta-button { display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid white; font-size: 0.875rem; font-weight: 500; border-radius: 0.25rem; color: white; transition: all 300ms; text-transform: uppercase; letter-spacing: 0.025em; }
-        .hero .cta-button:hover { background-color: white; color: #0f172a; }
-        .hero .scroll-down { display: none; }
-        /* --- END: Hero Section Update --- */
+        #hero { position: relative; display: flex; align-items: center; justify-content: center; background-color: var(--color-surface-dark); overflow: hidden; padding-top: 140px; padding-bottom: 120px; }
+        #hero .bg-image-container { position: absolute; inset: 0; z-index: 0; }
+        #hero .bg-image { width: 100%; height: 100%; object-fit: cover; opacity: 0.2; }
+        #hero .bg-overlay { position: absolute; inset: 0; background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6), var(--color-background-dark)); }
+        #hero .content { position: relative; z-index: 10; max-width: 64rem; margin: 0 auto; padding: 0 1rem; text-align: center; }
+        #hero h1 { font-size: 2.25rem; font-weight: 300; color: white; margin-bottom: 1.5rem; line-height: 1.25; }
+        #hero p { font-size: 1.125rem; color: #cbd5e1; margin-bottom: 2.5rem; max-width: 48rem; margin-left: auto; margin-right: auto; }
+        #hero .cta-button { display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid white; font-size: 0.875rem; font-weight: 500; border-radius: 0.25rem; color: white; transition: all 300ms; text-transform: uppercase; letter-spacing: 0.025em; }
+        #hero .cta-button:hover { background-color: white; color: #0f172a; }
 
         section { padding: 2.0rem 0; }
         .section-title { text-align: center; margin-bottom: 2.5rem; }
@@ -245,10 +242,8 @@
         .contact-info .info-item .icon { color: #64748b; margin-right: 1rem; font-size: 1.875rem; flex-shrink: 0; }
         .contact-info .info-item h4 { font-weight: 600; color: #64748b; font-size: 0.75rem; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
         .contact-info .info-item p { color: #334155; font-size: 0.875rem; }
-        /* --- START: Clickable Contact Info --- */
         .contact-info .info-item a { color: #334155; text-decoration: none; transition: color 150ms; }
         .contact-info .info-item a:hover { color: var(--color-primary); }
-        /* --- END: Clickable Contact Info --- */
         footer { background-color: var(--black); color: #94a3b8; padding: 2.4rem 0; border-top: 1px solid #1e293b; }
         footer .footer-grid { display: grid; gap: 2rem; }
         footer .footer-col h4 { font-size: 0.875rem; font-weight: 600; color: white; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; }
@@ -269,29 +264,28 @@
         #blog-post-container .blog-post-content { display: none; }
         #blog-post-container .blog-post-content.active { display: block; }
         
-        /* --- START: UI/UX & Conversion Optimizations --- */
         .card-service, .card-laudo { height: 100%; display: flex; flex-direction: column; }
         .card-service p { flex-grow: 1; }
         .card-laudo > div { flex-grow: 1; }
         .team-scroll-hint { display: none; }
-        @media (max-width: 767.98px) {
-            .grid-2-col, .grid-laudos { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-            .card-service, .card-laudo { padding: 1rem; }
-            .card-service h3, .card-laudo h3 { font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .grid-2-col, .grid-laudos { grid-template-columns: repeat(2, 1fr) !important; gap: 0.5rem !important; padding: 0 0.5rem; }
+            .card-service, .card-laudo { padding: 0.75rem !important; }
+            .card-service h3, .card-laudo h3 { font-size: 0.85rem !important; line-height: 1.2; margin-bottom: 0.5rem; }
             .metodologia-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
             .metodologia-step .step-icon-wrapper { width: 3rem; height: 3rem; }
             .metodologia-step .icon { font-size: 1.5rem; }
             .metodologia-step h4 { font-size: 1rem; }
-            #equipe .grid-3-col { display: flex; overflow-x: auto; gap: 1rem; padding-bottom: 1rem; -ms-overflow-style: none; scrollbar-width: none; }
+            #equipe .grid-3-col { display: flex !important; overflow-x: auto !important; scroll-snap-type: x mandatory; gap: 1rem; padding-bottom: 1rem; }
             #equipe .grid-3-col::-webkit-scrollbar { display: none; }
-            #equipe .card-equipe { width: 80%; flex-shrink: 0; }
+            #equipe .card-equipe { flex: 0 0 70%; scroll-snap-align: center; }
             .team-scroll-hint { display: block; text-align: center; color: #64748b; font-size: 0.875rem; margin-top: 1rem; }
+            #hero { padding-bottom: 80px !important; } 
         }
-        /* --- END: UI/UX & Conversion Optimizations --- */
 
         @media (min-width: 640px) {
             header .max-w-7xl, footer .max-w-7xl, .container { padding: 0 1.5rem; }
-            .hero .cta-button { padding: 1rem 2rem; font-size: 1rem; }
+            #hero .cta-button { padding: 1rem 2rem; font-size: 1rem; }
             .contact-info .info-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .testimonial-card, .blog-card { width: 45%; }
         }
@@ -300,9 +294,9 @@
             header .cta-button.hidden { display: inline-flex; }
             .md\:hidden { display: none; }
             #mobile-menu { display: none; }
-            .hero h1 { font-size: 3rem; }
-            .hero h1 .md\:block { display: block; }
-            .hero p { font-size: 1.25rem; }
+            #hero h1 { font-size: 3rem; }
+            #hero h1 .md\:block { display: block; }
+            #hero p { font-size: 1.25rem; }
             .grid-3-col { grid-template-columns: repeat(3, minmax(0, 1fr)); }
             .grid-2-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .grid-laudos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -322,7 +316,7 @@
         }
         @media (min-width: 1024px) {
             header .max-w-7xl, footer .max-w-7xl, .container { padding: 0 2rem; }
-            .hero h1 { font-size: 3.75rem; }
+            #hero h1 { font-size: 3.75rem; }
             #contato .contact-wrapper { flex-direction: row; align-items: stretch; }
             #contato .map-container { width: 41.666667%; }
             #contato .map-container iframe { height: 100%;}
@@ -335,25 +329,57 @@
         #blog-post-container .max-w-3xl { max-width: 850px !important; padding: 120px 20px 60px 20px !important; }
         #blog-post-container .prose p { font-size: 1.1rem; line-height: 1.8; }
 
-        /* --- START: Social Proof Logos Section CSS --- */
-        @keyframes scrollLogos {
-            from { transform: translate3d(0, 0, 0); }
-            to { transform: translate3d(-50%, 0, 0); }
+        .logos-container {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1100px;
+            padding: 40px 0;
+            overflow: hidden;
+            z-index: 20;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent), 
+                                linear-gradient(to top, black, transparent 80%);
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent),
+                        linear-gradient(to top, black, transparent 80%);
         }
-        .logos-authority { background-color: var(--color-surface-dark); padding: 2.5rem 0; border-top: 1px solid #1e293b; border-bottom: 1px solid #1e293b; }
-        .logos-title { text-align: center; color: #94a3b8; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2rem; }
-        .logos-slider { overflow: hidden; position: relative; width: 100%; -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent); mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent); }
-        .logos-track { display: flex; align-items: center; width: calc( (150px + 90px) * 22 ); animation: scrollLogos 35s linear infinite; }
-        .logos-track:hover { animation-play-state: paused; }
-        .logos-track img { height: 45px; width: auto; max-width: 150px; object-fit: contain; margin: 0 45px; filter: grayscale(100%); opacity: 0.6; transition: all 0.4s ease-in-out; flex-shrink: 0; }
-        .logos-track img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
+        .logos-track { 
+            display: flex; 
+            width: max-content; 
+            gap: 80px; 
+            animation: scroll-loop 45s linear infinite; 
+            align-items: center; 
+        }
+        .logos-track img { 
+            height: 35px; 
+            width: auto; 
+            filter: brightness(0) invert(1);
+            opacity: 0.5; 
+            flex-shrink: 0; 
+            transition: 0.3s; 
+        }
+        .logos-track img:hover { 
+            opacity: 1; 
+            transform: scale(1.1); 
+        }
+        @keyframes scroll-loop { 
+            0% { transform: translateX(0); } 
+            100% { transform: translateX(-50%); } 
+        }
+        
         @media (max-width: 768px) {
-            .logos-authority { padding: 2rem 0; }
-            .logos-title { margin-bottom: 1.5rem; }
-            .logos-track img { height: 35px; margin: 0 30px; }
-            .logos-track { width: calc( (100px + 60px) * 22 ); }
+            .logos-container { 
+                bottom: 10px; 
+                padding: 20px 0; 
+            } 
+            .logos-track { 
+                gap: 40px; 
+            } 
+            .logos-track img { 
+                height: 26px; 
+            } 
         }
-        /* --- END: Social Proof Logos Section CSS --- */
     </style>
 
     <!-- Open Graph & Twitter Card -->
@@ -379,7 +405,7 @@
       "name": "Harpia Consultoria e Engenharia",
       "url": "https://harpiaconsultoria.eng.br/",
       "logo": "https://harpiaconsultoria.eng.br/logo.svg",
-      "telephone": "+55 31 98216-2913",
+      "telephone": "+5531982162913",
       "email": "contato@harpiaconsultoria.eng.br",
       "address": {
         "@type": "PostalAddress",
@@ -477,8 +503,7 @@
 
     <main>
         <div id="page-home">
-            <!-- START: Hero Section Update -->
-            <section class="hero">
+            <section id="hero">
                 <div class="bg-image-container">
                     <img src="img/hero-harpia.webp" 
                          alt="Imagem de fundo de um projeto de engenharia, representando laudos técnicos e perícias de precisão da Harpia Consultoria" 
@@ -498,45 +523,34 @@
                         SOLICITAR ORÇAMENTO
                     </a>
                 </div>
-            </section>
-            <!-- END: Hero Section Update -->
-            
-            <!-- START: Social Proof Logos Section -->
-            <section class="logos-authority">
-                <div class="container">
-                    <p class="logos-title">EMPRESAS E INSTITUIÇÕES QUE CONFIAM NA HARPIA</p>
-                    <div class="logos-slider">
-                        <div class="logos-track">
-                            <!-- Original set of logos -->
-                            <img src="img/clients/projeto-realizado-prefeitura-de-barbacena.webp" alt="Consultoria técnica e projetos realizados para a Prefeitura de Barbacena pela Harpia." loading="lazy">
-                            <img src="img/clients/parceiro-harpia-tjmg.webp" alt="Laudos e perícias técnicas em parceria com o Tribunal de Justiça de Minas Gerais (TJMG)." loading="lazy">
-                            <img src="img/clients/parceiro-harpia-defesa-civil.webp" alt="Apoio técnico e vistorias de segurança em conjunto com a Defesa Civil." loading="lazy">
-                            <img src="img/clients/projeto-realizado-arquidiocese-de-mariana.webp" alt="Engenharia consultiva e preservação de patrimônio para a Arquidiocese de Mariana." loading="lazy">
-                            <img src="img/clients/cliente-harpia-mrv.webp" alt="Gestão e supervisão técnica em empreendimentos da construtora MRV." loading="lazy">
-                            <img src="img/clients/projeto-realizado-prefeitura-de-ouro-preto.webp" alt="Projetos de engenharia e regulação urbana para a Prefeitura de Ouro Preto." loading="lazy">
-                            <img src="img/clients/cliente-harpia-escola-salesianas.webp" alt="Inspeção predial e manutenção técnica para o Instituto das Filhas de Maria Auxiliadora." loading="lazy">
-                            <img src="img/clients/projeto-realizado-uisa-bioenergia-açucar.webp" alt="Consultoria técnica especializada para plantas de bioenergia e indústria." loading="lazy">
-                            <img src="img/clients/projeto-realizado-geo-bio-gas.webp" alt="Projetos de infraestrutura e consultoria para o setor de biogás e energia renovável." loading="lazy">
-                            <img src="img/clients/parceiro-harpia-m2g2-patrimonial.webp" alt="Gestão de ativos e engenharia consultiva para M2G2 Gestão Patrimonial." loading="lazy">
-                            <img src="img/clients/parceiro-harpia-grupo-projeta.webp" alt="Parceria técnica em projetos estruturais e planejamento com o Grupo Projeta." loading="lazy">
-                            
-                            <!-- Duplicated set for seamless loop -->
-                            <img src="img/clients/projeto-realizado-prefeitura-de-barbacena.webp" alt="" loading="lazy" aria-hidden="true">
-                            <img src="img/clients/parceiro-harpia-tjmg.webp" alt="" loading="lazy" aria-hidden="true">
-                            <img src="img/clients/parceiro-harpia-defesa-civil.webp" alt="" loading="lazy" aria-hidden="true">
-                            <img src="img/clients/projeto-realizado-arquidiocese-de-mariana.webp" alt="" loading="lazy" aria-hidden="true">
-                            <img src="img/clients/cliente-harpia-mrv.webp" alt="" loading="lazy" aria-hidden="true">
-                            <img src="img/clients/projeto-realizado-prefeitura-de-ouro-preto.webp" alt="" loading="lazy" aria-hidden="true">
-                            <img src="img/clients/cliente-harpia-escola-salesianas.webp" alt="" loading="lazy" aria-hidden="true">
-                            <img src="img/clients/projeto-realizado-uisa-bioenergia-açucar.webp" alt="" loading="lazy" aria-hidden="true">
-                            <img src="img/clients/projeto-realizado-geo-bio-gas.webp" alt="" loading="lazy" aria-hidden="true">
-                            <img src="img/clients/parceiro-harpia-m2g2-patrimonial.webp" alt="" loading="lazy" aria-hidden="true">
-                            <img src="img/clients/parceiro-harpia-grupo-projeta.webp" alt="" loading="lazy" aria-hidden="true">
-                        </div>
+                <div class="logos-container">
+                    <div class="logos-track">
+                        <img src="img/clients/projeto-realizado-prefeitura-de-barbacena.webp" alt="Prefeitura de Barbacena">
+                        <img src="img/clients/parceiro-harpia-tjmg.webp" alt="TJMG">
+                        <img src="img/clients/parceiro-harpia-defesa-civil.webp" alt="Defesa Civil">
+                        <img src="img/clients/projeto-realizado-arquidiocese-de-mariana.webp" alt="Arquidiocese de Mariana">
+                        <img src="img/clients/cliente-harpia-mrv.webp" alt="MRV">
+                        <img src="img/clients/projeto-realizado-prefeitura-de-ouro-preto.webp" alt="Prefeitura Ouro Preto">
+                        <img src="img/clients/cliente-harpia-escola-salesianas.webp" alt="Salesianas">
+                        <img src="img/clients/projeto-realizado-uisa-bioenergia-acucar.webp" alt="Uisa">
+                        <img src="img/clients/projeto-realizado-geo-bio-gas.webp" alt="Geo Bio Gas">
+                        <img src="img/clients/parceiro-harpia-m2g2-patrimonial.webp" alt="M2G2">
+                        <img src="img/clients/parceiro-harpia-grupo-projeta.webp" alt="Grupo Projeta">
+                        
+                        <img src="img/clients/projeto-realizado-prefeitura-de-barbacena.webp" alt="">
+                        <img src="img/clients/parceiro-harpia-tjmg.webp" alt="">
+                        <img src="img/clients/parceiro-harpia-defesa-civil.webp" alt="">
+                        <img src="img/clients/projeto-realizado-arquidiocese-de-mariana.webp" alt="">
+                        <img src="img/clients/cliente-harpia-mrv.webp" alt="">
+                        <img src="img/clients/projeto-realizado-prefeitura-de-ouro-preto.webp" alt="">
+                        <img src="img/clients/cliente-harpia-escola-salesianas.webp" alt="">
+                        <img src="img/clients/projeto-realizado-uisa-bioenergia-acucar.webp" alt="">
+                        <img src="img/clients/projeto-realizado-geo-bio-gas.webp" alt="">
+                        <img src="img/clients/parceiro-harpia-m2g2-patrimonial.webp" alt="">
+                        <img src="img/clients/parceiro-harpia-grupo-projeta.webp" alt="">
                     </div>
                 </div>
             </section>
-            <!-- END: Social Proof Logos Section -->
 
             <section class="bg-slate-950" id="tecnologia">
                 <div class="container">
@@ -719,7 +733,6 @@
                 </div>
             </section>
 
-            <!-- START: Team Section Update -->
             <section class="bg-surface-dark" id="equipe">
                 <div class="container">
                     <div class="section-title fade-in-on-scroll">
@@ -755,7 +768,6 @@
                     <p class="team-scroll-hint fade-in-on-scroll">› Arraste para ver mais ›</p>
                 </div>
             </section>
-            <!-- END: Team Section Update -->
             
             <section id="depoimentos" class="secao-depoimentos-harpia">
                 <div class="container">
@@ -954,7 +966,6 @@
                                 <p class="text-center text-xs text-slate-500">Ao enviar, você será redirecionado para o WhatsApp.</p>
                             </form>
                         </div>
-                        <!-- START: Clickable Contact Info -->
                         <div class="contact-info fade-in-on-scroll">
                             <h3>Ou entre em contato diretamente</h3>
                             <div class="info-grid">
@@ -962,7 +973,7 @@
                                     <span class="material-icons-outlined icon">location_on</span>
                                     <div>
                                         <h4>ENDEREÇO</h4>
-                                        <a href="https://www.google.com/maps/search/?api=1&query=Harpia+Consultoria+Avenida+Olegário+Maciel,+470+Barbacena" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://www.google.com/maps/search/?api=1&query=Av.+Olegário+Maciel,+470,+Centro,+Barbacena+-+MG" target="_blank" rel="noopener noreferrer">
                                             <p>Avenida Olegário Maciel, 470, Centro</p>
                                             <p>Barbacena – MG | CEP 36200-082</p>
                                         </a>
@@ -999,7 +1010,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- END: Clickable Contact Info -->
                     </div>
                 </div>
             </section>
@@ -1161,7 +1171,6 @@
                         <a href="/#servicos">LTCAT e Laudos de SST</a>
                     </nav>
                 </div>
-                <!-- START: Clickable Footer Contact -->
                 <div class="footer-col col-span-4 lg:col-span-3">
                     <h4>Contato Direto</h4>
                     <nav>
@@ -1172,7 +1181,6 @@
                         </a>
                     </nav>
                 </div>
-                <!-- END: Clickable Footer Contact -->
             </div>
             <div class="copyright">
                 <p style="margin-bottom: 0.5rem;">Atendemos Barbacena-MG, São João del-Rei, Juiz de Fora e toda a região de Campos das Vertentes.</p>
@@ -1237,3 +1245,4 @@
     </script>
 </body>
 </html>
+```
