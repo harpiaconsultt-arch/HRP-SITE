@@ -447,6 +447,47 @@
             transform: scale(1.1);
             cursor: pointer;
         }
+
+        .secao-servicos-harpia { background-color: #020617; padding: 60px 0; color: #f8fafc; overflow: hidden; }
+        .titulo-moderno { text-align: center; font-size: 2.2rem; font-weight: 300; margin-bottom: 40px; color: #fff; }
+        .nuvem-organica { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .pill-service {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 22px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pill-service:hover { transform: translateY(-3px); border-color: #38bdf8; background: rgba(56, 189, 248, 0.1); }
+
+        /* Identidade por Núcleo */
+        .pill-service.geo { border-color: rgba(56, 189, 248, 0.3); }
+        .pill-service.fire { border-color: rgba(239, 68, 68, 0.3); }
+        .pill-service.eng-premium { border-color: rgba(14, 165, 233, 0.5); font-weight: 600; }
+
+        /* Tooltip SEO */
+        .pill-service::after {
+            content: attr(data-seo);
+            position: absolute;
+            bottom: 125%; left: 50%; transform: translateX(-50%);
+            width: 240px; background: #fff; color: #020617;
+            padding: 12px; border-radius: 8px; font-size: 0.75rem;
+            opacity: 0; visibility: hidden; transition: 0.3s; z-index: 99;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        .pill-service:hover::after { opacity: 1; visibility: visible; }
+
+        @media (max-width: 768px) {
+            .pill-service::after { display: none; }
+            .titulo-moderno { font-size: 1.6rem; }
+            .nuvem-organica { gap: 8px; }
+        }
     </style>
 
     <!-- Open Graph & Twitter Card -->
@@ -651,6 +692,7 @@
                 </div>
             </section>
             
+            <!-- 
             <section class="bg-surface-dark" id="servicos">
                 <div class="container">
                     <div class="section-title fade-in-on-scroll">
@@ -732,6 +774,33 @@
                          <p class="text-xs text-slate-600 max-w-800px text-center">Todos os laudos seguem as normas técnicas aplicáveis e incluem ART/RRT.</p>
                      </div>
                  </div>
+            </section>
+            -->
+
+            <section class="secao-servicos-harpia" id="servicos">
+                <div class="container-fluid">
+                    <h2 class="titulo-moderno">Soluções Integradas em Engenharia e Geotecnologias</h2>
+                    <div class="nuvem-organica">
+                        <div class="pill-service geo" data-seo="Topografia em Barbacena para loteamentos e medição de terrenos com precisão milimétrica.">Topografia Profissional</div>
+                        <div class="pill-service geo" data-seo="Georreferenciamento de imóveis rurais (INCRA) e urbanos. Certificação e regularização fundiária.">Georreferenciamento</div>
+                        <div class="pill-service" data-seo="Retificação de área para processos de usucapião e desmembramentos em Barbacena e região.">Retificação de Área</div>
+            
+                        <div class="pill-service eng-premium" data-seo="Cálculo estrutural avançado e otimização de materiais para concreto e aço. Engenharia de alta performance.">Cálculo Estrutural & Otimização</div>
+                        <div class="pill-service eng-premium" data-seo="Projetos de galpões, mezaninos e estruturas metálicas industriais complexas.">Estruturas Metálicas & Industriais</div>
+            
+                        <div class="pill-service fire" data-seo="Renovação de AVCB e CLCB em Barbacena. Projetos de Segurança Contra Incêndio (PSCIP) conforme CBMMG.">AVCB e Projeto de Incêndio</div>
+                        
+                        <div class="pill-service" data-seo="Laudo técnico de engenharia civil em Barbacena. Diagnóstico de patologias e estabilidade predial (NBR 13752).">Laudo Técnico de Engenharia</div>
+                        <div class="pill-service" data-seo="Emissão de LTCAT e eventos S-2240 para o eSocial. Gestão de Segurança do Trabalho e SST.">LTCAT & eSocial (S-2240)</div>
+                        <div class="pill-service" data-seo="Laudo estrutural para verificação de capacidade de carga, trincas e integridade de vigas.">Laudo Estrutural</div>
+                        <div class="pill-service" data-seo="Laudo de infiltração e diagnóstico de umidade. Identificação técnica de causas e falhas.">Laudo de Infiltração</div>
+                        <div class="pill-service" data-seo="Assistência técnica pericial em processos judiciais e vistorias cautelares de vizinhança em MG.">Técnico Pericial</div>
+                        <div class="pill-service" data-seo="Relatório técnico de ar condicionado e PMOC para conformidade com normas da ANVISA.">PMOC & Ar Condicionado</div>
+                        <div class="pill-service" data-seo="Vistoria técnica para recebimento de chaves. Checklist contra vícios construtivos aparentes.">Recebimento de Obras</div>
+                        <div class="pill-service" data-seo="Avaliação de imóveis para fins judiciais, inventários e garantias bancárias.">Avaliação de Imóveis</div>
+                        <div class="pill-service" data-seo="Inspeção predial periódica e autovistoria técnica para gestão de manutenção em condomínios.">Inspeção Predial</div>
+                    </div>
+                </div>
             </section>
 
             <section class="bg-surface-dark" id="metodologia">
