@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Página Principal -->
@@ -7,6 +6,14 @@
         <lastmod>2024-08-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+    </url>
+
+    <!-- Página do Blog (Listagem) -->
+    <url>
+        <loc>https://harpiaconsultoria.eng.br/#/blog</loc>
+        <lastmod>2024-08-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
     
     <!-- Artigos de Blog Estáticos -->
