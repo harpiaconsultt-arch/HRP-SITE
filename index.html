@@ -3,14 +3,6 @@
 <html class="scroll-smooth" lang="pt-BR">
 <head>
     <link rel="preload" as="image" href="img/hero-harpia-v2.webp" fetchpriority="high">
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MS53MLHS');</script>
-    <!-- End Google Tag Manager -->
-
     <!-- Resource Hints: Estabelece conexões críticas o mais cedo possível -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://connect.facebook.net">
@@ -775,46 +767,76 @@
     <script type="module" src="index.js" defer></script>
     
     <!-- Tracking Scripts -->
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1387923072219701'); 
-    fbq('track', 'PageView');
-    </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
-    
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-WX7TNRJS94"></script>
+
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      const initTracking = () => {
+        // GTM
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MS53MLHS');
 
-      gtag('config', 'G-WX7TNRJS94');
-      gtag('config', 'AW-16755835554');
-      
-      document.addEventListener('DOMContentLoaded', function() {
-        const trackConversion = () => {
-          if (typeof fbq === 'function') fbq('track', 'Contact');
-          if (typeof gtag === 'function') {
-            gtag('event', 'conversion', {'send_to': 'AW-16755835554/wWlACLC0gd4bEKKF57U-'});
-          }
+        // Meta Pixel
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1387923072219701'); 
+        fbq('track', 'PageView');
+        
+        // GTag Loader
+        const gtagScript = document.createElement('script');
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-WX7TNRJS94';
+        gtagScript.async = true;
+        document.head.appendChild(gtagScript);
+
+        gtagScript.onload = () => {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WX7TNRJS94');
+            gtag('config', 'AW-16755835554');
+            
+            // Set up conversion tracking after GTag is configured
+            const trackConversion = () => {
+              if (typeof fbq === 'function') fbq('track', 'Contact');
+              if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {'send_to': 'AW-16755835554/wWlACLC0gd4bEKKF57U-'});
+              }
+            };
+
+            const ctaElements = document.querySelectorAll('.track-conversion');
+            ctaElements.forEach(element => {
+              element.addEventListener('click', trackConversion);
+            });
         };
+      };
 
-        const ctaElements = document.querySelectorAll('.track-conversion');
-
-        ctaElements.forEach(element => {
-          element.addEventListener('click', trackConversion);
-        });
+      const userInteractionEvents = ['scroll', 'mousemove', 'touchstart', 'click'];
+      
+      let scriptsTriggered = false;
+      const trigger = () => {
+        if (scriptsTriggered) return;
+        scriptsTriggered = true;
+        initTracking();
+        userInteractionEvents.forEach(event => window.removeEventListener(event, trigger));
+      };
+      
+      const fallbackTimeout = setTimeout(trigger, 3000);
+      
+      userInteractionEvents.forEach(event => {
+        window.addEventListener(event, () => {
+          clearTimeout(fallbackTimeout);
+          trigger();
+        }, { once: true, passive: true });
       });
     </script>
 </body>
