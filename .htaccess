@@ -1,0 +1,12 @@
+# Otimiza o cache de recursos estáticos para melhorar a performance de carregamento
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Cache de imagens por 1 ano
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  
+  # Cache de CSS por 1 ano
+  ExpiresByType text/css "access plus 1 year"
+</IfModule>
