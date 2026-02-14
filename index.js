@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 2. Observer de Animação (Fade In)
-  // DICA DE OURO: Nunca coloque a classe "fade-in-on-scroll" no seu Banner Principal (Hero).
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -38,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".fade-in-on-scroll").forEach(el => observer.observe(el));
 
-  // 3. Formulário de Contato (WhatsApp)
+  // 3. Formulário de Contato (WhatsApp) com Rastreamento GA4
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     const serviceContainer = document.getElementById("service-options-container");
@@ -60,6 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!name) return alert("Por favor, preencha seu nome.");
       if (!selectedService) return alert("Por favor, selecione um serviço.");
+
+      // --- RASTREAMENTO DE CONVERSÃO (GA4) ---
+      // Envia o evento para o Google Analytics antes de abrir o WhatsApp
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          'event_category': 'WhatsApp',
+          'event_label': selectedService,
+          'value': 1
+        });
+      }
+      // ---------------------------------------
 
       const text = `Olá! Meu nome é ${name}. Gostaria de solicitar um orçamento para: ${selectedService}.${message ? `\n\nDetalhes: ${message}` : ""}`;
       window.open(`https://wa.me/5532935018000?text=${encodeURIComponent(text)}`, "_blank");
