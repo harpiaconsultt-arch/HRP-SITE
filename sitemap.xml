@@ -8,12 +8,26 @@
         <priority>1.0</priority>
     </url>
 
+    <!-- Páginas de Serviço Estratégicas -->
+    <url>
+        <loc>https://www.harpiaconsultoria.eng.br/vistoria-cautelar-vizinhanca-juiz-de-fora.html</loc>
+        <lastmod>2024-08-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.harpiaconsultoria.eng.br/engenheiro-perito-estrutural-barbacena.html</loc>
+        <lastmod>2024-08-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
     <!-- Página do Blog (Listagem) -->
     <url>
         <loc>https://www.harpiaconsultoria.eng.br/#/blog</loc>
         <lastmod>2024-08-15</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
     </url>
     
     <!-- Artigos de Blog Estáticos -->
@@ -41,30 +55,36 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+     <url>
+        <loc>https://www.harpiaconsultoria.eng.br/blog/manutencao-predial-chuvas-barbacena.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
     
     <!-- Artigos de Blog (SPA/Client-Side Routing) -->
     <url>
         <loc>https://www.harpiaconsultoria.eng.br/#/blog/preco-laudo-tecnico-engenharia-barbacena-2026</loc>
         <lastmod>2026-01-08</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.harpiaconsultoria.eng.br/#/blog/quando-contratar-engenharia-diagnostica</loc>
         <lastmod>2025-12-20</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.harpiaconsultoria.eng.br/#/blog/vistoria-cautelar-de-vizinhanca-guia-completo</loc>
         <lastmod>2025-12-10</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.harpiaconsultoria.eng.br/#/blog/pericia-judicial-engenharia-o-papel-assistente-tecnico</loc>
         <lastmod>2025-12-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
 </urlset>
