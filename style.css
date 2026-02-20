@@ -1,0 +1,7 @@
+.blog-list-container { max-width: 1200px; margin: 0 auto; padding: 120px 20px 60px; }
+.posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+.post-card { background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 1.5rem; text-decoration: none; color: #d1d5db; transition: transform 0.2s; }
+.post-card:hover { transform: translateY(-5px); }
+.post-card h2 { font-size: 1.25rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
+.post-card .post-meta { font-size: 0.875rem; color: #94a3b8; margin-bottom: 1rem; }
+.post-card .read-more { display: inline-block; margin-top: 1rem; color: #1E8E4A; font-weight: 600; }
