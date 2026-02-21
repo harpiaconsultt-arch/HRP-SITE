@@ -32,6 +32,12 @@
     
     <!-- Artigos de Blog Estáticos -->
     <url>
+        <loc>https://www.harpiaconsultoria.eng.br/blog/vistoria-cautelar-de-vizinhanca-juiz-de-fora.html</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.harpiaconsultoria.eng.br/blog/vistoria-de-bombeiros-em-condominios-barbacena.html</loc>
         <lastmod>2026-02-12</lastmod>
         <changefreq>monthly</changefreq>
