@@ -1844,7 +1844,7 @@
         <section id="hero" style="position: relative; overflow: hidden">
           <img
             src="img/hero-harpia-v2.webp"
-            alt="Engenharia Diagnóstica"
+            alt="Engenharia Diagnóstica Harpia Consultoria"
             style="
               position: absolute;
               top: 0;
@@ -3335,103 +3335,35 @@
       <span class="material-icons">keyboard_arrow_up</span>
     </button>
 
-    <!-- Tracking Scripts -->
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
-    /></noscript>
+    <!-- Optimized Facebook Pixel Snippet -->
+<script>
+  // Facebook Pixel Stub: Captura eventos em uma fila antes do script principal carregar.
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];}(window, document,'script');
 
-    <script>
-      const initTracking = () => {
-        // Meta Pixel
-        !(function (f, b, e, v, n, t, s) {
-          if (f.fbq) return;
-          n = f.fbq = function () {
-            n.callMethod
-              ? n.callMethod.apply(n, arguments)
-              : n.queue.push(arguments);
-          };
-          if (!f._fbq) f._fbq = n;
-          n.push = n;
-          n.loaded = !0;
-          n.version = "2.0";
-          n.queue = [];
-          t = b.createElement(e);
-          t.async = !0;
-          t.src = v;
-          s = b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t, s);
-        })(
-          window,
-          document,
-          "script",
-          "https://connect.facebook.net/en_US/fbevents.js",
-        );
-        fbq("init", "1387923072219701");
-        fbq("track", "PageView");
+  // Adiciona os eventos iniciais à fila. Eles serão processados quando o script carregar.
+  fbq('init', '1387923072219701');
+  fbq('track', 'PageView');
 
-        // GTag Loader
-        const gtagScript = document.createElement("script");
-        gtagScript.src =
-          "https://www.googletagmanager.com/gtag/js?id=G-WX7TNRJS94";
-        gtagScript.async = true;
-        document.head.appendChild(gtagScript);
+  // Adia o carregamento do script do Pixel para depois que a página estiver totalmente carregada.
+  window.addEventListener('load', function() {
+    var t = document.createElement('script');
+    t.async = true;
+    t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  });
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=1387923072219701&ev=PageView&noscript=1"
+  />
+</noscript>
+<!-- End Optimized Facebook Pixel Snippet -->
 
-        gtagScript.onload = () => {
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag("js", new Date());
-          gtag("config", "G-WX7TNRJS94");
-
-          // Set up conversion tracking after GTag is configured
-          const trackConversion = () => {
-            if (typeof fbq === "function") {
-              fbq("track", "Contact");
-            }
-          };
-
-          const ctaElements = document.querySelectorAll(".track-conversion");
-          ctaElements.forEach((element) => {
-            element.addEventListener("click", trackConversion);
-          });
-        };
-      };
-
-      const userInteractionEvents = [
-        "scroll",
-        "mousemove",
-        "touchstart",
-        "click",
-      ];
-
-      let scriptsTriggered = false;
-      const trigger = () => {
-        if (scriptsTriggered) return;
-        scriptsTriggered = true;
-        initTracking();
-        userInteractionEvents.forEach((event) =>
-          window.removeEventListener(event, trigger),
-        );
-      };
-
-      const fallbackTimeout = setTimeout(trigger, 3000);
-
-      userInteractionEvents.forEach((event) => {
-        window.addEventListener(
-          event,
-          () => {
-            clearTimeout(fallbackTimeout);
-            trigger();
-          },
-          { once: true, passive: true },
-        );
-      });
-    </script>
     <script type="module" src="/index.js" defer></script>
   </body>
 </html>
