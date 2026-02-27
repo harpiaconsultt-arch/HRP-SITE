@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-br" style="scroll-behavior: smooth;">
+<html lang="pt-BR" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engenheiro Perito Estrutural em Juiz de Fora e Barbacena</title>
-    <meta name="description" content="Laudos técnicos e ART com engenheiro perito estrutural. Atendimento especializado em Juiz de Fora, Barbacena e região para vistorias e perícias.">
     
+    <!-- SEO -->
+    <title>Engenheiro Perito Estrutural em Juiz de Fora e Barbacena | Laudos</title>
+    <meta name="description" content="Análise e laudos técnicos com engenheiro perito estrutural. Atendimento especializado em Juiz de Fora, Barbacena e região para vistorias e perícias de segurança.">
+    
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -28,185 +31,189 @@
     }
     </script>
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
     <style>
         :root {
-            --bg: #0a0a0a;
-            --surface: #111827;
-            --primary: #50C878; /* Verde Esmeralda */
-            --text-primary: #f3f4f6;
-            --text-secondary: #9ca3af;
+            --bg-white: #FFFFFF;
+            --bg-light-silver: #F8F9FA;
+            --primary-blue: #0D2C54; /* Azul Royal Escuro */
+            --accent-silver: #D1D5DB;
+            --text-dark: #212529;
+            --text-light: #495057;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Lato', sans-serif;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; background-color: var(--bg); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-        section { padding: 60px 0; }
-        h1, h2, h3 { line-height: 1.3; color: var(--text-primary); font-weight: 700; margin-bottom: 1rem; }
-        h1 { font-size: 2.8rem; text-align: center; }
-        h2 { font-size: 2.2rem; border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 2rem; }
-        h3 { font-size: 1.4rem; color: var(--primary); margin-top: 1.5rem; }
-        p { color: var(--text-secondary); margin-bottom: 1rem; }
-        ul { list-style: none; padding-left: 0; }
-        li { margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative; }
-        li::before { content: '✓'; color: var(--primary); position: absolute; left: 0; }
-        .cta-button { display: inline-block; background-color: var(--primary); color: #000; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; text-align: center; transition: transform 0.2s; margin: 0.5rem; }
-        .cta-button:hover { transform: scale(1.05); }
-        .hero { text-align: center; padding-top: 80px; padding-bottom: 80px; }
-        .hero .subtitle { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem auto; }
+        body { font-family: var(--font-sans); background-color: var(--bg-white); color: var(--text-light); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; }
+        h1, h2, h3 { font-family: var(--font-serif); color: var(--primary-blue); font-weight: 700; line-height: 1.3; }
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        h2 { font-size: 2.5rem; margin-bottom: 2.5rem; text-align: center; }
+        h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        p { margin-bottom: 1rem; }
+        ul { list-style: none; }
+        li { margin-bottom: 0.75rem; padding-left: 25px; position: relative; }
+        li::before { content: '✓'; color: var(--primary-blue); position: absolute; left: 0; font-weight: bold; }
+        .btn { display: inline-block; padding: 15px 35px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; border: 2px solid var(--primary-blue); margin: 5px; }
+        .btn-primary { background-color: var(--primary-blue); color: var(--bg-white); }
+        .btn-primary:hover { background-color: #0A2240; border-color: #0A2240; transform: translateY(-2px); }
+        .btn-secondary { background-color: var(--bg-white); color: var(--primary-blue); }
+        .btn-secondary:hover { background-color: var(--bg-light-silver); transform: translateY(-2px); }
+
+        /* Hero Section */
+        .hero { min-height: 80vh; display: flex; align-items: center; text-align: left; }
+        .hero-content { max-width: 650px; }
+        .hero .subtitle { font-size: 1.2rem; margin: 1.5rem 0 2rem 0; }
         .hero .cta-container { margin-top: 2rem; }
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .card { background-color: var(--surface); padding: 2rem; border-radius: 8px; }
-        .faq details { background-color: var(--surface); margin-bottom: 1rem; border-radius: 8px; }
-        .faq summary { padding: 1.5rem; cursor: pointer; font-weight: bold; font-size: 1.1rem; }
-        .faq .answer { padding: 0 1.5rem 1.5rem; }
-        footer { background-color: #000; text-align: center; padding: 40px 20px; color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* Cards Section */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .card { background-color: var(--bg-white); padding: 2rem; border: 1px solid var(--accent-silver); border-radius: 8px; text-align: center; }
+        .card .icon { font-size: 2rem; color: var(--primary-blue); margin-bottom: 1rem; }
+        .card h3 { font-size: 1.3rem; }
+
+        /* Services Section */
+        #servicos { background-color: var(--bg-light-silver); }
+        .service-block { margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--accent-silver); }
+        .service-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        /* Process Section */
+        .process-timeline { display: flex; justify-content: space-between; position: relative; margin-top: 3rem; }
+        .process-step { width: 23%; text-align: center; position: relative; z-index: 1; }
+        .step-number { width: 50px; height: 50px; background-color: var(--primary-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: var(--font-serif); font-size: 1.5rem; }
+        .process-timeline::before { content: ''; position: absolute; top: 25px; left: 10%; right: 10%; height: 2px; background-color: var(--accent-silver); z-index: 0; }
+
+        /* Final CTA Section */
+        .final-cta { background-color: var(--primary-blue); color: var(--bg-white); text-align: center; }
+        .final-cta h2, .final-cta p { color: var(--bg-white); }
+        .final-cta .btn-primary { background-color: var(--bg-white); color: var(--primary-blue); border-color: var(--bg-white); }
+        .final-cta .btn-secondary { background-color: transparent; color: var(--bg-white); border-color: var(--bg-white); }
+
+        /* Footer */
+        footer { background-color: #040D19; color: var(--accent-silver); padding: 50px 0; text-align: center; font-size: 0.9rem; }
         footer p { margin-bottom: 0.5rem; }
-        @media (max-width: 768px) { h1 { font-size: 2.2rem; } h2 { font-size: 1.8rem; } }
+        footer strong { color: var(--bg-white); }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; } h2 { font-size: 2rem; }
+            .hero { text-align: center; }
+            .hero-content { margin: 0 auto; }
+            .process-timeline { flex-direction: column; }
+            .process-step { width: 100%; margin-bottom: 2rem; }
+            .process-timeline::before { display: none; }
+        }
     </style>
 </head>
 <body>
 
     <main>
-        <!-- SEÇÃO 1 – HERO -->
         <section class="hero">
             <div class="container">
-                <h1>Engenheiro Perito Estrutural em Juiz de Fora e Barbacena</h1>
-                <p class="subtitle">Análises técnicas detalhadas e emissão de Anotação de Responsabilidade Técnica (ART) para garantir a segurança, a conformidade normativa e a estabilidade de condomínios, empresas e obras. Nosso trabalho é fundamentado no rigor técnico para proteger seu patrimônio e sua responsabilidade civil.</p>
-                <ul>
-                    <li>Laudos de estabilidade estrutural para condomínios, empresas e imóveis residenciais.</li>
-                    <li>Vistorias de vizinhança para início de obras, reduzindo o risco de litígios.</li>
-                    <li>Perícia judicial e assistência técnica em ações envolvendo patologias construtivas.</li>
-                    <li>Atendimento especializado em Juiz de Fora, Barbacena, Conselheiro Lafaiete, Ubá e cidades próximas.</li>
-                </ul>
-                <div class="cta-container">
-                    <a href="#" class="cta-button">Solicitar Orçamento Técnico</a>
-                    <a href="https://wa.me/5532993501800?text=Olá,%20preciso%20de%20um%20orçamento%20para%20laudo%20estrutural." class="cta-button">Falar pelo WhatsApp</a>
+                <div class="hero-content">
+                    <h1>Engenheiro Perito Estrutural em Juiz de Fora e Barbacena</h1>
+                    <p class="subtitle">Laudos Técnicos, Vistorias e Perícias para a Segurança e a Valorização do seu Patrimônio. Análises fundamentadas em rigor técnico e normativo para proteger sua responsabilidade e garantir a estabilidade de estruturas.</p>
+                    <ul>
+                        <li>Laudos de estabilidade estrutural para condomínios, empresas e imóveis residenciais.</li>
+                        <li>Vistorias de vizinhança para o início seguro de obras, reduzindo o risco de litígios.</li>
+                        <li>Perícia judicial e assistência técnica em ações envolvendo patologias construtivas.</li>
+                        <li>Atendimento especializado em Juiz de Fora, Barbacena, Conselheiro Lafaiete e Ubá.</li>
+                    </ul>
+                    <div class="cta-container">
+                        <a href="#" class="btn btn-primary">Solicitar Orçamento Técnico</a>
+                        <a href="https://wa.me/5532993501800?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20laudo%20estrutural." class="btn btn-secondary">Falar pelo WhatsApp</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 2 – QUANDO CONTRATAR -->
-        <section class="container">
-            <h2>Quando um Engenheiro Perito Estrutural é Indispensável</h2>
-            <p>A contratação de um engenheiro perito estrutural é uma decisão estratégica para mitigar riscos, fundamentar processos e garantir a segurança. A ausência de um laudo técnico pode resultar em falhas estruturais, desvalorização do imóvel, responsabilidade civil e criminal, além de interdições por parte de órgãos fiscalizadores. A engenharia de perícias oferece o subsídio técnico necessário para decisões seguras e juridicamente embasadas.</p>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Condomínios e Síndicos</h3>
-                    <p>A responsabilidade do síndico sobre a segurança e a manutenção das áreas comuns é direta. Um laudo de estabilidade estrutural previne autuações da Defesa Civil e do Corpo de Bombeiros, protege o síndico de processos por negligência e garante a tranquilidade dos moradores. É um documento essencial para a gestão de riscos e para a aprovação de obras em assembleias.</p>
-                </div>
-                <div class="card">
-                    <h3>Advogados e Escritórios de Advocacia</h3>
-                    <p>Um laudo técnico robusto e bem fundamentado é a peça central para o sucesso em ações judiciais que envolvem patologias construtivas. Fornecemos pareceres técnicos claros e objetivos, que fortalecem a tese jurídica, auxiliam na elaboração de quesitos e oferecem ao juízo uma prova pericial incontestável.</p>
-                </div>
-                <div class="card">
-                    <h3>Construtoras, Empresas e Proprietários</h3>
-                    <p>Para construtoras e empresas, a perícia estrutural é uma ferramenta de gestão de risco técnico, reduzindo passivos futuros e garantindo a conformidade com as normas da ABNT. Para proprietários, é a segurança necessária ao planejar reformas, ampliações ou ao avaliar a condição de um imóvel antes da compra.</p>
+        <section id="indispensavel">
+            <div class="container">
+                <h2>Quando um Engenheiro Perito Estrutural é Indispensável</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto;">A estabilidade de uma edificação é um ativo inegociável. A contratação de um perito é a medida que separa a gestão de risco da negligência, sendo crucial para evitar falhas, interdições e responsabilidade civil. Um laudo técnico preciso é a base para decisões seguras.</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Condomínios e Síndicos</h3>
+                        <p>Um laudo de estabilidade é a principal ferramenta de proteção jurídica para o síndico, atestando a segurança das áreas comuns e cumprindo exigências normativas, além de garantir a tranquilidade dos moradores.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Advogados e Escritórios</h3>
+                        <p>A prova técnica é o pilar de processos envolvendo engenharia. Nossos laudos fortalecem teses e oferecem clareza para o juízo, sendo decisivos em disputas sobre vícios construtivos, responsabilidades e danos.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Construtoras e Proprietários</h3>
+                        <p>Para empresas, é a gestão de risco que reduz passivos. Para proprietários, é a segurança em reformas ou na avaliação de um imóvel. A vistoria de vizinhança, por exemplo, previne litígios antes mesmo da obra começar.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 3 – SERVIÇOS ESPECIALIZADOS -->
-        <section class="container">
-            <h2>Serviços Especializados em Laudos e Vistorias Estruturais</h2>
-            <div class="card-grid">
-                <div class="card">
+        <section id="servicos">
+            <div class="container">
+                <h2>Serviços Especializados em Laudos e Vistorias Estruturais</h2>
+                <div class="service-block">
                     <h3>Laudo de Estabilidade Estrutural</h3>
-                    <p>Diagnóstico completo da saúde da edificação, atestando as condições de segurança, identificando manifestações patológicas e recomendando ações corretivas. Essencial para edifícios antigos, imóveis com sinais de deterioração ou para atender exigências de órgãos públicos.</p>
+                    <p>Análise técnica completa que diagnostica a "saúde" da edificação, atestando suas condições de segurança e estabilidade. É o documento que identifica manifestações patológicas (fissuras, corrosão, deformações) e fundamenta planos de manutenção ou reparo.</p>
                 </div>
-                <div class="card">
-                    <h3>Vistoria de Vizinhança</h3>
-                    <p>Instrumento de proteção jurídica indispensável antes do início de qualquer obra. Documenta o estado de conservação dos imóveis limítrofes, criando um registro técnico que resguarda tanto o construtor quanto os vizinhos de futuras alegações de danos.</p>
+                <div class="service-block">
+                    <h3>Vistoria de Vizinhança (Vistoria Cautelar)</h3>
+                    <p>Instrumento de proteção jurídica essencial antes do início de construções, demolições ou reformas. Documenta formalmente o estado de conservação dos imóveis limítrofes, resguardando o construtor e os vizinhos de futuras alegações de danos.</p>
                 </div>
-                <div class="card">
+                <div class="service-block">
                     <h3>Perícia Judicial e Assistência Técnica</h3>
-                    <p>Atuação em processos judiciais para fornecer suporte técnico. Como perito do juízo, elaboramos um laudo imparcial; como assistente técnico, defendemos os interesses da parte contratante com pareceres técnicos, análise de laudos e elaboração de quesitos.</p>
-                </div>
-            </div>
-            <p style="text-align:center; margin-top: 2rem;">Caso seu caso envolva outro tipo de laudo ou vistoria estrutural, descreva a situação no primeiro contato para avaliarmos tecnicamente a melhor abordagem.</p>
-        </section>
-
-        <!-- SEÇÃO 4 – ÁREA DE ATUAÇÃO -->
-        <section class="container">
-            <h2>Atendimento em Juiz de Fora, Barbacena e Região</h2>
-            <p>Nossa atuação é focada na agilidade logística para clientes na Zona da Mata e Campo das Vertentes. Oferecemos laudo de estabilidade estrutural em <strong>Juiz de Fora</strong>, vistoria de vizinhança em <strong>Barbacena</strong> e demais serviços de perícia em <strong>Conselheiro Lafaiete</strong>, <strong>Ubá</strong> e outras cidades da região. A contratação de um engenheiro perito estrutural local garante a presença de um profissional que compreende as particularidades construtivas da área. Avaliamos deslocamentos para outras localidades mediante análise prévia.</p>
-        </section>
-
-        <!-- SEÇÃO 5 – DIFERENCIAIS -->
-        <section class="container">
-            <h2>Diferenciais Técnicos que Aumentam a Segurança dos Seus Laudos</h2>
-            <ul>
-                <li><strong>Rigor Normativo:</strong> Laudos baseados em normas ABNT aplicáveis e boas práticas de engenharia diagnóstica.</li>
-                <li><strong>Experiência em Patologias Estruturais:</strong> Vivência em análise de manifestações patológicas em estruturas de concreto, alvenaria e contenções.</li>
-                <li><strong>Clareza para o Leigo, Precisão para o Técnico:</strong> Documentos técnicos com base sólida, mas organizados de forma compreensível para síndicos, advogados e juízes.</li>
-                <li><strong>Foco em Prova Técnica Sólida:</strong> Laudos pensados para suportar questionamentos em processos administrativos e judiciais.</li>
-                <li><strong>Entrega Organizada e Profissional:</strong> Estrutura padronizada, anexos fotográficos, numeração adequada, ART emitida.</li>
-            </ul>
-        </section>
-
-        <!-- SEÇÃO 6 – COMO FUNCIONA -->
-        <section class="container">
-            <h2>Como Funciona o Processo de Contratação</h2>
-            <div class="card-grid">
-                <div class="card"><strong>1. Contato Inicial:</strong> Cliente informa tipo de imóvel, cidade e contexto.</div>
-                <div class="card"><strong>2. Avaliação e Proposta:</strong> Análise da complexidade, definição de escopo, prazos e honorários.</div>
-                <div class="card"><strong>3. Vistoria em Campo:</strong> Visita técnica, registros fotográficos e análise de documentos.</div>
-                <div class="card"><strong>4. Emissão e Entrega:</strong> Entrega do laudo assinado, com ART, em formato digital (PDF).</div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO 7 – FAQ -->
-        <section class="container faq">
-            <h2>Perguntas Frequentes</h2>
-            <details>
-                <summary>Quando um laudo de estabilidade estrutural é obrigatório?</summary>
-                <div class="answer"><p>É fortemente recomendado para edificações com mais de 20 anos, ao surgirem anomalias (trincas, deformações) e em processos de compra/venda. Em muitas cidades, leis municipais já o tornam obrigatório para condomínios.</p></div>
-            </details>
-            <details>
-                <summary>Qual o prazo médio para entrega de um laudo?</summary>
-                <div class="answer"><p>O prazo varia com a complexidade. Para casos comuns, a média é de 7 a 15 dias úteis após a vistoria. Casos mais complexos são avaliados individualmente.</p></div>
-            </details>
-            <details>
-                <summary>O laudo pode ser usado em processos judiciais?</summary>
-                <div class="answer"><p>Sim. Nossos laudos são documentos técnicos oficiais, acompanhados de ART, e são elaborados para terem validade jurídica e administrativa.</p></div>
-            </details>
-            <details>
-                <summary>A vistoria de vizinhança protege quem?</summary>
-                <div class="answer"><p>Ambos. Protege o dono da obra de acusações infundadas sobre danos preexistentes e protege os vizinhos ao criar um registro oficial do estado de seus imóveis.</p></div>
-            </details>
-        </section>
-
-        <!-- SEÇÃO 8 – PROVA SOCIAL -->
-        <section class="container">
-            <h2>O que Clientes e Parceiros Dizem</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <p><i>"O laudo de estabilidade foi extremamente claro e objetivo, nos deu a segurança que precisávamos para aprovar a reforma da fachada em assembleia."</i></p>
-                    <p><strong>- Síndico de Condomínio</strong></p>
-                </div>
-                <div class="card">
-                    <p><i>"A assistência técnica em nosso processo foi decisiva. O parecer técnico era robusto, bem fundamentado nas normas e crucial para o entendimento do juiz."</i></p>
-                    <p><strong>- Advogado</strong></p>
-                </div>
-                <div class="card">
-                    <p><i>"Contratamos a vistoria de vizinhança e o relatório detalhado nos deu total segurança jurídica para iniciar os trabalhos. Profissionalismo e pontualidade."</i></p>
-                    <p><strong>- Empresa de Construção</strong></p>
+                    <p>Atuação especializada em processos judiciais para fornecer subsídio técnico à decisão. Como perito do juízo, elaboramos laudos imparciais. Como assistente técnico, defendemos os interesses da parte contratante com pareceres, quesitos e análise crítica de laudos oficiais.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 9 – CTA FINAL -->
-        <section class="hero">
+        <section id="atuacao" style="background-color: var(--bg-light-silver);">
             <div class="container">
-                <h2>Precisa de um Laudo Estrutural Confiável?</h2>
-                <p class="subtitle">Envie um breve resumo do seu caso (tipo de imóvel, cidade, contexto) para receber uma avaliação técnica objetiva, com uma proposta clara de prazos e honorários. Clique no botão para solicitar uma avaliação técnica ou envie as informações básicas da sua situação pelo WhatsApp.</p>
+                <h2>Atendimento Especializado em Juiz de Fora, Barbacena e Região</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto;">Nossa atuação é focada na agilidade e no conhecimento técnico local para clientes na Zona da Mata e no Campo das Vertentes. A contratação de um perito que entende as tipologias construtivas da região garante uma análise mais precisa. Atendemos principalmente: <strong>Juiz de Fora, Barbacena, Conselheiro Lafaiete e Ubá.</strong></p>
+            </div>
+        </section>
+
+        <section id="diferenciais">
+            <div class="container">
+                <h2>Diferenciais Técnicos que Aumentam a Segurança dos Seus Laudos</h2>
+                <div class="card-grid">
+                    <div class="card"><h3>Rigor Normativo</h3><p>Análises baseadas nas normas da ABNT e nas melhores práticas do IBAPE.</p></div>
+                    <div class="card"><h3>Experiência Prática</h3><p>Sólida vivência na análise de patologias em estruturas de concreto, alvenaria e fundações.</p></div>
+                    <div class="card"><h3>Clareza e Precisão</h3><p>Documentos técnicos claros para leigos, mas com a profundidade necessária para técnicos.</p></div>
+                    <div class="card"><h3>Foco em Prova Técnica</h3><p>Laudos elaborados para servirem como prova robusta em processos judiciais e administrativos.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="processo">
+            <div class="container">
+                <h2>Como Funciona o Processo de Contratação</h2>
+                <div class="process-timeline">
+                    <div class="process-step"><div class="step-number">1</div><h3>Contato Inicial</h3><p>Cliente apresenta o caso e seus objetivos.</p></div>
+                    <div class="process-step"><div class="step-number">2</div><h3>Proposta Técnica</h3><p>Elaboramos escopo, prazos e honorários.</p></div>
+                    <div class="process-step"><div class="step-number">3</div><h3>Vistoria em Campo</h3><p>Coleta de dados e registros no local.</p></div>
+                    <div class="process-step"><div class="step-number">4</div><h3>Emissão do Laudo</h3><p>Entrega do documento final com ART.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container">
+                <h2>Precisa de um Laudo Estrutural Confiável para sua Obra ou Processo?</h2>
+                <p>Envie um breve resumo do seu caso para receber uma avaliação técnica objetiva, com uma proposta clara de prazos e honorários.</p>
                 <div class="cta-container">
-                    <a href="#" class="cta-button">Solicitar Avaliação Técnica</a>
-                    <a href="https://wa.me/5532993501800?text=Olá,%20preciso%20de%20uma%20avaliação%20para%20laudo%20estrutural." class="cta-button">Enviar Informações pelo WhatsApp</a>
+                    <a href="#" class="btn btn-primary">Solicitar Avaliação Técnica</a>
+                    <a href="https://wa.me/5532993501800?text=Olá,%20preciso%20de%20uma%20avaliação%20para%20laudo%20estrutural." class="btn btn-secondary">Enviar por WhatsApp</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- SEÇÃO 10 – RODAPÉ -->
     <footer>
         <p><strong>Harpia Consultoria e Engenharia</strong></p>
         <p>Engenharia de Perícias Estruturais e Laudos Técnicos</p>
