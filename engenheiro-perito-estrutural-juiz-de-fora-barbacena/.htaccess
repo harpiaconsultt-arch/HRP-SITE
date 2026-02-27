@@ -1,0 +1,17 @@
+# 1. Forçar HTTPS (Segurança é fator de ranking)
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Definir página inicial padrão
+DirectoryIndex index.html
+
+# 3. Compressão Gzip (Torna a página ainda mais leve para SEO)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript
+</IfModule>
+
+# 4. Canonicalização (Evita conteúdo duplicado com o site principal)
+<IfModule mod_headers.c>
+    Header add Link '<https://harpiaconsultoria.eng.br/engenheiro-perito-estrutural-juiz-de-fora-barbacena/>; rel="canonical"'
+</IfModule>
