@@ -129,4 +129,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupSlider("testimonials-track", "prev-testimonial-btn", "next-testimonial-btn");
   setupSlider("homepage-blog-posts", "prev-blog-btn", "next-blog-btn", false);
+
+  // 5. Animação de Números (Counter)
+  const counters = document.querySelectorAll(".counter");
+  const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = +counter.getAttribute("data-target");
+        const duration = 2000; // 2 segundos
+        const startTime = performance.now();
+
+        const updateCounter = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const currentCount = Math.floor(progress * target);
+
+          counter.innerText = currentCount;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        requestAnimationFrame(updateCounter);
+        observer.unobserve(counter);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => counterObserver.observe(counter));
 });
