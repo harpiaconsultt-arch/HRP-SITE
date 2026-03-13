@@ -1585,136 +1585,149 @@
       content="https://www.harpiaconsultoria.eng.br/img/logo-share.png"
     />
 
-    <!-- Schema.org Markup -->
+    <!-- Schema.org Markup - LocalBusiness -->
     <script type="application/ld+json" id="schema-markup-script">
     {
       "@context": "https://schema.org",
-      "@graph": [
+      "@type": [
+        "LocalBusiness",
+        "EngineeringBusiness"
+      ],
+      "@id": "https://harpiaconsultoria.eng.br/#organization",
+      "name": "Harpia Consultoria - Engenharia e Laudos Técnicos",
+      "url": "https://harpiaconsultoria.eng.br/",
+      "image": "https://harpiaconsultoria.eng.br/img/logo.webp",
+      "logo": "https://harpiaconsultoria.eng.br/img/logo.webp",
+      "telephone": "+55-32-93501-8000",
+      "priceRange": "R$ 740 - R$ 200.000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Olegário Maciel, 470 - Sala 18, Centro",
+        "addressLocality": "Barbacena",
+        "addressRegion": "MG",
+        "postalCode": "36200-082",
+        "addressCountry": {
+          "@type": "Country",
+          "name": "BR"
+        }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -21.2257,
+        "longitude": -43.7739
+      },
+      "areaServed": [
+        "Barbacena",
+        "Juiz de Fora",
+        "São João del-Rei",
+        "Conselheiro Lafaiete"
+      ],
+      "openingHoursSpecification": [
         {
-          "@type": "EngineeringBusiness",
-          "@id": "https://harpiaconsultoria.eng.br/#organization",
-          "name": "Harpia Consultoria - Engenharia e Laudos Técnicos",
-          "url": "https://harpiaconsultoria.eng.br/",
-          "image": "https://harpiaconsultoria.eng.br/img/logo.webp",
-          "logo": "https://harpiaconsultoria.eng.br/img/logo.webp",
-          "telephone": "+55-32-93501-8000",
-          "priceRange": "R$ 740 - R$ 200.000",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "R. Olegário Maciel, 470 - Sala 18, Centro",
-            "addressLocality": "Barbacena",
-            "addressRegion": "MG",
-            "postalCode": "36200-082",
-            "addressCountry": {
-              "@type": "Country",
-              "name": "BR"
-            }
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": -21.2257,
-            "longitude": -43.7739
-          },
-          "areaServed": [
-            { "@type": "City", "name": "Barbacena" },
-            { "@type": "City", "name": "Juiz de Fora" },
-            { "@type": "City", "name": "São João del-Rei" },
-            { "@type": "City", "name": "Conselheiro Lafaiete" }
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
           ],
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-              "opens": "08:00",
-              "closes": "18:00"
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "Saturday",
-              "opens": "08:00",
-              "closes": "12:00"
-            }
-          ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "37"
-          },
-          "review": [
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Jônatas Anklin"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "Serviço de extrema qualidade, desde o atendimento até a entrega do laudo. O conhecimento técnico do engenheiro Gustavo é notável. Recomendo fortemente para quem busca um trabalho sério e confiável."
-            },
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Construtora Rocha & Filhos"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "O laudo de vistoria de vizinhança foi extremamente detalhado e profissional. A equipe da Harpia nos deu a segurança que precisávamos para iniciar nossa construção sem preocupações. Atendimento impecável do início ao fim."
-            },
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Mariana Costa, Síndica"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "Contratei a Harpia para um laudo de patologias em meu condomínio. A precisão do diagnóstico com os equipamentos que eles usam é impressionante. Identificaram a origem da infiltração que outros 2 profissionais não encontraram."
-            },
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Dr. Carlos Almeida"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "Como advogado, preciso de assistentes técnicos que falem a linguagem do direito e da engenharia. A Harpia entrega pareceres robustos que fortalecem nossas teses nos processos. Parceria de sucesso."
-            },
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Rapha TJ"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "O laudo técnico apresentado pela Harpia foi decisivo em uma disputa judicial sobre vícios construtivos. A clareza e o embasamento técnico foram elogiados até pela parte contrária. Profissionais de altíssimo nível."
-            }
-          ],
-          "sameAs": [
-            "https://www.linkedin.com/company/harpiaconsultt/",
-            "https://www.facebook.com/profile.php?id=61557861472457",
-            "https://www.youtube.com/@HarpiaConsult",
-            "https://www.tiktok.com/@harpia.consultt",
-            "https://www.instagram.com/harpiaconsultt/"
-          ]
+          "opens": "08:00",
+          "closes": "18:00"
         },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "12:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/harpiaconsultt/",
+        "https://www.facebook.com/profile.php?id=61557861472457",
+        "https://www.youtube.com/@HarpiaConsult",
+        "https://www.tiktok.com/@harpia.consultt",
+        "https://www.instagram.com/harpiaconsultt/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "37"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Jônatas Anklin"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Serviço de extrema qualidade, desde o atendimento até a entrega do laudo. O conhecimento técnico do engenheiro Gustavo é notável. Recomendo fortemente para quem busca um trabalho sério e confiável."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Construtora Rocha & Filhos"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "O laudo de vistoria de vizinhança foi extremamente detalhado e profissional. A equipe da Harpia nos deu a segurança que precisávamos para iniciar nossa construção sem preocupações. Atendimento impecável do início ao fim."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Mariana Costa (Síndica)"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Contratei a Harpia para um laudo de patologias em meu condomínio. A precisão do diagnóstico com os equipamentos que eles usam é impressionante. Identificaram a origem da infiltração que outros 2 profissionais não encontraram."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Dr. Carlos Almeida"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Como advogado, preciso de assistentes técnicos que falem a linguagem do direito e da engenharia. A Harpia entrega pareceres robustos que fortalecem nossas teses nos processos. Parceria de sucesso."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Rapha TJ"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "O laudo técnico apresentado pela Harpia foi decisivo em uma disputa judicial sobre vícios construtivos. A clareza e o embasamento técnico foram elogiados até pela parte contrária. Profissionais de altíssimo nível."
+        }
+      ]
+    }
+    </script>
+    <!-- Schema.org Markup - Outros (FAQ, Breadcrumb, Services) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
         {
           "@type": "FAQPage",
           "@id": "https://harpiaconsultoria.eng.br/#faq",
