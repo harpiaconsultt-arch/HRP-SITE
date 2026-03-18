@@ -1,0 +1,3 @@
+## 2025-01-24 - [Accessibility Micro-UX Patterns]
+**Learning:** For static landing pages exported from tools like Google Stitch, common accessibility gaps include missing skip links, non-semantic form controls (using plain divs/buttons instead of fieldsets), and a lack of respect for system-level motion preferences. Implementing these globally via the main template and a few lines of CSS/JS provides high-impact UX improvements with minimal code.
+**Action:** Always check for `#main-content` targets and `prefers-reduced-motion` media queries in static templates. Ensure all custom "selection" buttons use `aria-pressed` for screen reader feedback.
