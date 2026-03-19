@@ -1,4 +1,39 @@
 
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Forçar HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Forçar non-www
+  RewriteCond %{HTTP_HOST} ^www\.harpiaconsultoria\.eng\.br [NC]
+  RewriteRule ^(.*)$ https://harpiaconsultoria.eng.br/$1 [L,R=301]
+
+  # Redirecionamentos de ?page_id=
+  RewriteCond %{QUERY_STRING} ^page_id=1543$
+  RewriteRule ^$ /? [L,R=301]
+
+  RewriteCond %{QUERY_STRING} ^page_id=1523$
+  RewriteRule ^$ /blog/laudo-estrutural.html? [L,R=301]
+
+  RewriteCond %{QUERY_STRING} ^page_id=1529$
+  RewriteRule ^$ /blog/vistoria-cautelar-de-vizinhanca-juiz-de-fora.html? [L,R=301]
+
+  RewriteCond %{QUERY_STRING} ^page_id=
+  RewriteRule ^$ /? [L,R=301]
+
+  # Redirecionamentos de URLs antigas de laudo
+  RewriteRule ^laudo-estrutural-barbacena\.html$ /blog/laudo-estrutural.html [L,R=301]
+  RewriteRule ^blog/laudo-estrutural-barbacena-juiz-de-fora\.html$ /blog/laudo-estrutural.html [L,R=301]
+  RewriteRule ^vistoria-cautelar-vizinhanca-juiz-de-fora\.html$ /blog/vistoria-cautelar-de-vizinhanca-juiz-de-fora.html [L,R=301]
+
+  # Redirecionamentos de Termos e Cookies
+  RewriteRule ^termos-de-uso/?$ /termos-de-uso.html [L,R=301]
+  RewriteRule ^politica-de-cookies/?$ /politica-de-cookies.html [L,R=301]
+
+</IfModule>
+
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/webp "access plus 1 year"
