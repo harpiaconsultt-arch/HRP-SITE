@@ -1,3 +1,4 @@
 User-agent: *
-Allow: /
-Sitemap: https://www.harpiaconsultoria.eng.br/sitemap.xml
+Disallow:
+
+Sitemap: https://harpiaconsultoria.eng.br/sitemap.xml

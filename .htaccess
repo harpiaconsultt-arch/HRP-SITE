@@ -1,3 +1,39 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Forçar HTTPS e non-www em uma única regra para evitar múltiplos redirecionamentos
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,NE,R=301]
+
+  # Redirecionamentos de ?page_id=
+  RewriteCond %{QUERY_STRING} ^page_id=1543$
+  RewriteRule ^$ /? [L,R=301]
+
+  RewriteCond %{QUERY_STRING} ^page_id=1523$
+  RewriteRule ^$ /blog/laudo-estrutural.html? [L,R=301]
+
+  RewriteCond %{QUERY_STRING} ^page_id=1529$
+  RewriteRule ^$ /blog/vistoria-cautelar-de-vizinhanca-juiz-de-fora.html? [L,R=301]
+
+  # Catch-all para qualquer outro page_id perdido
+  RewriteCond %{QUERY_STRING} ^page_id=
+  RewriteRule ^$ /? [L,R=301]
+
+  # Redirecionamentos de URLs antigas de laudo
+  RewriteRule ^laudo-estrutural-barbacena\.html$ /blog/laudo-estrutural.html [L,R=301]
+  RewriteRule ^blog/laudo-estrutural-barbacena-juiz-de-fora\.html$ /blog/laudo-estrutural.html [L,R=301]
+  RewriteRule ^vistoria-cautelar-vizinhanca-juiz-de-fora\.html$ /blog/vistoria-cautelar-de-vizinhanca-juiz-de-fora.html [L,R=301]
+  RewriteRule ^laudo-estrutural-juiz-de-fora\.html$ /blog/laudo-estrutural.html [L,R=301]
+  RewriteRule ^engenheiro-perito-estrutural-barbacena\.html$ /blog/laudo-estrutural.html [L,R=301]
+
+  # Redirecionamentos de Termos e Cookies (evitando 404)
+  RewriteRule ^termos-de-uso/?$ /termos-de-uso.html [L,R=301]
+  RewriteRule ^politica-de-cookies/?$ /politica-de-cookies.html [L,R=301]
+  RewriteRule ^politica-privacidade/?$ /politica-privacidade.html [L,R=301]
+
+</IfModule>
 
 <IfModule mod_expires.c>
   ExpiresActive On
