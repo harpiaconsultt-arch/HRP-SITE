@@ -31,7 +31,6 @@
   # Redirecionamentos de Termos e Cookies
   RewriteRule ^termos-de-uso/?$ /termos-de-uso.html [L,R=301]
   RewriteRule ^politica-de-cookies/?$ /politica-de-cookies.html [L,R=301]
-  RewriteRule ^politica-privacidade/?$ /politica-privacidade.html [L,R=301]
 
 </IfModule>
 
