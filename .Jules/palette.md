@@ -1,0 +1,3 @@
+## 2026-03-22 - [Skip to Content Link Implementation]
+**Learning:** In projects with sticky headers and complex absolute/relative positioning, a 'Skip to Content' link requires 'position: fixed' and a high 'z-index' (e.g., 1000) to ensure it is not obscured by other elements when focused. Additionally, explicitly overriding '.sr-only' properties (width, height, clip, etc.) on ':focus' is more robust than relying solely on Tailwind's 'focus:not-sr-only' in a hybrid static/React environment.
+**Action:** Always use fixed positioning and a high z-index for skip links in landing pages with persistent headers, and provide fallback CSS for accessibility utilities.
