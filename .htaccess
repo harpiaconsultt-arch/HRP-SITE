@@ -22,11 +22,8 @@
   RewriteRule ^$ /? [L,R=301]
 
   # Redirecionamentos de URLs antigas de laudo
-  RewriteRule ^laudo-estrutural-barbacena\.html$ /blog/laudo-estrutural.html [L,R=301]
-  RewriteRule ^blog/laudo-estrutural-barbacena-juiz-de-fora\.html$ /blog/laudo-estrutural.html [L,R=301]
+  RewriteRule ^laudo-estrutural-barbacena\.html$ /blog/laudo-estrutural-barbacena-juiz-de-fora.html [L,R=301]
   RewriteRule ^vistoria-cautelar-vizinhanca-juiz-de-fora\.html$ /blog/vistoria-cautelar-de-vizinhanca-juiz-de-fora.html [L,R=301]
-  RewriteRule ^laudo-estrutural-juiz-de-fora\.html$ /blog/laudo-estrutural.html [L,R=301]
-  RewriteRule ^engenheiro-perito-estrutural-barbacena\.html$ /blog/laudo-estrutural.html [L,R=301]
 
   # Redirecionamentos de Termos e Cookies (evitando 404)
   RewriteRule ^termos-de-uso/?$ /termos-de-uso.html [L,R=301]
