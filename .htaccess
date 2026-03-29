@@ -27,9 +27,13 @@
 
   # Redirecionamentos de Termos e Cookies (evitando 404)
   RewriteRule ^termos-de-uso/?$ /termos-de-uso.html [L,R=301]
-  RewriteRule ^termos-de-uso-2/?$ /termos-de-uso.html [L,R=301]
+  RewriteRule ^termos-de-uso-2/?$ /termos-de-uso/ [L,R=301]
   RewriteRule ^politica-de-cookies/?$ /politica-de-cookies.html [L,R=301]
   RewriteRule ^politica-privacidade/?$ /politica-privacidade.html [L,R=301]
+
+  # Redirecionamentos de Imagens e Favicon
+  RewriteRule ^img/logo-share\.png$ /img/logo.webp [L,R=301]
+  RewriteRule ^favicon\.ico$ /img/logo.webp [L,R=301]
 
 </IfModule>
 
