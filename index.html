@@ -1536,6 +1536,36 @@
         background-color: var(--cobre) !important;
         color: #fff !important;
       }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+      .focus\:not-sr-only:focus {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1000;
+        width: auto;
+        height: auto;
+        padding: 1rem;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        background-color: #fff;
+        color: #000;
+        border: 2px solid var(--color-cta-green);
+        border-radius: 0.25rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        font-weight: 700;
+      }
     </style>
 
     <!-- Open Graph & Twitter Card -->
@@ -1963,6 +1993,12 @@
     </script>
   </head>
   <body>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only fixed top-4 left-4 z-[100] bg-white text-black p-4 rounded shadow-lg font-bold border-2 border-emerald-500"
+    >
+      Pular para o conteúdo principal
+    </a>
     <header id="header">
       <div class="max-w-7xl">
         <div class="flex">
@@ -2002,7 +2038,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <div id="page-home">
         <section id="hero" style="position: relative; overflow: hidden">
           <img
