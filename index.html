@@ -1536,6 +1536,51 @@
         background-color: var(--cobre) !important;
         color: #fff !important;
       }
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--color-cta-green);
+        color: white;
+        padding: 8px;
+        z-index: 100;
+        transition: top 0.3s;
+      }
+      .skip-link:focus {
+        top: 0;
+      }
+      .service-fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+      .service-fieldset legend {
+        color: #fff;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      :focus-visible {
+        outline: 2px solid var(--color-cta-green);
+        outline-offset: 4px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+          animation-delay: -1ms !important;
+          animation-duration: 1ms !important;
+          animation-iteration-count: 1 !important;
+          background-attachment: initial !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0s !important;
+          transition-delay: 0s !important;
+        }
+        .fade-in-on-scroll {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
     </style>
 
     <!-- Open Graph & Twitter Card -->
@@ -1963,6 +2008,7 @@
     </script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
     <header id="header">
       <div class="max-w-7xl">
         <div class="flex">
@@ -2002,7 +2048,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <div id="page-home">
         <section id="hero" style="position: relative; overflow: hidden">
           <img
@@ -2960,21 +3006,21 @@
               </div>
               <div class="w-full fade-in-on-scroll">
                 <form id="contact-form">
-                  <div>
-                    <label>1. Qual serviço você precisa?</label>
+                  <fieldset class="service-fieldset">
+                    <legend>1. Qual serviço você precisa?</legend>
                     <div id="service-options-container">
-                      <button type="button" data-service="Vistoria de Imóvel">
+                      <button type="button" data-service="Vistoria de Imóvel" aria-pressed="false">
                         Vistoria de Imóvel
                       </button>
-                      <button type="button" data-service="Laudo para Reforma">
+                      <button type="button" data-service="Laudo para Reforma" aria-pressed="false">
                         Laudo para Reforma
                       </button>
-                      <button type="button" data-service="Perícia Judicial">
+                      <button type="button" data-service="Perícia Judicial" aria-pressed="false">
                         Perícia Judicial
                       </button>
-                      <button type="button" data-service="Outro">Outro</button>
+                      <button type="button" data-service="Outro" aria-pressed="false">Outro</button>
                     </div>
-                  </div>
+                  </fieldset>
                   <div>
                     <label for="name-contact">2. Seu nome completo *</label>
                     <input
