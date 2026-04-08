@@ -1536,6 +1536,35 @@
         background-color: var(--cobre) !important;
         color: #fff !important;
       }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+      .skip-link {
+        left: 0.5rem;
+        top: 0.5rem;
+        z-index: 100;
+        background-color: var(--color-cta-green);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .skip-link:focus {
+        clip: auto;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        margin: 0;
+      }
     </style>
 
     <!-- Open Graph & Twitter Card -->
@@ -1963,6 +1992,7 @@
     </script>
   </head>
   <body>
+    <a href="#main-content" class="sr-only skip-link">Pular para o conteúdo principal</a>
     <header id="header">
       <div class="max-w-7xl">
         <div class="flex">
@@ -2002,7 +2032,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1" style="outline: none;">
       <div id="page-home">
         <section id="hero" style="position: relative; overflow: hidden">
           <img
@@ -2963,16 +2993,16 @@
                   <div>
                     <label>1. Qual serviço você precisa?</label>
                     <div id="service-options-container">
-                      <button type="button" data-service="Vistoria de Imóvel">
+                      <button type="button" data-service="Vistoria de Imóvel" aria-pressed="false">
                         Vistoria de Imóvel
                       </button>
-                      <button type="button" data-service="Laudo para Reforma">
+                      <button type="button" data-service="Laudo para Reforma" aria-pressed="false">
                         Laudo para Reforma
                       </button>
-                      <button type="button" data-service="Perícia Judicial">
+                      <button type="button" data-service="Perícia Judicial" aria-pressed="false">
                         Perícia Judicial
                       </button>
-                      <button type="button" data-service="Outro">Outro</button>
+                      <button type="button" data-service="Outro" aria-pressed="false">Outro</button>
                     </div>
                   </div>
                   <div>
