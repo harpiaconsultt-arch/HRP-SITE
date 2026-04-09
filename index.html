@@ -8,7 +8,7 @@
     <link rel="dns-prefetch" href="https://connect.facebook.net" />
     <link
       rel="preload"
-      href="img/hero-harpia-v2.webp"
+      href="/assets/images/hero-harpiaconsultoria-v2.webp"
       as="image"
       type="image/webp"
       fetchpriority="high"
@@ -85,6 +85,7 @@
         -webkit-text-size-adjust: 100%;
         tab-size: 4;
         overflow-x: hidden;
+        width: 100%;
       }
       body {
         margin: 0;
@@ -94,6 +95,7 @@
         color: #cbd5e1;
         overflow-x: hidden;
         position: relative;
+        width: 100%;
       }
       img,
       svg {
@@ -235,18 +237,6 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
-      .flex {
-        display: flex;
-      }
-      .flex-col {
-        flex-direction: column;
-      }
-      .items-center {
-        align-items: center;
-      }
-      .text-center {
-        text-align: center;
-      }
       header {
         position: fixed;
         width: 100%;
@@ -376,14 +366,14 @@
       }
       #hero {
         margin-top: 0;
-        mask-image: none;
-        -webkit-mask-image: none;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        background: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8));
+        mask-image: none;
+        -webkit-mask-image: none;
+        background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85));
         padding-top: 140px;
         padding-bottom: 120px;
         min-height: 80vh;
@@ -394,7 +384,7 @@
         -webkit-mask-image: none;
       }
       #hero h1 {
-        font-size: 4rem;
+        font-size: clamp(2rem, 8vw, 4rem);
         font-weight: 700;
         line-height: 1.1;
         color: #fff;
@@ -402,7 +392,7 @@
         margin-bottom: 30px;
       }
       #hero .content p {
-        font-size: 1.3rem;
+        font-size: clamp(1rem, 3vw, 1.3rem);
         max-width: 850px;
         margin: 0 auto 40px auto;
         font-weight: 300 !important;
@@ -1164,6 +1154,11 @@
         display: none;
       }
       @media (max-width: 768px) {
+        .container {
+          max-width: 100%;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
         .logo-img {
           height: 50px;
         }
@@ -2006,17 +2001,9 @@
       <div id="page-home">
         <section id="hero" style="position: relative; overflow: hidden">
           <img
-            src="img/hero-harpia-v2.webp"
+            src="/assets/images/hero-harpiaconsultoria-v2.webp"
             alt="Engenharia Diagnóstica Harpia Consultoria"
-            style="
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              z-index: -1;
-            "
+            class="absolute inset-0 w-full h-full object-cover z-[-1]"
             fetchpriority="high"
             decoding="async"
             width="1920"
@@ -2027,7 +2014,7 @@
               <h1>
                 Laudos Estruturais, Perícias e <br />
                 Engenharia Diagnóstica <br />
-                <span style="color: #005b96">em Barbacena e JF</span>
+        <span class="text-[#3b82f6]">em Barbacena e JF</span>
               </h1>
 
               <p>
@@ -2046,134 +2033,134 @@
             <div class="logos-track">
               <img
                 src="img/pref-de-barbacena.webp"
-                alt="Prefeitura de Barbacena"
+                alt="Logo da Prefeitura de Barbacena, parceiro institucional"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/parceiro-harpia-tjmg.webp"
-                alt="Tribunal de Justiça de Minas Gerais - TJMG"
+                alt="Logo do Tribunal de Justiça de Minas Gerais - TJMG, parceiro jurídico"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/parceiro-harpia-defesa-civil.webp"
-                alt="Defesa Civil"
+                alt="Logo da Defesa Civil, parceiro em engenharia de segurança"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/projeto-realizado-arquidiocese-de-mariana.webp"
-                alt="Arquidiocese de Mariana"
+                alt="Logo da Arquidiocese de Mariana, cliente de projetos técnicos"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/cliente-harpia-mrv.webp"
-                alt="MRV"
+                alt="Logo da MRV Engenharia, cliente em perícias e laudos"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/projeto-realizado-prefeitura-de-ouro-preto.webp"
-                alt="Prefeitura Ouro Preto"
+                alt="Logo da Prefeitura de Ouro Preto, parceiro institucional em MG"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/cliente-harpia-escola-salesianas.webp"
-                alt="Salesianas"
+                alt="Logo do Instituto Salesianas, cliente de engenharia diagnóstica"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/projeto-realizado-uisa-bioenergia-acucar.webp"
-                alt="Uisa"
+                alt="Logo da Uisa Bioenergia, cliente de projetos industriais"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/projeto-realizado-geo-bio-gas.webp"
-                alt="Geo Bio Gas"
+                alt="Logo da Geo Bio Gas, cliente em projetos de sustentabilidade"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/parceiro-harpia-m2g2-patrimonial.webp"
-                alt="M2G2"
+                alt="Logo da M2G2 Patrimonial, parceiro em gestão de ativos"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/parceiro-harpia-grupo-projeta.webp"
-                alt="Grupo Projeta"
+                alt="Logo do Grupo Projeta, parceiro em engenharia e consultoria"
                 loading="lazy"
                 decoding="async"
               />
 
               <img
                 src="img/pref-de-barbacena.webp"
-                alt="Prefeitura de Barbacena"
+                alt="Logo da Prefeitura de Barbacena, parceiro institucional"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/parceiro-harpia-tjmg.webp"
-                alt="Tribunal de Justiça de Minas Gerais - TJMG"
+                alt="Logo do Tribunal de Justiça de Minas Gerais - TJMG, parceiro jurídico"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/parceiro-harpia-defesa-civil.webp"
-                alt="Defesa Civil"
+                alt="Logo da Defesa Civil, parceiro em engenharia de segurança"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/projeto-realizado-arquidiocese-de-mariana.webp"
-                alt="Arquidiocese de Mariana"
+                alt="Logo da Arquidiocese de Mariana, cliente de projetos técnicos"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/cliente-harpia-mrv.webp"
-                alt="MRV"
+                alt="Logo da MRV Engenharia, cliente em perícias e laudos"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/projeto-realizado-prefeitura-de-ouro-preto.webp"
-                alt="Prefeitura Ouro Preto"
+                alt="Logo da Prefeitura de Ouro Preto, parceiro institucional em MG"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/cliente-harpia-escola-salesianas.webp"
-                alt="Salesianas"
+                alt="Logo do Instituto Salesianas, cliente de engenharia diagnóstica"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/projeto-realizado-uisa-bioenergia-acucar.webp"
-                alt="Uisa"
+                alt="Logo da Uisa Bioenergia, cliente de projetos industriais"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/projeto-realizado-geo-bio-gas.webp"
-                alt="Geo Bio Gas"
+                alt="Logo da Geo Bio Gas, cliente em projetos de sustentabilidade"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/parceiro-harpia-m2g2-patrimonial.webp"
-                alt="M2G2"
+                alt="Logo da M2G2 Patrimonial, parceiro em gestão de ativos"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="img/parceiro-harpia-grupo-projeta.webp"
-                alt="Grupo Projeta"
+                alt="Logo do Grupo Projeta, parceiro em engenharia e consultoria"
                 loading="lazy"
                 decoding="async"
               />
@@ -2515,9 +2502,9 @@
                     src="img/gustavo-santos.webp"
                     alt="Foto de Gustavo Santos, Engenheiro Civil Geotécnico"
                     loading="lazy"
+                    decoding="async"
                     width="80"
                     height="80"
-                    decoding="async"
                   />
                 </div>
                 <h3>Gustavo Santos</h3>
@@ -2534,9 +2521,9 @@
                     src="img/lucas-de-sa.webp"
                     alt="Foto de Lucas de Sá, Engenheiro Mecânico e Civil"
                     loading="lazy"
+                    decoding="async"
                     width="80"
                     height="80"
-                    decoding="async"
                   />
                 </div>
                 <h3>Lucas de Sá</h3>
@@ -2553,9 +2540,9 @@
                     src="img/djalmir-silva.webp"
                     alt="Foto de Djalmir Silva, Arquiteto e Urbanista"
                     loading="lazy"
+                    decoding="async"
                     width="80"
                     height="80"
-                    decoding="async"
                   />
                 </div>
                 <h3>Djalmir Silva</h3>
@@ -3444,10 +3431,10 @@
                 src="img/logo.webp"
                 alt="Logo da Harpia Consultoria e Engenharia"
                 class="logo-img"
-                width="60"
-                height="60"
                 loading="lazy"
                 decoding="async"
+                width="60"
+                height="60"
               />
               <div class="logo-text">
                 <span>HARPIA CONSULTORIA</span>
