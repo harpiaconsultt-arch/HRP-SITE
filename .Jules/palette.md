@@ -1,0 +1,3 @@
+## 2025-05-15 - [Skip to Content Link in Static/Hybrid Projects]
+**Learning:** In hybrid projects where a large static 'index.html' is the main entry point but Tailwind is available, it is preferred to use Tailwind's accessibility utilities (sr-only, focus:not-sr-only) directly on elements rather than adding manual CSS to the <style> block, as this maintains consistency with the design system and avoids redundant definitions.
+**Action:** Always check if the static entry point is included in the Tailwind content configuration and prioritize utility classes for accessibility features like skip links.
