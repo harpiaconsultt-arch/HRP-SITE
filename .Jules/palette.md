@@ -1,0 +1,3 @@
+## 2025-05-14 - Accessible Skip-to-Content Link in Hybrid Static Projects
+**Learning:** In projects where the entry point is a large static HTML file but styles are managed via Tailwind and Vite, a "Skip to Content" link requires both the `.sr-only` utility and explicit manual focus styles in the document's internal `<style>` block. This ensures that the link becomes reliably visible and correctly positioned when focused, even if the main Tailwind CSS bundle has not fully loaded or if there are conflicts with global resets.
+**Action:** Always include a manual `.skip-link:focus` override in the internal CSS of the static entry point to guarantee visibility for keyboard users.
