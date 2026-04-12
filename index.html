@@ -1542,6 +1542,38 @@
         background-color: var(--cobre) !important;
         color: #fff !important;
       }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+      .skip-link {
+        position: absolute;
+        left: 0.5rem;
+        top: -100%;
+        z-index: 1000;
+        background-color: var(--color-cta-green);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        font-weight: 700;
+        transition: top 0.2s;
+      }
+      .skip-link:focus {
+        top: 0.5rem;
+        width: auto;
+        height: auto;
+        clip: auto;
+        margin: 0;
+        overflow: visible;
+        text-decoration: underline;
+      }
     </style>
 
     <!-- Open Graph & Twitter Card -->
@@ -3162,6 +3194,9 @@
 
   </head>
   <body>
+    <a href="#main-content" class="skip-link sr-only"
+      >Pular para o conteúdo principal</a
+    >
     <header id="header">
       <div class="max-w-7xl">
         <div class="flex">
@@ -3201,7 +3236,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <div id="page-home">
         <section id="hero" style="position: relative; overflow: hidden">
           <img
