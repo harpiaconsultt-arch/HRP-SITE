@@ -47,8 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const btn = e.target.closest("button");
       if (btn) {
         selectedService = btn.dataset.service || "";
-        serviceContainer.querySelectorAll("button").forEach(b => b.classList.remove("selected"));
+        serviceContainer.querySelectorAll("button").forEach(b => {
+          b.classList.remove("selected");
+          b.setAttribute("aria-pressed", "false");
+        });
         btn.classList.add("selected");
+        btn.setAttribute("aria-pressed", "true");
       }
     });
 
