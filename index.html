@@ -1542,6 +1542,12 @@
         background-color: var(--cobre) !important;
         color: #fff !important;
       }
+
+      /* Accessibility Styles */
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+      .focus\:not-sr-only:focus { position: fixed; top: 1rem; left: 1rem; z-index: 9999; width: auto; height: auto; padding: 1rem 1.5rem; background-color: var(--color-cta-green); color: white; border-radius: 0.5rem; font-weight: bold; clip: auto; margin: 0; overflow: visible; }
+      :focus-visible { outline: 2px solid var(--color-cta-green) !important; outline-offset: 2px !important; }
+      #main-content:focus { outline: none; }
     </style>
 
     <!-- Open Graph & Twitter Card -->
@@ -3162,6 +3168,9 @@
 
   </head>
   <body>
+    <a href="#main-content" class="sr-only focus:not-sr-only">
+      Pular para o conteúdo principal
+    </a>
     <header id="header">
       <div class="max-w-7xl">
         <div class="flex">
@@ -3201,7 +3210,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <div id="page-home">
         <section id="hero" style="position: relative; overflow: hidden">
           <img
