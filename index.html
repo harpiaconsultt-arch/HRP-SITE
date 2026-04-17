@@ -130,6 +130,36 @@
         text-decoration: none;
         color: inherit;
       }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+      .focus\:not-sr-only:focus {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 100;
+        width: auto;
+        height: auto;
+        padding: 1rem 2rem;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        background-color: var(--color-cta-green);
+        color: white;
+        font-weight: bold;
+        text-decoration: underline;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
       .scroll-smooth {
         scroll-behavior: smooth;
       }
@@ -3162,6 +3192,9 @@
 
   </head>
   <body>
+    <a href="#main-content" class="sr-only focus:not-sr-only">
+      Pular para o conteúdo principal
+    </a>
     <header id="header">
       <div class="max-w-7xl">
         <div class="flex">
@@ -3201,7 +3234,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <div id="page-home">
         <section id="hero" style="position: relative; overflow: hidden">
           <img
