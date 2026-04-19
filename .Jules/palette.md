@@ -1,0 +1,3 @@
+## 2026-04-19 - Improved Keyboard Navigation with Skip Link and Focus Styles
+**Learning:** Implementing a "Skip to Content" link is a high-impact, low-code accessibility win for sites with fixed headers. When paired with explicit `*:focus-visible` styles using the brand's primary CTA color, it significantly improves the browsing experience for keyboard users without affecting the visual design for mouse users.
+**Action:** Always check for fixed headers in landing pages and ensure a localized skip link is the first interactive element. Use the primary CTA color for focus indicators to maintain brand consistency while meeting WCAG contrast requirements.
