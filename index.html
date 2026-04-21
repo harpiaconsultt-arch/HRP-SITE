@@ -63,6 +63,8 @@
     </noscript>
 
     <!-- CSS Crítico & Refatorado -->
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+      .focus\:not-sr-only:focus { position: fixed; top: 1rem; left: 1rem; z-index: 9999; width: auto; height: auto; padding: 1rem 2rem; margin: 0; overflow: visible; clip: auto; white-space: normal; background-color: var(--color-cta-green); color: #fff; font-weight: 700; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); text-decoration: none; }
     <style>
       :root {
         --color-primary: #0a2240;
@@ -3190,6 +3192,7 @@
             <a href="/#metodologia">Metodologia</a>
             <a href="/#equipe">Equipe</a>
             <a href="#/blog">Blog</a>
+    <a href="#main-content" class="sr-only focus:not-sr-only">Pular para o conteúdo</a>
             <a href="/#contato">Contato</a>
           </nav>
           <div class="hidden md:flex">
@@ -3201,7 +3204,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <div id="page-home">
         <section id="hero" style="position: relative; overflow: hidden">
           <img
@@ -4283,16 +4286,16 @@
                   <div>
                     <label>1. Qual serviço você precisa?</label>
                     <div id="service-options-container">
-                      <button type="button" data-service="Vistoria de Imóvel">
+                      <button type="button" data-service="Vistoria de Imóvel" aria-pressed="false">
                         Vistoria de Imóvel
                       </button>
-                      <button type="button" data-service="Laudo para Reforma">
+                      <button type="button" data-service="Laudo para Reforma" aria-pressed="false">
                         Laudo para Reforma
                       </button>
-                      <button type="button" data-service="Perícia Judicial">
+                      <button type="button" data-service="Perícia Judicial" aria-pressed="false">
                         Perícia Judicial
                       </button>
-                      <button type="button" data-service="Outro">Outro</button>
+                      <button type="button" data-service="Outro" aria-pressed="false">Outro</button>
                     </div>
                   </div>
                   <div>
