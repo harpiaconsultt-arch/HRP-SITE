@@ -1159,21 +1159,39 @@
               </div>
               <div class="w-full fade-in-on-scroll">
                 <form id="contact-form">
-                  <div>
-                    <label>1. Qual serviço você precisa?</label>
+                  <fieldset>
+                    <legend>1. Qual serviço você precisa?</legend>
                     <div id="service-options-container">
-                      <button type="button" data-service="Vistoria de Imóvel">
+                      <button
+                        type="button"
+                        data-service="Vistoria de Imóvel"
+                        aria-pressed="false"
+                      >
                         Vistoria de Imóvel
                       </button>
-                      <button type="button" data-service="Laudo para Reforma">
+                      <button
+                        type="button"
+                        data-service="Laudo para Reforma"
+                        aria-pressed="false"
+                      >
                         Laudo para Reforma
                       </button>
-                      <button type="button" data-service="Perícia Judicial">
+                      <button
+                        type="button"
+                        data-service="Perícia Judicial"
+                        aria-pressed="false"
+                      >
                         Perícia Judicial
                       </button>
-                      <button type="button" data-service="Outro">Outro</button>
+                      <button
+                        type="button"
+                        data-service="Outro"
+                        aria-pressed="false"
+                      >
+                        Outro
+                      </button>
                     </div>
-                  </div>
+                  </fieldset>
                   <div>
                     <label for="name-contact">2. Seu nome completo *</label>
                     <input
