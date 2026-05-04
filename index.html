@@ -43,6 +43,12 @@
 
   </head>
   <body>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:px-4 focus:py-2 focus:bg-emerald-600 focus:text-white focus:rounded-md focus:font-bold"
+    >
+      Pular para o conteúdo principal
+    </a>
     <header id="header">
       <div class="max-w-7xl">
         <div class="flex">
@@ -81,7 +87,7 @@
         </div>
       </div>
     </header>
-    <main>
+    <main id="main-content" tabindex="-1" class="outline-none">
       <div id="page-home">
         <section id="hero" style="position: relative; overflow: hidden">
           <img
@@ -1162,16 +1168,34 @@
                   <div>
                     <label>1. Qual serviço você precisa?</label>
                     <div id="service-options-container">
-                      <button type="button" data-service="Vistoria de Imóvel">
+                      <button
+                        type="button"
+                        data-service="Vistoria de Imóvel"
+                        aria-pressed="false"
+                      >
                         Vistoria de Imóvel
                       </button>
-                      <button type="button" data-service="Laudo para Reforma">
+                      <button
+                        type="button"
+                        data-service="Laudo para Reforma"
+                        aria-pressed="false"
+                      >
                         Laudo para Reforma
                       </button>
-                      <button type="button" data-service="Perícia Judicial">
+                      <button
+                        type="button"
+                        data-service="Perícia Judicial"
+                        aria-pressed="false"
+                      >
                         Perícia Judicial
                       </button>
-                      <button type="button" data-service="Outro">Outro</button>
+                      <button
+                        type="button"
+                        data-service="Outro"
+                        aria-pressed="false"
+                      >
+                        Outro
+                      </button>
                     </div>
                   </div>
                   <div>
