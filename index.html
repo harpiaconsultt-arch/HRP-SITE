@@ -1160,19 +1160,41 @@
               <div class="w-full fade-in-on-scroll">
                 <form id="contact-form">
                   <div>
-                    <label>1. Qual serviço você precisa?</label>
-                    <div id="service-options-container">
-                      <button type="button" data-service="Vistoria de Imóvel">
-                        Vistoria de Imóvel
-                      </button>
-                      <button type="button" data-service="Laudo para Reforma">
-                        Laudo para Reforma
-                      </button>
-                      <button type="button" data-service="Perícia Judicial">
-                        Perícia Judicial
-                      </button>
-                      <button type="button" data-service="Outro">Outro</button>
-                    </div>
+                    <fieldset style="border: none; padding: 0; margin: 0">
+                      <legend style="display: block; color: white; margin-bottom: 0.5rem">
+                        1. Qual serviço você precisa?
+                      </legend>
+                      <div id="service-options-container">
+                        <button
+                          type="button"
+                          data-service="Vistoria de Imóvel"
+                          aria-pressed="false"
+                        >
+                          Vistoria de Imóvel
+                        </button>
+                        <button
+                          type="button"
+                          data-service="Laudo para Reforma"
+                          aria-pressed="false"
+                        >
+                          Laudo para Reforma
+                        </button>
+                        <button
+                          type="button"
+                          data-service="Perícia Judicial"
+                          aria-pressed="false"
+                        >
+                          Perícia Judicial
+                        </button>
+                        <button
+                          type="button"
+                          data-service="Outro"
+                          aria-pressed="false"
+                        >
+                          Outro
+                        </button>
+                      </div>
+                    </fieldset>
                   </div>
                   <div>
                     <label for="name-contact">2. Seu nome completo *</label>
