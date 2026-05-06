@@ -1,0 +1,3 @@
+## 2025-05-15 - Accessibilty: Skip to Content Link implementation
+**Learning:** In projects with large fixed headers and a hybrid static/React structure, a 'Skip to Content' link is essential for keyboard navigation. For accessibility, the link must be the first focusable element in the DOM and use high-contrast colors (e.g., emerald-600 instead of emerald-500) to meet WCAG AA standards against a white background.
+**Action:** Always place the skip link as the first child of <body>, target the <main> element with id="main-content" and tabindex="-1", and use 'sr-only focus:not-sr-only' utilities for visual management.
