@@ -1,0 +1,3 @@
+## 2025-05-14 - Accessible Skip Links with Tailwind v4
+**Learning:** Tailwind CSS v4 (@tailwindcss/postcss) natively supports `sr-only` and `focus:not-sr-only` utilities, which simplifies the implementation of visually hidden skip links without needing custom CSS boilerplate. Additionally, when using green themes (like emerald), `emerald-500` (#10b981) often fails WCAG AA contrast for white text (2.5:1), making `emerald-600` or higher necessary for accessible interactive components.
+**Action:** Use native Tailwind v4 accessibility utilities for skip links and always verify contrast ratios for brand colors in interactive states, preferring darker variants for text-on-background combinations.
