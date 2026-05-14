@@ -264,6 +264,35 @@
       .text-center {
         text-align: center;
       }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+      .focus\:not-sr-only:focus {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 10000;
+        width: auto;
+        height: auto;
+        padding: 1rem 1.5rem;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        background-color: var(--color-cta-green);
+        color: #fff;
+        font-weight: 700;
+        border-radius: 0.5rem;
+        text-decoration: none;
+      }
       header {
         position: fixed;
         width: 100%;
@@ -2283,6 +2312,9 @@
 
   </head>
   <body>
+    <a href="#main-content" class="sr-only focus:not-sr-only">
+      Pular para o conteúdo principal
+    </a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS53MLHS"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -2326,7 +2358,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <div id="page-home">
         <section id="hero" style="position: relative; overflow: hidden">
           <img
@@ -3278,21 +3310,21 @@
               </div>
               <div class="w-full fade-in-on-scroll">
                 <form id="contact-form">
-                  <div>
-                    <label>1. Qual serviço você precisa?</label>
+                  <fieldset class="border-0 p-0 m-0">
+                    <legend class="text-white mb-2">1. Qual serviço você precisa?</legend>
                     <div id="service-options-container">
-                      <button type="button" data-service="Vistoria de Imóvel">
+                      <button type="button" data-service="Vistoria de Imóvel" aria-pressed="false">
                         Vistoria de Imóvel
                       </button>
-                      <button type="button" data-service="Laudo para Reforma">
+                      <button type="button" data-service="Laudo para Reforma" aria-pressed="false">
                         Laudo para Reforma
                       </button>
-                      <button type="button" data-service="Perícia Judicial">
+                      <button type="button" data-service="Perícia Judicial" aria-pressed="false">
                         Perícia Judicial
                       </button>
-                      <button type="button" data-service="Outro">Outro</button>
+                      <button type="button" data-service="Outro" aria-pressed="false">Outro</button>
                     </div>
-                  </div>
+                  </fieldset>
                   <div>
                     <label for="name-contact">2. Seu nome completo *</label>
                     <input
